@@ -577,19 +577,73 @@
   line-height: 1.4;
 }
 
-.btn-see-more {
-  font-family: 'Kaisei Opti', serif;
-  background: #d62828;
-  color: #fff;
-  border: none;
-  padding: .6rem 1.4rem;
-  border-radius: 8px;
-  cursor: pointer;
-  align-self: flex-start;
-  transition: background .25s ease, transform .1s ease;
+/* Reuse the same base styling for both buttons */
+/* Row: force two equal columns */
+/* two equal columns (keep) */
+.endeavor-buttons{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:15px;
 }
-.btn-see-more:hover { background: #a91c1c; }
-.btn-see-more:active { transform: translateY(1px); }
+
+/* make <a> and <button> identical */
+/* Base button (red background, white text) */
+.endeavor-btn {
+  appearance:none;
+  -webkit-appearance:none;
+  border:0;
+  margin:0;
+
+  font-family: "Kaisei Opti";
+  font-weight:700;
+  font-size:13px;
+  line-height:1;
+  white-space:nowrap;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:44px;
+  padding:0 16px;
+  box-sizing:border-box;
+  text-align:center;
+  text-decoration:none;
+  cursor:pointer;
+
+  background:#d62828;
+  color:#fff;
+  border-radius:8px;
+  transition:background .25s ease, transform .1s ease, color .25s ease, border-color .25s ease;
+}
+
+.endeavor-btn:hover { background:#a91c1c; }
+.endeavor-btn:active { transform:translateY(1px); }
+
+/* Variant: outlined style for Visit Page */
+.endeavor-btn.outlined {
+  background:#fff;
+  color:#d62828;
+  border:2px solid #d62828;
+}
+
+.endeavor-btn.outlined:hover {
+  background:#ffe5e5; /* subtle hover */
+}
+
+.endeavor-btn.outlined:active {
+  transform:translateY(1px);
+}
+
+
+
+/* (Optional) on narrow screens stack them full width */
+@media (max-width: 600px) {
+  .endeavor-buttons {
+    grid-template-columns:repeat(2, minmax(0,1fr));
+  }
+}
+
+
 
 /* Mobile / tablet */
 @media (max-width: 1100px) {
@@ -605,6 +659,11 @@
   }
   .btn-see-more {
     align-self: center;
+  }
+
+    .endeavor-buttons:has(.endeavor-btn:only-child) {
+    grid-template-columns: 1fr;   /* collapse to one column */
+    justify-items: center;        /* center it in that column */
   }
 }
 

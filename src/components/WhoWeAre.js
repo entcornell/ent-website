@@ -220,29 +220,43 @@ export default function WhoWeAre() {
         <div className="section-divider" />
 
         {/* ===== Our Endeavors (reuse your existing block) ===== */}
-        {/* Our Endeavors */}
-      <section className="our-endeavors">
-        <h2>Our Endeavors</h2>
-        <div className="endeavors-grid">
-          {endeavors.map((e, i) => (
-            <article className="endeavor-card" key={i}>
-              <div className="endeavor-media">
-                <img src={e.img} alt={e.title} />
-              </div>
-              <div className="endeavor-content">
-                <h3>{e.title}</h3>
-                <p>{e.desc}</p>
-                <button
-                  className="btn-see-more"
-                  onClick={() => setPopupData(e)}
-                >
-                  See More
-                </button>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+        <section className="our-endeavors">
+          <h2>Our Endeavors</h2>
+          <div className="endeavors-grid">
+            {endeavors.map((e, i) => (
+              <article className="endeavor-card" key={i}>
+                <div className="endeavor-media">
+                  <img src={e.img} alt={e.title} />
+                </div>
+                <div className="endeavor-content">
+                  <h3>{e.title}</h3>
+                  <p>{e.desc}</p>
+                  <div className="endeavor-buttons">
+                    <button
+                      type="button"
+                      className="endeavor-btn"
+                      onClick={() => setPopupData(e)}
+                    >
+                      See More
+                    </button>
+        
+                    {e.link && (
+                      <a
+                        href={e.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="endeavor-btn outlined"
+                      >
+                        Visit Page
+                      </a>
+                    )}
+                  </div>
+        
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
 
         <div className="section-divider" />
 

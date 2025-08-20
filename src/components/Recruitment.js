@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Recruitment.css";
-import { Helmet } from "react-helmet-async";
-import { useLocation } from "react-router-dom";
+//import { Helmet } from "react-helmet-async";
+//import { useLocation } from "react-router-dom";
 
 const tips_images = [
     "/images/IMG_3070.jpg",
@@ -56,7 +56,7 @@ const roundsData = [
 
 export default function Recruitment() {
 
-    const { pathname } = useLocation();
+    //const { pathname } = useLocation();
 
         useEffect(() => {
             window.scrollTo({ top: 0, behavior: "smooth" });
@@ -261,13 +261,13 @@ useEffect(() => {
   return (
     <div className="recruitment-page">
 
-    <Helmet key={pathname}>
+    {/*<Helmet key={pathname}>
       <title>Recruitment — ENT</title>
       <meta
         name="description"
         content="Join Epsilon Nu Tau at Cornell. Build ventures, gain mentorship, and grow alongside fellow innovators."
       />
-    </Helmet>
+    </Helmet>*/}
 
       {/* HERO */}
       <section className="r-hero">

@@ -4,11 +4,11 @@ import "./NewsletterPage.css";
 import { issues } from "./NewsletterData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExpand } from "@fortawesome/free-solid-svg-icons";
-import { Helmet } from "react-helmet-async";
-import { useLocation } from "react-router-dom";
+//import { Helmet } from "react-helmet-async";
+//import { useLocation } from "react-router-dom";
 
 export default function NewsletterPage() {
-  const { pathname } = useLocation();
+  //const { pathname } = useLocation();
   const { id } = useParams();
   const navigate = useNavigate();
   const idx = issues.findIndex((i) => String(i.id) === String(id));
@@ -46,13 +46,13 @@ export default function NewsletterPage() {
   return (
     <div className="nl-page">
 
-      <Helmet key={pathname}>
+      {/*<Helmet key={pathname}>
             <title>Weekly Newsletter Issue — ENT</title>
             <meta
               name="description"
               content="Stay up to date with ENT’s weekly newsletter, featuring entrepreneurship news, member highlights, and upcoming events."
             />
-      </Helmet>
+      </Helmet>*/}
 
       {/* ===== Banner with overlay back button ===== */}
       <section className="nl-banner">

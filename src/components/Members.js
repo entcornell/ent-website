@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "./NavBar";
 import "./Members.css";
-import { Helmet } from "react-helmet-async";
-import { useLocation } from "react-router-dom";
+//import { Helmet } from "react-helmet-async";
+//import { useLocation } from "react-router-dom";
 
 const eboard = [
   {
@@ -112,7 +112,7 @@ function MemberCard({
   showRole = false,
   style,
 }) {
-  const { pathname } = useLocation();
+  //const { pathname } = useLocation();
   return (
     <article className="m-card">
       <div className="m-card-media">
@@ -143,20 +143,20 @@ function MemberCard({
 
 export default function Members() {
 
-  const { pathname } = useLocation();
+  //const { pathname } = useLocation();
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     }, []);
   return (
     <div className="members-page">
-      <Helmet key={pathname}>
+      {/*<Helmet key={pathname}>
         <title>Members — ENT</title>
         <meta
           name="description"
           content="Meet the members of Epsilon Nu Tau — a diverse community of student entrepreneurs, innovators, and future leaders shaping tomorrow’s ventures."
         />
-      </Helmet>
+      </Helmet>*/}
 
 
       {/* HERO */}

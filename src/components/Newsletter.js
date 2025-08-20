@@ -2,14 +2,14 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Newsletter.css";
 import { issues } from "./NewsletterData";
-import { Helmet } from "react-helmet-async";
-import { useLocation } from "react-router-dom";
+//import { Helmet } from "react-helmet-async";
+//import { useLocation } from "react-router-dom";
 
 export default function Newsletter() {
   const latest = issues[0];
   const rest = issues.slice(1);
 
-  const { pathname } = useLocation();
+  //const { pathname } = useLocation();
 
       useEffect(() => {
           window.scrollTo({ top: 0, behavior: "smooth" });
@@ -18,13 +18,13 @@ export default function Newsletter() {
   return (
     <div className="nl-page">
 
-      <Helmet key={pathname}>
+      {/*<Helmet key={pathname}>
         <title>Weekly Newsletter — ENT</title>
         <meta
           name="description"
           content="Stay up to date with ENT’s weekly newsletter, featuring entrepreneurship news, member highlights, and upcoming events."
         />
-      </Helmet>
+      </Helmet>*/}
 
       {/* HERO */}
       <section className="nl-hero">

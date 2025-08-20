@@ -5,12 +5,12 @@ import { faLightbulb, faRocket, faUsers, faUserGraduate, faFileAlt, faDollarSign
 import EndeavorsPopup from "./EndeavorsPopup";
 import { endeavors } from "./EndeavorsData";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
-import { useLocation } from "react-router-dom";
+//import { Helmet } from "react-helmet-async";
+//import { useLocation } from "react-router-dom";
 
 const Home = () => {
 
-  const { pathname } = useLocation();
+  //const { pathname } = useLocation();
 
     const [popupData, setPopupData] = useState(null);
 
@@ -22,13 +22,13 @@ const Home = () => {
   return (
     <div className="home-container">
 
-    <Helmet key={pathname}>
+    {/*<Helmet key={pathname}>
       <title>Epsilon Nu Tau — The Nation’s First Entrepreneurship Fraternity</title>
       <meta
         name="description"
         content="Epsilon Nu Tau empowers student entrepreneurs with community, mentorship, and resources to launch ventures and grow as leaders."
       />
-    </Helmet>
+    </Helmet>*/}
 
     {/* Hero Section */}
     <section className="hero">

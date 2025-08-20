@@ -43,6 +43,16 @@ export default function Navbar() {
         <li><NavLink to="/members" onClick={closeMenu}>Members</NavLink></li>
         <li><NavLink to="/who-we-are" onClick={closeMenu}>Who We Are</NavLink></li>
         <li><NavLink to="/newsletter" onClick={closeMenu}>Newsletter</NavLink></li>
+        <li>
+          <a 
+            href="https://sbc.entcornell.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            SBC
+          </a>
+        </li>
+
       </ul>
     </nav>
   );

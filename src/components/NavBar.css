@@ -1,0 +1,121 @@
+/* ========== NAVBAR ========== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 30px;
+  width: 100px;
+  object-fit: cover; /* Zooms in and crops if needed */
+  border-radius: 4px; /* Optional: clean rounded corners */
+  display: block;
+}
+
+.brand-text {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #d62828;
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* li still handles spacing and layout */
+.nav-links li {
+  cursor: pointer;
+  font-size: clamp(0.9rem, 1.6vw, 1rem);
+  position: relative;
+}
+
+/* Style the actual link text */
+.nav-links li a {
+  color: black;
+  text-decoration: none;  /* remove blue underline */
+  transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.nav-links li a:hover {
+  color: #d62828;
+}
+
+/* Active NavLink */
+.nav-links li a.active {
+  color: #d62828;
+  font-weight: bold;
+}
+
+/* === Hamburger button (hidden on desktop) === */
+/* Hamburger: make it a larger tap target */
+.hamburger {
+  display: none;
+  background: transparent;
+  border: 0;
+  padding: 10px;              /* bigger hit area */
+  cursor: pointer;
+  border-radius: 10px;
+  min-width: 44px;            /* recommended touch size */
+  min-height: 44px;
+}
+.hamburger .bar {
+  display: block;
+  width: 28px;                /* bigger bars */
+  height: 3px;
+  background: #000;
+  border-radius: 2px;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.hamburger .bar + .bar { margin-top: 6px; }
+.hamburger.is-open .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.hamburger.is-open .bar:nth-child(2) { opacity: 0; }
+.hamburger.is-open .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+/* Mobile menu (bigger + hidden by default) */
+@media (max-width: 768px) {
+  .navbar { padding: 0.85rem 1rem; }
+  .hamburger { display: block; }
+
+  /* Hide by default on mobile; only show when .open */
+  .nav-links {
+    position: fixed;
+    top: 64px;                 /* sits below navbar (adjust if navbar taller) */
+    left: 0; right: 0;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    display: none;             /* <-- prevents auto-show */
+    flex-direction: column;
+    gap: 0;                    /* we’ll use padding on li for touch size */
+    padding: 0.25rem 1rem 0.75rem;
+    z-index: 9;
+  }
+  .nav-links.open { display: flex; }
+
+  /* Bigger, easy-to-tap items */
+  .nav-links li {
+    font-size: 1.05rem;        /* larger text */
+    padding: 12px 4px;         /* vertical space = bigger tap target */
+    border-bottom: 1px solid #f1f1f1;
+  }
+  .nav-links li:last-child { border-bottom: 0; }
+  .nav-links li a { display: block; width: 100%; }
+}
+
+
+.navbar { position: sticky; top: 0; z-index: 1000; }

@@ -1,0 +1,711 @@
+.section-divider {
+  width: 90%;
+  height: 1px;
+  background-color: #ccc;
+  margin: 2rem auto;  /* vertical spacing, horizontal centering */
+}
+
+/* ========== HERO SECTION ========== */
+/* HERO SECTION WITH TRIANGULAR CLIP */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-clip {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+  overflow: hidden;
+}
+
+/* Red SVG outline positioned on top */
+.hero-outline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 1;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content h1 {
+  margin: 0px;
+  font-family: 'Kaisei Decol', serif;
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+  font-family: 'Dai Banna SIL', serif;
+  font-size: 1.7rem;
+  margin-bottom: 1.5rem;
+}
+
+.apply-btn {
+  font-family: 'Kaisei Opti', serif;
+  background: #d62828;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
+
+.apply-btn:hover {
+  background: #a91c1c;
+}
+
+.hero-content h1 {
+  white-space: nowrap;   /* ✅ forces all words onto one line */
+}
+
+.hero-content p {
+  white-space: nowrap;   /* ✅ forces all words onto one line */
+}
+
+/* Mobile: shrink hero text & button only */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 3.8rem;   /* down from 4rem */
+  }
+
+  .hero-content p {
+    font-size: 1.4rem;   /* down from 1.7rem */
+    margin-bottom: 1rem;
+  }
+
+  .apply-btn {
+    margin-top: 20px;
+    padding: 0.6rem 1.4rem;
+    font-size: 1.2rem;
+    border-radius: 6px;
+  }
+}
+
+
+
+/* ========== WHAT WE DO SECTION ========== */
+.what-we-do {
+  background: white;
+  padding: 0;
+  margin: 0;
+  width: 100%;  /* Use 100% instead of 100vw to prevent horizontal scrolling */
+  overflow-x: hidden;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.what-we-do-container {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+/* Image Section */
+.what-we-do-image {
+  flex: 1;
+  display: block;
+}
+
+.what-we-do-image img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: block;
+}
+
+/* Text Section */
+.what-we-do-text {
+  flex: 1;
+  padding: 4rem 3rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.what-we-do-text h2 {
+  margin: 0px;
+  font-family: 'Kaisei Opti', serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.icon-hex {
+  width: 60px;
+  height: 60px;
+  background: #d62828;
+  clip-path: polygon(
+    50% 0%,
+    93% 25%,
+    93% 75%,
+    50% 100%,
+    7% 75%,
+    7% 25%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.5rem;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.icon-hex svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  color: white;
+}
+
+
+.service-item h3 {
+  font-family: 'Kaisei Opti', serif;
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.service-item p {
+  margin: 0;
+  font-family: 'Dai Banna SIL', serif;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Mobile: stack What We Do like Our Story */
+/* Mobile: stack What We Do like Our Story */
+@media (max-width: 768px) {
+  .what-we-do-container {
+    flex-direction: column;
+    align-items: center;        /* centers image block */
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;            /* same margins as our-story */
+    box-sizing: border-box;
+  }
+
+  .what-we-do-image {
+    order: -1;
+    width: 100%;
+    height: 300px;              /* match our-story */
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+    margin-bottom: 1rem;        /* add spacing below image */
+  }
+
+  .what-we-do-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+    display: block;
+  }
+
+  .what-we-do-text {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;                 /* match our-story text */
+    text-align: left;           /* ✅ left aligned */
+  }
+
+  .service-item {
+    justify-content: flex-start; /* ✅ icons + text stay left */
+  }
+}
+
+
+
+/* ========== OUR STORY SECTION ========== */
+.our-story {
+  background: white;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.our-story-container {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center; /* <-- changed from stretch to center */
+  justify-content: center;
+  width: 100%;
+}
+
+
+.our-story-text {
+  flex: 1;
+  padding: 3rem 3rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+  height: 100%; /* optional: ensures it's aligned with the image */
+}
+
+
+.our-story-text h2 {
+  margin: 0px;
+  font-family: 'Kaisei Opti', serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.our-story-text p {
+  font-family: 'Dai Banna SIL', serif;
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.stats-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: 'Kaisei Opti', serif;
+  flex: 1;
+}
+
+.stat-icon {
+  font-size: 2rem;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.stat strong {
+  font-size: 1.4rem;
+}
+
+.stat-divider {
+  width: 1px;
+  background-color: #ccc;
+  margin: 0 1rem;
+}
+
+
+/* IMAGE */
+/* Desktop style */
+.our-story-image {
+  flex: 1;
+  max-height: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px 0px 0px 20px;
+}
+
+
+.our-story-image img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: block;
+}
+
+/* Mobile style */
+@media (max-width: 768px) {
+  .our-story-container {
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    overflow-x: hidden; /* 👈 additional safety */
+  }
+
+  .our-story-image,
+  .our-story-image img {
+    max-width: 100%;
+    width: 100%;
+    height: 300px;
+    border-radius: 20px 20px 0px 00px;
+  }
+
+  .our-story-text {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;                 /* match our-story text */
+    text-align: left;           /* ✅ left aligned */
+  }
+}
+
+/* Unify section H2s (Our Story + What We Do) */
+.what-we-do-text h2,
+.our-story-text h2 {
+  margin: 0;
+  font-family: 'Kaisei Opti', serif;
+  font-weight: 700;
+  /* Scales a bit on small screens but caps at the same size you liked */
+  font-size: clamp(2rem, 5.5vw, 2.5rem);
+  border-bottom: 2px solid #000;
+  display: inline-block;       /* underline hugs the text like your other sections */
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+
+/* ========== OUR MEMBERS SECTION ========== */
+.our-members {
+  padding: 1rem 2rem;
+  background-color: white;
+  text-align: center;
+  position: relative;
+}
+
+.our-members h2 {
+  margin: 0px;
+  font-family: 'Kaisei Opti', serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.members-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.members-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 2rem;
+  scroll-behavior: smooth;
+  padding: 0 2rem;
+  scrollbar-width: none; /* Firefox */
+}
+
+.members-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.member-card {
+  min-width: 200px;
+  max-width: 200px;
+  flex-shrink: 0;
+  text-align: center;
+  font-family: 'Dai Banna SIL', serif;
+}
+
+.member-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.member-card h3 {
+  font-family: 'Kaisei Opti', serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.member-name {
+  font-weight: 500;
+  margin: 0.3rem 0;
+}
+
+.member-desc {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* Arrows */
+/* Arrows placed outside scroll area */
+.scroll-arrow {
+  background: white; /* White background to match your site */
+  color: #000000; /* Your brand red */
+  border: 2px solid #000000;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+  z-index: 5;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.scroll-arrow:hover {
+  background: #d62828;
+  color: white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.scroll-arrow:focus {
+  outline: none;
+}
+
+.scroll-arrow.left {
+  left: -1.5rem; /* Outside the scroll area */
+}
+
+.scroll-arrow.right {
+  right: -1.5rem; /* Outside the scroll area */
+}
+
+/* ========== OUR ENDEAVORS ========== */
+.our-endeavors {
+  padding: 1rem 2rem;
+  background: #fff;
+}
+
+.our-endeavors h2 {
+  margin: 0px;
+  text-align: center;
+  font-family: 'Kaisei Opti', serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  border-bottom: 2px solid #000;
+  padding-bottom: .5rem;
+  margin: 0 auto 1rem auto; /* centers it */
+  display: block; /* full block so margin auto works */
+  width: fit-content; /* so border only wraps text */
+}
+
+
+.endeavors-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 1rem;
+  grid-auto-flow: dense; /* fills gaps */
+}
+
+.endeavor-card {
+  display: grid;
+  grid-template-columns: 280px 1fr; /* narrower image */
+  gap: 1rem;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 16px;
+}
+
+
+.endeavor-media img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.endeavor-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.endeavor-content h3 {
+  margin: 0 0 .4rem 0;
+  font-family: 'Kaisei Opti', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.endeavor-content p {
+  margin: 0 0 1.2rem 0;
+  font-family: 'Dai Banna SIL', serif;
+  color: #333;
+  line-height: 1.4;
+}
+
+.btn-see-more {
+  font-family: 'Kaisei Opti', serif;
+  background: #d62828;
+  color: #fff;
+  border: none;
+  padding: .6rem 1.4rem;
+  border-radius: 8px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background .25s ease, transform .1s ease;
+}
+.btn-see-more:hover { background: #a91c1c; }
+.btn-see-more:active { transform: translateY(1px); }
+
+/* Mobile / tablet */
+@media (max-width: 1100px) {
+  .endeavors-grid {
+    grid-template-columns: 1fr;
+  }
+  .endeavor-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .endeavor-content {
+    align-items: center;
+  }
+  .btn-see-more {
+    align-self: center;
+  }
+}
+
+/* ===== Photo Mosaic at the very bottom ===== */
+.photo-mosaic {
+  /* pull the section out of the centered page flow */
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
+}
+
+
+/* Thin red accent bar (like in your mock) */
+.mosaic-bar {
+  height: 10px;
+  background: #d62828;
+  width: 100%;
+}
+
+/* Desktop mosaic */
+.mosaic-grid {
+  display: grid;
+  gap: 0px;
+  /* 4 columns; adjust base row height with grid-auto-rows */
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 180px;
+  grid-template-areas:
+    "img1 img2 img3 img4"
+    "img1 img5 img3 img6";
+   max-width: none; /* keeps things from stretching too wide on big screens */
+   width: 100vw;
+   margin: 0 auto;
+}
+
+.tile {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgb(0 0 0 / 18%);
+}
+
+.tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1);
+  transition: transform .35s ease;
+}
+
+/* Subtle “alive” hover */
+.tile:hover img {
+  transform: scale(1.04);
+}
+
+/* Place each image in the mosaic */
+.tile--img1 { grid-area: img1; } /* Tall on the left (spans 2 rows) */
+.tile--img2 { grid-area: img2; } /* Small top mid-left */
+.tile--img3 { grid-area: img3; } /* Tall center-right (spans 2 rows) */
+.tile--img4 { grid-area: img4; } /* Small top right */
+.tile--img5 { grid-area: img5; } /* Small bottom mid-left */
+.tile--img6 { grid-area: img6; } /* Small bottom right */
+
+/* Tablet: 3 columns (still looks mosaic-y) */
+@media (max-width: 1024px) {
+  .mosaic-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 160px;
+    grid-template-areas:
+      "img1 img2 img3"
+      "img1 img5 img3"
+      "img4 img4 img6";
+  }
+}
+
+/* Mobile: stack gracefully */
+/* Mobile: shrink images instead of stacking */
+@media (max-width: 640px) {
+  .mosaic-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-auto-rows: 120px; /* smaller height */
+    gap: 6px; /* tighter spacing if desired */
+  }
+
+  .mosaic-grid img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-content h1 {
+  margin: 0px;
+  font-family: 'Kaisei Decol', serif;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+  font-family: 'Dai Banna SIL', serif;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+}
+

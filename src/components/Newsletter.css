@@ -1,0 +1,180 @@
+/* ======= theme ======= */
+:root {
+  --ent-red: #d62828;
+  --text: #111;
+  --muted: #666;
+  --border: #e3e3e3;
+  --shadow: 0 6px 16px rgb(0 0 0 / 18%);
+}
+
+.nl-page {
+  background: #fff;
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* ======= hero (matches your home hero look) ======= */
+.nl-hero { position: relative; overflow: hidden; }
+.nl-hero-clip {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+  overflow: hidden;
+}
+.nl-hero-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: brightness(0.55);
+}
+.nl-hero-content {
+  position: absolute; inset: 0;
+  display: grid; place-content: center;
+  text-align: center; color: #fff; z-index: 1;
+  text-shadow: 0 0 12px rgba(0,0,0,.6);
+}
+.nl-hero-content h1 {
+  font-family: 'Kaisei Decol', serif; /* same family you used */
+  font-weight: 700;
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  margin: 0 0 .25rem 0;
+}
+.nl-hero-content p {
+  font-family: 'Dai Banna SIL', serif;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  margin: 0;
+}
+.nl-hero-outline {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  pointer-events: none; z-index: 2;
+}
+
+/* ======= layout ======= */
+.nl-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 3rem;
+}
+
+/* ======= featured (latest) ======= */
+.nl-featured {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 1.25rem;
+  align-items: center;
+  margin-top: .75rem;
+}
+.nl-featured-media img {
+  width: 100%; height: 280px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  display: block;
+}
+.nl-kicker {
+  font-family: 'Inika', serif;
+  font-size: 1.5rem;
+  display: inline-block;
+  font-weight: 800;
+  letter-spacing: .08em;
+  color: var(--ent-red);
+}
+.nl-featured-title {
+  font-family: 'Kaisei Opti', serif;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  margin: 0 0 .25rem 0;
+}
+.nl-featured-excerpt {
+  font-family: 'Dai Banna SIL', serif;
+  color: #333;
+  line-height: 1.5;
+  margin: 0 0 1rem 0;
+}
+.nl-btn {
+  display: inline-block;
+  background: var(--ent-red);
+  color: #fff; text-decoration: none;
+  padding: .7rem 1.4rem;
+  border-radius: 12px;
+  font-family: 'Kaisei Opti', serif;
+  transition: background .25s ease, transform .1s ease;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 15%);
+}
+.nl-btn:hover { background: #a91c1c; }
+.nl-btn:active { transform: translateY(1px); }
+.nl-btn--small {
+  padding: .55rem 1.1rem;
+  border-radius: 10px;
+  align-self: flex-start;   /* don’t stretch across the column */
+  width: fit-content;       /* size to its content */
+  max-width: 180px;         /* hard cap just in case */
+}
+
+.nl-divider {
+  border: 0; height: 1px; background: var(--border);
+  margin: 1.25rem 0 1.5rem;
+}
+
+/* ======= past issues (2-column cards) ======= */
+.nl-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px 28px;
+}
+
+.nl-card {
+  display: grid;
+  grid-template-columns: 190px 1fr;  /* was 155px */
+  gap: 14px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 14px;
+}
+
+.nl-card-media img {
+  width: 190px;            /* was 155px */
+  height: 220px;           /* keep height similar so it feels wider */
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+  box-shadow: var(--shadow);
+}
+
+.nl-card-body { display: flex; flex-direction: column; }
+
+.nl-date {
+  font-family: 'Inika', serif;
+  color: var(--ent-red);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: .15rem;
+}
+
+.nl-card-title {
+  margin: 0 0 .25rem 0;
+  font-family: 'Kaisei Opti', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.nl-card-excerpt {
+  margin: 0 0 .7rem 0;
+  font-family: 'Dai Banna SIL', serif;
+  color: #333;
+  line-height: 1.45;
+}
+
+/* ======= responsive ======= */
+@media (max-width: 920px) {
+  .nl-featured { grid-template-columns: 1fr; }
+  .nl-featured-media img { height: 260px; }
+}
+
+@media (max-width: 760px) {
+  .nl-grid { grid-template-columns: 1fr; }
+  .nl-card {
+    grid-template-columns: 120px 1fr;
+  }
+  .nl-card-media img { width: 120px; height: 170px; }
+}

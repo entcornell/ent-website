@@ -1,0 +1,198 @@
+:root {
+  --ent-red: #d62828;
+  --text: #111;
+  --border: #e7e7e7;
+  --shadow: 0 6px 16px rgb(0 0 0 / 18%);
+}
+
+.members-page { background: #fff; color: var(--text); }
+
+/* ===== hero (matching your other pages) ===== */
+.m-hero { position: relative; overflow: hidden; }
+.m-hero-clip {
+  position: relative;
+  width: 100%;
+  height: 320px; /* match newsletter */
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+  overflow: hidden;
+}
+
+.m-hero-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; filter: brightness(.55);
+}
+.m-hero-content {
+  position: absolute; inset: 0; display: grid; place-content: center;
+  text-align: center; color: #fff; text-shadow: 0 0 12px rgba(0,0,0,.6);
+}
+
+.m-hero-content h1 {
+  font-family: 'Kaisei Decol', serif;
+  font-weight: 700;
+  font-size: clamp(2.8rem, 5vw, 4rem); /* match newsletter */
+  margin: 0 0 .25rem 0;
+}
+
+.m-hero-content p {
+  font-family: 'Dai Banna SIL', serif;
+  font-size: clamp(1rem, 2vw, 1.25rem); /* match newsletter */
+  margin: 0;
+}
+
+.m-hero-outline {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+/* ===== layout ===== */
+.m-container {
+  max-width: 1400px; /* was 1100px */
+  margin: 0 auto;
+  padding: 1.25rem 2rem 3rem; /* slightly more padding inside */
+}
+
+
+/* ===== headings ===== */
+/* Section titles match Home ("What We Do", etc.) */
+.m-section-title {
+  margin: 0;                               /* reset */
+  font-family: 'Kaisei Opti', serif;
+  font-size: 2.5rem;                        /* match Home */
+  font-weight: 700;
+  border-bottom: 2px solid #000;            /* the black underline */
+  display: inline-block;                    /* underline only under the text */
+  padding-bottom: 0.5rem;                   /* breathing room above the line */
+  margin-bottom: 2rem;                      /* space to content below */
+}
+
+.m-divider {
+  border: 0; height: 6px; background: var(--ent-red);
+  border-radius: 3px;
+  margin: 1.2rem 0 1.4rem;
+}
+.m-class-title {
+  font-family: 'Kaisei Opti', serif;   /* new font */
+  font-size: 1.8rem;             /* was 1.15rem */
+  font-weight: 800;              /* keep it bold */
+  color: var(--ent-red);
+  margin: .8rem 0 .8rem;         /* a bit more breathing room below */
+}
+
+/* tiny divider between Delta, Epsilon, etc. */
+.m-class-block + .m-class-block::before {
+  content: "";
+  display: block;
+  height: 1px;               
+  background: #ccc;
+  border-radius: 1px;
+  margin: 12px 0 30px;  
+  opacity: 0.9;
+}
+
+/* ===== card grid ===== */
+.m-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 50px;
+}
+
+/* ===== cards ===== */
+.m-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 250px auto; /* image then body */
+}
+
+.m-card-media img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  background: #000;
+}
+
+
+
+.m-card-body {
+  padding: 1rem 1.2rem 1.1rem;
+  font-size: .96rem;
+  line-height: 1.5;
+
+  display: flex;             /* make body a column flexbox */
+  flex-direction: column;
+}
+
+.m-role { 
+    color: var(--ent-red); 
+    margin: 0 0 .15rem 0; 
+    font-size: 1rem;
+    font-weight: bold; 
+}
+
+.member-extra { 
+    color: var(--ent-red); 
+    margin: 0 0 .15rem 0; 
+    font-size: 1rem;
+    font-weight: bold; 
+}
+
+.m-name { 
+    margin: 0 0 .15rem 0; 
+    font-size: 1.5rem;
+}
+
+.m-line { margin: .3rem 0; color: #333; }
+.m-email-line { 
+
+    padding-bottom: 1rem;
+    margin: .15rem 0;
+    color: #333; 
+}
+
+.m-line span { font-weight: 700; }
+
+.m-btn {
+  display: block;                /* full-width button */
+  width: 100%;                    /* match card width */
+  text-align: center;             /* center the text */
+  margin-top: auto;
+  background: var(--ent-red);
+  color: #fff;
+  text-decoration: none;
+  padding: .6rem 0;               /* vertical padding only */
+  border-radius: 10px;   /* match card corners on bottom */
+  font-family: 'Kaisei Opti', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background .25s ease, transform .1s ease;
+  box-shadow: 0 -1px 0 var(--border) inset;
+}
+.m-btn:hover { background:#a91c1c; }
+.m-btn:active { transform: translateY(1px); }
+
+
+/* ===== responsive ===== */
+
+@media (max-width: 1000px) {
+  .m-card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .m-card-grid {
+    grid-template-columns: 1fr; /* one column, full width */
+  }
+  .m-hero-clip {
+    height: 220px;
+  }
+}
+

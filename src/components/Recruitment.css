@@ -1,0 +1,798 @@
+:root {
+  --ent-red: #d62828;
+  --text: #111;
+  --muted: #666;
+  --border: #e7e7e7;
+  --shadow: 0 6px 16px rgb(0 0 0 / 18%);
+}
+
+/* ===== Page base ===== */
+.recruitment-page { background:#fff; color:var(--text); }
+.r-container { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem 3rem; }
+
+/* ===== Hero (matches your Home/Members hero) ===== */
+.r-hero { position: relative; overflow: hidden; }
+.r-hero-clip {
+  position: relative;
+  width: 100%; height: 320px;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+  overflow: hidden;
+}
+.r-hero-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:brightness(.55); }
+.r-hero-content { position:absolute; inset:0; display:grid; place-content:center; text-align:center; color:#fff; text-shadow:0 0 12px rgba(0,0,0,.6); }
+.r-hero-content h1 {
+  margin:0;
+  font-family:'Kaisei Decol', serif;
+  font-size: clamp(2.6rem, 5vw, 3.6rem);
+}
+.r-apply-btn {
+  display:inline-block;
+  margin-top:.75rem;
+  padding:.6rem 1.4rem;
+  background:var(--ent-red); color:#fff; border-radius:8px; text-decoration:none;
+  font-family:'Kaisei Opti', serif; font-weight:700;
+}
+.r-apply-btn:hover { background:#a91c1c; }
+.r-hero-outline { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:2; }
+
+/* ===== Section titles & small divider ===== */
+.r-title {
+  margin:0;
+  font-family:'Kaisei Opti', serif;
+  font-size:2.2rem;
+  font-weight:700;
+  border-bottom:2px solid #000;
+  display:inline-block;
+  padding-bottom:.4rem;
+  margin-bottom:1.25rem;
+}
+.r-title.center { display:block; width:fit-content; margin:0 auto 1.25rem; }
+.r-thin-divider {
+  border:0; height:1px; background:#ccc; margin:1.6rem auto; width:90%;
+}
+
+/* --- Requirements layout --- */
+.r-req {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 2rem;
+  align-items: start;
+  margin-top: 1.6rem;
+  margin-left: 3rem;
+}
+
+/* "Application" red pretitle (bigger + bold, like screenshot) */
+.r-pretitle {
+  margin: 0 0 .25rem 0;
+  color: var(--ent-red);
+  font-family: 'Kaisei Opti', serif;
+  font-weight: 800;
+  font-size: 1.8rem;
+}
+
+/* "Requirements" huge black title */
+.r-title--xl {
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.05;
+  border-bottom: none;     /* screenshot shows no line under this one */
+  padding-bottom: 0;
+  margin-bottom: 1rem;
+}
+
+/* Bullets stack with big black dots and tidy spacing */
+/* Bullets stack */
+.r-bullets--big {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+  display: grid;
+  gap: 1.2rem;
+}
+
+.r-bullets--big li {
+  display: flex;
+  align-items: flex-start; /* top-align block if multi-line */
+  gap: 14px;
+}
+
+/* Dot: vertically centers on the text block */
+.r-bullet-dot {
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  background: #000;
+  border-radius: 50%;
+  margin-top: 0.6rem; /* tweak until it visually centers with the bold headline */
+}
+
+/* Text block */
+.r-bullet-head {
+  margin: 0;
+  font-family: 'Kaisei Opti', serif;
+  font-weight: 800;
+  font-size: 1.35rem;
+  line-height: 1.3;
+}
+.r-bullet-sub {
+  margin: .2rem 0 0 0;
+  font-family: 'Dai Banna SIL', serif;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+/* Red underline link exactly like the mock */
+.r-link-underline {
+  color: inherit;                      /* stay black */
+  text-decoration-line: underline;
+  text-decoration-color: var(--ent-red);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+  font-weight: 700;
+}
+
+/* Right image: rounded, light drop shadow, same proportions */
+.r-req-right img {
+  width: 100%;
+  height: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+/* Responsive: stack with image under or over nicely */
+@media (max-width: 860px) {
+  .r-req {
+    grid-template-columns: 1fr;
+  }
+  .r-req-right img {
+    max-height: 260px;
+  }
+}
+
+/* ===== Timeline ===== */
+.r-events { padding-top:.25rem; }
+.r-timeline {
+  --progress: 0; /* set from JS [0..1] */
+  position: relative;
+  margin: 1.4rem auto 0;
+  max-width: 1000px;
+  padding: 16px 0;
+}
+/* keep your existing line definitions unchanged */
+.tl-line,
+.tl-progress {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  top: 0;
+  bottom: 0;
+  border-radius: 2px;
+}
+.tl-progress {
+  background: #000;
+  height: calc(var(--progress) * 100%);
+  bottom: auto;
+  transition: height .5s ease;
+}
+.tl-item {
+  position: relative;
+  width: 50%;
+  padding: 8px 0;                 /* no horizontal padding; keeps vertical space */
+  display: flex;                    /* lets us push cards to the edge cleanly */
+  align-items: center;              /* keep card vertically centered in the row */
+  margin: 0;
+}
+
+.tl-item.left  { left: 0;   text-align: right;  justify-content: flex-end; }
+.tl-item.right { left: 50%; text-align: left;   justify-content: flex-start; }
+
+/* the dot is centered on the vertical line for BOTH sides */
+.tl-dot {
+  position: absolute;
+  top: 50%;                         /* vertically center to the item/card */
+  transform: translate(-50%, -50%); /* center the 14px dot itself */
+  width: 14px;
+  height: 14px;
+  background: #000;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px #fff, 0 0 0 6px #000;
+}
+
+/* left items: dot sits on the RIGHT edge (the center line) */
+.tl-item.left .tl-dot  { left: 100%; }
+
+/* right items: dot sits on the LEFT edge (the center line) */
+.tl-item.right .tl-dot { left: 0; }
+
+/* give the cards breathing room from the center line */
+.tl-item.left  .tl-card { margin-right: 22px; }
+.tl-item.right .tl-card { margin-left: 22px; }
+
+.tl-card {
+  display: inline-block;
+  text-align: center;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 14px;
+  padding: 22px 26px 26px;
+  max-width: none;   
+  width: 80%;            /* breathes like the screenshot */
+  box-shadow: 0 12px 30px rgba(0,0,0,.08), 0 1px 0 rgba(0,0,0,.03);
+  transform: translateY(12px);
+  opacity: 0;
+  transition: transform .5s ease, opacity .5s ease;
+  margin-bottom: 0;
+}
+
+.tl-item + .tl-item {
+  margin-top: -90px;           /* pull next item up closer */
+}
+
+.tl-item.left .tl-card { margin-right: 26px; }
+.tl-item.right .tl-card { margin-left: 26px; }
+
+
+.tl-item.is-visible .tl-card { transform: translateY(0); opacity: 1; }
+
+.tl-when {
+  margin: 0 0 .25rem 0;
+  font-family: 'Kaisei Opti', serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color:var(--ent-red);                 /* default (dates) */
+}
+.tl-when.accent {                 /* “Any time!” */
+  color: var(--ent-red);
+}
+.tl-title {
+  margin: .15rem 0 .45rem 0;
+  font-family: 'Kaisei Opti', serif;
+  font-weight: 800;
+  font-size: clamp(1.4rem, 2.4vw, 2rem);  /* bold, large like the mock */
+  line-height: 1.15;
+}
+
+.tl-blurb {
+  margin: 0 0 1.05rem 0;
+  font-family: 'Dai Banna SIL', serif;
+  font-size: 1.05rem;
+  color: #2a2a2a;
+  line-height: 1.35;
+  max-width: 34ch;                /* match the compact wrap */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* red pill button */
+.tl-btn {
+  display: inline-block;
+  background: var(--ent-red);
+  color: #fff;
+  border: 0;
+  border-radius: 12px;
+  padding: .75rem 2.5rem;
+  font-family: 'Kaisei Opti', serif;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 0 rgba(0,0,0,.05) inset;
+  transition: background .25s ease, transform .06s ease;
+  text-decoration: none;
+}
+.tl-btn:hover { background: #a91c1c; }
+.tl-btn:active { transform: translateY(1px); }
+
+/* === FINAL mobile timeline: single left rail, no alternation === */
+/* ===== Mobile timeline (<=780px): single left rail, dots on top, no overflow ===== */
+@media (max-width: 780px) {
+  /* tweakable vars */
+  .r-timeline { --rail-x: 20px; --rail-w: 3px; --side-pad: 16px; --gap-from-rail: 12px; }
+
+  /* rail uses the same width var */
+  .tl-line,
+  .tl-progress {
+    left: var(--rail-x);
+    width: var(--rail-w);
+    top: -8px; bottom: -8px;
+    transform: none;
+    z-index: 0;
+  }
+
+  /* one-column layout; neutralize left/right variants */
+  .tl-item,
+  .tl-item.left,
+  .tl-item.right {
+    width: 100% !important;
+    left: 0 !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    margin: 0 !important;
+    /* space for rail+dot on the left; prevents card overflow */
+    padding: 20px var(--side-pad)
+             20px calc(var(--rail-x) + var(--gap-from-rail) + 14px) !important;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  /* card fills available space inside tl-item (never wider than page) */
+  .tl-card,
+  .tl-item.left .tl-card,
+  .tl-item.right .tl-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    border-radius: 12px !important;
+    padding: 18px 16px 20px !important;
+    position: relative;
+    z-index: 2;             /* under the dot */
+    box-sizing: border-box;
+  }
+
+  /* dot centered ON the rail and visually above it */
+  .tl-dot,
+  .tl-item.left .tl-dot,
+  .tl-item.right .tl-dot {
+    left: calc(var(--rail-x) + (var(--rail-w) / 2)) !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 5 !important;                /* above the rail */
+    background: #000;
+    box-shadow: 0 0 0 4px #fff, 0 0 0 6px #000;
+  }
+
+  /* vertical rhythm */
+  .tl-item + .tl-item { margin-top: 18px !important; }
+
+  /* comfy type */
+  .tl-title { font-size: 1.4rem; }
+  .tl-blurb { max-width: 44ch; font-size: 1rem; }
+  .tl-btn   { font-size: 1rem; padding: .6rem 1.2rem; border-radius: 10px; }
+}
+
+/* ===== reveal helper (for non-timeline bits if you want to reuse) ===== */
+.reveal { opacity: 0; transform: translateY(12px); transition: opacity .45s ease, transform .45s ease; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+/* ===== Rounds (3D coverflow) ===== */
+.r-rounds { 
+    margin-top: .5rem; 
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.r-rounds .r-title {
+  margin-bottom:.6rem; font-family:'Kaisei Opti',serif; font-weight:700;
+  font-size:2.2rem; border-bottom:2px solid #000; display:inline-block; padding-bottom:.4rem;
+}
+
+.r-rounds-edge {
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);   /* extend to viewport edges */
+  overflow-x: clip;                   /* nothing can exist past the right edge */
+}
+@supports not (overflow: clip) {
+  .r-rounds-edge { overflow-x: hidden; }
+}
+
+/* Center arrows + stage */
+/* Wrap: give space for arrows so they can live outside the cards */
+.r-rounds-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-inline: 56px;
+  overflow: visible;                  /* cards may peek, but are clipped by .r-rounds-edge */
+  box-sizing: border-box;
+}
+
+/* Arrows: float and sit a bit higher than vertical center of the cards */
+.r-arrow {
+  position: absolute;
+  top: 42%;                  /* try 40–48% to taste */
+  z-index: 10;
+  background: #fff;
+  color: #000;
+  border: 2px solid #000;
+  font-size: 1.2rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 16px rgb(0 0 0 / 18%);
+}
+
+.r-arrow.left  { left: 12px; }   /* sits inside the padding area */
+.r-arrow.right { right: 12px; }
+.r-arrow:hover { background:var(--ent-red); color:#fff; }
+
+/* 3D viewport + stage */
+.r-rounds-viewport {
+  width: min(100%, 820px);
+  height: 360px;
+  perspective: 1200px;
+  overflow: visible;
+  margin-top: 60px;
+}
+
+.r-rounds-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;  /* keep children in 3D */
+  touch-action: pan-y;   /* allow vertical page scroll; we handle horizontal swipes */
+  cursor: grab;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.r-rounds-stage.is-dragging {
+  cursor: grabbing;
+}
+
+/* Cards now are absolutely centered and transformed by inline style */
+.round-card {
+  position: absolute;
+  left: 50%; top: 12px;
+  transform-origin: center center;
+  width: 340px;                  /* same width you designed for */
+  height: 210px;
+  background:#fff; border:1px solid var(--border); border-radius:16px;
+  padding:1.2rem 1.2rem 1.4rem;
+  text-align:center;
+  box-shadow:0 12px 30px rgba(0,0,0,.08), 0 1px 0 rgba(0,0,0,.03);
+  transition: transform .45s cubic-bezier(.22,.8,.24,1), opacity .3s, box-shadow .3s;
+  translate: -50% 0;             /* start centered; x-translate handled inline */
+}
+
+.round-card.is-active {
+  box-shadow:0 16px 36px rgba(0,0,0,.12), 0 1px 0 rgba(0,0,0,.04);
+}
+
+/* Typography inside card (same as before) */
+.round-date { margin-bottom:.4rem; color:#cc4433; font-weight:800; font-size:.9rem; }
+.round-title { font-size:1.25rem; font-weight:700; font-family:'Kaisei Opti',serif; margin:.15rem 0 .6rem; }
+.round-desc { font-size:.95rem; font-family:'Dai Banna SIL',serif; line-height:1.4; color:#333; margin-bottom:1.3rem; }
+.round-btn { background:#cc2b2b; color:#fff; font-family:'Kaisei Opti',serif; font-size:1rem; padding:.55rem 1.3rem; border-radius:12px; text-decoration:none; display:inline-block; }
+.round-btn:hover { background:#a91c1c; }
+.round-chip { position:absolute; bottom:16px; left:50%; transform:translateX(-50%); font-size:.75rem; font-weight:600; color:#555; background:#fafafa; border:1px solid #ddd; padding:.2rem .6rem; border-radius:20px; }
+
+/* Dots (unchanged) */
+.r-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: -0.5rem;   /* pull them upward */
+  position: relative;
+  z-index: 3;            /* sit above background */
+}
+
+.r-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;      /* perfect circle */
+  background: #ccc;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.r-dot:hover {
+  background: #999;
+  transform: scale(1.2);
+}
+
+.r-dot.is-active {
+  background: var(--ent-red); /* match your theme red */
+}
+
+
+/* Small screens: tighten spacing and stage height */
+@media (max-width: 780px) {
+  .round-card { width: min(340px, 92vw); }
+  .r-rounds-wrap { padding-inline: 24px; } /* smaller arrow gutters on phones */
+}
+
+/* ===== Application Tips Section ===== */
+.appTips {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 380px;
+  overflow: hidden;
+}
+
+/* Left scroll area */
+.appTips-leftScroll {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.scroll-track {
+  display: flex;
+  gap: 16px;
+  animation: scrollLoop 25s linear infinite;
+}
+
+/* Wrapper ensures fixed size */
+.img-wrapper {
+  flex: 0 0 auto;
+}
+
+.appTips-img {
+  width: 220px;        /* slightly wider */
+  height: 280px;       /* taller */
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* Infinite loop keyframes: shift entire duplicate set */
+@keyframes scrollLoop {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Right side */
+.appTips-right {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+.appTips-title {
+  font-family: 'Kaisei Opti', serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 4.5vw, 2rem);
+  margin: 0 0 1.2rem 0;
+  border-bottom: 2px solid #111;
+  width: fit-content;
+  padding-bottom: .3rem;
+}
+.appTips-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.appTips-list li {
+  font-size: 1.1rem;
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hex {
+  width: 18px;
+  height: 18px;
+  background-color: #d62828;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  flex-shrink: 0;
+}
+
+.appTips-blurb {
+  font-family: 'Dai Banna SIL', serif;
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0 0 1rem;
+  line-height: 1.5;
+}
+
+.appTips-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+.appTips-list li {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  margin: .5rem 0;
+}
+.hex {
+  width: 18px;
+  height: 18px;
+  background: #d62828;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  margin-right: 10px;
+}
+
+.appTips-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .5rem;
+}
+
+.appTips-btn {
+  background: #d62828;
+  color: #fff;
+  border: none;
+  padding: .7rem 1.4rem;
+  border-radius: 14px;
+  font-family: 'Kaisei Opti', serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: background .2s ease, transform .1s ease;
+  text-decoration: none;
+}
+.appTips-btn:hover { background: #b21f1f; transform: translateY(-1px); }
+.appTips-btn:active { transform: translateY(0); }
+
+.appTips-follow {
+  font-size: .95rem;
+  color: #444;
+}
+.appTips-follow a {
+  color: #d62828;
+  font-weight: 600;
+  text-decoration: none;
+}
+.appTips-follow a:hover {
+  text-decoration: underline;
+}
+
+
+/* Mobile stack */
+@media (max-width: 850px) {
+  .appTips {
+    grid-template-columns: 1fr;
+  }
+  .appTips-right {
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+  .appTips-title {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .appTips-list {
+    justify-content: center;
+  }
+
+  .appTips-img {
+    width: 180px;        /* slightly wider */
+    height: 220px;  
+  }
+  .appTips-cta {
+    align-items: center;
+    text-align: center;
+  }
+
+  /* ===== Rounds (3D coverflow) ===== */
+.r-rounds { 
+    margin-top: .5rem; 
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.r-rounds .r-title {
+  margin-bottom:.6rem; font-family:'Kaisei Opti',serif; font-weight:700;
+  font-size:2.2rem; border-bottom:2px solid #000; display:inline-block; padding-bottom:.4rem;
+}
+
+.r-rounds-edge {
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);   /* extend to viewport edges */
+  overflow-x: clip;                   /* nothing can exist past the right edge */
+}
+@supports not (overflow: clip) {
+  .r-rounds-edge { overflow-x: hidden; }
+}
+
+/* Center arrows + stage */
+/* Wrap: give space for arrows so they can live outside the cards */
+.r-rounds-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-inline: 56px;
+  overflow: visible;                  /* cards may peek, but are clipped by .r-rounds-edge */
+  box-sizing: border-box;
+}
+
+/* Arrows: float and sit a bit higher than vertical center of the cards */
+.r-arrow {
+    width: 28px;
+    height: 40px;
+    font-size: 1rem;
+    border-width: 1.5px;   /* slimmer border */
+  }
+
+  /* push them a touch closer to the cards */
+  .r-arrow.left  { left: 6px; }
+  .r-arrow.right { right: 6px; }
+.r-arrow:hover { background:var(--ent-red); color:#fff; }
+
+/* 3D viewport + stage */
+.r-rounds-viewport {
+  width: min(100%, 820px);
+  height: 360px;
+  perspective: 1200px;
+  overflow: visible;
+  margin-top: 60px;
+}
+
+.r-rounds-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;  /* keep children in 3D */
+  touch-action: pan-y;   /* allow vertical page scroll; we handle horizontal swipes */
+  cursor: grab;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.r-rounds-stage.is-dragging {
+  cursor: grabbing;
+}
+
+/* Cards now are absolutely centered and transformed by inline style */
+.round-card {
+    width: 80vw;            /* always relative to viewport width */
+    max-width: 300px;       /* optional safety cap */
+    height: auto;           /* let height grow naturally */
+    left: 50%;
+    translate: -50% 0;      /* keep centered */
+    box-sizing: border-box; /* padding included */
+  }
+
+.round-card.is-active {
+  box-shadow:0 16px 36px rgba(0,0,0,.12), 0 1px 0 rgba(0,0,0,.04);
+}
+
+/* Typography inside card (same as before) */
+.round-date { margin-bottom:.4rem; color:#cc4433; font-weight:800; font-size:.9rem; }
+.round-title { font-size:1.25rem; font-weight:700; font-family:'Kaisei Opti',serif; margin:.15rem 0 .6rem; }
+.round-desc { font-size:.95rem; font-family:'Dai Banna SIL',serif; line-height:1.4; color:#333; margin-bottom:1.3rem; }
+.round-btn { background:#cc2b2b; color:#fff; font-family:'Kaisei Opti',serif; font-size:1rem; padding:.55rem 1.3rem; border-radius:12px; text-decoration:none; display:inline-block; }
+.round-btn:hover { background:#a91c1c; }
+.round-chip { position:absolute; bottom:16px; left:50%; transform:translateX(-50%); font-size:.75rem; font-weight:600; color:#555; background:#fafafa; border:1px solid #ddd; padding:.2rem .6rem; border-radius:20px; }
+
+/* Dots (unchanged) */
+.r-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: -0.5rem;   /* pull them upward */
+  position: relative;
+  z-index: 3;            /* sit above background */
+}
+
+.r-dot {
+  width: 5px;
+  height: 20px;
+  border-radius: 50%;      /* perfect circle */
+  background: #ccc;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.r-dot:hover {
+  background: #999;
+  transform: scale(1.2);
+}
+
+.r-dot.is-active {
+  background: var(--ent-red); /* match your theme red */
+}
+
+  
+}
+
+
+
+
+
+
+
+
+

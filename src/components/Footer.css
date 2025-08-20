@@ -1,0 +1,143 @@
+/* ===== Footer ===== */
+.site-footer {
+  background: #111;            /* deep charcoal to match your mosaic band */
+  color: #eee;
+  width: 100%;
+  margin-top: 0;
+}
+
+.footer-accent {
+  height: 6px;
+  background: #d62828;         /* ENT red */
+  width: 100%;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1.2fr .8fr .8fr;
+  gap: 2rem;
+}
+
+.footer-brand .footer-logo {
+  margin-left: -25px;
+  width: 140px;
+  height: 60px; /* set a fixed height so cropping can occur */
+  object-fit: cover; /* fills the box, cropping overflow */
+  object-position: center; /* which part of the image stays visible */
+  filter: brightness(1.1);
+  margin-bottom: .75rem;
+}
+
+
+.club-regristration {
+  margin: 0;
+  font-family: 'Dai Banna SIL', serif;
+  color: #cfcfcf;
+  line-height: 1.5;
+}
+
+.footer-col h4 {
+  margin: 0 0 .8rem 0;
+  font-family: 'Kaisei Opti', serif;
+  font-weight: 700;
+  letter-spacing: .3px;
+  font-size: 1.05rem;
+  color: #fff;
+}
+
+.footer-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin: .45rem 0;
+}
+
+.footer-col a,
+.footer-contact span {
+  text-decoration: none;
+  color: #d9d9d9;
+  font-family: 'Dai Banna SIL', serif;
+  transition: color .2s ease, transform .2s ease;
+}
+
+.footer-socials a:hover {
+  color: #ffffff; /* ENT red */
+  transform: translateX(2px);
+}
+
+.footer-col-links a:hover {
+  color: #d62828; /* ENT red */
+  transform: translateX(2px);
+}
+
+.footer-socials {
+  display: flex;
+  gap: .75rem;
+  margin-top: .9rem;
+}
+
+.footer-socials a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #1b1b1b;
+  border: 1px solid #2a2a2a;
+  color: #fff;
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.footer-socials a:hover {
+  background: #d62828;
+  border-color: #d62828;
+  transform: translateY(-2px);
+}
+
+/* tiny copyright strip */
+.footer-bottom {
+  border-top: 1px solid #222;
+  text-align: center;
+  padding: 1rem 1.5rem 1.2rem;
+  color: #bdbdbd;
+  font-size: .92rem;
+  font-family: 'Dai Banna SIL', serif;
+}
+
+.equal-education a {
+  color: inherit; /* keeps link text same as surrounding text */
+  text-decoration-line: underline;
+  text-decoration-color: #fff; /* white underline */
+  text-underline-offset: 2px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.equal-education a:hover {
+  color: #d62828; /* ENT red on hover */
+  text-decoration-color: #d62828;
+}
+
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+  .footer-brand {
+    text-align: left;
+  }
+}

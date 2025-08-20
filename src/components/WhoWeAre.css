@@ -1,0 +1,664 @@
+/* basic page shell */
+.who-page { background:#fff; color:#111; }
+.wwa-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem 3rem; }
+
+/* ===== hero (same shape as your other pages) ===== */
+.wwa-hero { position: relative; overflow: hidden; }
+/* was 280px */
+.wwa-hero-clip {
+  position: relative;
+  width: 100%;
+  height: 320px;             /* match the other pages */
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+  overflow: hidden;
+}
+
+.wwa-hero-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:brightness(.55); }
+.wwa-hero-content { position:absolute; inset:0; display:grid; place-content:center; text-align:center; color:#fff; text-shadow:0 0 12px rgba(0,0,0,.6); }
+.wwa-hero-content h1 {
+  font-family: 'Kaisei Decol', serif; /* same family you used */
+  font-weight: 700;
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  margin: 0 0 .25rem 0;
+}
+.wwa-hero-content p {
+  font-family: 'Dai Banna SIL', serif;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  margin: 0;
+}
+.wwa-hero-outline { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
+
+/* ===== shared section look ===== */
+/* ---------- OVERVIEW SHELL ---------- */
+.wwa-overview {
+  position: relative;
+  overflow: hidden;
+  padding: .75rem 0 1.25rem;
+  /* width of the triangle block; change once, content shifts with it */
+  --tri-w: 600px;         /* visual width of the triangle area */
+  --tri-nudge: -150px;    /* how far you’re pulling the SVG left (negative) */
+}
+  
+  .wwa-overview::before{
+  content: "";
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 30%;                          /* adjust width of the diagonal */
+  clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%);
+  z-index: 0;                         /* stays behind content */
+}
+
+@media(max-width: 900px){
+  .wwa-overview::before{ display: none; } /* hide on small screens */
+}
+
+.wwa-overview {
+  position: relative;
+  overflow: hidden;
+  min-height: auto;
+}
+
+/* SVG layer sits behind everything in the section */
+.wwa-diag-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: var(--tri-w);
+  height: 600px;
+  margin-left: var(--tri-nudge);
+  z-index: 0;
+  pointer-events: none;
+}
+.wwa-diag-layer svg { width: 100%; height: 100%; display: block; }
+
+/* ensure all section content sits above the wedge */
+.wwa-ov-title,
+.wwa-quote-wrap,
+.wwa-ov-lede,
+.wwa-ov-redrule,
+.wwa-journey-row,
+.wwa-commit-row,
+.wwa-cta {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+
+.wwa-diag-railSVG {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: clamp(220px, 26vw, 360px);   /* adjust width as needed */
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.rail-stroke {
+  fill: none;
+  stroke: #d62828;
+  stroke-width: 14;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+/* content sits above */
+.wwa-ov-title,
+.wwa-quote-wrap,
+.wwa-ov-lede,
+.wwa-ov-redrule,
+.wwa-journey-row,
+.wwa-commit-row,
+.wwa-cta {
+  position: relative;
+  z-index: 1;
+}
+
+/* offset content to the right so it clears the triangle */
+
+@media (max-width: 979px) {
+  .wwa-diag-railSVG { display: none; }
+}
+
+
+.wwa-ov-title{
+  margin: 0 0 .6rem;
+  text-align: center;
+  font-family: 'Kaisei Opti', serif;
+  font-weight: 800;
+  font-size: clamp(1.95rem, 4.2vw, 2.5rem);
+  letter-spacing: .2px;
+  border-bottom: 2px solid #111;              /* thin underline under title */
+  display: inline-block;
+  padding: 0 .4rem .35rem;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);                /* keeps underline centered */
+}
+
+/* ---------- QUOTE ---------- */
+.wwa-quote-wrap{
+  max-width: 840px;
+  margin: .6rem auto 0;
+  background: rgba(214, 40, 40, .07);
+  border-left: 6px solid #d62828;
+  padding: .85rem 1rem .9rem 1.1rem;
+  border-radius: 8px;
+}
+.wwa-quote-text{
+  margin: 0;
+  text-align: center;
+  font-family: 'Kaisei Decol', serif;
+  font-size: clamp(1.25rem, 2.8vw, 1.9rem);
+  font-style: italic;
+}
+.wwa-quote-src{
+  text-align: right;
+  margin-top: .35rem;
+  font-family: 'Dai Banna SIL', serif;
+  color:#333;
+  font-size: .98rem;
+  opacity: .9;
+}
+
+.commit-btn.wwa-cta-btn{
+  background: #d62828;
+  color: #fff;
+  border: none;
+  text-decoration: none;
+}
+.commit-btn.wwa-cta-btn:hover{
+  filter: brightness(.92);
+  transform: translateY(-1px);
+}
+
+@media (min-width: 900px){
+  /* push the two content rows to the right */
+  .wwa-journey-row,
+  .wwa-commit-row{
+    margin-left: 0;
+  }
+  /* slight extra breathing room inside the rows */
+  .wwa-journey-row{ gap: 22px; }
+  .wwa-commit-row{ gap: 22px; }
+}
+
+
+/* ---------- LEDE + SHORT RED RULE ---------- */
+.wwa-ov-lede{
+  max-width: 820px;
+  margin: .9rem auto .6rem;
+  text-align: center;
+  font-family: 'Dai Banna SIL', serif;
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color:#222;
+  margin-bottom: 20px;
+}
+.wwa-ov-redrule{
+  width: 280px;
+  height: 6px;
+  background:#d62828;
+  border-radius: 4px;
+  margin: .4rem auto 1.1rem;
+}
+
+/* ---------- JOURNEY ROW ---------- */
+.wwa-journey-row{
+  display:grid;
+  grid-template-columns: 330px 1fr;
+  gap: 18px;
+  align-items: center;
+}
+
+.card-shadow{ border-radius: 14px; overflow: hidden; box-shadow: 0 6px 16px rgb(0 0 0 / 18%); }
+.wwa-journey-photo img{ width:100%; height: 200px; object-fit: cover; display:block; }
+
+.wwa-journey-copy{ padding-left: 6px; }
+.wwa-journey-title{
+  margin: 0 0 .2rem;
+  font-family: 'Kaisei Decol', serif;
+  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  font-weight: 800;
+}
+.wwa-journey-blurb{
+  margin: 0 0 .45rem;
+  font-family: 'Dai Banna SIL', serif;
+  color:#333;
+}
+
+/* inline hex bullets exactly like the mock */
+.wwa-steps{
+  display:flex; align-items: center; gap: 26px;
+  list-style: none; padding: 0; margin: .15rem 0 0;
+  font-family: 'Kaisei Opti', serif; font-weight: 800;
+}
+.wwa-steps li{ display:flex; align-items: center; gap: 10px; white-space: nowrap; }
+.mini-hex{
+  width: 34px; height: 34px; display:grid; place-items:center;
+  background:#d62828; color:#fff; flex: 0 0 34px;
+  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+  font-size: .9rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,.18);
+}
+
+/* ---------- COMMITMENT ROW ---------- */
+.wwa-commit-row{
+  margin-left: 15rem;
+  margin-top: 18px;
+  display:grid; grid-template-columns: 1fr 330px; gap: 18px; align-items: center;
+}
+.wwa-commit-copy h3.wwa-commit-title{
+  margin: 0 0 .25rem;
+  font-family: 'Kaisei Decol', serif;
+  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  font-weight: 800;
+}
+.wwa-commit-copy p{
+  margin: 0;
+  font-family: 'Dai Banna SIL', serif;
+  color:#333;
+}
+.wwa-commit-photo img{ width:100%; height: 200px; object-fit: cover; display:block; }
+
+/* ---------- CTA (bottom-right) ---------- */
+.wwa-cta{
+  display:flex; align-items:center; gap: 18px;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-right: 2.5rem;
+}
+.wwa-cta p{
+  margin: 0; text-align:right;
+  font-family:'Kaisei Decol', serif; font-size: 1.25rem;
+}
+.wwa-cta-btn{
+  border-radius: 14px;               /* pill-like */
+  padding: .7rem 1.4rem;
+  font-size: 1.05rem;
+}
+
+.wwa-info-rows {
+    margin-left: 7rem;
+    padding-right: 1rem;
+}
+
+/* ---------- responsive to keep proportions ---------- */
+
+@media (max-width: 979px) {
+  /* Hide the diagonal triangle / rail */
+  .wwa-diag-layer,
+  .wwa-overview::before,
+  .wwa-diag-railSVG {
+    display: none !important;
+  }
+
+  .wwa-ov-lede {
+    font-size: 1.35rem;   /* slightly larger */
+    line-height: 1.65;    /* keep it readable */
+    padding: 0 0.5rem;    /* a little breathing room on sides */
+  }
+
+  /* Section itself: clean padding */
+  .wwa-overview {
+    padding: 1rem;
+    overflow: visible;
+  }
+
+  /* Reset the info container */
+  .wwa-info-rows {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Rows: single column, no offset */
+  .wwa-journey-row,
+  .wwa-commit-row {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    gap: 12px;
+  }
+
+  .wwa-journey-row {
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start !important; /* force left alignment */
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 12px;
+  }
+
+  .wwa-journey-copy {
+    text-align: left !important;
+    width: 100% !important;   /* make text span full width */
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .wwa-steps {
+    justify-content: flex-start !important; /* stop centering the icons */
+  }
+
+  /* Photos: on top, no stray margins */
+  .wwa-journey-photo,
+  .wwa-commit-photo {
+    order: -1;
+    margin: 0;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgb(0 0 0 / 18%);
+  }
+  .wwa-journey-photo img,
+  .wwa-commit-photo img {
+    width: 100%;
+    height: auto;
+    max-height: 240px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Text blocks */
+  .wwa-journey-copy,
+  .wwa-commit-copy {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+
+  /* Quote + red rule still centered */
+  .wwa-quote-wrap,
+  .wwa-ov-lede,
+  .wwa-ov-redrule {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  /* CTA: centered, no right margin */
+  .wwa-cta {
+    justify-content: center;
+    text-align: center;
+    margin: 1rem 0 0;
+  }
+
+  .wwa-cta p{
+    margin: 0; text-align:right;
+    font-family:'Kaisei Decol', serif; font-size: 1rem;
+  }
+
+}
+
+
+/* ===== values row ===== */
+/* Layout wrapper */
+.values-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.wwa-title {
+    margin: 0 0 .6rem;
+  text-align: center;
+  font-family: 'Kaisei Opti', serif;
+  font-weight: 800;
+  font-size: clamp(1.95rem, 4.2vw, 2.5rem);
+  letter-spacing: .2px;
+  border-bottom: 2px solid #111;              /* thin underline under title */
+  display: inline-block;
+  padding: 0 .4rem .35rem;
+  position: relative;
+  left: 25%;
+  transform: translateX(-50%);  
+}
+
+/* Left image */
+.values-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+/* Right side */
+.values-content {
+  padding: 0 1rem;
+}
+
+/* Grid of values */
+.wwa-values {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px 50px;
+  text-align: left;
+  justify-items: start;
+}
+
+.value {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.value-bubble {
+  display: grid;
+  place-items: center;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: #d62828;       /* red fill */
+  border: 2px solid #111;    /* thin black outline */
+  font-size: 1.4rem;
+  color: #fff;               /* white icon */
+  box-shadow: 0 3px 8px rgba(0,0,0,.15); /* subtle depth */
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.value-bubble:hover {
+  background: #a91c1c;       /* darker red on hover */
+  transform: scale(1.05);
+}
+
+.value p {
+  margin: 0;
+  font-family: 'Kaisei Opti', serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+}
+
+/* Mobile: image moves to top */
+@media (max-width: 900px) {
+  .values-layout {
+    grid-template-columns: 1fr; /* stack */
+  }
+
+  .values-image {
+    order: -1;   /* moves image above content */
+  }
+
+  .wwa-values {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .value {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .wwa-title {
+    left: 50%;
+    }
+}
+
+
+/* ===== ventures ===== */
+/* Section heading: eyebrow + big headline */
+
+.ventures-section {
+  padding-left: 40px;  /* pushes all content inside */
+  padding-right: 40px; /* keep symmetry */
+}
+
+.ventures-title {
+  line-height: 1.05;
+  letter-spacing: .2px;
+  font-family: 'Kaisei Opti', serif;
+}
+
+.ventures-eyebrow {
+  display: inline-block;
+  color: #d62828;                 /* red “Our Members” */
+  font-weight: 800;
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  margin-bottom: 2px;
+  padding-bottom: 2px;
+}
+
+/* Big “Started These Ventures” line */
+.ventures-title {
+  margin: 0px;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  font-weight: 800;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+}
+
+/* Grid */
+.wwa-ventures {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;      /* enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* nice snapping */
+  -webkit-overflow-scrolling: touch; /* smooth on iOS */
+  padding-bottom: 12px;  /* breathing room for shadow */
+}
+
+/* Card */
+.venture-card {
+  flex: 0 0 300px;        /* fixed width for each card */
+  scroll-snap-align: start; /* snap each card neatly */
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 16px;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+/* hide ugly scrollbar but still allow scrolling */
+.wwa-ventures::-webkit-scrollbar {
+  display: none;
+}
+.wwa-ventures {
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* Media with rounded corners inside the card (so border stays crisp) */
+.venture-media {
+  padding: 14px 14px 0;
+}
+.venture-media-inner {
+  border-radius: 14px;
+  overflow: hidden;
+}
+.venture-media img {
+  width: 100%;
+  height: 185px;                  /* banner height like your screenshot */
+  object-fit: cover;
+  display: block;
+}
+
+/* Body */
+.venture-body {
+  padding: 14px 18px 18px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* pushes button to bottom */
+}
+.venture-body h3 {
+  margin: 6px 0 8px;
+  font-family: 'Kaisei Opti', serif;
+  font-weight: 800;
+  font-size: clamp(1.25rem, 2.1vw, 1.6rem);
+}
+.venture-body p {
+  margin: 0 0 16px;
+  font-family: 'Dai Banna SIL', serif;
+  color: #333;
+  line-height: 1.45;
+}
+
+/* Button: big rounded pill */
+.venture-btn {
+  display: inline-block;
+  background: #d62828;
+  color: #fff;
+  border: none;
+  padding: .75rem 1.25rem;
+  border-radius: 14px;
+  font-family: 'Kaisei Opti', serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: transform .12s ease, background .2s ease, box-shadow .2s ease;
+  text-decoration: none;
+}
+.venture-btn:hover {
+  background: #bb2020;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(214, 40, 40, .28);
+}
+.venture-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive: 2-up on tablets, 1-up on phones */
+@media (max-width: 1100px) {
+  .wwa-ventures { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .wwa-ventures { grid-template-columns: 1fr; }
+  .ventures-title { font-size: clamp(2rem, 8vw, 2.6rem); }
+  .venture-media img { height: 200px; } /* breathe more on mobile */
+}
+
+/* ===== responsive ===== */
+@media (max-width: 1000px){
+  .wwa-journey { grid-template-columns: 1fr; row-gap: 12px; }
+  .journey-connector { display:none; }
+  .wwa-commit { grid-template-columns: 1fr; }
+  .wwa-values { grid-template-columns: repeat(2,1fr); }
+  .wwa-ventures { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px){
+  .wwa-hero-clip { height: 220px; }
+  .wwa-values { grid-template-columns: 1fr 1fr; }
+  .wwa-ventures { grid-template-columns: 1fr; }
+}
+
+/* make the steps wrap on small screens */
+@media (max-width: 640px){
+  .wwa-steps{
+    display: flex;          /* already set, but fine to repeat here */
+    flex-wrap: wrap;        /* <-- allow items to move to the next line */
+    gap: 14px 20px;         /* row gap / column gap */
+    justify-content: flex-start;
+  }
+  .wwa-steps li{
+    white-space: normal;    /* <-- let the text wrap if it needs to */
+    flex: 0 1 auto;         /* don't force fixed widths */
+  }
+}
+

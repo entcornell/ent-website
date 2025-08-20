@@ -6,6 +6,9 @@ import { faEnvelope, faUsers, faBolt } from '@fortawesome/free-solid-svg-icons';
 import EndeavorsPopup from "./EndeavorsPopup";
 import { endeavors } from "./EndeavorsData";
 import { studentventures } from "./StudentVenturesData";
+import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+
 import {
   faLightbulb,
   faClipboardCheck,
@@ -19,6 +22,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function WhoWeAre() {
+  const { pathname } = useLocation();
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     }, []);
@@ -27,6 +31,14 @@ export default function WhoWeAre() {
     
   return (
     <div className="who-page">
+
+      <Helmet key={pathname}>
+        <title>Who We Are — ENT</title>
+        <meta
+          name="description"
+          content="Discover the story of Epsilon Nu Tau at Cornell. We unite aspiring entrepreneurs with the mentorship, resources, and community to turn ideas into impact."
+        />
+      </Helmet>
 
       {/* ===== HERO (same shape as others) ===== */}
       <section className="wwa-hero">

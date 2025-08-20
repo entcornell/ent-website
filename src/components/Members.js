@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "./NavBar";
 import "./Members.css";
+import { Helmet } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
 
 const eboard = [
   {
@@ -21,7 +23,7 @@ const eboard = [
   { role: "VP Finance", name: "Noel Blackwell", email: "bwb79@cornell.edu", year: "2028", major: "Economics", involvement: "Social Fraternity, Cornell Capital Club", hobbies: "Golf, F1, Traveling, Reading, Classical Music", image: "headshots/NoelBlackwell-Headshot.JPEG", style: {objectPosition: "center 25%"} },
   { role: "VP Marketing", name: "Samantha Vaca", email: "sv492@cornell.edu", year: "2027", major: "Computer Science/Artificial Intelligence & Business", involvement: "Cornell Data Science, Cornell Filmmaking Society", hobbies: "Computer Animation, Creative Writing, Piano", image: "headshots/SamanthaVaca-Headshot.jpeg", style: {objectPosition: "center 45%"} },
   { role: "VP SBC", name: "Mihir Kulshreshtha", email: "mk2664@cornell.edu", year: "2028", major: "Computer Science/Artificial Intelligence & Statistics", involvement: "Cornell Data science, Cornell Bhangra, ACSU", hobbies: "Love to workout and run, Listen to Drake or Punjabi music, Hang out with friends", image: "headshots/MihirKulshreshtha-Headshot.JPEG", style: {objectPosition: "center 50%"} },
-  { role: "VP Brotherhood", name: "Finn Clancy", email: "fac49@cornell.edu", year: "", major: "", involvement: "", hobbies: "", image: "headshots/default-icon.jpg", style: {objectPosition: "center 10%"}},
+  { role: "VP Brotherhood", name: "Finn Clancy", email: "fac49@cornell.edu", year: "2027", major: "Biology & Society/Entrepreneurship", involvement: "ENT, Reis Tennis Center, Biotech off Campus Job", hobbies: "Tennis, Traveling, Weightlifting, Cooking, and Collecting Coins", image: "headshots/FinnClancy-Headshot.jpeg", style:{objectFit: "contain",  objectPosition: "center bottom", backgroundColor: "rgb(214, 209, 210)", width: "100%", height: "100%"}},
   { role: "VP Prof. Connects", name: "Hongjin Fang", email: "hf355@cornell.edu", year: "", major: "", involvement: "", hobbies: "", image: "headshots/HongjinFang-Headshot.jpg", style: {objectPosition: "center 20%"} },
   { role: "VP Philanthropy", name: "Shannon Lin", email: "sl3454@cornell.edu", year: "2028", major: "Computer Science/Business", involvement: "Big Red Hacks, Women in Computing", hobbies: "Skiing, Music, Crocheting, Swim", image: "headshots/ShannonLin-Headshot.JPG", style: {objectPosition: "center 40%"} },
 ];
@@ -110,6 +112,7 @@ function MemberCard({
   showRole = false,
   style,
 }) {
+  const { pathname } = useLocation();
   return (
     <article className="m-card">
       <div className="m-card-media">
@@ -140,11 +143,21 @@ function MemberCard({
 
 export default function Members() {
 
+  const { pathname } = useLocation();
+
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     }, []);
   return (
     <div className="members-page">
+      <Helmet key={pathname}>
+        <title>Members — ENT</title>
+        <meta
+          name="description"
+          content="Meet the members of Epsilon Nu Tau — a diverse community of student entrepreneurs, innovators, and future leaders shaping tomorrow’s ventures."
+        />
+      </Helmet>
+
 
       {/* HERO */}
       <section className="m-hero">

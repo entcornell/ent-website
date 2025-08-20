@@ -35,5 +35,6 @@ export const endeavors = [
       { name: "Growth Partners @ ENT", detail: "Develop long-term partnerships with local operations, startups, and alumni ventures.", icon: faRocket },
     ],
     thumbs: ["endeavors/SBC-Stickers.jpg", "endeavors/working-on-computer.jpg", "endeavors/NSA-Stickers.jpg"],
+    link: "https://v0-new-chat-beta-khaki.vercel.app/"
   },
 ];

@@ -632,6 +632,23 @@
   .wwa-ventures { grid-template-columns: 1fr; }
   .ventures-title { font-size: clamp(2rem, 8vw, 2.6rem); }
   .venture-media img { height: 200px; } /* breathe more on mobile */
+
+  .venture-card {
+  flex: 0 0 240px;        /* fixed width for each card */
+  scroll-snap-align: start; /* snap each card neatly */
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 16px;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.ventures-section {
+  padding-left: 0px;  /* pushes all content inside */
+  padding-right: px; /* keep symmetry */
+}
+
 }
 
 /* ===== responsive ===== */

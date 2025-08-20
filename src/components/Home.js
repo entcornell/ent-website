@@ -55,7 +55,7 @@ const Home = () => {
         <div className="what-we-do-container">
           <div className="what-we-do-image">
             <img
-              src="images/IMG_4535- Enhanced.JPG"
+              src="images/IMG_4535- Enhanced.jpg"
               alt="Fraternity"
             />
           </div>
@@ -145,13 +145,13 @@ const Home = () => {
         <div className="members-scroll">
         {[
             { role: "President", name: "Matt Kahn", img: "headshots/MattKahn-Headshot.jpg" },
-            { role: "VP Recruitment", name: "Dillon Gordon", img: "headshots/DillonGordon-Headshot.jpeg" },
-            { role: "VP NME", name: "Brij Garg", img: "headshots/BrijGarg-Headshot.png" },
+            { role: "VP Recruitment", name: "Dillon Gordon", img: "headshots/DillonGordon-Headshot.JPEG" },
+            { role: "VP NME", name: "Brij Garg", img: "headshots/BrijGarg-Headshot.PNG" },
             { role: "VP Prof. Events", name: "Sadie Schnierow", img: "headshots/SadieSchnierow-Headshot.jpeg" },
-            { role: "VP Finance", name: "Noel Blackwell", img: "headshots/NoelBlackwell-Headshot.jpeg" },
+            { role: "VP Finance", name: "Noel Blackwell", img: "headshots/NoelBlackwell-Headshot.JPEG" },
             { role: "VP Marketing", name: "Samantha Vaca", img: "headshots/SamanthaVaca-Headshot.jpeg" },
-            { role: "VP SBC", name: "Mihir Kulshreshtha", img: "headshots/MihirKulshreshtha-Headshot.jpeg" },
-                        { role: "VP Brotherhood", name: "Finn Clancy", img: "images/IMG_0052.JPG" },
+            { role: "VP SBC", name: "Mihir Kulshreshtha", img: "headshots/MihirKulshreshtha-Headshot.JPEG" },
+                        { role: "VP Brotherhood", name: "Finn Clancy", img: "headshots/default-icon.jpg" },
             { role: "VP Prof. Connects", name: "Hongjin Fang", img: "headshots/HongjinFang-Headshot.jpg" },
             { role: "VP Philanthropy", name: "Shannon Lin", img: "headshots/ShannonLin-Headshot.JPG" },
             // Add more here...

@@ -4,7 +4,7 @@ import "./Recruitment.css";
 
 const tips_images = [
     "/images/IMG_3070.jpg",
-    "/images/IMG_0052.jpg",
+    "/images/IMG_0052.JPG",
     "/images/Fall+2021+Headshot+Picture.jpg",
     "/images/IMG_4516 5.JPG"
   ];

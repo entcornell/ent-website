@@ -35,7 +35,7 @@ const roundsData = [
     date: "Due: 09/21/25",
     title: "Round One",
     tag: "Google Form",
-    desc: "Round one of recruitment is an online application consisting only of a headshot and a 60-second video submission. We just want to know who you are!",
+    desc: "Online application consisting of a headshot, a written question, and a 60-second video submission. We just want to know who you are!",
     button: { label: "Google Form", href: "#" },
   },
   {
@@ -275,6 +275,7 @@ useEffect(() => {
           <img src="images/IMG_3070.jpg" alt="Recruitment hero" className="r-hero-img" />
           <div className="r-hero-content">
             <h1>Recruitment</h1>
+            <p>Applications open on <strong>September 10th</strong>!</p>
             <a 
             href="https://forms.gle/d1VfHTNDmnChkXRd7" 
             target="_blank" 
@@ -496,6 +497,9 @@ useEffect(() => {
     We’re looking for passionate, creative, and driven students 
     who want to grow together. Show us what makes you unique and 
     take the next step with us!
+  </p>
+  <p className="appTips-blurb">
+    Applications open on <strong>September 10th</strong>! In the meantime, fill out this interest form.
   </p>
   <div className="appTips-cta">
                 <a 

@@ -1,4 +1,3 @@
-
 import { faRocket, faComputer, faShirt, faFire, faMicrophone, faPeopleGroup, faNewspaper, faCalendarAlt, faUserTie } from '@fortawesome/free-solid-svg-icons';
 
 export const endeavors = [
@@ -13,14 +12,14 @@ export const endeavors = [
     ],
     thumbs: ["newsletters/issue1/1.png", "newsletters/issue5/3.png", "newsletters/issue6/4.png"],
     link: "/newsletter"
-},
+  },
   {
     title: "Speaker Events",
     img: "images/speakerevent1.jpg",
     desc: "Conversations with entrepreneurs, alumni, and industry leaders hosted weekly by our members.",
     projects: [
       { name: "Speaker Series", detail: "Talk to founders, learn about their personal journeys, and recieve advice.", icon: faFire },
-      { name: "Eccletic Convergence", detail: "Travel to NYC to attend Cornell's annual entrepreneurship conference.", icon: faPeopleGroup },
+      { name: "Eclectic Convergence", detail: "Travel to NYC to attend Cornell's annual entrepreneurship conference.", icon: faPeopleGroup },
       { name: "The Podcast Project", detail: "Converting our speaker series into podcasts for all to listen and enjoy.", icon: faMicrophone },
     ],
     thumbs: ["endeavors/elab-event.jpg", "endeavors/EcclecticConvergence1.jpg", "endeavors/speaker-event1.jpg"],

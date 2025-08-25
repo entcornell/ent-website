@@ -21,7 +21,7 @@ const tips_images = [
 
 const eventsData = [
   { when: "Open Now!", title: "Coffee Chats", blurb: "Get to know our wonderful members by requesting a coffee chat! They'll tell you more about the club and what you can expect.", cta: "Coffee Chat a Member", to: "/members" },
-  { when: "08/27/25", title: "Freshman Only Info Session", blurb: "If you're a freshman, you can learn more about our organization by attending this event.", cta: "See Details"},
+  { when: "08/27/25", title: "Freshman Only Info Session", blurb: "If you're a freshman, you can learn more about our organization by attending this event.", cta: "RSVP", to: "https://forms.gle/2Fc4ETvJ8z6QVXTs5"},
   { when: "September", title: "PFC Fair", blurb: "You can find us tabling at this event. Drop by to learn more about ENT. Stay tuned to find out what day it will be taking place.", cta: "See Details" },
   { when: "09/04/25", title: "E-Ship Kickoff", blurb: "Stop by the entrepreneurship building and meet the community! You can also come chat to our fellow members to learn more about ENT.", cta: "See Details" },
   { when: "09/10/25", title: "Info Session #1", blurb: "Come to this information ENT event to learn more about what we have to offer!", cta: "See Details" },

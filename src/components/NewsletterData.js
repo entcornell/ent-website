@@ -88,10 +88,10 @@ export const issues = [
       "Welcome back to another edition of ENT weekly - your easy to read and favorite source of entrepreneurship, business, and market news!",
     image: abs("/newsletters/issue4/Newsletter4-HeadlineImage.jpg"),
     pages: [
-      abs("/newsletters/issue4/1 6.png"),
-      abs("/newsletters/issue4/2 6.png"),
-      abs("/newsletters/issue4/3 6.png"),
-      abs("/newsletters/issue4/4 3.png"),
+      abs("/newsletters/issue4/1 6.PNG"),
+      abs("/newsletters/issue4/2 6.PNG"),
+      abs("/newsletters/issue4/3 6.PNG"),
+      abs("/newsletters/issue4/4 3.PNG"),
     ],
     sources: [
       { label: "Startups Cash In", url: "https://news.crunchbase.com/ma/ai-enterprise-startup-ma-higher-h1-2025-data/#:~:text=Acquirers%20made%20just%20over%20%24100,after%20companies" },
@@ -113,10 +113,10 @@ export const issues = [
       "Welcome back to another edition of ENT weekly - your easy to read and favorite source of entrepreneurship, business, and market news!",
     image: abs("/newsletters/issue3/Newsletter3-HeadlineImage.jpg"),
     pages: [
-      abs("/newsletters/issue3/1.png"),
-      abs("/newsletters/issue3/2.png"),
-      abs("/newsletters/issue3/3.png"),
-      abs("/newsletters/issue3/4.png"),
+      abs("/newsletters/issue3/1.PNG"),
+      abs("/newsletters/issue3/2.PNG"),
+      abs("/newsletters/issue3/3.PNG"),
+      abs("/newsletters/issue3/4.PNG"),
     ],
     sources: [
       { label: "Sweet Deal", url: "https://www.investopedia.com/wk-kellogg-stock-pops-as-ferrero-buys-cereal-giant-for-usd3-1b-11769561?utm_source=chatgpt.com" },
@@ -137,10 +137,10 @@ export const issues = [
       "Welcome back to another edition of ENT weekly - your easy to read and favorite source of entrepreneurship, business, and market news!",
     image: abs("/newsletters/issue2/Newsletter2-HeadlineImage.jpg"),
     pages: [
-      abs("/newsletters/issue2/1.png"),
-      abs("/newsletters/issue2/2.png"),
-      abs("/newsletters/issue2/3.png"),
-      abs("/newsletters/issue2/4.png"),
+      abs("/newsletters/issue2/1.PNG"),
+      abs("/newsletters/issue2/2.PNG"),
+      abs("/newsletters/issue2/3.PNG"),
+      abs("/newsletters/issue2/4.PNG"),
     ],
     sources: [
       { label: "Lime in the Green", url: "https://www.reuters.com/business/uber-backed-electric-bike-startup-lime-hires-banks-us-ipo-sources-say-2025-06-24/?utm_source=chatgpt.com" },

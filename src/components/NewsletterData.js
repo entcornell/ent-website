@@ -6,6 +6,31 @@ const abs = (p) => `${PUB}${p.startsWith("/") ? p : "/" + p}`;
 
 export const issues = [
   {
+    id: 7,
+    title: "Issue #7",
+    date: "08/31/25",
+    author: "Mac Dorward",
+    excerpt:
+      "We are thrilled to kick off this semester together. From upcoming recruiting events to our weekly G-Body meetings, we cannot wait to see how ENT has spent the summer.",
+    image: abs("/newsletters/issue7/Newsletter7-HeadlineImage.jpg"),
+    pages: [
+      abs("/newsletters/issue7/1.png"),
+      abs("/newsletters/issue7/2.png"),
+      abs("/newsletters/issue7/3.png"),
+      abs("/newsletters/issue7/4.png"),
+    ],
+    sources: [
+      { label: "Retail on Death Row", url: "https://www.cnbc.com/2025/08/29/retail-impact-de-minimis-exemption-ends-globally.html" },
+      { label: "Language Choice", url: "https://www.cnbc.com/2025/08/06/wharton-word-guru-on-simple-language-fixes-success-influence.html" },
+      { label: "New AI Chip in China", url: "https://seekingalpha.com/news/4490363-alibaba-develops-new-ai-chip-to-help-fill-nvidias-absence-in-china" },
+      { label: "Brace for Inflation", url: "https://www.wsj.com/business/retail/trump-tariffs-higher-prices-forecast-5233d6c4?mod=business_feat2_retail_pos1" },
+      { label: "Woes in Canada:", url: " https://www.cnbc.com/2025/08/27/cracker-barrel-cbrl-stock-logo-trump.html" },
+      { label: "A Story on Brand", url: "https://www.cnbc.com/2025/08/26/eli-lilly-weight-loss-pill-orforglipron-clears-trial-paving-way-for-approval.html" },
+      { label: "Weight-Loss Win", url: "https://www.cnbc.com/2025/08/26/eli-lilly-weight-loss-pill-orforglipron-clears-trial-paving-way-for-approval.html" },
+      { label: "Is the FED at Risk of Losing Independence?:", url: "https://www.cnbc.com/2025/08/30/trump-firing-cook-could-damage-fed-independence-rebecca-patterson.html" },
+    ],
+  },
+  {
     id: 6,
     title: "Issue #6",
     date: "08/10/25",

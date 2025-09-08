@@ -6,6 +6,31 @@ const abs = (p) => `${PUB}${p.startsWith("/") ? p : "/" + p}`;
 
 export const issues = [
   {
+    id: 8,
+    title: "Issue #8",
+    date: "09/07/25",
+    author: "Mac Dorward",
+    excerpt:
+      "This semester has started off with a bang! With recruiting underway and numerous events coming up, opportunities are abundant to get involved in the future of entrepreneurship.",
+    image: abs("/newsletters/issue7/Newsletter7-HeadlineImage.jpg"),
+    pages: [
+      abs("/newsletters/issue8/1.png"),
+      abs("/newsletters/issue8/2.png"),
+      abs("/newsletters/issue8/3.png"),
+      abs("/newsletters/issue8/4.png"),
+    ],
+    sources: [
+      { label: "Brothers & Brews", url: "https://www.wsj.com/business/retail/the-kelce-brothers-garage-beer-company-is-now-worth-200-million-22239286?mod=business_feat2_retail_pos3" },
+      { label: "Mortgage Drop", url: "https://www.cnbc.com/2025/09/05/mortgage-rates-drop.html" },
+      { label: "Elon's Big Bag", url: "https://www.nbcnews.com/business/autos/elon-musk-line-1-trillion-pay-package-tesla-hits-aggressive-goals-10-y-rcna229285" },
+      { label: "Google Holds Firm", url: "https://www.wsj.com/us-news/law/google-search-antitrust-enforcement-limits-alphabet-cb1e5b6e?mod=Searchresults&pos=4&page=1" },
+      { label: "Bagel Bucks", url: " https://www.cnbc.com/2025/09/05/brazen-bagels-owner-how-i-built-profitable-bagel-shop-after-quitting-job.html" },
+      { label: "Search Funds", url: "https://www.cnbc.com/2025/09/05/search-fund-investment-wealth-entrepreneurship-gsb-sme-msmes-small-businesses.html" },
+      { label: "Success for Life", url: "https://www.wsj.com/health/wellness/billionaires-longevity-health-04dd205c?mod=hp_lead_pos1" },
+      { label: "Another Bad Jobs Report: What This Means", url: "https://www.wsj.com/economy/central-banking/jobs-report-fed-interest-rate-cuts-65a8a169?mod=Searchresults&pos=1&page=1" },
+    ],
+  },
+  {
     id: 7,
     title: "Issue #7",
     date: "08/31/25",
@@ -24,10 +49,10 @@ export const issues = [
       { label: "Language Choice", url: "https://www.cnbc.com/2025/08/06/wharton-word-guru-on-simple-language-fixes-success-influence.html" },
       { label: "New AI Chip in China", url: "https://seekingalpha.com/news/4490363-alibaba-develops-new-ai-chip-to-help-fill-nvidias-absence-in-china" },
       { label: "Brace for Inflation", url: "https://www.wsj.com/business/retail/trump-tariffs-higher-prices-forecast-5233d6c4?mod=business_feat2_retail_pos1" },
-      { label: "Woes in Canada:", url: " https://www.cnbc.com/2025/08/27/cracker-barrel-cbrl-stock-logo-trump.html" },
+      { label: "Woes in Canada", url: " https://www.cnbc.com/2025/08/27/cracker-barrel-cbrl-stock-logo-trump.html" },
       { label: "A Story on Brand", url: "https://www.cnbc.com/2025/08/26/eli-lilly-weight-loss-pill-orforglipron-clears-trial-paving-way-for-approval.html" },
       { label: "Weight-Loss Win", url: "https://www.cnbc.com/2025/08/26/eli-lilly-weight-loss-pill-orforglipron-clears-trial-paving-way-for-approval.html" },
-      { label: "Is the FED at Risk of Losing Independence?:", url: "https://www.cnbc.com/2025/08/30/trump-firing-cook-could-damage-fed-independence-rebecca-patterson.html" },
+      { label: "Is the FED at Risk of Losing Independence?", url: "https://www.cnbc.com/2025/08/30/trump-firing-cook-could-damage-fed-independence-rebecca-patterson.html" },
     ],
   },
   {

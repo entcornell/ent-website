@@ -12,7 +12,7 @@ export const issues = [
     author: "Mac Dorward",
     excerpt:
       "This semester has started off with a bang! With recruiting underway and numerous events coming up, opportunities are abundant to get involved in the future of entrepreneurship.",
-    image: abs("/newsletters/issue7/Newsletter7-HeadlineImage.jpg"),
+    image: abs("/newsletters/issue8/Newsletter8-HeadlineImage.jpg"),
     pages: [
       abs("/newsletters/issue8/1.png"),
       abs("/newsletters/issue8/2.png"),

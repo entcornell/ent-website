@@ -277,7 +277,7 @@ useEffect(() => {
           <img src="images/IMG_3070.jpg" alt="Recruitment hero" className="r-hero-img" />
           <div className="r-hero-content">
             <h1>Recruitment</h1>
-            <p>Applications now <strong>open</strong>!</p>
+            <p>Applications are now <strong>open</strong>! Closing on <strong>September 21st</strong>!</p>
             <a 
             href="https://forms.gle/jnmfPFrpyQyae6eY6" 
             target="_blank" 

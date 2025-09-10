@@ -27,8 +27,8 @@ const eventsData = [
   { when: "09/10/25", title: "Info Session #1", blurb: "Come to this information ENT event to learn more about what we have to offer!", cta: "RSVP", to: "https://forms.gle/Wd1pRcVHm1RfSVUo9"},
   { when: "09/10/25", title: "Applications Open!", blurb: "Start working on your application!", cta: "Apply Today!", to: "https://forms.gle/jnmfPFrpyQyae6eY6"},
   { when: "09/13/25", title: "Club Fest", blurb: "Stop by our table at Club Fest to meet more of our current members. They can give you insight about the club!", cta: "See Details" },
-  { when: "09/15/25", title: "Academics of Entrepreneurship Panel", blurb: "Come learn more about entrepreneurship by hearing from our Cornell entrepreneurial faculty!", cta: "More Info Coming Soon!"},
-  { when: "09/17/25", title: "Info Session #2", blurb: "Come to this information ENT event to learn more about what we have to offer!", cta: "See Details" },
+  { when: "09/15/25", title: "Academics of Entrepreneurship Panel", blurb: "Come learn more about entrepreneurship by hearing from our Cornell entrepreneurial faculty!", cta: "RSVP", to: "https://forms.gle/e3reed9W8QyVUfFs8"},
+  { when: "09/17/25", title: "Info Session #2", blurb: "Come to this information ENT event to learn more about what we have to offer!", cta: "RSVP", to: "https://forms.gle/Ec8cmihqVksUr6jw8"},
   { when: "09/21/25", title: "Applications Due", blurb: "Save this date to your calendar! If you're even thinking about applying, just try it out! You never know what might happen!", cta: "Submit Application!" },
 ];
 

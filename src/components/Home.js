@@ -163,16 +163,16 @@ const Home = () => {
 
         <div className="members-scroll">
         {[
-            { role: "President", name: "Matt Kahn", img: "headshots/MattKahn-Headshot.jpg" },
-            { role: "VP Recruitment", name: "Dillon Gordon", img: "headshots/DillonGordon-Headshot.JPEG" },
-            { role: "VP NME", name: "Brij Garg", img: "headshots/BrijGarg-Headshot.PNG" },
-            { role: "VP Prof. Events", name: "Sadie Schnierow", img: "headshots/SadieSchnierow-Headshot.jpeg" },
-            { role: "VP Finance", name: "Noel Blackwell", img: "headshots/NoelBlackwell-Headshot.JPEG" },
-            { role: "VP Marketing", name: "Samantha Vaca", img: "headshots/SamanthaVaca-Headshot.jpeg" },
-            { role: "VP SBC", name: "Mihir Kulshreshtha", img: "headshots/MihirKulshreshtha-Headshot.JPEG" },
-            { role: "VP Brotherhood", name: "Finn Clancy", img: "headshots/FinnClancy-Headshot.jpeg" },
-            { role: "VP Prof. Connects", name: "Hongjin Fang", img: "headshots/HongjinFang-Headshot.jpg" },
-            { role: "VP Philanthropy", name: "Shannon Lin", img: "headshots/ShannonLin-Headshot.JPG" },
+            { role: "President", name: "Matt Kahn", img: "headshots-fall2025/MatthewKahn-Headshot.jpeg" },
+            { role: "VP Recruitment", name: "Dillon Gordon", img: "headshots-fall2025/DillonGordon-Headshot.jpg" },
+            { role: "VP NME", name: "Brij Garg", img: "headshots-fall2025/BrijGarg-Headshot.png" },
+            { role: "VP Prof. Events", name: "Sadie Schnierow", img: "headshots-fall2025/SadieSchnierow-Headshot.jpg" },
+            { role: "VP Marketing", name: "Samantha Vaca", img: "headshots-fall2025/SamanthaVaca-Headshot.jpeg" },
+            { role: "VP SBC", name: "Mihir Kulshreshtha", img: "headshots-fall2025/MihirKulshreshtha-Headshot.jpg" },
+            { role: "VP Brotherhood", name: "Finn Clancy", img: "headshots-fall2025/FinnClancy-Headshot.jpg" },
+            { role: "VP Prof. Connects", name: "Hongjin Fang", img: "headshots-fall2025/HongjinFang-Headshot.jpeg" },
+                        { role: "VP Finance", name: "Noel Blackwell", img: "headshots-fall2025/NoelBlackwell-Headshot.jpg" },
+            { role: "VP Philanthropy", name: "Shannon Lin", img: "headshots-fall2025/ShannonLin-Headshot.jpeg" },
             // Add more here...
         ].map((member, index) => (
             <div className="member-card" key={index}>

@@ -48,7 +48,7 @@ const Home = () => {
               href="https://forms.gle/jnmfPFrpyQyae6eY6" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="r-apply-btn"
+              className="apply-btn"
               >
               Apply Here!
             </a>

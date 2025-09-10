@@ -41,9 +41,17 @@ const Home = () => {
             <div className="hero-content">
             <h1>Epsilon Nu Tau</h1>
             <p>The Nation's First Entrepreneurship Fraternity!</p>
-            <Link to="/recruitment" className="apply-btn">
+            {/*<Link to="/recruitment" className="apply-btn">
               Apply Now!
-            </Link>
+            </Link>*/}
+            <a 
+              href="https://forms.gle/jnmfPFrpyQyae6eY6" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="r-apply-btn"
+              >
+              Apply Here!
+            </a>
             </div>
 
             {/* Red Chevron Outline */}

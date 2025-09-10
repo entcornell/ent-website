@@ -25,7 +25,7 @@ const eventsData = [
   { when: "September", title: "PFC Fair", blurb: "You can find us tabling at this event. Drop by to learn more about ENT. Stay tuned to find out what day it will be taking place.", cta: "See Details", to: "https://www.instagram.com/p/DN4N2qBEcTS/?igsh=ZXQ4ZmVjb3RnM3Bn" },
   { when: "09/04/25", title: "E-Ship Kickoff", blurb: "Stop by the entrepreneurship building and meet the community! You can also come chat to our fellow members to learn more about ENT.", cta: "See Details", to: "https://eship.cornell.edu/all-events/entrepreneurship-kickoff/" },
   { when: "09/10/25", title: "Info Session #1", blurb: "Come to this information ENT event to learn more about what we have to offer!", cta: "RSVP", to: "https://forms.gle/Wd1pRcVHm1RfSVUo9"},
-  { when: "09/10/25", title: "Applications Open!", blurb: "Start working on your application!", cta: "More Info Coming Soon!"},
+  { when: "09/10/25", title: "Applications Open!", blurb: "Start working on your application!", cta: "Apply Today!", to: "https://forms.gle/jnmfPFrpyQyae6eY6"},
   { when: "09/13/25", title: "Club Fest", blurb: "Stop by our table at Club Fest to meet more of our current members. They can give you insight about the club!", cta: "See Details" },
   { when: "09/15/25", title: "Academics of Entrepreneurship Panel", blurb: "Come learn more about entrepreneurship by hearing from our Cornell entrepreneurial faculty!", cta: "More Info Coming Soon!"},
   { when: "09/17/25", title: "Info Session #2", blurb: "Come to this information ENT event to learn more about what we have to offer!", cta: "See Details" },
@@ -277,14 +277,14 @@ useEffect(() => {
           <img src="images/IMG_3070.jpg" alt="Recruitment hero" className="r-hero-img" />
           <div className="r-hero-content">
             <h1>Recruitment</h1>
-            <p>Applications open on <strong>September 10th</strong>!</p>
+            <p>Applications now <strong>open</strong>!</p>
             <a 
-            href="https://forms.gle/d1VfHTNDmnChkXRd7" 
+            href="https://forms.gle/jnmfPFrpyQyae6eY6" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="r-apply-btn"
             >
-            Interest Form
+            Apply Here!
             </a>
           </div>
           <svg className="r-hero-outline" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -501,16 +501,16 @@ useEffect(() => {
     take the next step with us!
   </p>
   <p className="appTips-blurb">
-    Applications open on <strong>September 10th</strong>! In the meantime, fill out this interest form.
+    Applications are now <strong>open</strong>! They close on <strong>September 21st</strong>!
   </p>
   <div className="appTips-cta">
                 <a 
-            href="https://forms.gle/d1VfHTNDmnChkXRd7" 
+            href="https://forms.gle/jnmfPFrpyQyae6eY6" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="appTips-btn"
             >
-            Interest Form
+            Apply Here!
             </a>
     <p className="appTips-follow">
       Follow us on <a href="https://www.instagram.com/entcornell" target="_blank" rel="noopener noreferrer">Instagram</a> for updates!

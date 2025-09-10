@@ -171,7 +171,7 @@ const Home = () => {
             { role: "VP SBC", name: "Mihir Kulshreshtha", img: "headshots-fall2025/MihirKulshreshtha-Headshot.jpg" },
             { role: "VP Brotherhood", name: "Finn Clancy", img: "headshots-fall2025/FinnClancy-Headshot.jpg" },
             { role: "VP Prof. Connects", name: "Hongjin Fang", img: "headshots-fall2025/HongjinFang-Headshot.jpeg" },
-                        { role: "VP Finance", name: "Noel Blackwell", img: "headshots-fall2025/NoelBlackwell-Headshot.jpg" },
+            { role: "VP Finance", name: "Noel Blackwell", img: "headshots-fall2025/NoelBlackwell-Headshot.jpg" },
             { role: "VP Philanthropy", name: "Shannon Lin", img: "headshots-fall2025/ShannonLin-Headshot.jpeg" },
             // Add more here...
         ].map((member, index) => (

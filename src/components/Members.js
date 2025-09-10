@@ -178,7 +178,7 @@ export default function Members() {
       {/* HERO */}
       <section className="m-hero">
         <div className="m-hero-clip">
-          <img src="images/IMG_3070.jpg" alt="Members hero" className="m-hero-img" />
+          <img src="group-pics/ENTGroups-64.jpeg" alt="Members hero" className="m-hero-img" />
           <div className="m-hero-content">
             <h1>Our Members</h1>
             <p>Get to know all of our wonderful members!</p>

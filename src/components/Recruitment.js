@@ -29,6 +29,7 @@ const eventsData = [
   { when: "09/13/25", title: "Club Fest", blurb: "Stop by our table at Club Fest to meet more of our current members. They can give you insight about the club!", cta: "See Details" },
   { when: "09/15/25", title: "Academics of Entrepreneurship Panel", blurb: "Come learn more about entrepreneurship by hearing from our Cornell entrepreneurial faculty!", cta: "RSVP", to: "https://forms.gle/e3reed9W8QyVUfFs8"},
   { when: "09/17/25", title: "Info Session #2", blurb: "Come to this information ENT event to learn more about what we have to offer!", cta: "RSVP", to: "https://forms.gle/Ec8cmihqVksUr6jw8"},
+  { when: "09/18/25", title: "ENT Picture Day", blurb: "Get your headshot taken for FREE and meet the members of ENT!", cta: "RSVP", to: "https://docs.google.com/forms/d/e/1FAIpQLSfUVNrGPcJ6CViqS9g60Z_m0niBWQ6AtGT2g48ZwA4J7vbqmA/viewform?usp=dialog"},
   { when: "09/21/25", title: "Applications Due", blurb: "Save this date to your calendar! If you're even thinking about applying, just try it out! You never know what might happen!", cta: "Submit Application!" },
 ];
 

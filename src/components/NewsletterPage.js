@@ -26,7 +26,7 @@ export default function NewsletterPage() {
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, [fullscreen]);
-
+  
   if (!issue) {
     return (
       <div className="nl-page">

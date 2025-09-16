@@ -11,7 +11,7 @@ const tips_images = [
     "/images/IMG_4516 5.JPG"
   ];
 
-  const loopedImages = [...tips_images, ...tips_images, ...tips_images];
+const loopedImages = [...tips_images, ...tips_images, ...tips_images];
 
 /*const tips = [
   'Be yourself!',
@@ -42,14 +42,14 @@ const roundsData = [
     button: { label: "Google Form", href: "#" },
   },
   {
-    date: "Date TBD",
+    date: "Notified by 11:59PM on 09/22/25",
     title: "Round Two",
     tag: "Invite Only",
     desc: "Show your creativity, passion, and professionalism in a round-robin style interview.",
     button: { label: "Invite Only", href: "#" },
   },
   {
-    date: "Date TBD",
+    date: "09/24/25 - 09/25/25",
     title: "Round Three",
     tag: "Invite Only",
     desc: "Get to know our chapter and showcase your strengths as you participate in an activity-based round.",

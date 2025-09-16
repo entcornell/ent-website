@@ -6,6 +6,31 @@ const abs = (p) => `${PUB}${p.startsWith("/") ? p : "/" + p}`;
 
 export const issues = [
   {
+    id: 9,
+    title: "Issue #9",
+    date: "09/14/25",
+    author: "Mac Dorward",
+    excerpt:
+      "Welcome back ENT! On September 15th at 5:30PM, we will be hosting an Entrepreneurship Faculty Panel, where you will get to hear about what Cornell has to offer for entrepreneurs. On September 27th, ENT will be partnering with Computers4 People to host a 5K run to raise money to provide internet access for those access.",
+    image: abs("/newsletters/issue9/Newsletter9-HeadlineImage.jpg"),
+    pages: [
+      abs("/newsletters/issue9/1.png"),
+      abs("/newsletters/issue9/2.png"),
+      abs("/newsletters/issue9/3.png"),
+      abs("/newsletters/issue9/4.png"),
+    ],
+    sources: [
+      { label: "Brothers & Brews", url: "https://www.wsj.com/business/retail/the-kelce-brothers-garage-beer-company-is-now-worth-200-million-22239286?mod=business_feat2_retail_pos3" },
+      { label: "Mortgage Drop", url: "https://www.cnbc.com/2025/09/05/mortgage-rates-drop.html" },
+      { label: "Elon's Big Bag", url: "https://www.nbcnews.com/business/autos/elon-musk-line-1-trillion-pay-package-tesla-hits-aggressive-goals-10-y-rcna229285" },
+      { label: "Google Holds Firm", url: "https://www.wsj.com/us-news/law/google-search-antitrust-enforcement-limits-alphabet-cb1e5b6e?mod=Searchresults&pos=4&page=1" },
+      { label: "Bagel Bucks", url: " https://www.cnbc.com/2025/09/05/brazen-bagels-owner-how-i-built-profitable-bagel-shop-after-quitting-job.html" },
+      { label: "Search Funds", url: "https://www.cnbc.com/2025/09/05/search-fund-investment-wealth-entrepreneurship-gsb-sme-msmes-small-businesses.html" },
+      { label: "Success for Life", url: "https://www.wsj.com/health/wellness/billionaires-longevity-health-04dd205c?mod=hp_lead_pos1" },
+      { label: "Another Bad Jobs Report: What This Means", url: "https://www.wsj.com/economy/central-banking/jobs-report-fed-interest-rate-cuts-65a8a169?mod=Searchresults&pos=1&page=1" },
+    ],
+  },
+  {
     id: 8,
     title: "Issue #8",
     date: "09/07/25",

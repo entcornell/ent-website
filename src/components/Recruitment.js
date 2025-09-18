@@ -42,14 +42,14 @@ const roundsData = [
     button: { label: "Google Form", href: "#" },
   },
   {
-    date: "Notified by 11:59PM on 09/22/25",
+    date: "09/24/25 - 09/25/25",
     title: "Round Two",
     tag: "Invite Only",
-    desc: "Show your creativity, passion, and professionalism in a round-robin style interview.",
+    desc: "Notified by 11:59PM on 09/22/25. Show your creativity, passion, and professionalism through a business pitch and a round-robin style interview.",
     button: { label: "Invite Only", href: "#" },
   },
   {
-    date: "09/24/25 - 09/25/25",
+    date: "Date: TBD",
     title: "Round Three",
     tag: "Invite Only",
     desc: "Get to know our chapter and showcase your strengths as you participate in an activity-based round.",

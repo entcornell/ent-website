@@ -39,7 +39,7 @@ const brotherhood = [
     className: "Eta Class",
     members: [
       {name: "Matt Kahn", email: "mjk366@cornell.edu", year: "2026",  major: "AEM", minors: "", involvement: "ENT is a religion.", hobbies: "Weightlifting, Cold Plunges, Reading, Running, and Guitar (and Entrepreneurship)", image: "headshots-fall2025/MatthewKahn-Headshot.jpeg", style: {objectPosition: "center 35%"}},
-      { name: "Ava Grace Sannino", email: "acs329@cornell.edu", year: "2026", major: "Viticulture & Enology/Business", involvement: "Sailing, CALS Ambassadors, Big Red Yoga, Splash", hobbies: "Wine Making, Cooking, Baking, Knitting, Lifting, Yoga", image: "headshots/AvaGraceSannino-Headshot.jpeg", style: {objectPosition: "center 10%"} },
+      { name: "Ava Grace Sannino", email: "acs329@cornell.edu", year: "2026", major: "Viticulture & Enology/Business", involvement: "Sailing, CALS Ambassadors, Big Red Yoga, Splash", hobbies: "Wine Making, Cooking, Baking, Knitting, Lifting, Yoga", image: "headshots-fall2025/AvaGraceSannino-Headshot.jpeg", style: {objectPosition: "center 10%"} },
     ],
   },
   {

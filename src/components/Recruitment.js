@@ -6,7 +6,7 @@ import "./Recruitment.css";
 */
 const events = [
   {
-    date: "Jan 20",
+    date: "Jan 10",
     title: "Coffee Chats",
     meta: "End 02/01",
     tag: "Pairing Form",
@@ -54,6 +54,7 @@ const events = [
     date: "Jan 30",
     title: "ENT Trivia Night",
     meta: "7:00 PM – 9:00 PM | Location TBD",
+    body: "ENT places a strong emphasis on community and brotherhood events. Join us for a jeopardy style trivia night, where potential applicants will team up with current members to answer ENT and entrepreneurship themed questions. Get ready for some fun!"
   },
   {
     date: "Jan 31",
@@ -66,6 +67,7 @@ const events = [
 export default function Recruitment() {
   // Tracks which dropdown is currently open
   const [openIndex, setOpenIndex] = useState(null);
+  const [openRoundIndex, setOpenRoundIndex] = useState(null);
 
   // Scroll to top when page loads
   useEffect(() => {
@@ -146,22 +148,31 @@ export default function Recruitment() {
             <span className="round-date-day">- Feb 1</span>
           </div>
 
-          <div className="round-content">
+          <div
+            className="round-content"
+            onClick={() =>
+              setOpenRoundIndex(openRoundIndex === 0 ? null : 0)
+            }
+            style={{ cursor: "pointer" }}
+          >
             <div className="event-header">
-              <span className="round-title">Round One</span>
+              <span className="round-title">
+                Round One: Application & Video
+              </span>
+              <span className={`dropdown ${openRoundIndex === 0 ? "open" : ""}`}>
+                ▸
+              </span>
             </div>
 
             <div className="event-meta-row">
               <p className="round-meta">Google Form | Due 11:59 PM</p>
-              {/* <a
-                href="https://forms.gle/YOUR_FORM_LINK"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="event-tag"
-              >
-                Apply
-              </a>*/}
             </div>
+
+            {openRoundIndex === 0 && (
+              <div className="event-body">
+                Show us who you really are by creating a 90-second video and answering quick short-answer questions. Why should you be in ENT?
+              </div>
+            )}
           </div>
         </div>
 
@@ -172,14 +183,31 @@ export default function Recruitment() {
             <span className="round-date-day">4</span>
           </div>
 
-          <div className="round-content">
+          <div
+            className="round-content"
+            onClick={() =>
+              setOpenRoundIndex(openRoundIndex === 1 ? null : 1)
+            }
+            style={{ cursor: "pointer" }}
+          >
             <div className="event-header">
-              <span className="round-title">Round Two</span>
+              <span className="round-title">
+                Round Two: Pitch & Round Robin
+              </span>
+              <span className={`dropdown ${openRoundIndex === 1 ? "open" : ""}`}>
+                ▸
+              </span>
             </div>
 
             <div className="event-meta-row">
               <p className="round-meta">Invite Only | In-Person</p>
             </div>
+
+            {openRoundIndex === 1 && (
+              <div className="event-body">
+                Showcase your inner passion for entrepreneurship and creativity through a short pitch and round-robin style questions.
+              </div>
+            )}
           </div>
         </div>
 
@@ -190,17 +218,35 @@ export default function Recruitment() {
             <span className="round-date-day">5</span>
           </div>
 
-          <div className="round-content">
+          <div
+            className="round-content"
+            onClick={() =>
+              setOpenRoundIndex(openRoundIndex === 2 ? null : 2)
+            }
+            style={{ cursor: "pointer" }}
+          >
             <div className="event-header">
-              <span className="round-title">Round Three</span>
+              <span className="round-title">
+                Round Three: Social Round
+              </span>
+              <span className={`dropdown ${openRoundIndex === 2 ? "open" : ""}`}>
+                ▸
+              </span>
             </div>
 
             <div className="event-meta-row">
               <p className="round-meta">Invite Only | In-Person</p>
             </div>
+
+            {openRoundIndex === 2 && (
+              <div className="event-body">
+                Show us how you get along with members of our organization. Be ready for any game, pitch, or question that comes your way!
+              </div>
+            )}
           </div>
         </div>
       </section>
+
 
 
 

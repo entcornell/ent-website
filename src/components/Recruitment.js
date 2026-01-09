@@ -11,49 +11,55 @@ const events = [
     meta: "End 02/01",
     tag: "Pairing Form",
     url: "https://docs.google.com/forms/d/e/1FAIpQLSf-EoEUt3dYzgIAwHIrbdUCrytN7kEYjrvIrOwETft5kgB07g/viewform",
-    body: "Get paired with a member to learn more about ENT and ask questions."
+    body: "Coffee chats are a great way to get to know the amazing current members of ENT. Feel free to ask about the organization, entrepreneurship, Cornell, or anything on your mind. These informal conversations can be scheduled using the pairing form link. Note that you can also email ENT members directly for coffee chats from the Members Page."
   },
   {
     date: "Jan 24",
     title: "Freshman Only Info Session",
-    meta: "1:00 PM – 2:00 PM | Location TBD"
+    meta: "1:00 PM – 2:00 PM | Location TBD",
+    body: "ENT information sessions are a great way to learn about the organization. You will hear about the New Member Education process, some fun brotherhood events, current projects, and club culture. Additionally, you will have the opportunity to network to current members at the conclusion of the session. This event is for freshmen only!"
   },
   {
     date: "Jan 25",
     title: "Club Fest",
-    meta: "12:00 PM – 4:30 PM | Barton Hall"
+    meta: "12:00 PM – 4:30 PM | Barton Hall",
+    body: "Find the ENT booth at Club Fest and speak to our current members to learn more about what makes the organization special!"
   },
   {
     date: "Jan 26",
     title: "In-Person Info Session",
-    meta: "7:00 PM – 8:00 PM | Location TBD"
+    meta: "7:00 PM – 8:00 PM | Location TBD",
+    body: "ENT information sessions are a great way to learn about the organization. You will hear about the New Member Education process, some fun brotherhood events, current projects, and club culture. Additionally, you will have the opportunity to network to current members at the conclusion of the session. This event is open to anyone!"
   },
   {
-    date: "Jan 28",
+    date: "Jan 27",
     title: "Speed Round Coffee Chats",
-    meta: "End of Day | Location TBD"
+    meta: "End of Day | Location TBD",
   },
   {
     date: "Jan 28",
     title: "Professional Fraternity Council Club Fair",
-    meta: "11:30 AM – 2:00 PM | Willard Straight Hall"
+    meta: "11:30 AM – 2:00 PM | Willard Straight Hall",
+    body: "Find the ENT booth at the PFC club fair and speak to our current members to learn more about what makes the organization special!"
   },
   {
     date: "Jan 29",
     title: "Virtual Info Session",
-    meta: "5:00 PM – 6:00 PM",
+    meta: "5:00 PM – 6:00 PM | Zoom Call",
     /*tag: "Link",
     url: "https://zoom.us/YOUR_MEETING_LINK"*/
+    body: "ENT information sessions are a great way to learn about the organization. You will hear about the New Member Education process, some fun brotherhood events, current projects, and club culture. Additionally, you will have the opportunity to network to current members at the conclusion of the session. This event will be on zoom!"
   },
   {
     date: "Jan 30",
     title: "ENT Trivia Night",
-    meta: "7:00 PM – 9:00 PM | Location TBD"
+    meta: "7:00 PM – 9:00 PM | Location TBD",
   },
   {
     date: "Jan 31",
     title: "ENT Professional Headshots",
-    meta: "Time TBD | Location TBD"
+    meta: "Time TBD | Location TBD",
+    body: "This is your opportunity to get your professional headshot for club, or even job applications. Our experienced photographer will take individual, high quality, and professional photos for each person. You will also have the opportunity to speak to our E-board and current members at this event."
   }
 ];
 
@@ -87,18 +93,21 @@ export default function Recruitment() {
             </div>
 
             {/* Event content */}
-            <div className="event-content">
+            <div
+              className="event-content"
+              onClick={() => setOpenIndex(openIndex === i ? null : i)}
+              style={{ cursor: "pointer" }}
+            >
+
 
               {/* Header toggles dropdown */}
-              <button
-                className="event-header"
-                onClick={() => setOpenIndex(openIndex === i ? null : i)}
-              >
+              <div className="event-header">
                 <span className="event-title">{e.title}</span>
                 <span className={`dropdown ${openIndex === i ? "open" : ""}`}>
                   ▸
                 </span>
-              </button>
+              </div>
+
 
               {/* Location / time */}
               <div className="event-meta-row">

@@ -1,539 +1,234 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import "./Recruitment.css";
-//import { Helmet } from "react-helmet-async";
-//import { useLocation } from "react-router-dom";
 
-const tips_images = [
-    "/images/IMG_3070.jpg",
-    "/images/IMG_0052.JPG",
-    "/images/Fall+2021+Headshot+Picture.jpg",
-    "/images/IMG_4516 5.JPG"
-  ];
-
-const loopedImages = [...tips_images, ...tips_images, ...tips_images];
-
-/*const tips = [
-  'Be yourself!',
-  'Don’t be afraid!',
-  'Show your passion!',
-];*/
-
-const eventsData = [
-  { when: "Open Now!", title: "Coffee Chats", blurb: "Get to know our wonderful members by requesting a coffee chat! They'll tell you more about the club and what you can expect.", cta: "Coffee Chat a Member", to: "/members" },
-  { when: "08/27/25", title: "Freshman Only Info Session", blurb: "If you're a freshman, you can learn more about our organization by attending this event.", cta: "RSVP", to: "https://forms.gle/2Fc4ETvJ8z6QVXTs5"},
-  { when: "September", title: "PFC Fair", blurb: "You can find us tabling at this event. Drop by to learn more about ENT. Stay tuned to find out what day it will be taking place.", cta: "See Details", to: "https://www.instagram.com/p/DN4N2qBEcTS/?igsh=ZXQ4ZmVjb3RnM3Bn" },
-  { when: "09/04/25", title: "E-Ship Kickoff", blurb: "Stop by the entrepreneurship building and meet the community! You can also come chat to our fellow members to learn more about ENT.", cta: "See Details", to: "https://eship.cornell.edu/all-events/entrepreneurship-kickoff/" },
-  { when: "09/10/25", title: "Info Session #1", blurb: "Come to this information ENT event to learn more about what we have to offer!", cta: "RSVP", to: "https://forms.gle/Wd1pRcVHm1RfSVUo9"},
-  { when: "09/10/25", title: "Applications Open!", blurb: "Start working on your application!", cta: "Apply Today!", to: "https://forms.gle/jnmfPFrpyQyae6eY6"},
-  { when: "09/13/25", title: "Club Fest", blurb: "Stop by our table at Club Fest to meet more of our current members. They can give you insight about the club!", cta: "See Details" },
-  { when: "09/15/25", title: "Academics of Entrepreneurship Panel", blurb: "Come learn more about entrepreneurship by hearing from our Cornell entrepreneurial faculty!", cta: "RSVP", to: "https://forms.gle/e3reed9W8QyVUfFs8"},
-  { when: "09/17/25", title: "Info Session #2", blurb: "Come to this information ENT event to learn more about what we have to offer!", cta: "RSVP", to: "https://forms.gle/Ec8cmihqVksUr6jw8"},
-  { when: "09/18/25", title: "ENT Picture Day", blurb: "Get your headshot taken for FREE and meet the members of ENT!", cta: "RSVP", to: "https://docs.google.com/forms/d/e/1FAIpQLSfUVNrGPcJ6CViqS9g60Z_m0niBWQ6AtGT2g48ZwA4J7vbqmA/viewform?usp=dialog"},
-  { when: "09/21/25", title: "Applications Due", blurb: "Save this date to your calendar! If you're even thinking about applying, just try it out! You never know what might happen!", cta: "Submit Application!" },
-];
-
-const roundsData = [
+/*
+  Event data for the recruitment timeline
+*/
+const events = [
   {
-    date: "Due: 09/21/25",
-    title: "Round One",
-    tag: "Google Form",
-    desc: "Online application consisting of a headshot, a written question, and a 60-second video submission. We just want to know who you are!",
-    button: { label: "Google Form", href: "#" },
+    date: "Jan 20",
+    title: "Coffee Chats",
+    meta: "End 02/01",
+    tag: "Pairing Form",
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSf-EoEUt3dYzgIAwHIrbdUCrytN7kEYjrvIrOwETft5kgB07g/viewform",
+    body: "Get paired with a member to learn more about ENT and ask questions."
   },
   {
-    date: "09/24/25 - 09/25/25",
-    title: "Round Two",
-    tag: "Invite Only",
-    desc: "Notified by 11:59PM on 09/22/25. Show your creativity, passion, and professionalism through a business pitch and a round-robin style interview.",
-    button: { label: "Invite Only", href: "#" },
+    date: "Jan 24",
+    title: "Freshman Only Info Session",
+    meta: "1:00 PM – 2:00 PM | Location TBD"
   },
   {
-    date: "Date: TBD",
-    title: "Round Three",
-    tag: "Invite Only",
-    desc: "Get to know our chapter and showcase your strengths as you participate in an activity-based round.",
-    button: { label: "Invite Only", href: "#" },
+    date: "Jan 25",
+    title: "Club Fest",
+    meta: "12:00 PM – 4:30 PM | Barton Hall"
   },
+  {
+    date: "Jan 26",
+    title: "In-Person Info Session",
+    meta: "7:00 PM – 8:00 PM | Location TBD"
+  },
+  {
+    date: "Jan 28",
+    title: "Speed Round Coffee Chats",
+    meta: "End of Day | Location TBD"
+  },
+  {
+    date: "Jan 28",
+    title: "Professional Fraternity Council Club Fair",
+    meta: "11:30 AM – 2:00 PM | Willard Straight Hall"
+  },
+  {
+    date: "Jan 29",
+    title: "Virtual Info Session",
+    meta: "5:00 PM – 6:00 PM",
+    /*tag: "Link",
+    url: "https://zoom.us/YOUR_MEETING_LINK"*/
+  },
+  {
+    date: "Jan 30",
+    title: "ENT Trivia Night",
+    meta: "7:00 PM – 9:00 PM | Location TBD"
+  },
+  {
+    date: "Jan 31",
+    title: "ENT Professional Headshots",
+    meta: "Time TBD | Location TBD"
+  }
 ];
 
 export default function Recruitment() {
+  // Tracks which dropdown is currently open
+  const [openIndex, setOpenIndex] = useState(null);
 
-    //const { pathname } = useLocation();
-
-        useEffect(() => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }, []);
-
-    const scrollRef = useRef(null);
-
+  // Scroll to top when page loads
   useEffect(() => {
-    const container = scrollRef.current;
-    let scrollAmount = 0;
-    let scrollStep = 1; // speed (px per frame)
-    let animationFrame;
-
-    const autoScroll = () => {
-      if (container) {
-        scrollAmount += scrollStep;
-        container.scrollLeft = scrollAmount;
-
-        // reset when reaching end
-        if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
-          scrollAmount = 0;
-        }
-      }
-      animationFrame = requestAnimationFrame(autoScroll);
-    };
-
-    animationFrame = requestAnimationFrame(autoScroll);
-
-    return () => cancelAnimationFrame(animationFrame);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
-
-  const [roundIndex, setRoundIndex] = useState(0);
-  const viewportRef = useRef(null);
-  const stageRef = useRef(null);
-
-  // timeline refs
-  const tlContainerRef = useRef(null);
-  const nodeRefs = useRef([]);
-  const [visibleCount, setVisibleCount] = useState(0);
-
-  // basic carousel logic
-  //const clamp = (n) => Math.min(Math.max(n, 0), roundsData.length - 1);
-  const go = (dir) => {
-  setRoundIndex((i) => {
-    const next = i + dir;
-    if (next < 0) return roundsData.length - 1;
-    if (next >= roundsData.length) return 0;
-    return next;
-  });
-};
-
-const [sidePadding, setSidePadding] = useState(0);
-
-useEffect(() => {
-  const viewport = viewportRef.current;
-  if (!viewport) return;
-
-  const cardWidth = 340; // match CSS
-  const gap = 22;
-  const totalCardWidth = cardWidth + gap;
-
-  const scrollX = roundIndex * totalCardWidth
-    - (viewport.offsetWidth / 2) + (cardWidth / 2);
-
-  // Wait for layout to settle before scrolling
-  requestAnimationFrame(() => {
-    viewport.scrollTo({
-      left: Math.max(0, scrollX),
-      behavior: 'smooth',
-    });
-  });
-}, [roundIndex]);
-
-
-useEffect(() => {
-  const handleResize = () => {
-    if (viewportRef.current) {
-      const viewportWidth = viewportRef.current.offsetWidth;
-      const cardWidth = 340; // same as .round-card flex-basis
-      const padding = Math.max((viewportWidth - cardWidth) / 2, 0);
-      setSidePadding(padding);
-    }
-  };
-
-  handleResize();
-  window.addEventListener("resize", handleResize);
-  return () => window.removeEventListener("resize", handleResize);
-}, []);
-
-
-
-
-  // swipe for carousel
-  useEffect(() => {
-  const el = stageRef.current;
-  if (!el) return;
-
-  let startX = 0;
-  let lastX = 0;
-  let dx = 0;
-  let startT = 0;
-  let dragging = false;
-  let pointerId = null;
-
-  const THRESHOLD = 60;       // px movement to count as a swipe
-  const FLICK_VEL = 0.5;      // px/ms ~ quick flick shortcut
-
-  const onDown = (e) => {
-    // support mouse/touch/pen via Pointer Events
-    pointerId = e.pointerId;
-    startX = lastX = e.clientX;
-    startT = performance.now();
-    dx = 0;
-    dragging = true;
-    el.classList.add("is-dragging");
-    try { el.setPointerCapture(pointerId); } catch {}
-  };
-
-  const onMove = (e) => {
-    if (!dragging) return;
-    dx = e.clientX - startX;
-    lastX = e.clientX;
-  };
-
-  const onUp = (e) => {
-    if (!dragging) return;
-    const dt = Math.max(1, performance.now() - startT);
-    const vel = Math.abs(dx) / dt;
-
-    // decide direction
-    if (Math.abs(dx) > THRESHOLD || vel > FLICK_VEL) {
-      if (dx > 0) {
-        go(-1); // swipe right -> go to previous
-      } else {
-        go(1);  // swipe left  -> go to next
-      }
-    }
-
-    dragging = false;
-    dx = 0;
-    el.classList.remove("is-dragging");
-    try { el.releasePointerCapture(pointerId); } catch {}
-    pointerId = null;
-  };
-
-  el.addEventListener("pointerdown", onDown);
-  el.addEventListener("pointermove", onMove);
-  el.addEventListener("pointerup", onUp);
-  el.addEventListener("pointercancel", onUp);
-  el.addEventListener("pointerleave", onUp);
-
-  return () => {
-    el.removeEventListener("pointerdown", onDown);
-    el.removeEventListener("pointermove", onMove);
-    el.removeEventListener("pointerup", onUp);
-    el.removeEventListener("pointercancel", onUp);
-    el.removeEventListener("pointerleave", onUp);
-  };
-}, [go]);
-
-
-  // intersection reveal + progress fill
-  useEffect(() => {
-    const nodes = nodeRefs.current.filter(Boolean);
-    if (!nodes.length) return;
-
-    const io = new IntersectionObserver(
-      (ents) => {
-        let changed = false;
-        ents.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            changed = true;
-          }
-        });
-        if (changed) {
-          const newlyVisible = nodes.filter((n) => n.classList.contains("is-visible")).length;
-          setVisibleCount(newlyVisible);
-        }
-      },
-      { root: null, threshold: 0.3 }
-    );
-
-    nodes.forEach((n) => io.observe(n));
-    return () => io.disconnect();
-  }, []);
-
-  // update CSS progress custom prop on container
-  useEffect(() => {
-    const total = eventsData.length;
-    const ratio = total <= 1 ? 1 : (visibleCount - 1) / (total - 1);
-    if (tlContainerRef.current) {
-      tlContainerRef.current.style.setProperty("--progress", Math.max(0, Math.min(1, ratio)));
-    }
-  }, [visibleCount]);
-
-  // store refs for timeline items
-  const setNodeRef = (el, i) => {
-    nodeRefs.current[i] = el;
-  };
 
   return (
     <div className="recruitment-page">
 
-    {/*<Helmet key={pathname}>
-      <title>Recruitment — ENT</title>
-      <meta
-        name="description"
-        content="Join Epsilon Nu Tau at Cornell. Build ventures, gain mentorship, and grow alongside fellow innovators."
-      />
-    </Helmet>*/}
+      {/* ===== HERO HEADER ===== */}
+      <section className="recruitment-hero">
+        <img src="/images/recruitmentheader.png" alt="Recruitment Header" />
+        <h1>SPRING 2026 RECRUITMENT</h1>
+      </section>
 
-      {/* HERO */}
-      <section className="r-hero">
-        <div className="r-hero-clip">
-          <img src="images/IMG_3070.jpg" alt="Recruitment hero" className="r-hero-img" />
-          <div className="r-hero-content">
-            <h1>Recruitment</h1>
-            <p>Applications are now <strong>open</strong>! Closing on <strong>September 21st</strong>!</p>
-            <a 
-            href="https://forms.gle/jnmfPFrpyQyae6eY6" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="r-apply-btn"
-            >
-            Apply Here!
-            </a>
+      {/* ===== EVENTS TIMELINE ===== */}
+      <section className="recruitment-events">
+        {events.map((e, i) => (
+          <div className="event-card" key={i}>
+
+            {/* Date block */}
+            <div className="event-date">
+              <span className="event-date-month">{e.date.split(" ")[0]}</span>
+              <span className="event-date-day">{e.date.split(" ")[1]}</span>
+            </div>
+
+            {/* Event content */}
+            <div className="event-content">
+
+              {/* Header toggles dropdown */}
+              <button
+                className="event-header"
+                onClick={() => setOpenIndex(openIndex === i ? null : i)}
+              >
+                <span className="event-title">{e.title}</span>
+                <span className={`dropdown ${openIndex === i ? "open" : ""}`}>
+                  ▸
+                </span>
+              </button>
+
+              {/* Location / time */}
+              <div className="event-meta-row">
+                <p className="event-meta">{e.meta}</p>
+                {e.tag && e.url && (
+                  <a
+                    href={e.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="event-tag"
+                  >
+                    {e.tag}
+                  </a>
+                )}
+              </div>
+
+
+              {/* Dropdown body */}
+              {openIndex === i && e.body && (
+                <div className="event-body">{e.body}</div>
+              )}
+            </div>
           </div>
-          <svg className="r-hero-outline" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <polyline points="-1,85 50,100 101,85" fill="none" stroke="#d62828" strokeWidth="35" vectorEffect="non-scaling-stroke" />
-          </svg>
+        ))}
+      </section>
+
+      {/* ===== APPLICATION ROUNDS ===== */}
+      <section className="recruitment-rounds">
+        <h2>Application Rounds</h2>
+
+        {/* Round One */}
+        <div className="round">
+          <div className="round-date">
+            <span className="round-date-month">Jan 23</span>
+            <span className="round-date-day">- Feb 1</span>
+          </div>
+
+          <div className="round-content">
+            <div className="event-header">
+              <span className="round-title">Round One</span>
+            </div>
+
+            <div className="event-meta-row">
+              <p className="round-meta">Google Form | Due 11:59 PM</p>
+              {/* <a
+                href="https://forms.gle/YOUR_FORM_LINK"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="event-tag"
+              >
+                Apply
+              </a>*/}
+            </div>
+          </div>
+        </div>
+
+        {/* Round Two */}
+        <div className="round">
+          <div className="round-date">
+            <span className="round-date-month">Feb</span>
+            <span className="round-date-day">4</span>
+          </div>
+
+          <div className="round-content">
+            <div className="event-header">
+              <span className="round-title">Round Two</span>
+            </div>
+
+            <div className="event-meta-row">
+              <p className="round-meta">Invite Only | In-Person</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Round Three */}
+        <div className="round">
+          <div className="round-date">
+            <span className="round-date-month">Feb</span>
+            <span className="round-date-day">5</span>
+          </div>
+
+          <div className="round-content">
+            <div className="event-header">
+              <span className="round-title">Round Three</span>
+            </div>
+
+            <div className="event-meta-row">
+              <p className="round-meta">Invite Only | In-Person</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <main className="r-container">
-        {/* REQUIREMENTS */}
-        <section className="r-req">
-        <div className="r-req-left">
-            <p className="r-pretitle">Application</p>
-            <h2 className="r-title r-title--xl">Requirements</h2>
-
-            <ul className="r-bullets r-bullets--big">
-            <li>
-                <div className="r-bullet-dot" aria-hidden />
-                <div>
-                <p className="r-bullet-head">Undergraduate student</p>
-                <p className="r-bullet-sub">
-                    Any age or year!{" "}
-                    <a className="r-link-underline" href="#">
-                    First–semester freshmen allowed
-                    </a>
-                </p>
-                </div>
-            </li>
-
-            <li>
-                <div className="r-bullet-dot" aria-hidden />
-                <div>
-                <p className="r-bullet-head">Passion for entrepreneurship</p>
-                <p className="r-bullet-sub">
-                    Just be yourself! You <em>don’t</em> have to be
-                    actively running or working on a venture!
-                </p>
-                </div>
-            </li>
-            </ul>
-        </div>
-
-        <div className="r-req-right">
-            <img
-            src="images/Fall+2021+Headshot+Picture.jpg"
-            alt="Recruitment group"
-            />
-        </div>
-        </section>
 
 
-        <hr className="r-thin-divider" />
+      {/* ===== FAQ ===== */}
+      <section
+        className="recruitment-faq"
+        style={{ backgroundImage: "url(/images/RecruitmentFAQ.png)" }}
+      >
+        <h2>FAQ</h2>
 
-        {/* EVENTS TIMELINE */}
-        <section className="r-events">
-          <h2 className="r-title center">Events Timeline</h2>
-
-          <div className="r-timeline" ref={tlContainerRef}>
-            <div className="tl-line" />
-            <div className="tl-progress" />
-
-            {eventsData.map((e, i) => {
-              const side = i % 2 === 0 ? "left" : "right";
-              return (
-                <article
-                  key={i}
-                  className={`tl-item ${side} reveal`}
-                  ref={(el) => setNodeRef(el, i)}
-                >
-                  <div className="tl-dot" aria-hidden />
-                  <div className="tl-card">
-                    <p className={`tl-when ${i === 0 ? "accent" : ""}`}>{e.when}</p>
-                    <h3 className="tl-title">{e.title}</h3>
-                    <p className="tl-blurb">{e.blurb}</p>
-                    {e.href ? (
-  <a 
-    className="tl-btn" 
-    href={e.href} 
-    target="_blank" 
-    rel="noopener noreferrer"
-  >
-    {e.cta}
-  </a>
-) : e.to ? (
-  <Link className="tl-btn" to={e.to}>
-    {e.cta}
-  </Link>
-) : (
-  <span className="tl-btn">More info coming soon!</span>
-)}
-
-
-                  </div>
-                </article>
-              );
-            })}
+        <div className="faq-item">
+          <div className="faq-question">Who can apply?</div>
+          <div className="faq-answer">
+            Undergraduates of all years (Class of 2026–2029) and exchange students.
           </div>
-        </section>
-
-        <hr className="r-thin-divider" />
-
-        {/* RECRUITMENT ROUNDS (CAROUSEL) */}
-        <section className="r-rounds">
-        <h2 className="r-title">Recruitment Rounds</h2>
-
-        <div className="r-rounds-edge">
-        <div className="r-rounds-wrap">
-            <button className="r-arrow left" onClick={() => go(-1)}>
-            &#8249;
-            </button>
-
-            <div className="r-rounds-viewport">   {/* provides perspective */}
-            <div className="r-rounds-stage" ref={stageRef}>     {/* the 3D stage */}
-                {roundsData.map((r, i) => {
-                const total = roundsData.length;
-                // shortest circular distance from active
-                let delta = i - roundIndex;
-                if (delta > total / 2) delta -= total;
-                if (delta < -total / 2) delta += total;
-
-                const ad = Math.abs(delta);
-                const x = delta * 220;              // horizontal spacing
-                const ry = delta * -15;             // Y rotation per step
-                const z = 160 - ad * 120;           // bring center forward
-                const s = 1 - Math.min(ad * 0.12, .36);
-                const op = 1 - Math.min(ad * 0.25, .55);
-                const zi = 100 - ad * 10;
-
-                return (
-                    <article
-                    key={i}
-                    className={`round-card ${delta === 0 ? "is-active" : ""}`}
-                    style={{
-                        transform: `translateX(${x}px) translateZ(${z}px) rotateY(${ry}deg) scale(${s})`,
-                        opacity: op,
-                        zIndex: zi
-                    }}
-                    >
-                    <p className="round-date">{r.date}</p>
-                    <h3 className="round-title">{r.title}</h3>
-                    <p className="round-desc">{r.desc}</p>
-
-                    {r.button?.label ? (
-                        <a className="round-btn" href={r.button.href}>{r.button.label}</a>
-                    ) : (
-                        r.tag && <span className="round-chip">{r.tag}</span>
-                    )}
-                    </article>
-                );
-                })}
-            </div>
-            </div>
-
-            <button className="r-arrow right" onClick={() => go(1)}>
-            &#8250;
-            </button>
         </div>
 
-        <div className="r-dots">
-            {roundsData.map((_, i) => (
-            <button
-                key={i}
-                className={`r-dot ${i === roundIndex ? "is-active" : ""}`}
-                onClick={() => setRoundIndex(i)}
-            />
-            ))}
+        <div className="faq-item">
+          <div className="faq-question">How many events should I attend?</div>
+          <div className="faq-answer">
+            We recommend attending at least one event to get to know the fraternity.
+          </div>
         </div>
+
+        <div className="faq-item">
+          <div className="faq-question">How do I apply?</div>
+          <div className="faq-answer">
+            Fill out the online application when it opens.
+          </div>
         </div>
-        
-        </section>
 
-         <hr className="r-thin-divider" />
-
-        {/* APPLICATION TIPS */}
-        {/*<section className="app-container">
-             <div className="app-container-diag-layer">
-                <DiagonalWedge
-                topSrc="/images/IMG_3070.jpg"
-                bottomSrc="/images/IMG_0052.jpg"
-                stroke="#b92d2d"
-                />
-            </div>
-        <div className="right-section">
-            <h1 className="heading">App...</h1>
-            <ul className="bullet-list">
-            <li><span className="hex-icon"></span> Better
-             communication</li>
-            <li><span className="hex-icon"></span> Document flow</li>
-            <li><span className="hex-icon"></span> Shared access</li>
-            </ul>
+        <div className="faq-item">
+          <div className="faq-question">What is pledging / NME?</div>
+          <div className="faq-answer">
+            A semester-long new member education focused on bonding and entrepreneurship.
+          </div>
         </div>
-    </section>*/}
-
-    <section className="appTips">
-      {/* Left auto-scrolling carousel */}
-      <div className="appTips-leftScroll">
-        <div className="scroll-track">
-          {loopedImages.map((src, i) => (
-            <div className="img-wrapper" key={i}>
-              <img src={src} alt={`App Tip ${i}`} className="appTips-img" />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Right tips */}
-      {/* Right tips */}
-<div className="appTips-right">
-  <h2 className="appTips-title">Apply Today!</h2>
-
-  <p className="appTips-blurb">
-    We’re looking for passionate, creative, and driven students 
-    who want to grow together. Show us what makes you unique and 
-    take the next step with us!
-  </p>
-  <p className="appTips-blurb">
-    Applications are now <strong>open</strong>! They close on <strong>September 21st</strong>!
-  </p>
-  <div className="appTips-cta">
-                <a 
-            href="https://forms.gle/jnmfPFrpyQyae6eY6" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="appTips-btn"
-            >
-            Apply Here!
-            </a>
-    <p className="appTips-follow">
-      Follow us on <a href="https://www.instagram.com/entcornell" target="_blank" rel="noopener noreferrer">Instagram</a> for updates!
-    </p>
-  </div>
-</div>
-
-    </section>
-
-
-
-
-
-
-
-
-
-
-
-
-      </main>
-
+      </section>
     </div>
   );
 }

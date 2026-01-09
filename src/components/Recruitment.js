@@ -46,8 +46,8 @@ const events = [
     date: "Jan 29",
     title: "Virtual Info Session",
     meta: "5:00 PM – 6:00 PM | Zoom Call",
-    /*tag: "Link",
-    url: "https://zoom.us/YOUR_MEETING_LINK"*/
+    tag: "Link",
+    url: "https://cornell.zoom.us/j/92755337719?pwd=4IfdnGlWKKhb17uIqgET5jD4syyj90.1",
     body: "ENT information sessions are a great way to learn about the organization. You will hear about the New Member Education process, some fun brotherhood events, current projects, and club culture. Additionally, you will have the opportunity to network to current members at the conclusion of the session. This event will be on zoom!"
   },
   {

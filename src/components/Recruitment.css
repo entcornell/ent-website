@@ -80,7 +80,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: left;
   cursor: pointer;
   padding: 0;
 }
@@ -241,18 +241,18 @@
 .recruitment-faq {
   background-size: cover;
   background-position: center;
-  padding: 2rem 1rem;
+  padding: 2rem 3rem;
 }
 
 .recruitment-faq h2 {
   text-align: center;
   font-weight: 800;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .faq-item {
   background: rgba(0, 0, 0, 0.55);
-  max-width: 1200px;
+  max-width: 900px;
   padding: 0.8rem 0.7rem;
   margin: 0 auto 0.6rem;
   margin-bottom: 0.6rem;
@@ -261,12 +261,12 @@
 
 /* FAQ question */
 .faq-question {
-  font-weight: 700; /* Bold */
+  font-weight: 700;
 }
 
 /* FAQ answer */
 .faq-answer {
-  font-weight: 500; /* Medium */
+  font-weight: 500; 
   margin-top: 0.25rem;
   line-height: 1.4;
 }

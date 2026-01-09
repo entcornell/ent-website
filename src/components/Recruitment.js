@@ -221,7 +221,7 @@ export default function Recruitment() {
         <div className="faq-item">
           <div className="faq-question">How many events should I attend?</div>
           <div className="faq-answer">
-            We recommend attending at least one event to get to know the fraternity.
+            We recommend attending at least one event to get to know the brothers and learn more about us.
           </div>
         </div>
 
@@ -235,7 +235,7 @@ export default function Recruitment() {
         <div className="faq-item">
           <div className="faq-question">What is pledging / NME?</div>
           <div className="faq-answer">
-            A semester-long new member education focused on bonding and entrepreneurship.
+            A semester-long new member education focused on bonding and entrepreneurship education.
           </div>
         </div>
       </section>

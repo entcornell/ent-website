@@ -83,6 +83,7 @@ export default function Recruitment() {
 
       {/* ===== EVENTS TIMELINE ===== */}
       <section className="recruitment-events">
+        <h2 className="timeline-title">Recruitment Timeline</h2>
         {events.map((e, i) => (
           <div className="event-card" key={i}>
 

@@ -147,7 +147,7 @@
   text-align: center;
   gap: 1.75rem;
   font-weight: 200;
-  margin-top: -2rem;
+  margin-top: -1.8rem;
   margin-bottom: 3rem;
   font-size: 1.2rem;
 }
@@ -213,6 +213,28 @@
   opacity: 0.85;
   line-height: 2.2;
 }
+
+.timeline-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.75rem;
+
+  font-weight: 200;
+  font-size: 1.2rem;
+
+  margin: 1.5rem 0 3rem;
+}
+
+.timeline-title::before,
+.timeline-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.5);
+  max-width: 200px;
+}
+
 
 /* FAQ */
 .recruitment-faq {

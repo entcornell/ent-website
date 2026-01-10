@@ -35,6 +35,7 @@ const events = [
     date: "Jan 27",
     title: "Speed Round Coffee Chats",
     meta: "End of Day | Location TBD",
+    body: "Join us for Speed Coffee Chats, a fast-paced and welcoming event where you’ll rotate through conversations with different ENT brothers and hear firsthand about their experiences in the fraternity. It’s a low-pressure, genuine way for you to ask questions, make connections, and see what makes ENT unique. At the same time, we’re excited to get to know you as an applicant beyond the résumé. We’ll also be selling assorted goods during the event, with all proceeds going toward charity. Come grab a coffee, support a good cause, and start meaningful conversations!"
   },
   {
     date: "Jan 28",

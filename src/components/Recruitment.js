@@ -280,7 +280,7 @@ export default function Recruitment() {
         </div>
 
         <div className="faq-item">
-          <div className="faq-question">What is pledging / NME?</div>
+          <div className="faq-question">What is NME?</div>
           <div className="faq-answer">
             A semester-long new member education focused on bonding and entrepreneurship education.
           </div>

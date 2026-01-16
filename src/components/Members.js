@@ -181,18 +181,19 @@ export default function Members() {
 
 
       {/* HERO */}
-      <section className="m-hero">
-        <div className="m-hero-clip">
-          <img src="group-pics/ENTGroups-64.jpeg" alt="Members hero" className="m-hero-img" />
-          <div className="m-hero-content">
-            <h1>Our Members</h1>
-            <p>Get to know all of our wonderful members!</p>
-          </div>
-          <svg className="m-hero-outline" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <polyline points="-1,85 50,100 101,85" fill="none" stroke="#d62828" strokeWidth="35" vectorEffect="non-scaling-stroke" />
-          </svg>
+      <section className="members-hero">
+        <img
+          src="group-pics/ENTGroups-64.jpeg"
+          alt="Members hero"
+          className="members-hero-img"
+        />
+
+        <div className="members-hero-content">
+          <h1>BROTHERS</h1>
+          <p>Get to know all of our wonderful members</p>
         </div>
       </section>
+
 
       <main className="m-container">
         {/* E-BOARD */}

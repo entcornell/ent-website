@@ -5,54 +5,46 @@
   --shadow: 0 6px 16px rgb(0 0 0 / 18%);
 }
 
-.members-page { background: #fff; color: var(--text); }
+.members-page { background: #fff; color: var(--text); font-family: "Montserrat", system-ui, sans-serif;}
 
-/* ===== hero (matching your other pages) ===== */
-.m-hero { position: relative; overflow: hidden; }
-.m-hero-clip {
+/* hero */
+.members-hero {
   position: relative;
-  width: 100%;
-  height: 320px; /* match newsletter */
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+  text-align: center;
   overflow: hidden;
 }
 
-.m-hero-img {
-  position: absolute; 
-  inset: 0;
-  width: 100%; 
-  height: 100%;
+.members-hero-img {
+  width: 100%;
+  height: 350px;
   object-fit: cover;
-  object-position: 50% 20%; /* center horizontally, shift up vertically */
-  filter: brightness(.55);
+  object-position: 50% 20%;
+  filter: brightness(0.55);
 }
 
-.m-hero-content {
-  position: absolute; inset: 0; display: grid; place-content: center;
-  text-align: center; color: #fff; text-shadow: 0 0 12px rgba(0,0,0,.6);
+.members-hero-content {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  color: #fff;
+  text-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
 }
 
-.m-hero-content h1 {
-  font-family: 'Kaisei Decol', serif;
-  font-weight: 700;
-  font-size: clamp(2.8rem, 5vw, 4rem); /* match newsletter */
-  margin: 0 0 .25rem 0;
-}
-
-.m-hero-content p {
-  font-family: 'Dai Banna SIL', serif;
-  font-size: clamp(1rem, 2vw, 1.25rem); /* match newsletter */
+.members-hero-content h1 {
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-weight: 1000;
+  letter-spacing: 0.04em;
+  font-size: 3.7rem;
   margin: 0;
 }
 
-.m-hero-outline {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 2;
+.members-hero-content p {
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: clamp(1.3rem, 2vw, 1.25rem);
+  margin-top: 0.5rem;
 }
+
 
 
 /* ===== layout ===== */

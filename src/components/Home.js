@@ -163,17 +163,22 @@ const Home = () => {
 
         <div className="members-scroll">
         {[
-            { role: "President", name: "Matt Kahn", img: "headshots-fall2025/MatthewKahn-Headshot.jpeg" },
-            { role: "VP Recruitment", name: "Dillon Gordon", img: "headshots-fall2025/DillonGordon-Headshot.jpg" },
-            { role: "VP NME", name: "Brij Garg", img: "headshots-fall2025/BrijGarg-Headshot.png" },
-            { role: "VP Prof. Events", name: "Sadie Schnierow", img: "headshots-fall2025/SadieSchnierow-Headshot.jpg" },
-            { role: "VP Marketing", name: "Samantha Vaca", img: "headshots-fall2025/SamanthaVaca-Headshot.jpeg" },
-            { role: "VP SBC", name: "Mihir Kulshreshtha", img: "headshots-fall2025/MihirKulshreshtha-Headshot.jpg" },
-            { role: "VP Brotherhood", name: "Finn Clancy", img: "headshots-fall2025/FinnClancy-Headshot.jpg" },
-            { role: "VP Prof. Connects", name: "Hongjin Fang", img: "headshots-fall2025/HongjinFang-Headshot.jpeg" },
+            { role: "President", name: "Sadie Schnierow", img: "headshots-fall2025/SadieSchnierow-Headshot.jpg" },
+            { role: "VP Recruitment", name: "Krish Patel", img: "headshots/KrishPatel-Headshot.png" },
+            { role: "VP NME", name: "Pradhi Pakkeraki", img: "headshots-fall2025/PradhiPakkerakari.png" },
+            { role: "VP NME", name: "Julius Behner", img: "headshots/JuliusBehner-Headshot.jpg" },
+            { role: "VP Professional Events", name: "Alix Martini", img: "headshots/default-icon.jpg" },
             { role: "VP Finance", name: "Noel Blackwell", img: "headshots-fall2025/NoelBlackwell-Headshot.jpg" },
-            { role: "VP Philanthropy", name: "Shannon Lin", img: "headshots-fall2025/ShannonLin-Headshot.jpeg" },
-            // Add more here...
+            { role: "VP Marketing", name: "Samantha Vaca", img: "headshots-fall2025/SamanthaVaca-Headshot.jpeg" },
+            { role: "VP SBC", name: "Matt Kahn", img: "headshots-fall2025/MatthewKahn-Headshot.jpeg" },
+            { role: "VP Brotherhood", name: "Jad Alsouss", img: "headshots/JadAlsouss-Headshot.JPG" },
+            { role: "VP Professional Connects", name: "Diya Sheth", img: "headshots/DiyaSheth-Headshot.png" },
+            { role: "VP Philanthropy", name: "Mahin Hardaway", img: "headshots-fall2025/MahinHardaway-Headshot.jpg" },
+            { role: "Social Media Chair", name: "Brooke Wilcox", img: "headshots/BrookeWilcox-Headshot.jpeg" },
+            { role: "Website Coordinator", name: "Neha Patil", img: "headshots-fall2025/NehaPatil-Headshot.png" },
+            { role: "Website Coordinator", name: "Shannon Lin", img: "headshots-fall2025/ShannonLin-Headshot.jpeg" },
+            { role: "Director of Alumni Relations", name: "Kyan Rosenthal", img: "headshots-fall2025/KyanRosenthal-Headshot.jpg" },
+            { role: "Sponsorships Coordinator", name: "Finn Clancy", img: "headshots-fall2025/FinnClancy-Headshot.jpg" },
         ].map((member, index) => (
             <div className="member-card" key={index}>
             <img src={member.img} alt={member.role} />

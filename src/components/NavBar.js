@@ -40,7 +40,7 @@ export default function Navbar() {
       <ul id="primary-nav" className={`nav-links ${open ? 'open' : ''}`}>
         <li><NavLink to="/" end onClick={closeMenu}>Home</NavLink></li>
         <li><NavLink to="/recruitment" onClick={closeMenu}>Recruitment</NavLink></li>
-        <li><NavLink to="/members" onClick={closeMenu}>Members</NavLink></li>
+        <li><NavLink to="/members" onClick={closeMenu}>Brothers</NavLink></li>
         <li><NavLink to="/who-we-are" onClick={closeMenu}>Who We Are</NavLink></li>
         <li><NavLink to="/newsletter" onClick={closeMenu}>Newsletter</NavLink></li>
         <li>

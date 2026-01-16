@@ -45,12 +45,12 @@ const Home = () => {
               Apply Now!
             </Link>*/}
             <a 
-              href="https://forms.gle/jnmfPFrpyQyae6eY6" 
+              href="https://docs.google.com/forms/d/e/1FAIpQLSf-EoEUt3dYzgIAwHIrbdUCrytN7kEYjrvIrOwETft5kgB07g/viewform" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="apply-btn"
               >
-              Apply Here!
+              Coffee Chat Form Open
             </a>
             </div>
 

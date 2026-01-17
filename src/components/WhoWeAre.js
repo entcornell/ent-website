@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./WhoWeAre.css";
 import DiagonalWedge from "./DiagonalWedge";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faUsers, faBolt } from '@fortawesome/free-solid-svg-icons';
+//import { faEnvelope, faUsers, faBolt } from '@fortawesome/free-solid-svg-icons';
 import EndeavorsPopup from "./EndeavorsPopup";
 import { endeavors } from "./EndeavorsData";
 import { studentventures } from "./StudentVenturesData";

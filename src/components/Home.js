@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLightbulb, faRocket, faUsers, faUserGraduate, faFileAlt, faDollarSign} from '@fortawesome/free-solid-svg-icons';
 import EndeavorsPopup from "./EndeavorsPopup";
 import { endeavors } from "./EndeavorsData";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 //import { Helmet } from "react-helmet-async";
 //import { useLocation } from "react-router-dom";
 

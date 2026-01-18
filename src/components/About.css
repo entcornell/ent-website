@@ -517,7 +517,7 @@
 
 .ventures-eyebrow {
   display: inline-block;
-  color: #d62828;                 /* red “Our Members” */
+  color: #d62828;               
   font-weight: 800;
   font-size: clamp(1.25rem, 2vw, 1.6rem);
   margin-bottom: 2px;

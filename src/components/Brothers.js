@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 //import React, { useState } from "react";
 //import NavBar from "./NavBar";
-import "./Members.css";
+import "./Brothers.css";
 //import { Helmet } from "react-helmet-async";
 //import { useLocation } from "react-router-dom";
 

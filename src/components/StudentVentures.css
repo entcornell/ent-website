@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #111;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ============================= */
+/* HERO                          */
+/* ============================= */
+
+.ventures-hero {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+}
+
+.ventures-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.55);
+  object-position: center 35%;
+}
+
+.ventures-hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.ventures-hero-overlay h1 {
+  margin: 0;
+  color: white;
+  font-family: "Kaisei Decol", serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  text-align: center;
+}
+
+/* ============================= */
+/* PAGE CONTAINER                */
+/* ============================= */
+
+.student-ventures {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+}
+
+/* GRID */
+
+.student-ventures-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+/* CARD */
+
+.venture-card {
+  display: flex;
+  gap: 20px;
+  padding: 18px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  align-items: center;
+}
+
+/* LEFT IMAGE */
+
+.venture-left {
+  flex: 0 0 110px;   
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+
+.venture-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* RIGHT CONTENT */
+
+.venture-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.venture-right h3 {
+  margin: 0;
+  font-family: 'Kaisei Opti', serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.venture-right p {
+  margin: 0;
+  font-family: 'Dai Banna SIL', serif;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: #333;
+}
+
+/* BUTTON */
+
+.venture-btn {
+  align-self: flex-start;
+  margin-top: 6px;
+  background: #d62828;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-family: 'Kaisei Opti', serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.venture-btn:hover {
+  background: #b81f1f;
+  transform: translateY(-1px);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .student-ventures-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .venture-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .venture-left {
+    width: 140px;
+  }
+
+  .venture-btn {
+    align-self: center;
+  }
+}

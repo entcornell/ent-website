@@ -70,8 +70,8 @@ export default function Navbar() {
 
           <ul className="dropdown-menu">
             <li>
-              <NavLink to="/who-we-are" onClick={closeMenu}>
-                WHO WE ARE
+              <NavLink to="/studentVentures" onClick={closeMenu}>
+                STUDENT VENTURES
               </NavLink>
             </li>
             <li>
@@ -95,7 +95,7 @@ export default function Navbar() {
         </li>
 
         <li>
-          <NavLink to="/members" onClick={closeMenu}>
+          <NavLink to="/brothers" onClick={closeMenu}>
             BROTHERS
           </NavLink>
         </li>

@@ -4,9 +4,9 @@ import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 
 import Home from "./components/Home";
 import Newsletter from "./components/Newsletter";
-import Members from "./components/Members";
+import Brothers from "./components/Brothers";
 import Recruitment from "./components/Recruitment";
-import WhoWeAre from "./components/WhoWeAre";
+import StudentVentures from "./components/StudentVentures";
 import NewsletterPage from "./components/NewsletterPage";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
@@ -32,9 +32,9 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/newsletter/:id" element={<NewsletterPage />} />
-          <Route path="/members" element={<Members />} />
+          <Route path="/brothers" element={<Brothers />} />
           <Route path="/recruitment" element={<Recruitment />} />
-          <Route path="/who-we-are" element={<WhoWeAre />} />
+          <Route path="/studentVentures" element={<StudentVentures />} />
           <Route path="/about" element={<About />} />
         </Route>
       </Routes>

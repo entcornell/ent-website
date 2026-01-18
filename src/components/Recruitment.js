@@ -81,7 +81,8 @@ export default function Recruitment() {
       {/* ===== HERO HEADER ===== */}
       <section className="recruitment-hero">
         <img src="/images/recruitmentheader.png" alt="Recruitment Header" />
-        <h1>SPRING 2026 RECRUITMENT</h1>
+        <h1>SPRING 2026</h1>
+        <h2>RECRUITMENT</h2>
       </section>
 
       {/* ===== EVENTS TIMELINE ===== */}

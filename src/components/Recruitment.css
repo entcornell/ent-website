@@ -26,7 +26,19 @@
   place-items: center;
   font-weight: 1000; 
   letter-spacing: 0.04em;
-  font-size: 3.0rem;
+  font-size: 4.0rem;
+  margin-bottom: 7.5rem;
+}
+
+.recruitment-hero h2 {
+  margin-top: 7.5rem;
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-weight: 1000; 
+  letter-spacing: 0.04em;
+  font-size: 4.0rem;
 }
 
 /* EVENTS */

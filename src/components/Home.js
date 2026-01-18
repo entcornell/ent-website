@@ -34,7 +34,7 @@ const Home = () => {
     <section className="hero">
         <div className="hero-clip">
             <img
-            src="images/IMG_3070.jpg"
+            src="images/homeBackground.jpg"
             alt="Hero"
             className="hero-img"
             />
@@ -58,10 +58,10 @@ const Home = () => {
             {/* Red Chevron Outline */}
             <svg className="hero-outline" viewBox="0 0 100 100" preserveAspectRatio="none">
                 <polyline
-                    points="-1,85 50,100 101,85"
+                    points="-1,80 50,95 101,80"
                     fill="none"
-                    stroke="#d62828"
-                    strokeWidth="35"
+                    stroke="#6E1010"
+                    strokeWidth="10"
                     vectorEffect="non-scaling-stroke"
                 />
             </svg>

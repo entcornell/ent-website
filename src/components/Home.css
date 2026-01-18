@@ -54,16 +54,22 @@
 }
 
 .hero-content h1 {
-  margin: 0px;
+  margin: 0;
   font-family: 'Kaisei Decol', serif;
   font-size: 4rem;
-  margin-bottom: 0.5rem;
+
+  letter-spacing: 0.02em;  
+  line-height: 1.05;       
+
+  margin-bottom: 0.25rem;  
 }
 
 .hero-content p {
-  font-family: 'Dai Banna SIL', serif;
+  font-family: "Montserrat", system-ui, sans-serif;
   font-size: 1.7rem;
-  margin-bottom: 1.5rem;
+  letter-spacing: 0.06em; 
+  line-height: 1.2;
+  margin: 0.5rem 0;
 }
 
 .apply-btn {

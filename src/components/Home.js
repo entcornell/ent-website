@@ -39,8 +39,9 @@ const Home = () => {
             className="hero-img"
             />
             <div className="hero-content">
-            <h1>Epsilon Nu Tau</h1>
-            <p>The Nation's First Entrepreneurship Fraternity!</p>
+            <h1>EPSILON NU TAU</h1>
+            <p>TAU CHAPTER</p>
+            <p>CORNELL UNIVERSITY</p> 
             {/*<Link to="/recruitment" className="apply-btn">
               Apply Now!
             </Link>*/}

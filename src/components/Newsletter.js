@@ -31,12 +31,9 @@ export default function Newsletter() {
         <div className="nl-hero-clip">
           <img src="images/IMG_3070.jpg" alt="ENT Newsletter" className="nl-hero-img" />
           <div className="nl-hero-content">
-            <h1>Weekly Newsletter</h1>
-            <p>Stay up to date with the latest entrepreneurship news!</p>
+            <h1>ENT NEWSLETTER</h1>
+            <p>STAY UP TO DATE WITH THE LATEST ENTREPRENEURIAL NEWS</p>
           </div>
-          <svg className="nl-hero-outline" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <polyline points="-1,85 50,100 101,85" fill="none" stroke="#d62828" strokeWidth="35" vectorEffect="non-scaling-stroke"/>
-          </svg>
         </div>
       </section>
 

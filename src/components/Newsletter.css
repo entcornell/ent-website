@@ -18,15 +18,15 @@
 .nl-hero-clip {
   position: relative;
   width: 100%;
-  height: 320px;
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+  height: 340px;
   overflow: hidden;
 }
 .nl-hero-img {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 350px;
   object-fit: cover;
-  filter: brightness(0.55);
+  object-position: 50% 50%;
+  filter: brightness(0.35);
 }
 .nl-hero-content {
   position: absolute; inset: 0;
@@ -35,13 +35,15 @@
   text-shadow: 0 0 12px rgba(0,0,0,.6);
 }
 .nl-hero-content h1 {
-  font-family: 'Kaisei Decol', serif; /* same family you used */
+  font-family: 'Kaisei Decol', serif; 
   font-weight: 700;
-  font-size: clamp(2.8rem, 5vw, 4rem);
+  font-size: clamp(3.4rem, 5vw, 4rem);
   margin: 0 0 .25rem 0;
+  letter-spacing: 0.04em;
 }
 .nl-hero-content p {
-  font-family: 'Dai Banna SIL', serif;
+  letter-spacing: 0.04em;
+  font-family: "Montserrat", system-ui, sans-serif;
   font-size: clamp(1rem, 2vw, 1.25rem);
   margin: 0;
 }

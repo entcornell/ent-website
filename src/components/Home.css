@@ -119,7 +119,7 @@
   background: white;
   padding: 0;
   margin: 0;
-  width: 100%;  /* Use 100% instead of 100vw to prevent horizontal scrolling */
+  width: 100%;  
   overflow-x: hidden;
   margin-top: 20px;
   margin-bottom: 20px;

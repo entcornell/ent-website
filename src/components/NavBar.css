@@ -26,10 +26,28 @@
 }
 
 /* DESKTOP: hover opens dropdown */
-@media (min-width: 769px) {
-  .nav-dropdown:hover .dropdown-menu {
+@media (max-width: 768px) {
+  .nav-dropdown .dropdown-menu {
     display: block;
   }
+}
+
+@media (max-width: 768px) {
+  .dropdown-menu {
+    padding-left: 1.2rem;
+    margin-top: 0.5rem;
+  }
+
+  .dropdown-menu li {
+    padding: 8px 0;
+  }
+}
+
+
+
+
+.nav-dropdown.open .dropdown-menu {
+  display: block;
 }
 
 

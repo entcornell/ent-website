@@ -39,10 +39,10 @@ const Footer = () => {
         <h4>Explore</h4>
         <ul className="footer-col-links">
             <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
             <li><a href="/recruitment">Recruitment</a></li>
-            <li><a href="/members">Members</a></li>
-            <li><a href="/who-we-are">Who We Are</a></li>
-            <li><a href="/newsletter">Newsletters</a></li>
+            <li><a href="/members">Brothers</a></li>
+            <li><a href="/newsletter">Newsletter</a></li>
         </ul>
         </nav>
 

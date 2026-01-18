@@ -10,6 +10,7 @@ import WhoWeAre from "./components/WhoWeAre";
 import NewsletterPage from "./components/NewsletterPage";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import About from "./components/About";
 import "./index.css";
 
 function Layout() {
@@ -34,6 +35,7 @@ export default function App() {
           <Route path="/members" element={<Members />} />
           <Route path="/recruitment" element={<Recruitment />} />
           <Route path="/who-we-are" element={<WhoWeAre />} />
+          <Route path="/about" element={<About />} />
         </Route>
       </Routes>
     </BrowserRouter>

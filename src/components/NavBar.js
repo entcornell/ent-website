@@ -60,13 +60,13 @@ export default function Navbar() {
           onMouseEnter={() => window.innerWidth > 768 && setAboutOpen(true)}
           onMouseLeave={() => window.innerWidth > 768 && setAboutOpen(false)}
         >
-          <button
+          <NavLink
+            to="/about"
             className="nav-link-btn"
-            onClick={() => setAboutOpen(o => !o)}
-            aria-expanded={aboutOpen}
+            onClick={closeMenu}
           >
-            ABOUT 
-          </button>
+            ABOUT
+          </NavLink>
 
           <ul className="dropdown-menu">
             <li>
@@ -86,6 +86,7 @@ export default function Navbar() {
             </li>
           </ul>
         </li>
+
 
         <li>
           <NavLink to="/recruitment" onClick={closeMenu}>

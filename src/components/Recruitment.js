@@ -34,7 +34,7 @@ const events = [
   {
     date: "Jan 27",
     title: "Speed Round Coffee Chats",
-    meta: "End of Day | Location TBD",
+    meta: "7:00 PM - 8:00 PM | Toni Morrison Multipurpose Room",
     body: "Join us for Speed Coffee Chats, a fast-paced and welcoming event where you’ll rotate through conversations with different ENT brothers and hear firsthand about their experiences in the fraternity. It’s a low-pressure, genuine way for you to ask questions, make connections, and see what makes ENT unique. At the same time, we’re excited to get to know you as an applicant beyond the résumé. We’ll also be selling assorted goods during the event, with all proceeds going toward charity. Come grab a coffee, support a good cause, and start meaningful conversations!"
   },
   {
@@ -46,7 +46,7 @@ const events = [
   {
     date: "Jan 29",
     title: "Virtual Info Session",
-    meta: "5:00 PM – 6:00 PM | Zoom Call",
+    meta: "5:00 PM – 6:00 PM | Zoom",
     tag: "Link",
     url: "https://cornell.zoom.us/j/92755337719?pwd=4IfdnGlWKKhb17uIqgET5jD4syyj90.1",
     body: "ENT information sessions are a great way to learn about the organization. You will hear about the New Member Education process, some fun brotherhood events, current projects, and club culture. Additionally, you will have the opportunity to network to current members at the conclusion of the session. This event will be on zoom!"

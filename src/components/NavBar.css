@@ -6,7 +6,11 @@
   padding: 1rem 2rem;
   background: white;
   border-bottom: 1px solid #ddd;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Montserrat", system-ui, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-weight: 700;
 }
 
 .nav-left {
@@ -17,18 +21,19 @@
 .logo-img {
   height: 30px;
   width: 100px;
-  object-fit: cover; /* Zooms in and crops if needed */
-  border-radius: 4px; /* Optional: clean rounded corners */
+  object-fit: cover;
   display: block;
 }
 
-.brand-text {
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #d62828;
-  letter-spacing: 0.5px;
+/* DESKTOP: hover opens dropdown */
+@media (min-width: 769px) {
+  .nav-dropdown:hover .dropdown-menu {
+    display: block;
+  }
 }
 
+
+/* ========== NAV LINKS ========== */
 .nav-links {
   display: flex;
   gap: 1.5rem;
@@ -37,85 +42,228 @@
   padding: 0;
 }
 
-/* li still handles spacing and layout */
 .nav-links li {
-  cursor: pointer;
-  font-size: clamp(0.9rem, 1.6vw, 1rem);
   position: relative;
+  font-size: clamp(1.2rem, 1.6vw, 1rem);
 }
 
-/* Style the actual link text */
-.nav-links li a {
+/* links */
+.nav-links a,
+.nav-links .nav-link {
   color: black;
-  text-decoration: none;  /* remove blue underline */
+  text-decoration: none;
+  cursor: pointer;
   transition: color 0.3s ease;
 }
 
-/* Hover effect */
-.nav-links li a:hover {
+.nav-links a:hover,
+.nav-links .nav-link:hover {
   color: #d62828;
 }
 
-/* Active NavLink */
-.nav-links li a.active {
+.nav-links a.active {
   color: #d62828;
   font-weight: bold;
 }
 
-/* === Hamburger button (hidden on desktop) === */
-/* Hamburger: make it a larger tap target */
+/* ========== DROPDOWN (DESKTOP) ========== */
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+
+/* hidden by default */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  background: white;
+  min-width: 180px;
+  padding: 0.4rem 0;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  z-index: 1000;
+}
+
+/* dropdown items */
+.dropdown-menu li {
+  padding: 0;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.6rem 1rem;
+  color: black;
+  font-size: 0.95rem;
+}
+
+.dropdown-menu a:hover {
+  background: #f7f7f7;
+  color: #d62828;
+}
+
+.nav-link-btn {
+  all: unset;                       
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: clamp(1.2rem, 1.6vw, 1rem);
+  color: black;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+
+.nav-link-btn:hover {
+  color: #d62828;
+}
+
+.nav-dropdown {
+  display: flex;
+  align-items: center;
+}
+
+/* SHOW DROPDOWN ONLY ON DESKTOP HOVER */
+@media (max-width: 768px) {
+  .nav-dropdown {
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    position: static;        
+    border: none;
+    background: transparent;
+    padding-left: 1.2rem;     
+    display: none;
+  }
+
+  .nav-dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-menu li {
+    padding: 10px 0;
+  }
+
+  .dropdown-menu li a {
+    font-size: 1rem;
+  }
+}
+
+
+/* ========== HAMBURGER ========== */
 .hamburger {
   display: none;
   background: transparent;
   border: 0;
-  padding: 10px;              /* bigger hit area */
+  padding: 10px;
   cursor: pointer;
   border-radius: 10px;
-  min-width: 44px;            /* recommended touch size */
+  min-width: 44px;
   min-height: 44px;
 }
+
 .hamburger .bar {
   display: block;
-  width: 28px;                /* bigger bars */
+  width: 28px;
   height: 3px;
   background: #000;
   border-radius: 2px;
   transition: transform .2s ease, opacity .2s ease;
 }
-.hamburger .bar + .bar { margin-top: 6px; }
-.hamburger.is-open .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
-.hamburger.is-open .bar:nth-child(2) { opacity: 0; }
-.hamburger.is-open .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
-/* Mobile menu (bigger + hidden by default) */
-@media (max-width: 768px) {
-  .navbar { padding: 0.85rem 1rem; }
-  .hamburger { display: block; }
-
-  /* Hide by default on mobile; only show when .open */
-  .nav-links {
-    position: fixed;
-    top: 64px;                 /* sits below navbar (adjust if navbar taller) */
-    left: 0; right: 0;
-    background: #fff;
-    border-bottom: 1px solid #eee;
-    display: none;             /* <-- prevents auto-show */
-    flex-direction: column;
-    gap: 0;                    /* we’ll use padding on li for touch size */
-    padding: 0.25rem 1rem 0.75rem;
-    z-index: 9;
-  }
-  .nav-links.open { display: flex; }
-
-  /* Bigger, easy-to-tap items */
-  .nav-links li {
-    font-size: 1.05rem;        /* larger text */
-    padding: 12px 4px;         /* vertical space = bigger tap target */
-    border-bottom: 1px solid #f1f1f1;
-  }
-  .nav-links li:last-child { border-bottom: 0; }
-  .nav-links li a { display: block; width: 100%; }
+.hamburger .bar + .bar {
+  margin-top: 6px;
 }
 
+.hamburger.is-open .bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.hamburger.is-open .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.is-open .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
 
-.navbar { position: sticky; top: 0; z-index: 1000; }
+/* ========== MOBILE MENU ========== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  /* Mobile nav container */
+  .nav-links {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: white;
+    display: none;
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+    z-index: 999;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  /* Top-level items */
+  .nav-links > li {
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  /* ABOUT button */
+  .nav-link-btn {
+    all: unset;
+    display: inline-flex;
+    align-items: center;
+    font-family: "Montserrat", system-ui, sans-serif;
+    font-size: clamp(1.2rem, 1.6vw, 1rem);
+    color: black;
+    cursor: pointer;
+    line-height: 1;
+    font-weight: 700;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link-btn:hover {
+    color: #d62828;
+  }
+
+
+  /* Dropdown menu under About */
+  .dropdown-menu {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  /* Show only when About is open */
+  .nav-dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  /* Dropdown items */
+  .dropdown-menu li {
+    padding: 6px 0;
+  }
+
+  .dropdown-menu a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #000;
+  }
+
+  .dropdown-menu a:hover {
+    color: #d62828;
+  }
+}

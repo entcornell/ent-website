@@ -3,20 +3,29 @@ import { NavLink } from 'react-router-dom';
 import './NavBar.css';
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
-  const closeMenu = () => setOpen(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
 
-  // Close the mobile menu whenever we cross back to desktop
+  const closeMenu = () => {
+    setMenuOpen(false);
+    setAboutOpen(false);
+  };
+
+  // Close menus when resizing back to desktop
   useEffect(() => {
     const onResize = () => {
-      if (window.innerWidth > 768 && open) setOpen(false);
+      if (window.innerWidth > 768) {
+        setMenuOpen(false);
+        setAboutOpen(false);
+      }
     };
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
-  }, [open]);
+  }, []);
 
   return (
     <nav className="navbar">
+      {/* LEFT LOGO */}
       <div className="nav-left">
         <img
           src={`${process.env.PUBLIC_URL}/images/ENTTransparentLogo.png`}
@@ -25,34 +34,76 @@ export default function Navbar() {
         />
       </div>
 
+      {/* HAMBURGER */}
       <button
-        className={`hamburger ${open ? 'is-open' : ''}`}
+        className={`hamburger ${menuOpen ? 'is-open' : ''}`}
         aria-label="Toggle menu"
-        aria-expanded={open}
-        aria-controls="primary-nav"
-        onClick={() => setOpen(o => !o)}
+        aria-expanded={menuOpen}
+        onClick={() => setMenuOpen(o => !o)}
       >
         <span className="bar" />
         <span className="bar" />
         <span className="bar" />
       </button>
 
-      <ul id="primary-nav" className={`nav-links ${open ? 'open' : ''}`}>
-        <li><NavLink to="/" end onClick={closeMenu}>Home</NavLink></li>
-        <li><NavLink to="/recruitment" onClick={closeMenu}>Recruitment</NavLink></li>
-        <li><NavLink to="/members" onClick={closeMenu}>Brothers</NavLink></li>
-        <li><NavLink to="/who-we-are" onClick={closeMenu}>Who We Are</NavLink></li>
-        <li><NavLink to="/newsletter" onClick={closeMenu}>Newsletter</NavLink></li>
+      {/* NAV LINKS */}
+      <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
         <li>
-          <a 
-            href="https://sbc.entcornell.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            SBC
-          </a>
+          <NavLink to="/" end onClick={closeMenu}>
+            Home
+          </NavLink>
         </li>
 
+        {/* ABOUT DROPDOWN */}
+        <li
+          className={`nav-dropdown ${aboutOpen ? 'open' : ''}`}
+          onMouseEnter={() => window.innerWidth > 768 && setAboutOpen(true)}
+          onMouseLeave={() => window.innerWidth > 768 && setAboutOpen(false)}
+        >
+          <button
+            className="nav-link-btn"
+            onClick={() => setAboutOpen(o => !o)}
+            aria-expanded={aboutOpen}
+          >
+            About 
+          </button>
+
+          <ul className="dropdown-menu">
+            <li>
+              <NavLink to="/who-we-are" onClick={closeMenu}>
+                Who We Are
+              </NavLink>
+            </li>
+            <li>
+              <a
+                href="https://sbc.entcornell.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeMenu}
+              >
+                SBC
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <NavLink to="/recruitment" onClick={closeMenu}>
+            Recruitment
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink to="/members" onClick={closeMenu}>
+            Brothers
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink to="/newsletter" onClick={closeMenu}>
+            Newsletter
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );

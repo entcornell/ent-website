@@ -50,7 +50,7 @@ export default function Navbar() {
       <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
         <li>
           <NavLink to="/" end onClick={closeMenu}>
-            Home
+            HOME
           </NavLink>
         </li>
 
@@ -65,13 +65,13 @@ export default function Navbar() {
             onClick={() => setAboutOpen(o => !o)}
             aria-expanded={aboutOpen}
           >
-            About 
+            ABOUT 
           </button>
 
           <ul className="dropdown-menu">
             <li>
               <NavLink to="/who-we-are" onClick={closeMenu}>
-                Who We Are
+                WHO WE ARE
               </NavLink>
             </li>
             <li>
@@ -89,19 +89,19 @@ export default function Navbar() {
 
         <li>
           <NavLink to="/recruitment" onClick={closeMenu}>
-            Recruitment
+            RECRUITMENT
           </NavLink>
         </li>
 
         <li>
           <NavLink to="/members" onClick={closeMenu}>
-            Brothers
+            BROTHERS
           </NavLink>
         </li>
 
         <li>
           <NavLink to="/newsletter" onClick={closeMenu}>
-            Newsletter
+            NEWSLETTER
           </NavLink>
         </li>
       </ul>

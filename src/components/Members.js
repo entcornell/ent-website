@@ -223,14 +223,12 @@ export default function Members() {
 
       <main className="m-container">
         {/* E-BOARD */}
-        <h2 className="m-section-title">E-Board</h2>
+        <h2 className="m-section-title">EXECUTIVE BOARD</h2>
         <div className="m-card-grid">
           {eboard.map((m, i) => (
             <MemberCard key={`e-${i}`} {...m} showRole />
           ))}
         </div>
-
-        <hr className="m-divider" />
 
         {/* BROTHERHOOD */}
         <h2 className="m-section-title">Brotherhood</h2>

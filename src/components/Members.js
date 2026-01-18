@@ -216,7 +216,7 @@ export default function Members() {
 
         <div className="members-hero-content">
           <h1>BROTHERS</h1>
-          <p>Get to know all of our wonderful members</p>
+          <p>GET TO KNOW OUR BROTHERHOOD</p>
         </div>
       </section>
 

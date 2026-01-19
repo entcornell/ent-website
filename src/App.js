@@ -1,6 +1,6 @@
 // App.jsx
 import React from "react";
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet, Navigate } from "react-router-dom";
 
 import Home from "./components/Home";
 import Newsletter from "./components/Newsletter";
@@ -33,6 +33,7 @@ export default function App() {
           <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/newsletter/:id" element={<NewsletterPage />} />
           <Route path="/brothers" element={<Brothers />} />
+          <Route path="/members" element={<Navigate to="/brothers" replace />} />
           <Route path="/recruitment" element={<Recruitment />} />
           <Route path="/studentVentures" element={<StudentVentures />} />
           <Route path="/about" element={<About />} />

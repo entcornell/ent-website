@@ -75,14 +75,9 @@ export default function Navbar() {
               </NavLink>
             </li>
             <li>
-              <a
-                href="https://sbc.entcornell.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={closeMenu}
-              >
+              <NavLink to="/SBC" onClick={closeMenu}>
                 SBC
-              </a>
+              </NavLink>
             </li>
           </ul>
         </li>

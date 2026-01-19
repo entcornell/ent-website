@@ -7,6 +7,7 @@ import Newsletter from "./components/Newsletter";
 import Brothers from "./components/Brothers";
 import Recruitment from "./components/Recruitment";
 import StudentVentures from "./components/StudentVentures";
+import SBC from "./components/SBC";
 import NewsletterPage from "./components/NewsletterPage";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
@@ -37,6 +38,7 @@ export default function App() {
           <Route path="/recruitment" element={<Recruitment />} />
           <Route path="/studentVentures" element={<StudentVentures />} />
           <Route path="/about" element={<About />} />
+          <Route path="/SBC" element={<SBC />} />
         </Route>
       </Routes>
     </BrowserRouter>

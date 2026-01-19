@@ -24,7 +24,6 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
   filter: brightness(0.55);
   object-position: center 35%;
 }
@@ -50,110 +49,133 @@ body {
 /* ============================= */
 
 .student-ventures {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 2.5rem 2rem;
+  padding: 3rem 2rem;
 }
 
-/* GRID */
+/* ============================= */
+/* GRID                          */
+/* ============================= */
 
 .student-ventures-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 36px;
 }
 
-/* CARD */
+/* ============================= */
+/* CARD                          */
+/* ============================= */
 
 .venture-card {
-  display: flex;
-  gap: 20px;
-  padding: 18px;
   background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.15);
+}
+
+/* Title across top */
+.venture-title {
+  margin: 0 0 30px;
+  text-align: center;
+  font-family: "Kaisei Decol", serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+/* ============================= */
+/* ROW: image left / content right */
+/* ============================= */
+
+.venture-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
   align-items: center;
 }
 
-/* LEFT IMAGE */
-
+/* Image */
 .venture-left {
-  flex: 0 0 110px;   
-  aspect-ratio: 1 / 1;
-  border-radius: 12px;
+  width: 100%;
+  border-radius: 10px;
   overflow: hidden;
+  background: #f2f2f2;
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.15);
 }
-
 
 .venture-img {
   width: 100%;
-  height: 100%;
+  height: 250px;
   object-fit: cover;
   display: block;
 }
 
-/* RIGHT CONTENT */
-
+/* Right content */
 .venture-right {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  padding: 0 6px;
 }
 
-.venture-right h3 {
+.venture-desc {
   margin: 0;
-  font-family: 'Kaisei Opti', serif;
-  font-size: 1.3rem;
-  font-weight: 800;
+  font-family: "Dai Banna SIL", serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #222;
+  max-width: 280px;
 }
 
-.venture-right p {
-  margin: 0;
-  font-family: 'Dai Banna SIL', serif;
-  font-size: 0.95rem;
-  line-height: 1.45;
-  color: #333;
-}
-
-/* BUTTON */
-
+/* Button */
 .venture-btn {
-  align-self: flex-start;
-  margin-top: 6px;
+  display: inline-block;
   background: #d62828;
   color: white;
-  padding: 8px 18px;
+  padding: 12px 30px;
   border-radius: 999px;
-  font-family: 'Kaisei Opti', serif;
+  font-family: "Kaisei Decol", serif;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 1.05rem;
   text-decoration: none;
-  transition: background 0.2s ease, transform 0.1s ease;
+  transition: transform 0.15s ease, background 0.2s ease;
 }
 
 .venture-btn:hover {
   background: #b81f1f;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
-/* RESPONSIVE */
+/* Founder line */
+.venture-founder {
+  margin: 6px 0 0;
+  font-family: "Kaisei Decol", serif;
+  font-size: 1.05rem;
+  color: #111;
+}
+
+.venture-founder span {
+  font-weight: 700;
+}
+
+/* ============================= */
+/* MOBILE                         */
+/* ============================= */
 
 @media (max-width: 900px) {
   .student-ventures-grid {
     grid-template-columns: 1fr;
   }
 
-  .venture-card {
-    flex-direction: column;
-    text-align: center;
+  .venture-row {
+    grid-template-columns: 1fr;
   }
 
-  .venture-left {
-    width: 140px;
-  }
-
-  .venture-btn {
-    align-self: center;
+  .venture-img {
+    height: 280px;
   }
 }

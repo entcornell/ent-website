@@ -25,28 +25,40 @@ export default function StudentVentures() {
       <main className="student-ventures">
         <div className="student-ventures-grid">
           {studentventures.map((v, i) => (
-            <article className="venture-card">
-              <div className="venture-left">
-                <img
-                  src={v.img}
-                  alt={v.title}
-                  className="venture-img"
-                  loading="lazy"
-                />
-              </div>
+            <article className="venture-card" key={i}>
+              {/* Title */}
+              <h2 className="venture-title">{v.title}</h2>
 
-              <div className="venture-right">
-                <h3>{v.title}</h3>
-                <p>{v.desc}</p>
+              {/* Left image + right content */}
+              <div className="venture-row">
+                <div className="venture-left">
+                  <img
+                    src={v.img}
+                    alt={v.title}
+                    className="venture-img"
+                    loading="lazy"
+                  />
+                </div>
 
-                <a
-                  href={v.link}
-                  className="venture-btn"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Check it out
-                </a>
+                <div className="venture-right">
+                  <p className="venture-desc">{v.desc}</p>
+
+                  <a
+                    href={v.link}
+                    className="venture-btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Learn More
+                  </a>
+
+                  {/* Optional: show founder if it exists in data */}
+                  {v.founder && (
+                    <p className="venture-founder">
+                      Founder: <span>{v.founder}</span>
+                    </p>
+                  )}
+                </div>
               </div>
             </article>
           ))}

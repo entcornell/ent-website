@@ -70,6 +70,11 @@ export default function Navbar() {
 
           <ul className="dropdown-menu">
             <li>
+              <NavLink to="/Values" onClick={closeMenu}>
+                Values
+              </NavLink>
+            </li>
+            <li>
               <NavLink to="/studentVentures" onClick={closeMenu}>
                 STUDENT VENTURES
               </NavLink>

@@ -1,0 +1,117 @@
+/* ============================= */
+/* RESET                         */
+/* ============================= */
+* {
+  box-sizing: border-box;
+}
+
+.values-page {
+  background: #fff;
+  color: #111;
+}
+
+/* ============================= */
+/* HERO                          */
+/* ============================= */
+.values-hero {
+  position: relative;
+
+  /* IMPORTANT:
+     makes hero full width even if your page has padding containers */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+
+  height: 260px;
+  overflow: hidden;
+}
+
+.values-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* move image up/down */
+  object-position: center 45%;
+
+  filter: brightness(0.55);
+  display: block;
+}
+
+.values-hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.values-hero-overlay h1 {
+  margin: 0;
+  color: white;
+  font-family: "Kaisei Decol", serif;
+  font-size: clamp(3.5rem, 8vw, 5.5rem);
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-align: center;
+  text-shadow: 0 0 18px rgba(0, 0, 0, 0.55);
+}
+
+/* ============================= */
+/* MAIN CONTENT                  */
+/* ============================= */
+.values-main {
+  min-height: 70vh;
+  padding: 5rem 2rem 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* the 2x2 layout */
+.values-grid {
+  width: min(900px, 100%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  /* huge whitespace like screenshot */
+  gap: 110px 240px;
+
+  justify-items: center;
+  align-items: center;
+}
+
+/* each value word */
+.value-item {
+  font-family: "Kaisei Opti", serif;
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  font-weight: 500;
+  color: #111;
+}
+
+/* ============================= */
+/* RESPONSIVE                    */
+/* ============================= */
+@media (max-width: 900px) {
+  .values-grid {
+    gap: 90px 120px;
+  }
+}
+
+@media (max-width: 600px) {
+  .values-hero {
+    height: 220px;
+  }
+
+  .values-main {
+    padding: 3.2rem 1.4rem 4.2rem;
+  }
+
+  /* stack into 1 column on mobile */
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .value-item {
+    font-size: 1.4rem;
+  }
+}

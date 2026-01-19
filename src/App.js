@@ -12,6 +12,7 @@ import NewsletterPage from "./components/NewsletterPage";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import About from "./components/About";
+import Values from "./components/Values";
 import "./index.css";
 
 function Layout() {
@@ -39,6 +40,7 @@ export default function App() {
           <Route path="/studentVentures" element={<StudentVentures />} />
           <Route path="/about" element={<About />} />
           <Route path="/SBC" element={<SBC />} />
+          <Route path="/Values" element={<Values />} />
         </Route>
       </Routes>
     </BrowserRouter>

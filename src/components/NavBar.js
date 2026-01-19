@@ -71,7 +71,7 @@ export default function Navbar() {
           <ul className="dropdown-menu">
             <li>
               <NavLink to="/Values" onClick={closeMenu}>
-                Values
+                VALUES
               </NavLink>
             </li>
             <li>

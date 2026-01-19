@@ -17,7 +17,7 @@ export default function Values() {
           className="values-hero-img"
         />
         <div className="values-hero-overlay">
-          <h1>Values</h1>
+          <h1>VALUES</h1>
         </div>
       </section>
 

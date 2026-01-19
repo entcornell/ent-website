@@ -21,7 +21,7 @@ export default function About() {
       {/* ===== HERO ===== */}
       <section className="about-hero">
         <img
-          src="images/IMG_3070.jpg"
+          src="images/AboutBackground.jpg"
           alt="About ENT"
           className="about-hero-img"
         />

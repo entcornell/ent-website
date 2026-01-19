@@ -17,7 +17,7 @@ export default function StudentVentures() {
           className="ventures-hero-img"
         />
         <div className="ventures-hero-overlay">
-          <h1>Student Ventures</h1>
+          <h1>STUDENT VENTURES</h1>
         </div>
       </section>
 

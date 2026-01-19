@@ -50,10 +50,11 @@
 /* PAGE CONTAINER                */
 /* ============================= */
 .values-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 40px 80px;
+  width: 100%;
+  margin: 0;
+  padding: 60px 0 80px;
 }
+
 
 /* ============================= */
 /* SECTION HEADER                */
@@ -63,11 +64,15 @@
 }
 
 .value-header {
+  max-width: 1200px;
+  margin: 0 auto 18px;
+  padding: 0 40px;
+
   display: flex;
   align-items: baseline;
   gap: 18px;
-  margin-bottom: 18px;
 }
+
 
 .value-title {
   margin: 0;
@@ -96,10 +101,18 @@
 /* GALLERY GRID                  */
 /* ============================= */
 .value-gallery {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+
+  padding-right: 40px;
+  padding-left: 40px;
+
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 14px;
 }
+
 
 /* images */
 .value-gallery img {

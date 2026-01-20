@@ -200,26 +200,6 @@ const Home = () => {
                 name: "Brooke Wilcox",
                 img: "headshots/BrookeWilcox-Headshot.jpeg",
               },
-              {
-                role: "Website Coordinator",
-                name: "Neha Patil",
-                img: "headshots-fall2025/NehaPatil-Headshot.png",
-              },
-              {
-                role: "Website Coordinator",
-                name: "Shannon Lin",
-                img: "headshots-fall2025/ShannonLin-Headshot.jpeg",
-              },
-              {
-                role: "Director of Alumni Relations",
-                name: "Kyan Rosenthal",
-                img: "headshots-fall2025/KyanRosenthal-Headshot.jpg",
-              },
-              {
-                role: "Sponsorships Coordinator",
-                name: "Finn Clancy",
-                img: "headshots-fall2025/FinnClancy-Headshot.jpg",
-              },
             ].map((member, index) => (
               <div className="member-card" key={index}>
                 <img src={member.img} alt={member.role} />

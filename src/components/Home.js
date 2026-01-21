@@ -94,7 +94,7 @@ const Home = () => {
         <div className="home-stats-inner">
           <div className="home-stat">
             <div className="home-stat-text">
-              <div className="home-stat-num">30+</div>
+              <div className="home-stat-num">50+</div>
               <div className="home-stat-label">Active Members</div>
             </div>
           </div>
@@ -112,7 +112,7 @@ const Home = () => {
 
           <div className="home-stat">
             <div className="home-stat-text">
-              <div className="home-stat-num">10+</div>
+              <div className="home-stat-num">30+</div>
               <div className="home-stat-label">Student Ventures</div>
             </div>
           </div>

@@ -16,13 +16,13 @@ const events = [
   {
     date: "Jan 24",
     title: "Freshman Only Info Session",
-    meta: "1:00 PM – 2:00 PM | Location TBD",
+    meta: "1:00 PM – 2:00 PM | RPCC 205",
     body: "ENT information sessions are a great way to learn about the organization. You will hear about the New Member Education process, some fun brotherhood events, current projects, and club culture. Additionally, you will have the opportunity to network to current members at the conclusion of the session. This event is for freshmen only!"
   },
   {
     date: "Jan 25",
     title: "Club Fest",
-    meta: "12:00 PM – 4:30 PM | Barton Hall",
+    meta: "12:00 PM – 1:30 PM | Barton Hall",
     body: "Find the ENT booth at Club Fest and speak to our current members to learn more about what makes the organization special!"
   },
   {
@@ -54,7 +54,7 @@ const events = [
   {
     date: "Jan 30",
     title: "ENT Trivia Night",
-    meta: "7:00 PM – 9:00 PM | Location TBD",
+    meta: "7:00 PM – 9:00 PM | Ehub 3rd Floor",
     body: "ENT places a strong emphasis on community and brotherhood events. Join us for a jeopardy style trivia night, where potential applicants will team up with current members to answer ENT and entrepreneurship themed questions. Get ready for some fun!"
   },
   {

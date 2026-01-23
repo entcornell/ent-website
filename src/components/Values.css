@@ -207,6 +207,11 @@
   grid-row: span 1;
 }
 
+.value-gallery img:nth-child(17) {
+  grid-column: span 8;
+  grid-row: span 1;
+}
+
 /* ============================= */
 /* MOBILE RESPONSIVE             */
 /* ============================= */

@@ -90,7 +90,7 @@ const brotherhood = [
   {
     className: "Lambda Class",
     members: [
-      {name: "Noor Dewood", email: "nnd26@cornell.edu", year: "2028", major: "Chemical Engineering", involvement: "ChemE Car, Laidlaw Program, ISA", hobbies: "Cooking, quilling, astronomy, and pilates", image: "headshots-fall2025/NoorAbdulla-Headshot.jpg", style: {objectPosition: "center 35%"} },
+      {name: "Noor Dewood", email: "nnd26@cornell.edu", year: "2028", major: "Materials Science & Engineering/Physics", involvement: "ChemE Car, Laidlaw Program, ISA", hobbies: "Cooking, quilling, astronomy, and pilates", image: "headshots-fall2025/NoorAbdulla-Headshot.jpg", style: {objectPosition: "center 35%"} },
       {name: "Mahin Hardaway", email: "mh2584@cornell.edu", year: "2028", major: "Hotel Administration & Hospitality", involvement: "Mosaic Hospitality Association, Diverse Leaders for Tomorrow, Cornell Rock Climbing Club", hobbies: "Baking, Running, Computer Science, Social Consulting", image: "headshots-fall2025/MahinHardaway-Headshot.jpg", style: {objectPosition: "center 30%"} },
       {name: "Finn Clancy", email: "fac49@cornell.edu", year: "2027", major: "Biology & Society/Entrepreneurship", involvement: "ENT, Reis Tennis Center, Biotech off Campus Job", hobbies: "Tennis, Traveling, Weightlifting, Cooking, and Collecting Coins", image: "headshots-fall2025/FinnClancy-Headshot.jpg", extra: "Sponsorships Coordinator", style: {objectPosition: "center 30%"}},
       {name: "Marcus Lotufo", email: "mdl274@cornell.edu", year: "2027", major: "Mechanical Engineering", involvement: "CUBMD, Cornell Maker Club", hobbies: "Guitar, Spikeball", image: "headshots-fall2025/MarcusLotufo-Headshot.jpg", style: {objectPosition: "center 20%"}},

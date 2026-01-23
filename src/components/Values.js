@@ -53,7 +53,7 @@ export default function Values() {
             <img src="images/b14.png" alt="Brotherhood 14" />
             <img src="images/b15.png" alt="Brotherhood 15" />
             <img src="images/b16.png" alt="Brotherhood 16" />
-            <img src="images/b17.jpeg" alt="Brotherhood 17" />
+            <img src="images/b17.png" alt="Brotherhood 17" />
           </div>
         </section>
 
@@ -97,7 +97,7 @@ export default function Values() {
           <div className="value-gallery">
             <img src="images/p1.png" alt="Passion 1" />
             <img src="images/p2.png" alt="Passion 2" />
-            <img src="images/p3.jpeg" alt="Passion 3" />
+            <img src="images/p3.png" alt="Passion 3" />
           </div>
         </section>
 

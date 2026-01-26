@@ -60,7 +60,7 @@ const events = [
   {
     date: "Jan 31",
     title: "ENT Professional Headshots",
-    meta: "Time TBD | Location TBD",
+    meta: "11:00 AM - 1:00 PM | Zeus Atrium (Goldwin Smith Hall)",
     body: "This is your opportunity to get your professional headshot for club, or even job applications. Our experienced photographer will take individual, high quality, and professional photos for each person. You will also have the opportunity to speak to our E-board and current members at this event."
   }
 ];

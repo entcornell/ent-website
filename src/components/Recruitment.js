@@ -27,9 +27,11 @@ const events = [
   },
   {
     date: "Jan 26",
-    title: "In-Person Info Session",
-    meta: "7:00 PM – 8:00 PM | Location TBD",
-    body: "ENT information sessions are a great way to learn about the organization. You will hear about the New Member Education process, some fun brotherhood events, current projects, and club culture. Additionally, you will have the opportunity to network to current members at the conclusion of the session. This event is open to anyone!"
+    title: "Virtual Info Session",
+    meta: "7:00 PM – 8:00 PM | Zoom",
+    tag: "Link",
+    url: "https://cornell.zoom.us/j/92755337719?pwd=4IfdnGlWKKhb17uIqgET5jD4syyj90.1",
+    body: "ENT information sessions are a great way to learn about the organization. You will hear about the New Member Education process, some fun brotherhood events, current projects, and club culture. Additionally, you will have the opportunity to network to current members at the conclusion of the session. This event will be on zoom!"
   },
   {
     date: "Jan 27",
@@ -43,13 +45,11 @@ const events = [
     meta: "11:30 AM – 2:00 PM | Willard Straight Hall",
     body: "Find the ENT booth at the PFC club fair and speak to our current members to learn more about what makes the organization special!"
   },
-  {
+    {
     date: "Jan 29",
-    title: "Virtual Info Session",
-    meta: "5:00 PM – 6:00 PM | Zoom",
-    tag: "Link",
-    url: "https://cornell.zoom.us/j/92755337719?pwd=4IfdnGlWKKhb17uIqgET5jD4syyj90.1",
-    body: "ENT information sessions are a great way to learn about the organization. You will hear about the New Member Education process, some fun brotherhood events, current projects, and club culture. Additionally, you will have the opportunity to network to current members at the conclusion of the session. This event will be on zoom!"
+    title: "In-Person Info Session",
+    meta: "5:00 PM – 6:00 PM | Location TBD",
+    body: "ENT information sessions are a great way to learn about the organization. You will hear about the New Member Education process, some fun brotherhood events, current projects, and club culture. Additionally, you will have the opportunity to network to current members at the conclusion of the session. This event is open to anyone!"
   },
   {
     date: "Jan 30",

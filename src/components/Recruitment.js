@@ -167,7 +167,7 @@ export default function Recruitment() {
             </div>
 
             <div className="event-meta-row">
-              <p className="round-meta">Google Form | Due 11:59 PM</p>
+              <p className="round-meta">Google Form | Due 5:00 PM</p>
 
               <a
                 href="https://docs.google.com/forms/d/14UPJM5gJgw-MRswDzIkA-Fvx2ZhP_NSxN0mcyT3Mx80/viewform?edit_requested=true"

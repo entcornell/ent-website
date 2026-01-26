@@ -168,13 +168,17 @@ export default function Recruitment() {
 
             <div className="event-meta-row">
               <p className="round-meta">Google Form | Due 11:59 PM</p>
+
+              <a
+                href="https://docs.google.com/forms/d/14UPJM5gJgw-MRswDzIkA-Fvx2ZhP_NSxN0mcyT3Mx80/viewform?edit_requested=true"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="event-tag"
+              >
+                Apply
+              </a>
             </div>
 
-            {openRoundIndex === 0 && (
-              <div className="event-body">
-                Show us who you really are by creating a 90-second video and answering quick short-answer questions. Why should you be in ENT?
-              </div>
-            )}
           </div>
         </div>
 

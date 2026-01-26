@@ -13,9 +13,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      {/* ============================= */}
-      {/* HERO (DO NOT CHANGE)          */}
-      {/* ============================= */}
+      {/* HERO (DO NOT CHANGE) */}
       <section className="hero">
         <div className="hero-clip">
           <img src="images/homeBackground.jpg" alt="Hero" className="hero-img" />
@@ -26,12 +24,12 @@ const Home = () => {
             <p>CORNELL UNIVERSITY</p>
 
             <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSf-EoEUt3dYzgIAwHIrbdUCrytN7kEYjrvIrOwETft5kgB07g/viewform"
+              href="https://docs.google.com/forms/d/14UPJM5gJgw-MRswDzIkA-Fvx2ZhP_NSxN0mcyT3Mx80/viewform?edit_requested=true"
               target="_blank"
               rel="noopener noreferrer"
               className="apply-btn"
             >
-              Coffee Chat Form Open
+              Applications are OPEN!
             </a>
           </div>
 

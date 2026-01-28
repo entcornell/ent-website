@@ -39,17 +39,17 @@ const events = [
     meta: "6:00 PM - 7:30 PM | Toni Morrison Multipurpose Room",
     body: "Join us for Speed Coffee Chats, a fast-paced and welcoming event where you’ll rotate through conversations with different ENT brothers and hear firsthand about their experiences in the fraternity. It’s a low-pressure, genuine way for you to ask questions, make connections, and see what makes ENT unique. At the same time, we’re excited to get to know you as an applicant beyond the résumé. We’ll also be selling assorted goods during the event, with all proceeds going toward charity. Come grab a coffee, support a good cause, and start meaningful conversations!"
   },
-  {
-    date: "Jan 28",
-    title: "Professional Fraternity Council Club Fair",
-    meta: "11:30 AM – 2:00 PM | Willard Straight Hall",
-    body: "Find the ENT booth at the PFC club fair and speak to our current members to learn more about what makes the organization special!"
-  },
     {
     date: "Jan 29",
     title: "In-Person Info Session",
     meta: "5:00 PM – 6:00 PM | Location TBD",
     body: "ENT information sessions are a great way to learn about the organization. You will hear about the New Member Education process, some fun brotherhood events, current projects, and club culture. Additionally, you will have the opportunity to network to current members at the conclusion of the session. This event is open to anyone!"
+  },
+  {
+    date: "Jan 29",
+    title: "SEGC X ENT Diverse Pathways in Business Panel",
+    meta: "6:00 PM – 7:00 PM | Warren B75",
+    body: "Description TBD"
   },
   {
     date: "Jan 30",

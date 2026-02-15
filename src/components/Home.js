@@ -163,7 +163,7 @@ const Home = () => {
               {
                 role: "VP Professional Events",
                 name: "Alix Martini",
-                img: "headshots/default-icon.jpg",
+                img: "headshots-fall2025/AlixMartini-Headshot.jpg",
               },
               {
                 role: "VP Finance",

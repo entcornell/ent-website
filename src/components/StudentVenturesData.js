@@ -1,5 +1,33 @@
 export const studentventures = [
                 {
+                title: "Sadie Bea Cakes",
+                desc: "Independently founded bespoke cake studio specializing in festive, made-to-order cakes. Rooted in hospitality and the idea that every day deserves something worth celebrating.",
+                img: "studentbusinesses/SadieBeaCakes.png",
+                link: "https://www.instagram.com/sadiebeacakes?igsh=MXhlbGZhbTRka3pjOQ==",
+                founder: "Sadie Schnierow"
+                },
+                {
+                title: "Clark",
+                desc: "Clark is a smart briefing platform that tracks the topics you care about, distills what’s important, and pushes real-time notifications so you’re always on top of news that affects you. It filters the noise, delivers concise impact-first summaries, and gives you the truth.",
+                img: "studentbusinesses/Clark.png",
+                link: "https://monitoringthesituation.ai/accounts/login/?next=/home/new_conversation",
+                founder: "Julius Behner"
+                },
+                {
+                title: "Stride",
+                desc: "Stride is a women’s reflective athletic apparel brand designing sleek, safety-focused outerwear that empowers women to run independently and confidently. We are currently developing our first reflective vest collection and planning to launch in the near future.",
+                img: "studentbusinesses/StrideBlue.JPG",
+                link: "https://www.instagram.com/striderunningcompany?igsh=MXFpY2p5aG0yb2x2NQ==",
+                founder: "Brooke Wilcox"
+                },
+                {
+                title: "Nishijin-Ori Mari",
+                desc: "Nishijin-Ori Mari is a small entrepreneurial venture I started 6 years ago that modernized traditional Japanese textiles. It uses authentic Nishijin-ori fabric from Kyoto to create contemporary, travel-friendly accessories and souvenirs. The goal is to preserve cultural craftsmanship while making it accessible to a global audience through tourism-focused retail.",
+                img: "studentbusinesses/Nishijin-Ori Mari.jpeg",
+                link: "https://rinn-premium.com/nishijinorikomono-mari/",
+                founder: "Mariko Mita"
+                },
+                {
                 title: "Ellie Grace",
                 desc: "Sustainable handmade clothing and accessories brand rooted in timelessness, elegance, and femininity.",
                 img: "studentbusinesses/EllieGrace.png",

@@ -23,6 +23,7 @@ const Home = () => {
             <p>TAU CHAPTER</p>
             <p>CORNELL UNIVERSITY</p>
 
+            {/*
             <a
               href="https://docs.google.com/forms/d/14UPJM5gJgw-MRswDzIkA-Fvx2ZhP_NSxN0mcyT3Mx80/viewform?edit_requested=true"
               target="_blank"
@@ -31,6 +32,7 @@ const Home = () => {
             >
               Applications are OPEN!
             </a>
+            */}
           </div>
 
           {/* Red Chevron Outline */}

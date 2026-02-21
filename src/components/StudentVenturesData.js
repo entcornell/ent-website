@@ -67,6 +67,6 @@ export const studentventures = [
                 desc: "Pitch is a music platform for emerging artists where they post 15 to 30 second clips, fans boost the talent they believe in and get the chance to collaborate, turning real support into visibility and growth.",
                 img: "studentbusinesses/Pitch.png",
                 link: "https://pitch-your-sound.lovable.app/",
-                founder: "Shannon Lin and Ewan Moss"
+                founder: "Shannon Lin/Ewan Moss"
                 }
             ]

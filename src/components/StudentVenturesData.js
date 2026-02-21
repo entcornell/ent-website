@@ -54,5 +54,19 @@ export const studentventures = [
                 img: "studentbusinesses/AfritripAdvisors.png",
                 link: "https://www.afritripmorocco.com/",
                 founder: "Ghali Jorio"
+                },
+                {
+                title: "BUZZ",
+                desc: "A platform to connect consumer brands to college student organizations (like greek life, athletic teams, clubs) to run authentic student-led marketing events at scale, on campuses across the U.S. ",
+                img: "studentbusinesses/Buzz.png",
+                link: "https://www.bringthebuzzover.com/",
+                founder: "Melissa Chowdhury"
+                },
+                {
+                title: "Pitch",
+                desc: "Pitch is a music platform for emerging artists where they post 15 to 30 second clips, fans boost the talent they believe in and get the chance to collaborate, turning real support into visibility and growth.",
+                img: "studentbusinesses/Pitch.png",
+                link: "https://pitch-your-sound.lovable.app/",
+                founder: "Shannon Lin and Ewan Moss"
                 }
             ]

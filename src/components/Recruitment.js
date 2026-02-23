@@ -83,6 +83,7 @@ export default function Recruitment() {
         <img src="/images/recruitmentheader.png" alt="Recruitment Header" />
         <h1>SPRING 2026</h1>
         <h2>RECRUITMENT</h2>
+        <h3>Spring 2026 recruitment has ended, check back for Fall 2027 recruitment!</h3>
       </section>
 
       {/* ===== EVENTS TIMELINE ===== */}

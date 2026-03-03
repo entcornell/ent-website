@@ -28,6 +28,48 @@ export const studentventures = [
                 founder: "Mariko Mita"
                 },
                 {
+                title: "BUZZ",
+                desc: "A platform to connect consumer brands to college student organizations (like greek life, athletic teams, clubs) to run authentic student-led marketing events at scale, on campuses across the U.S. ",
+                img: "studentbusinesses/Buzz.png",
+                link: "https://www.bringthebuzzover.com/",
+                founder: "Melissa Chowdhury"
+                },
+                {
+                title: "Pitch",
+                desc: "Pitch is a music platform for emerging artists where they post 15 to 30 second clips, fans boost the talent they believe in and get the chance to collaborate, turning real support into visibility and growth.",
+                img: "studentbusinesses/Pitch.png",
+                link: "https://pitch-your-sound.lovable.app/",
+                founder: "Shannon Lin/Ewan Moss"
+                },
+                {
+                title: "DishPlay",
+                desc: "DishPlay helps restaurants turn their menus into a growth engine. Using simple food photos, DishPlay creates high-quality visual menus used across QR codes, NFC taps, WhatsApp Business, and social media, helping customers decide faster and restaurants sell more.",
+                img: "studentbusinesses/DishPlay.png",
+                link: "http://www.dishplay.ai",
+                founder: "Sebastian Dominguez"
+                },
+                {
+                title: "SmartSip",
+                desc: "I’m building SmartSip an autonomous and continuous patch that tracks the water level in your body for medical patients. The patch relays the information into an app on your phone, creating metrics that can be sent directly to clinicians. ",
+                img: "studentbusinesses/SmartSip.png",
+                link: "",
+                founder: "Diya Sheth"
+                },
+                {
+                title: "Ava Grace Sannino Jazz Bar",
+                desc: "A one of a kind jazz bar experience that blends intimate live music with award-winning wines.",
+                img: "studentbusinesses/AvaSanninoVineyard.JPG",
+                link: "SanninoVineyard.com",
+                founder: "Ava Grace Sannino"
+                },
+                {
+                title: "AnchorSmart",
+                desc: "AnchorSmart is a digital mooring reservation platform. Lets sailors view and book available buoys in real time and modernizes payments and occupancy management for bay operators. AnchorSmart creates a safer and more efficient coastal sailing experience.",
+                img: "studentbusinesses/AnchorSmart.png",
+                link: "https://anchor-smart-sea.lovable.app/",
+                founder: "Alix Martini"
+                },
+                {
                 title: "Ellie Grace",
                 desc: "Sustainable handmade clothing and accessories brand rooted in timelessness, elegance, and femininity.",
                 img: "studentbusinesses/EllieGrace.png",
@@ -55,18 +97,4 @@ export const studentventures = [
                 link: "https://www.afritripmorocco.com/",
                 founder: "Ghali Jorio"
                 },
-                {
-                title: "BUZZ",
-                desc: "A platform to connect consumer brands to college student organizations (like greek life, athletic teams, clubs) to run authentic student-led marketing events at scale, on campuses across the U.S. ",
-                img: "studentbusinesses/Buzz.png",
-                link: "https://www.bringthebuzzover.com/",
-                founder: "Melissa Chowdhury"
-                },
-                {
-                title: "Pitch",
-                desc: "Pitch is a music platform for emerging artists where they post 15 to 30 second clips, fans boost the talent they believe in and get the chance to collaborate, turning real support into visibility and growth.",
-                img: "studentbusinesses/Pitch.png",
-                link: "https://pitch-your-sound.lovable.app/",
-                founder: "Shannon Lin/Ewan Moss"
-                }
             ]

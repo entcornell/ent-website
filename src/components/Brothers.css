@@ -192,3 +192,55 @@
   }
 }
 
+/* ============================= */
+/* MOBILE PATCH (keeps desktop same) */
+/* ============================= */
+
+@media (max-width: 640px) {
+  /* tighter page padding */
+  .m-container {
+    padding: 1.1rem 1.1rem 2.5rem;
+  }
+
+  /* fix hero height on mobile (your current .m-hero-clip rule doesn't apply) */
+  .members-hero-img {
+    height: 220px;
+    object-position: 50% 25%;
+  }
+
+  /* prevent huge hero title on phones */
+  .members-hero-content h1 {
+    font-size: clamp(2.2rem, 9vw, 3rem);
+    line-height: 1.05;
+  }
+
+  .members-hero-content p {
+    font-size: 1.05rem;
+    padding: 0 1rem;
+  }
+
+  /* keep section title from feeling oversized */
+  .m-section-title {
+    font-size: 1.6rem;
+    height: 3.6rem;
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  /* prevent long names/emails from overflowing */
+  .m-name,
+  .m-line,
+  .m-email-line {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  /* card image slightly shorter so card isn't enormous */
+  .m-card {
+    grid-template-rows: 220px auto;
+  }
+  .m-card-media img {
+    height: 220px;
+  }
+}
+

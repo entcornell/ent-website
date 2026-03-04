@@ -252,3 +252,29 @@
     height: 150px;
   }
 }
+
+/* ============================= */
+/* PHONE PATCH (keeps desktop same) */
+/* ============================= */
+@media (max-width: 520px) {
+  /* prevent tiny sideways scroll from 100vw full-bleed math */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* tighten header padding on phones */
+  .value-header {
+    padding: 0 16px;
+  }
+
+  /* make the full-bleed gallery not feel squeezed */
+  .value-gallery {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* allow tags to wrap nicely without forcing overflow */
+  .value-tags span {
+    white-space: normal;
+  }
+}

@@ -141,3 +141,42 @@
     text-align: left;
   }
 }
+
+/* ============================= */
+/* PHONE PATCH (keeps desktop same) */
+/* ============================= */
+@media (max-width: 520px) {
+  /* prevent tiny sideways scroll from negative logo margin */
+  .site-footer {
+    overflow-x: hidden;
+  }
+
+  .footer-brand .footer-logo {
+    margin-left: 0;          /* only on phones */
+    max-width: 160px;
+  }
+
+  /* slightly tighter padding so it doesn't feel cramped */
+  .footer-inner {
+    padding: 2rem 1.1rem;
+    gap: 1.4rem;
+  }
+
+  /* make social icons easier to tap */
+  .footer-socials a {
+    width: 42px;
+    height: 42px;
+  }
+
+  /* make long links/emails wrap instead of overflowing */
+  .footer-col a,
+  .footer-contact span,
+  .club-regristration {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .footer-bottom {
+    padding: 0.9rem 1.1rem 1rem;
+  }
+}

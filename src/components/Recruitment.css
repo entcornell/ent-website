@@ -285,3 +285,66 @@
   margin-top: 0.25rem;
   line-height: 1.4;
 }
+
+/* ============================= */
+/* PHONE PATCH (keeps desktop same) */
+/* ============================= */
+@media (max-width: 520px) {
+  /* allow narrow phones < 360px to not overflow */
+  .recruitment-events,
+  .recruitment-rounds {
+    width: 92vw;          /* override clamp min width */
+    padding: 0.8rem;
+  }
+
+  /* HERO: prevent overlap/clipping */
+  .recruitment-hero img {
+    height: 260px;
+    object-position: 50% 25%;
+  }
+
+  .recruitment-hero h1,
+  .recruitment-hero h2 {
+    font-size: clamp(2rem, 10vw, 3rem);
+    letter-spacing: 0.03em;
+    margin: 0;            /* remove the big margin offsets */
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  /* separate the two lines cleanly */
+  .recruitment-hero h1 {
+    transform: translateY(-12px);
+  }
+  .recruitment-hero h2 {
+    margin-top: 0;
+    transform: translateY(34px);
+  }
+
+  /* cards: reduce huge margins + allow wrapping */
+  .event-card,
+  .round {
+    margin: 1.2rem 0;
+  }
+
+  .event-meta-row {
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  /* prevent long titles/locations from overflowing */
+  .event-title,
+  .event-meta,
+  .round-title,
+  .round-meta,
+  .faq-question,
+  .faq-answer {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  /* FAQ padding more phone-friendly */
+  .recruitment-faq {
+    padding: 1.6rem 1.1rem;
+  }
+}

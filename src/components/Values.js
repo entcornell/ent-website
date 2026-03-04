@@ -54,6 +54,8 @@ export default function Values() {
             <img src="images/b15.png" alt="Brotherhood 15" />
             <img src="images/b16.png" alt="Brotherhood 16" />
             <img src="images/b17.png" alt="Brotherhood 17" />
+            <img src="images/b18.png" alt="Brotherhood 18" />
+            <img src="images/b19.png" alt="Brotherhood 19" />
           </div>
         </section>
 
@@ -77,6 +79,13 @@ export default function Values() {
             <img src="images/a5.png" alt="Authenticity 5" />
             <img src="images/a6.png" alt="Authenticity 6" />
             <img src="images/a7.png" alt="Authenticity 7" />
+            <img src="images/a8.png" alt="Authenticity 8" />
+            <img src="images/a9.png" alt="Authenticity 9" />
+            <img src="images/a10.png" alt="Authenticity 10" />
+            <img src="images/a11.png" alt="Authenticity 11" />
+            <img src="images/a12.png" alt="Authenticity 12" />
+            <img src="images/a13.png" alt="Authenticity 13" />
+            <img src="images/a14.png" alt="Authenticity 14" />
           </div>
         </section>
 
@@ -118,6 +127,8 @@ export default function Values() {
             <img src="images/m2.png" alt="Mentoring 2" />
             <img src="images/m3.png" alt="Mentoring 3" />
             <img src="images/m4.png" alt="Mentoring 4" />
+            <img src="images/m5.png" alt="Mentoring 5" />
+            <img src="images/m6.png" alt="Mentoring 6" />
           </div>
         </section>
 

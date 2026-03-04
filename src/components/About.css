@@ -402,3 +402,52 @@ body {
     padding: 22px 18px;
   }
 }
+
+
+/* ============================= */
+/* MOBILE FIX (keeps desktop same)*/
+/* ============================= */
+
+@media (max-width: 520px) {
+  /* prevent any horizontal overflow on tiny screens */
+  .about-page {
+    overflow-x: hidden;
+  }
+
+  /* journey steps: remove stagger offsets on small phones */
+  .about-step:nth-child(1),
+  .about-step:nth-child(2),
+  .about-step:nth-child(3) {
+    transform: none;
+  }
+
+  /* make wrapped steps look intentional */
+  .about-journey-steps {
+    gap: 12px;
+  }
+
+  .about-step {
+    justify-content: center;
+  }
+
+  /* slightly tighten big type on small phones */
+  .about-story-text p,
+  .about-quote-desc,
+  .about-journey-text p {
+    font-size: 1.15rem;
+  }
+
+  .about-banner-glass p {
+    font-size: 1.2rem;
+  }
+
+  /* keep hero title from feeling too huge on very small devices */
+  .about-hero-overlay h1 {
+    font-size: clamp(2.2rem, 8vw, 3.2rem);
+  }
+
+  /* a bit more breathing room in banner glass */
+  .about-banner-overlay {
+    padding: 1.2rem;
+  }
+}

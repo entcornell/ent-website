@@ -126,3 +126,34 @@
     margin-top: 40px;
   }
 }
+
+/* ============================= */
+/* PHONE PATCH (keeps desktop same) */
+/* ============================= */
+@media (max-width: 520px) {
+  /* prevent 1–2px horizontal scroll from 100vw math */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* make hero full-width without vw rounding issues */
+  .sbc-hero {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  /* tighten hero title a bit on tiny screens */
+  .sbc-hero-overlay h1 {
+    font-size: clamp(2.2rem, 9vw, 3rem);
+    padding: 0 1rem;
+  }
+
+  /* button: better touch sizing + prevent text squeezing */
+  .sbc-website-btn {
+    width: 92%;
+    height: 84px;
+    font-size: clamp(1.5rem, 7vw, 2.2rem);
+    padding: 0 1rem;
+    text-align: center;
+  }
+}

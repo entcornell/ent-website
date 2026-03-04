@@ -264,3 +264,55 @@
   background: var(--ent-red-dark);
   transform: translateY(-2px);
 }
+
+/* ============================= */
+/* PHONE PATCH (keeps desktop same) */
+/* ============================= */
+
+@media (max-width: 520px){
+  /* keep the modal nicely inside the screen + avoid iOS vh quirks */
+  .popup-content{
+    width: 94vw;
+    max-height: 88dvh;     /* modern mobile viewport unit */
+    border-radius: 14px;
+  }
+
+  /* slightly shorter image so text has room */
+  .popup-left-card{
+    height: 32vh;
+  }
+
+  /* reduce padding so content fits without feeling tight */
+  .popup-right{
+    padding: .9rem 1rem 1.4rem;
+  }
+
+  /* prevent long words/emails/links from causing sideways scroll */
+  .popup-right-inner,
+  .popup-title,
+  .popup-desc,
+  .row-title,
+  .row-detail{
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  /* thumbs go to 1 column so they’re readable */
+  .popup-thumbs{
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  /* CTA button should match the modal width instead of vw */
+  .popup-cta-btn{
+    width: 100%;
+    max-width: 420px;
+    padding: .65rem 1.2rem;
+  }
+
+  /* close button a touch smaller on phones */
+  .popup-close{
+    width: 40px;
+    height: 40px;
+  }
+}

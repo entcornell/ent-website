@@ -526,3 +526,80 @@
     gap: 6px;
   }
 }
+
+/* ============================= */
+/* PHONE PATCH (keeps desktop same) */
+/* ============================= */
+@media (max-width: 520px) {
+  /* prevent tiny horizontal scroll from 100vw/clip-path rounding */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* HERO: allow wrapping + reduce height */
+  .hero-clip {
+    height: 380px;
+  }
+
+  .hero-content h1,
+  .hero-content p {
+    white-space: normal;     /* was nowrap -> causes overflow */
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.2rem, 9vw, 3rem);
+    padding: 0 1rem;
+  }
+
+  .hero-content p {
+    font-size: 1.15rem;
+    line-height: 1.2;        /* your .5 line-height is very tight on phones */
+    padding: 0 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  /* Blurb: remove fixed height so text never gets cut off */
+  .home-blurb {
+    height: auto;
+    padding: 3.2rem 1.2rem;
+    margin-top: -60px;       /* keep the overlap feel but less aggressive */
+  }
+
+  /* Photo row: tighten spacing */
+  .home-photo-row {
+    padding: 1.6rem 1.1rem;
+  }
+  .home-photo-grid {
+    gap: 18px;
+  }
+
+  /* Stats: a bit tighter */
+  .home-stats {
+    padding: 1.8rem 1.1rem;
+  }
+
+  /* Member scroller: keep arrows visible inside on phones */
+  .members-scroll {
+    padding: 0 1rem;
+    gap: 1.2rem;
+  }
+
+  .scroll-arrow.left {
+    left: 0.2rem;
+  }
+
+  .scroll-arrow.right {
+    right: 0.2rem;
+  }
+
+  .scroll-arrow {
+    font-size: 1.2rem;
+    padding: 0.45rem 0.75rem;
+  }
+
+  /* Mosaic: avoid 100vw rounding causing sideways scroll */
+  .photo-mosaic,
+  .mosaic-grid {
+    width: 100%;
+  }
+}

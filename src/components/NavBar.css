@@ -290,14 +290,6 @@
 /* PHONE / MOBILE PATCH (keeps desktop same) */
 /* ============================= */
 @media (max-width: 768px) {
-  /* IMPORTANT: override the earlier rule that forces dropdown always open */
-  .nav-dropdown .dropdown-menu {
-    display: none !important;
-  }
-  .nav-dropdown.open .dropdown-menu {
-    display: block !important;
-  }
-
   /* Make menu sit directly under the sticky navbar reliably */
   .nav-links {
     top: 72px; /* a safer default than 64px with your padding/logo */

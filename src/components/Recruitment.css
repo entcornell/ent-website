@@ -302,15 +302,14 @@
     height: 260px;
     object-position: 50% 25%;
   }
-
-  .recruitment-hero h1,
-  .recruitment-hero h2 {
-    font-size: clamp(2rem, 10vw, 3rem);
-    letter-spacing: 0.03em;
-    margin: 0;            /* remove the big margin offsets */
-    padding: 0 1rem;
-    text-align: center;
-  }
+.recruitment-hero h1,
+.recruitment-hero h2 {
+  font-size: clamp(2rem, 10vw, 3rem);
+  letter-spacing: 0.03em;
+  margin: 0;
+  padding: 0 2rem; /* more side padding */
+  text-align: center;
+}
 
   /* separate the two lines cleanly */
   .recruitment-hero h1 {

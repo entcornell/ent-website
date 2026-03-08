@@ -13,6 +13,13 @@ export const studentventures = [
                 link: "https://monitoringthesituation.ai/accounts/login/?next=/home/new_conversation",
                 founder: "Julius Behner"
                 },
+            {
+                title: "TalentTap",
+                desc: "TalentTap is a Cornell-only platform that connects students to other students for freelance work and creative gigs. It makes it easy to find trusted designers, developers, photographers, DJs, and more in one place. We hope to bring visibility to the incredible creative and technical talent already on campus.",
+                img: "studentbusinesses/TalentTap.jpeg",
+                link: "http://www.talenttapcornell.com",
+                founder: "Katie Perlitz"
+                },
                 {
                 title: "Stride",
                 desc: "Stride is a women’s reflective athletic apparel brand designing sleek, safety-focused outerwear that empowers women to run independently and confidently. We are currently developing our first reflective vest collection and planning to launch in the near future.",

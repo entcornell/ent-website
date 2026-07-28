@@ -147,8 +147,8 @@ const Home = () => {
               },
               {
                 role: "VP Recruitment",
-                name: "Krish Patel",
-                img: "headshots/KrishPatel-Headshot.png",
+                name: "Finn Clancy",
+                img: "headshots-fall2025/FinnClancy-Headshot.jpg",
               },
               {
                 role: "VP NME",
@@ -157,8 +157,8 @@ const Home = () => {
               },
               {
                 role: "VP NME",
-                name: "Julius Behner",
-                img: "headshots/JuliusBehner-Headshot.jpg",
+                name: "Sebastian Dominguez",
+                img: "headshots-fall2025/SebastianDominguez-Headshot.JPG",
               },
               {
                 role: "VP Professional Events",
@@ -177,29 +177,29 @@ const Home = () => {
               },
               {
                 role: "VP SBC",
-                name: "Matt Kahn",
-                img: "headshots-fall2025/MatthewKahn-Headshot.jpeg",
+                name: "Mahin Hardaway",
+                img: "headshots-fall2025/MahinHardaway-Headshot.jpg",
               },
               {
                 role: "VP Brotherhood",
-                name: "Jad Alsouss",
-                img: "headshots/JadAlsouss-Headshot.JPG",
+                name: "Jackson Hutchison",
+                img: "headshots/JacksonHutchison-Headshot.jpeg",
               },
               {
                 role: "VP Professional Connects",
                 name: "Diya Sheth",
                 img: "headshots/DiyaSheth-Headshot.png",
               },
-              {
+              /*{
                 role: "VP Philanthropy",
                 name: "Mahin Hardaway",
                 img: "headshots-fall2025/MahinHardaway-Headshot.jpg",
-              },
-              {
+              },*/
+              /*{
                 role: "Social Media Chair",
                 name: "Brooke Wilcox",
                 img: "headshots/BrookeWilcox-Headshot.jpeg",
-              },
+              },*/
             ].map((member, index) => (
               <div className="member-card" key={index}>
                 <img src={member.img} alt={member.role} />

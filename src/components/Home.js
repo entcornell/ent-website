@@ -187,14 +187,14 @@ const Home = () => {
               },
               {
                 role: "VP Professional Connects",
-                name: "Diya Sheth",
-                img: "headshots/DiyaSheth-Headshot.png",
+                name: "Christine Zhou",
+                img: "headshots/ChristineZhou-Headshot.png",
               },
-              /*{
+              {
                 role: "VP Philanthropy",
-                name: "Mahin Hardaway",
-                img: "headshots-fall2025/MahinHardaway-Headshot.jpg",
-              },*/
+                name: "Olivia Buvanova",
+                img: "headshots/OliviaBuvanova-Headshot.png",
+              },
               /*{
                 role: "Social Media Chair",
                 name: "Brooke Wilcox",

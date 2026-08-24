@@ -174,7 +174,9 @@ export default function Recruitment() {
 
             <div className="event-meta-row">
               <p className="round-meta">Google Form | Due Sep 14 @ 5:00 PM </p>
-
+              
+              <span className="event-tag">Application Coming Soon!</span>
+              {/*
               <a
                 href=""
                 target="_blank"
@@ -183,6 +185,7 @@ export default function Recruitment() {
               >
                 Application Coming Soon!
               </a>
+              */}
             </div>
 
           </div>

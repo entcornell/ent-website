@@ -6,62 +6,66 @@ import "./Recruitment.css";
 */
 const events = [
   {
-    date: "Jan 10",
-    title: "Coffee Chats",
-    meta: "End 02/01",
+    date: "Aug 24",
+    title: "Coffee Chat Open",
+    meta: "End 09/14",
     tag: "Pairing Form",
-    url: "https://docs.google.com/forms/d/e/1FAIpQLSf-EoEUt3dYzgIAwHIrbdUCrytN7kEYjrvIrOwETft5kgB07g/viewform",
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSfpjfJE1VQcAKhAnwLkVOdjtbmhtKjpIYnySE4VRuC5Neqt7g/viewform",
     body: "Coffee chats are a great way to get to know the amazing current members of ENT. Feel free to ask about the organization, entrepreneurship, Cornell, or anything on your mind. These informal conversations can be scheduled using the pairing form link. Note that you can also email ENT members directly for coffee chats from the Members Page."
   },
   {
-    date: "Jan 24",
-    title: "Freshman Only Info Session",
-    meta: "1:00 PM – 2:00 PM | RPCC 205",
+    date: "Aug 28",
+    title: "Future Founders Barbecue",
+    meta: "5:00 PM – 7:00 PM | Location TBD",
+    body: "Enjoy some food, play some outdoor sports, and chat with our current ENT members."
+  },
+  {
+    date: "Aug 31",
+    title: "Freshman Info Session",
+    meta: "6:00 PM – 7:00 PM | Location TBD",
     body: "ENT information sessions are a great way to learn about the organization. You will hear about the New Member Education process, some fun brotherhood events, current projects, and club culture. Additionally, you will have the opportunity to network to current members at the conclusion of the session. This event is for freshmen only!"
   },
   {
-    date: "Jan 25",
-    title: "Club Fest",
-    meta: "12:00 PM – 1:30 PM | Barton Hall",
+    date: "Sep 3",
+    title: "Eship Kickoff",
+    meta: "7:00 PM – 8:00 PM | Location: eHub Collegetown",
+    body: "Get an overview of the vast entrepreneurship opportunities available at Cornell, watch eLab pitches, and meet people passionate about entrepreneurship."
+  },
+  {
+    date: "Sep 5",
+    title: "Clubfest",
+    meta: "11:45 AM - 1:30 PM | Location: Arts Quad",
     body: "Find the ENT booth at Club Fest and speak to our current members to learn more about what makes the organization special!"
   },
   {
-    date: "Jan 26",
-    title: "Virtual Info Session",
-    meta: "7:00 PM – 8:00 PM | Zoom",
-    tag: "Link",
-    url: "https://cornell.zoom.us/j/93581287727?pwd=VxhFFpstfOGRbAJlQ4s4BaKz9LKD7K.1",
-    body: "ENT information sessions are a great way to learn about the organization. You will hear about the New Member Education process, some fun brotherhood events, current projects, and club culture. Additionally, you will have the opportunity to network to current members at the conclusion of the session. This event will be on zoom!"
+    date: "Sep 8",
+    title: "Cornell Creators’ Market",
+    meta: "12:00 PM – 4:00 PM | Location TBD",
+    body: "Visit student vendors from Cornell University selling their handmade goods and services! This is a great way to meet people in the entrepreneurial ecosystem and who knows, perhaps you’ll find a new trinket to take home."
   },
   {
-    date: "Jan 27",
-    title: "Speed Round Coffee Chats",
-    meta: "6:00 PM - 7:30 PM | Toni Morrison Multipurpose Room",
-    body: "Join us for Speed Coffee Chats, a fast-paced and welcoming event where you’ll rotate through conversations with different ENT brothers and hear firsthand about their experiences in the fraternity. It’s a low-pressure, genuine way for you to ask questions, make connections, and see what makes ENT unique. At the same time, we’re excited to get to know you as an applicant beyond the résumé. We’ll also be selling assorted goods during the event, with all proceeds going toward charity. Come grab a coffee, support a good cause, and start meaningful conversations!"
-  },
-  {
-    date: "Jan 29",
-    title: "In-Person Info Session",
-    meta: "5:00 PM – 6:00 PM | Statler 398",
+    date: "Sep 9",
+    title: "Info Session #1",
+    meta: "6:00 PM – 7:00 PM | Location TBD",
     body: "ENT information sessions are a great way to learn about the organization. You will hear about the New Member Education process, some fun brotherhood events, current projects, and club culture. Additionally, you will have the opportunity to network to current members at the conclusion of the session. This event is open to anyone!"
   },
   {
-    date: "Jan 29",
-    title: "SEGC X ENT Diverse Pathways in Business Panel",
-    meta: "6:00 PM – 7:00 PM | Warren B75",
-    body: "Description TBD"
+    date: "Sep 10",
+    title: "Pitch Workshop + Speed Mentoring & Coffee Chats",
+    meta: "6:00 PM – 8:00 PM | Location TBD",
+    body: "Work on your pitching skills and talk to our members one-on-one to receive advice on your entrepreneurial endeavors and learn more about ENT! No entrepreneurship experience is necessary."
   },
   {
-    date: "Jan 30",
-    title: "ENT Trivia Night",
-    meta: "7:00 PM – 9:00 PM | Ehub 3rd Floor",
-    body: "ENT places a strong emphasis on community and brotherhood events. Join us for a jeopardy style trivia night, where potential applicants will team up with current members to answer ENT and entrepreneurship themed questions. Get ready for some fun!"
+    date: "Sep 11",
+    title: "Pickleball Tournament",
+    meta: "4:00 PM - 6:00 PM | Location TBD",
+    body: "Play a friendly game of Pickleball to bond with the current members of ENT. You’ll get to have fun while getting to talk to more of our members."
   },
   {
-    date: "Jan 31",
-    title: "ENT Professional Headshots",
-    meta: "11:00 AM - 1:00 PM | Zeus Atrium (Goldwin Smith Hall)",
-    body: "This is your opportunity to get your professional headshot for club, or even job applications. Our experienced photographer will take individual, high quality, and professional photos for each person. You will also have the opportunity to speak to our E-board and current members at this event."
+    date: "Sep 13",
+    title: "Virtual Info Session",
+    meta: "5:00 PM - 6:00 PM | Location TBD",
+    body: "ENT information sessions are a great way to learn about the organization. You will hear about the New Member Education process, some fun brotherhood events, current projects, and club culture. Additionally, you will have the opportunity to network to current members at the conclusion of the session. This event is open to anyone!"
   }
 ];
 
@@ -140,6 +144,7 @@ export default function Recruitment() {
         ))}
       </section>
 
+
       {/* ===== APPLICATION ROUNDS ===== */}
       <section className="recruitment-rounds">
         <h2>Application Rounds</h2>
@@ -147,8 +152,8 @@ export default function Recruitment() {
         {/* Round One */}
         <div className="round">
           <div className="round-date">
-            <span className="round-date-month">Jan 23</span>
-            <span className="round-date-day">- Feb 1</span>
+            <span className="round-date-month">Coming</span>
+            <span className="round-date-day">Soon</span>
           </div>
 
           <div
@@ -168,15 +173,15 @@ export default function Recruitment() {
             </div>
 
             <div className="event-meta-row">
-              <p className="round-meta">Google Form | Due 5:00 PM</p>
+              <p className="round-meta">Google Form | Due Sep 14 @ 5:00 PM </p>
 
               <a
-                href="https://docs.google.com/forms/d/14UPJM5gJgw-MRswDzIkA-Fvx2ZhP_NSxN0mcyT3Mx80/viewform?edit_requested=true"
+                href=""
                 target="_blank"
                 rel="noopener noreferrer"
                 className="event-tag"
               >
-                Apply
+                Application Coming Soon!
               </a>
             </div>
 
@@ -186,8 +191,8 @@ export default function Recruitment() {
         {/* Round Two */}
         <div className="round">
           <div className="round-date">
-            <span className="round-date-month">Feb</span>
-            <span className="round-date-day">4</span>
+            <span className="round-date-month">Sep</span>
+            <span className="round-date-day">16</span>
           </div>
 
           <div
@@ -221,8 +226,8 @@ export default function Recruitment() {
         {/* Round Three */}
         <div className="round">
           <div className="round-date">
-            <span className="round-date-month">Feb</span>
-            <span className="round-date-day">5</span>
+            <span className="round-date-month">Sep</span>
+            <span className="round-date-day">17</span>
           </div>
 
           <div

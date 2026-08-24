@@ -7,7 +7,7 @@ import "./Recruitment.css";
 const events = [
   {
     date: "Aug 24",
-    title: "Coffee Chat Open",
+    title: "Coffee Chats Open!",
     meta: "End 09/14",
     tag: "Pairing Form",
     url: "https://docs.google.com/forms/d/e/1FAIpQLSfpjfJE1VQcAKhAnwLkVOdjtbmhtKjpIYnySE4VRuC5Neqt7g/viewform",

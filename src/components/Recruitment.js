@@ -16,7 +16,7 @@ const events = [
   {
     date: "Aug 28",
     title: "Future Founders Barbecue",
-    meta: "5:00 PM – 7:00 PM | Location TBD",
+    meta: "5:00 PM – 7:00 PM | Location: Rawlings Green on North Campus",
     body: "Enjoy some food, play some outdoor sports, and chat with our current ENT members."
   },
   {
@@ -85,9 +85,8 @@ export default function Recruitment() {
       {/* ===== HERO HEADER ===== */}
       <section className="recruitment-hero">
         <img src="/images/recruitmentheader.png" alt="Recruitment Header" />
-        <h1>SPRING 2026</h1>
+        <h1>FALL 2026</h1>
         <h2>RECRUITMENT</h2>
-        <h3>Spring 2026 recruitment has ended, check back for Fall 2027 recruitment!</h3>
       </section>
 
       {/* ===== EVENTS TIMELINE ===== */}

@@ -71,7 +71,8 @@
   transform: translateX(2px);
 }
 
-.footer-col-links a:hover {
+.footer-col-links a:hover,
+.footer-contact a:hover {
   color: #d62828; /* ENT red */
   transform: translateX(2px);
 }

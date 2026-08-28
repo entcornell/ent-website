@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Home.css";
 
+import ApplyNowButton from "./ApplyNowButton";
 import EndeavorsPopup from "./EndeavorsPopup";
 import { endeavors } from "./EndeavorsData";
 
@@ -22,17 +23,7 @@ const Home = () => {
             <h1>EPSILON NU TAU</h1>
             <p>TAU CHAPTER</p>
             <p>CORNELL UNIVERSITY</p>
-
-            {/*
-            <a
-              href="https://docs.google.com/forms/d/14UPJM5gJgw-MRswDzIkA-Fvx2ZhP_NSxN0mcyT3Mx80/viewform?edit_requested=true"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="apply-btn"
-            >
-              Applications are OPEN!
-            </a>
-            */}
+            <ApplyNowButton />
           </div>
 
           {/* Red Chevron Outline */}

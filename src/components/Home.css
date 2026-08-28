@@ -66,8 +66,12 @@
   font-size: 1.7rem;
   letter-spacing: 0.06em;
   line-height: 0.5;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
   white-space: nowrap;
+}
+
+.hero-content .apply-now-btn {
+  margin-top: 0.5rem;
 }
 
 .apply-btn {

@@ -3,6 +3,7 @@ import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { APPLICATION_FORM_URL } from './applicationConfig';
 
 const Footer = () => {
   return (
@@ -52,6 +53,11 @@ const Footer = () => {
         <ul className="footer-contact">
             <li><span>ent.cornell@gmail.com</span></li>
             <li><span>Ithaca, NY</span></li>
+            <li>
+              <a href={APPLICATION_FORM_URL} target="_blank" rel="noopener noreferrer">
+                Apply Here Now
+              </a>
+            </li>
         </ul>
 
         <div className="footer-socials">

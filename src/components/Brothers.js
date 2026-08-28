@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 //import React, { useState } from "react";
 //import NavBar from "./NavBar";
 import "./Brothers.css";
+import ApplyNowButton from "./ApplyNowButton";
 //import { Helmet } from "react-helmet-async";
 //import { useLocation } from "react-router-dom";
 
@@ -215,6 +216,7 @@ export default function Members() {
         <div className="members-hero-content">
           <h1>BROTHERS</h1>
           <p>GET TO KNOW OUR BROTHERHOOD</p>
+          <ApplyNowButton />
         </div>
       </section>
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Recruitment.css";
+import ApplyNowButton from "./ApplyNowButton";
 import { recruitmentEvents as events } from "./recruitmentEvents";
 
 /*
@@ -47,8 +48,11 @@ export default function Recruitment() {
       {/* ===== HERO HEADER ===== */}
       <section className="recruitment-hero">
         <img src="/images/recruitmentheader.png" alt="Recruitment Header" />
-        <h1>FALL 2026</h1>
-        <h2>RECRUITMENT</h2>
+        <div className="recruitment-hero-content">
+          <h1>FALL 2026</h1>
+          <h2>RECRUITMENT</h2>
+          <ApplyNowButton />
+        </div>
       </section>
 
       {/* ===== EVENTS TIMELINE ===== */}
@@ -113,8 +117,8 @@ export default function Recruitment() {
         {/* Round One */}
         <div className="round">
           <div className="round-date">
-            <span className="round-date-month">Coming</span>
-            <span className="round-date-day">Soon</span>
+            <span className="round-date-month">Due</span>
+            <span className="round-date-day">Sep 14</span>
           </div>
 
           <div
@@ -136,18 +140,21 @@ export default function Recruitment() {
             <div className="event-meta-row">
               <p className="round-meta">Google Form | Due Sep 14 @ 5:00 PM </p>
               
-              <span className="event-tag">Application Coming Soon!</span>
-              {/*
               <a
-                href=""
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdtmPyH-etdh51n1hQVqdhZ2_IIGz71PTjLV1zPxGzCKHQKeQ/viewform?usp=header"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="event-tag"
               >
-                Application Coming Soon!
+                Apply Here
               </a>
-              */}
             </div>
+
+            {openRoundIndex === 0 && (
+              <div className="event-body">
+                Fill out the application consisting of a short video and a written question to be considered for the next round.
+              </div>
+            )}
 
           </div>
         </div>

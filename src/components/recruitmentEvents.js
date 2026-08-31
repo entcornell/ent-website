@@ -25,15 +25,21 @@ export const recruitmentEvents = [
     body: "ENT information sessions are a great way to learn about the organization. You will hear about the New Member Education process, some fun brotherhood events, current projects, and club culture. Additionally, you will have the opportunity to network to current members at the conclusion of the session. This event is for freshmen only!"
   },
   {
+    date: "Sep 1",
+    title: "PFC Fair",
+    meta: "11:30 AM – 1:00 PM | Location: Willard Straight Hall",
+    body: "Learn about all the pre-professional fraternities that Cornell has to offer. Come to our table to say hello!"
+  },
+  {
     date: "Sep 3",
     title: "Eship Kickoff",
-    meta: "7:00 PM – 8:00 PM | Location: eHub Collegetown",
+    meta: "4:30 PM – 6:30 PM | Location: eHub Collegetown",
     body: "Get an overview of the vast entrepreneurship opportunities available at Cornell, watch eLab pitches, and meet people passionate about entrepreneurship."
   },
   {
     date: "Sep 5",
     title: "Clubfest",
-    meta: "11:45 AM - 1:30 PM | Location: Arts Quad",
+    meta: "12:00 PM - 1:30 PM | Location: Arts Quad",
     body: "Find the ENT booth at Club Fest and speak to our current members to learn more about what makes the organization special!"
   },
   {
@@ -51,7 +57,7 @@ export const recruitmentEvents = [
   {
     date: "Sep 10",
     title: "Pitch Workshop + Speed Mentoring & Coffee Chats",
-    meta: "6:00 PM – 8:00 PM | Location TBD",
+    meta: "5:00 PM – 7:00 PM | Location TBD",
     body: "Work on your pitching skills and talk to our members one-on-one to receive advice on your entrepreneurial endeavors and learn more about ENT! No entrepreneurship experience is necessary."
   },
   {

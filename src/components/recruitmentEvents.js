@@ -21,7 +21,7 @@ export const recruitmentEvents = [
   {
     date: "Aug 31",
     title: "Freshman Info Session",
-    meta: "6:00 PM – 7:00 PM | Location: Zoom",
+    meta: "6:00 PM – 7:00 PM | Location: RPCC 205",
     body: "ENT information sessions are a great way to learn about the organization. You will hear about the New Member Education process, some fun brotherhood events, current projects, and club culture. Additionally, you will have the opportunity to network to current members at the conclusion of the session. This event is for freshmen only!"
   },
   {

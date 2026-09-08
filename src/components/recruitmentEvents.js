@@ -43,15 +43,9 @@ export const recruitmentEvents = [
     body: "Find the ENT booth at Club Fest and speak to our current members to learn more about what makes the organization special!"
   },
   {
-    date: "Sep 8",
-    title: "Cornell Creators’ Market",
-    meta: "12:00 PM – 4:00 PM | Location TBD",
-    body: "Visit student vendors from Cornell University selling their handmade goods and services! This is a great way to meet people in the entrepreneurial ecosystem and who knows, perhaps you’ll find a new trinket to take home."
-  },
-  {
     date: "Sep 9",
     title: "Info Session #1",
-    meta: "6:00 PM – 7:00 PM | Location TBD",
+    meta: "6:00 PM – 7:00 PM | Location: Warren Hall 151",
     body: "ENT information sessions are a great way to learn about the organization. You will hear about the New Member Education process, some fun brotherhood events, current projects, and club culture. Additionally, you will have the opportunity to network to current members at the conclusion of the session. This event is open to anyone!"
   },
   {
@@ -72,4 +66,12 @@ export const recruitmentEvents = [
     meta: "5:00 PM - 6:00 PM | Location: Zoom",
     body: "ENT information sessions are a great way to learn about the organization. You will hear about the New Member Education process, some fun brotherhood events, current projects, and club culture. Additionally, you will have the opportunity to network to current members at the conclusion of the session. This event is open to anyone!"
   }
+  /*
+  {
+    date: "Sep 8",
+    title: "Cornell Creators’ Market",
+    meta: "12:00 PM – 4:00 PM | Location TBD",
+    body: "Visit student vendors from Cornell University selling their handmade goods and services! This is a great way to meet people in the entrepreneurial ecosystem and who knows, perhaps you’ll find a new trinket to take home."
+  },
+  */
 ];

@@ -50,9 +50,9 @@ export const recruitmentEvents = [
   },
   {
     date: "Sep 10",
-    title: "Pitch Workshop + Speed Mentoring & Coffee Chats",
-    meta: "5:00 PM – 7:00 PM | Location TBD",
-    body: "Work on your pitching skills and talk to our members one-on-one to receive advice on your entrepreneurial endeavors and learn more about ENT! No entrepreneurship experience is necessary."
+    title: "Speed Coffee Chats",
+    meta: "5:00 PM – 7:00 PM | Location: Willard Straight Terrace",
+    body: "Meet ENT members, ask questions, and learn what ENT is all about!"
   },
   {
     date: "Sep 11",

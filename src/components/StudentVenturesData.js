@@ -26,7 +26,7 @@ export const studentventures = [
     {
         title: "Stride",
         desc: "Stride is a women’s reflective athletic apparel brand designing sleek, safety-focused outerwear that empowers women to run independently and confidently. We are currently developing our first reflective vest collection and planning to launch in the near future.",
-        img: "studentbusinesses/StrideBlue.JPG",
+        img: "studentbusinesses/StrideRunningCompany.png",
         link: "https://www.instagram.com/striderunningcompany?igsh=MXFpY2p5aG0yb2x2NQ==",
         founder: "Brooke Wilcox",
         category: "Fashion"
@@ -119,6 +119,46 @@ export const studentventures = [
         founder: "Ghali Jorio",
         category: "Travel"
     },
+    {
+    title: "Collegetown Jazz Club",
+    desc: "Student operated jazz club in the heart of Collegetown.",
+    img: "studentbusinesses/CollegetownJazzClub.png",
+    link: "https://www.instagram.com/collegetownjazzclub/",
+    founder: "Kaitlyn Clarke",
+    category: "Food & Beverage"
+},
+{
+    title: "Jaden",
+    desc: "Quarter sized bodyguard for runners by runners. Backed by NY State.",
+    img: "studentbusinesses/Jaden.png",
+    link: "https://jaden-technology.com/",
+    founder: "Kaitlyn Clarke",
+    category: "Tech"
+},
+{
+    title: "Crescendo",
+    desc: "Crescendo is an all-in-one music education platform designed to solve one of music education's biggest challenges: keeping students engaged outside the lesson. By combining customizable assignments, interactive practice games, leaderboards, and separate teacher and student dashboards, Crescendo helps instructors increase accountability, improve communication, and reduce student dropout.",
+    img: "studentbusinesses/Crescendo.png",
+    link: "",
+    founder: "Olivia Buvanova",
+    category: "Tech"
+},
+{
+    title: "TennisB&B",
+    desc: "TennisB&B connects lower-level competitive tennis players traveling for tournaments with local tennis families offering affordable short-term stays. By cutting accommodation costs, it makes traveling to more tournaments financially accessible.",
+    img: "studentbusinesses/TennisBnB.png",
+    link: "",
+    founder: "Finn Clancy",
+    category: "Travel"
+},
+{
+    title: "Syndeo",
+    desc: "Syndeo is a guided networking platform for in-person events. For organizers it means more engaging events, and for attendees it means more valuable connections, and less missed opportunities.",
+    img: "studentbusinesses/Syndeo.png",
+    link: "https://www.linkedin.com/in/jackson-hutchison-564641312",
+    founder: "Jackson Hutchison",
+    category: "Tech"
+},
 ];
  
 

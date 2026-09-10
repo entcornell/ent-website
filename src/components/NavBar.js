@@ -100,13 +100,11 @@ export default function Navbar() {
           </NavLink>
         </li>
 
-        {/*
         <li>
           <NavLink to="/newsletter" onClick={closeMenu}>
             NEWSLETTER
           </NavLink>
         </li>
-        */}
       </ul>
     </nav>
   );

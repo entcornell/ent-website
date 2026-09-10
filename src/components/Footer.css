@@ -1,6 +1,6 @@
 /* ===== Footer ===== */
 .site-footer {
-  background: #6b0606;            /* deep charcoal to match your mosaic band */
+  background: #111;            /* deep charcoal to match your mosaic band */
   color: #eee;
   width: 100%;
   margin-top: 0;
@@ -71,8 +71,7 @@
   transform: translateX(2px);
 }
 
-.footer-col-links a:hover,
-.footer-contact a:hover {
+.footer-col-links a:hover {
   color: #d62828; /* ENT red */
   transform: translateX(2px);
 }

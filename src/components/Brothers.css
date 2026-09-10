@@ -24,10 +24,8 @@
 .members-hero-content {
   position: absolute;
   inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-content: center;
   color: #fff;
   text-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
 }
@@ -43,11 +41,7 @@
 .members-hero-content p {
   font-family: "Montserrat", system-ui, sans-serif;
   font-size: clamp(1.3rem, 2vw, 1.25rem);
-  margin: 0.5rem 0 0.75rem;
-}
-
-.members-hero-content .apply-now-btn {
-  margin-top: 0.25rem;
+  margin-top: 0.5rem;
 }
 
 

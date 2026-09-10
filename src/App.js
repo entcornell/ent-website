@@ -13,7 +13,6 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import About from "./components/About";
 import Values from "./components/Values";
-import EventPopUp from "./components/EventPopUp";
 import "./index.css";
 
 function Layout() {
@@ -22,7 +21,6 @@ function Layout() {
       <NavBar />
       <Outlet /> {/* child pages render here */}
       <Footer />
-      <EventPopUp />
     </>
   );
 }

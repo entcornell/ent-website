@@ -1,79 +1,46 @@
 import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./Recruitment.css";
+import ApplyNowButton from "./ApplyNowButton";
+import { recruitmentEvents as events } from "./recruitmentEvents";
 
 /*
-  Event data for the recruitment timeline
+  Event data lives in recruitmentEvents.js (shared with EventPopUp)
 */
-const events = [
-  {
-    date: "Jan 10",
-    title: "Coffee Chats",
-    meta: "End 02/01",
-    tag: "Pairing Form",
-    url: "https://docs.google.com/forms/d/e/1FAIpQLSf-EoEUt3dYzgIAwHIrbdUCrytN7kEYjrvIrOwETft5kgB07g/viewform",
-    body: "Coffee chats are a great way to get to know the amazing current members of ENT. Feel free to ask about the organization, entrepreneurship, Cornell, or anything on your mind. These informal conversations can be scheduled using the pairing form link. Note that you can also email ENT members directly for coffee chats from the Members Page."
-  },
-  {
-    date: "Jan 24",
-    title: "Freshman Only Info Session",
-    meta: "1:00 PM – 2:00 PM | RPCC 205",
-    body: "ENT information sessions are a great way to learn about the organization. You will hear about the New Member Education process, some fun brotherhood events, current projects, and club culture. Additionally, you will have the opportunity to network to current members at the conclusion of the session. This event is for freshmen only!"
-  },
-  {
-    date: "Jan 25",
-    title: "Club Fest",
-    meta: "12:00 PM – 1:30 PM | Barton Hall",
-    body: "Find the ENT booth at Club Fest and speak to our current members to learn more about what makes the organization special!"
-  },
-  {
-    date: "Jan 26",
-    title: "Virtual Info Session",
-    meta: "7:00 PM – 8:00 PM | Zoom",
-    tag: "Link",
-    url: "https://cornell.zoom.us/j/93581287727?pwd=VxhFFpstfOGRbAJlQ4s4BaKz9LKD7K.1",
-    body: "ENT information sessions are a great way to learn about the organization. You will hear about the New Member Education process, some fun brotherhood events, current projects, and club culture. Additionally, you will have the opportunity to network to current members at the conclusion of the session. This event will be on zoom!"
-  },
-  {
-    date: "Jan 27",
-    title: "Speed Round Coffee Chats",
-    meta: "6:00 PM - 7:30 PM | Toni Morrison Multipurpose Room",
-    body: "Join us for Speed Coffee Chats, a fast-paced and welcoming event where you’ll rotate through conversations with different ENT brothers and hear firsthand about their experiences in the fraternity. It’s a low-pressure, genuine way for you to ask questions, make connections, and see what makes ENT unique. At the same time, we’re excited to get to know you as an applicant beyond the résumé. We’ll also be selling assorted goods during the event, with all proceeds going toward charity. Come grab a coffee, support a good cause, and start meaningful conversations!"
-  },
-  {
-    date: "Jan 29",
-    title: "In-Person Info Session",
-    meta: "5:00 PM – 6:00 PM | Statler 398",
-    body: "ENT information sessions are a great way to learn about the organization. You will hear about the New Member Education process, some fun brotherhood events, current projects, and club culture. Additionally, you will have the opportunity to network to current members at the conclusion of the session. This event is open to anyone!"
-  },
-  {
-    date: "Jan 29",
-    title: "SEGC X ENT Diverse Pathways in Business Panel",
-    meta: "6:00 PM – 7:00 PM | Warren B75",
-    body: "Description TBD"
-  },
-  {
-    date: "Jan 30",
-    title: "ENT Trivia Night",
-    meta: "7:00 PM – 9:00 PM | Ehub 3rd Floor",
-    body: "ENT places a strong emphasis on community and brotherhood events. Join us for a jeopardy style trivia night, where potential applicants will team up with current members to answer ENT and entrepreneurship themed questions. Get ready for some fun!"
-  },
-  {
-    date: "Jan 31",
-    title: "ENT Professional Headshots",
-    meta: "11:00 AM - 1:00 PM | Zeus Atrium (Goldwin Smith Hall)",
-    body: "This is your opportunity to get your professional headshot for club, or even job applications. Our experienced photographer will take individual, high quality, and professional photos for each person. You will also have the opportunity to speak to our E-board and current members at this event."
-  }
-];
-
 export default function Recruitment() {
   // Tracks which dropdown is currently open
   const [openIndex, setOpenIndex] = useState(null);
   const [openRoundIndex, setOpenRoundIndex] = useState(null);
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  // Scroll to top when page loads
+  // Normal visits start at the top (skip if arriving from the event popup)
   useEffect(() => {
+    if (typeof location.state?.focusEventIndex === "number") return;
     window.scrollTo({ top: 0, behavior: "smooth" });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // From EventPopUp "View timeline": open that event and scroll to it
+  useEffect(() => {
+    const focusIndex = location.state?.focusEventIndex;
+    if (typeof focusIndex !== "number" || focusIndex < 0 || focusIndex >= events.length) {
+      return;
+    }
+
+    setOpenIndex(focusIndex);
+
+    const timer = window.setTimeout(() => {
+      const el = document.getElementById(`recruitment-event-${focusIndex}`);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+      // Clear state so refresh/back doesn't re-trigger
+      navigate(".", { replace: true, state: {} });
+    }, 150);
+
+    return () => window.clearTimeout(timer);
+  }, [location.state, navigate]);
 
   return (
     <div className="recruitment-page">
@@ -81,16 +48,18 @@ export default function Recruitment() {
       {/* ===== HERO HEADER ===== */}
       <section className="recruitment-hero">
         <img src="/images/recruitmentheader.png" alt="Recruitment Header" />
-        <h1>SPRING 2026</h1>
-        <h2>RECRUITMENT</h2>
-        <h3>Spring 2026 recruitment has ended, check back for Fall 2027 recruitment!</h3>
+        <div className="recruitment-hero-content">
+          <h1>FALL 2026</h1>
+          <h2>RECRUITMENT</h2>
+          <ApplyNowButton />
+        </div>
       </section>
 
       {/* ===== EVENTS TIMELINE ===== */}
       <section className="recruitment-events">
         <h2 className="timeline-title">Recruitment Timeline</h2>
         {events.map((e, i) => (
-          <div className="event-card" key={i}>
+          <div className="event-card" key={i} id={`recruitment-event-${i}`}>
 
             {/* Date block */}
             <div className="event-date">
@@ -140,6 +109,7 @@ export default function Recruitment() {
         ))}
       </section>
 
+
       {/* ===== APPLICATION ROUNDS ===== */}
       <section className="recruitment-rounds">
         <h2>Application Rounds</h2>
@@ -147,8 +117,8 @@ export default function Recruitment() {
         {/* Round One */}
         <div className="round">
           <div className="round-date">
-            <span className="round-date-month">Jan 23</span>
-            <span className="round-date-day">- Feb 1</span>
+            <span className="round-date-month">Due</span>
+            <span className="round-date-day">Sep 14</span>
           </div>
 
           <div
@@ -168,17 +138,23 @@ export default function Recruitment() {
             </div>
 
             <div className="event-meta-row">
-              <p className="round-meta">Google Form | Due 5:00 PM</p>
-
+              <p className="round-meta">Google Form | Due Sep 14 @ 5:00 PM </p>
+              
               <a
-                href="https://docs.google.com/forms/d/14UPJM5gJgw-MRswDzIkA-Fvx2ZhP_NSxN0mcyT3Mx80/viewform?edit_requested=true"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdtmPyH-etdh51n1hQVqdhZ2_IIGz71PTjLV1zPxGzCKHQKeQ/viewform?usp=header"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="event-tag"
               >
-                Apply
+                Apply Here
               </a>
             </div>
+
+            {openRoundIndex === 0 && (
+              <div className="event-body">
+                Fill out the application consisting of a short video and a written question to be considered for the next round.
+              </div>
+            )}
 
           </div>
         </div>
@@ -186,8 +162,8 @@ export default function Recruitment() {
         {/* Round Two */}
         <div className="round">
           <div className="round-date">
-            <span className="round-date-month">Feb</span>
-            <span className="round-date-day">4</span>
+            <span className="round-date-month">Sep</span>
+            <span className="round-date-day">16</span>
           </div>
 
           <div
@@ -221,8 +197,8 @@ export default function Recruitment() {
         {/* Round Three */}
         <div className="round">
           <div className="round-date">
-            <span className="round-date-month">Feb</span>
-            <span className="round-date-day">5</span>
+            <span className="round-date-month">Sep</span>
+            <span className="round-date-day">17</span>
           </div>
 
           <div

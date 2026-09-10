@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Home.css";
 
+import ApplyNowButton from "./ApplyNowButton";
 import EndeavorsPopup from "./EndeavorsPopup";
 import { endeavors } from "./EndeavorsData";
 
@@ -22,17 +23,7 @@ const Home = () => {
             <h1>EPSILON NU TAU</h1>
             <p>TAU CHAPTER</p>
             <p>CORNELL UNIVERSITY</p>
-
-            {/*
-            <a
-              href="https://docs.google.com/forms/d/14UPJM5gJgw-MRswDzIkA-Fvx2ZhP_NSxN0mcyT3Mx80/viewform?edit_requested=true"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="apply-btn"
-            >
-              Applications are OPEN!
-            </a>
-            */}
+            <ApplyNowButton />
           </div>
 
           {/* Red Chevron Outline */}
@@ -147,8 +138,8 @@ const Home = () => {
               },
               {
                 role: "VP Recruitment",
-                name: "Krish Patel",
-                img: "headshots/KrishPatel-Headshot.png",
+                name: "Finn Clancy",
+                img: "headshots-fall2025/FinnClancy-Headshot.jpg",
               },
               {
                 role: "VP NME",
@@ -157,8 +148,8 @@ const Home = () => {
               },
               {
                 role: "VP NME",
-                name: "Julius Behner",
-                img: "headshots/JuliusBehner-Headshot.jpg",
+                name: "Sebastian Dominguez",
+                img: "headshots-fall2025/SebastianDominguez-Headshot.JPG",
               },
               {
                 role: "VP Professional Events",
@@ -177,29 +168,29 @@ const Home = () => {
               },
               {
                 role: "VP SBC",
-                name: "Matt Kahn",
-                img: "headshots-fall2025/MatthewKahn-Headshot.jpeg",
-              },
-              {
-                role: "VP Brotherhood",
-                name: "Jad Alsouss",
-                img: "headshots/JadAlsouss-Headshot.JPG",
-              },
-              {
-                role: "VP Professional Connects",
-                name: "Diya Sheth",
-                img: "headshots/DiyaSheth-Headshot.png",
-              },
-              {
-                role: "VP Philanthropy",
                 name: "Mahin Hardaway",
                 img: "headshots-fall2025/MahinHardaway-Headshot.jpg",
               },
               {
+                role: "VP Brotherhood",
+                name: "Jackson Hutchison",
+                img: "headshots/JacksonHutchison-Headshot.jpeg",
+              },
+              {
+                role: "VP Professional Connects",
+                name: "Christine Zhou",
+                img: "headshots/ChristineZhou-Headshot.png",
+              },
+              {
+                role: "VP Philanthropy",
+                name: "Olivia Buvanova",
+                img: "headshots/OliviaBuvanova-Headshot.png",
+              },
+              /*{
                 role: "Social Media Chair",
                 name: "Brooke Wilcox",
                 img: "headshots/BrookeWilcox-Headshot.jpeg",
-              },
+              },*/
             ].map((member, index) => (
               <div className="member-card" key={index}>
                 <img src={member.img} alt={member.role} />

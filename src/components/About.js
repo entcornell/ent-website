@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "./About.css";
+import ApplyNowButton from "./ApplyNowButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import {
@@ -27,6 +28,7 @@ export default function About() {
         />
         <div className="about-hero-overlay">
           <h1>ABOUT US</h1>
+          <ApplyNowButton />
         </div>
       </section>
 

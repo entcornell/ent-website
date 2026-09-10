@@ -1,0 +1,31 @@
+.apply-now-btn {
+  display: inline-block;
+  font-family: "Kaisei Opti", serif;
+  background: #6e1010;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.apply-now-btn:hover {
+  background: #a91c1c;
+  color: #fff;
+}
+
+.apply-now-btn:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  .apply-now-btn {
+    padding: 0.6rem 1.35rem;
+    font-size: 0.95rem;
+  }
+}

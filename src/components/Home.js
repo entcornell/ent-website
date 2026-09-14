@@ -157,6 +157,11 @@ const Home = () => {
                 img: "headshots-fall2025/AlixMartini-Headshot.jpg",
               },
               {
+                role: "VP Professional Connects",
+                name: "Christine Zhou",
+                img: "headshots-fall2026/ChristineZhou-HeadshotFA26.png",
+              },
+              {
                 role: "VP Finance",
                 name: "Noel Blackwell",
                 img: "headshots-fall2025/NoelBlackwell-Headshot.jpg",
@@ -175,11 +180,6 @@ const Home = () => {
                 role: "VP Brotherhood",
                 name: "Jackson Hutchison",
                 img: "headshots/JacksonHutchison-Headshot.jpeg",
-              },
-              {
-                role: "VP Professional Connects",
-                name: "Christine Zhou",
-                img: "headshots/ChristineZhou-Headshot.png",
               },
               {
                 role: "VP Philanthropy",

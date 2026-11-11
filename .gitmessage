@@ -1,0 +1,10 @@
+# <type>(<scope>): <summary in imperative, max ~50 chars>
+#
+# English only. Commit messages, PR titles and PR bodies are in English.
+# Types: feat | fix | refactor | perf | docs | test | chore | ci | style | revert
+# Example:  feat(planner): show remaining credits per requirement
+#
+# Body (optional): explain WHY, not what. Wrap at ~72 chars.
+#
+# Co-authorship only for real joint work:
+# Co-authored-by: First Last <ID+user@users.noreply.github.com>

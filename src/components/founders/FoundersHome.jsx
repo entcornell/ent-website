@@ -2,6 +2,10 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { APPLICATION_FORM_URL } from "../applicationConfig";
 import MosaicHero from "./MosaicHero";
+import Community from "./Community";
+import Footer from "./Footer";
+import Recruitment from "./Recruitment";
+import Year from "./Year";
 import "./FoundersHome.css";
 
 // Transparent while the pinned hero is on screen; solid once the content scrolls under
@@ -25,7 +29,7 @@ function Nav() {
   return (
     <header className={`fh-nav ${scrolled ? "is-scrolled" : ""}`}>
       <nav aria-label="Main" className="fh-nav-inner">
-        <Link to="/new" aria-label="ENT home" className="fh-nav-logo">
+        <Link to="/" aria-label="ENT home" className="fh-nav-logo">
           <img className="fh-logo" src="/images/ENTLogo-trim.png" alt="ENT at Cornell" />
           <span className="fh-mono fh-nav-label fh-hide-sm">
             Epsilon Nu Tau
@@ -37,8 +41,12 @@ function Nav() {
           <a className="fh-hide-sm" href="#about">
             About
           </a>
-          <a href="#directory">Ventures</a>
-          <Link to="/brothers">Brothers</Link>
+          <Link className="fh-hide-xs" to="/studentVentures">
+            Ventures
+          </Link>
+          <Link className="fh-hide-xs" to="/brothers">
+            Brothers
+          </Link>
           <Link className="fh-hide-sm" to="/recruitment">
             Recruitment
           </Link>
@@ -64,10 +72,13 @@ export default function FoundersHome() {
   return (
     <div className="fh-root">
       <Nav />
-      {/* Only the hero for now; the rest of the home is rebuilt section by section. */}
       <main>
         <MosaicHero />
+        <Year />
+        <Community />
+        <Recruitment />
       </main>
+      <Footer />
     </div>
   );
 }

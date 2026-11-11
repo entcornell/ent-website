@@ -99,7 +99,7 @@ flowchart LR
 
 | Route              | File                                       | What it shows                                                                        |
 | ------------------ | ------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `/`                | `src/components/Home.jsx`                  | Hero, about blurb, ENT endeavors (popups), photo gallery                             |
+| `/`                | `src/components/founders/FoundersHome.jsx` | Home: scroll-driven hero, ventures, a year at ENT, the chapter, recruitment          |
 | `/about`           | `src/components/About.jsx`                 | Our story and mission                                                                |
 | `/Values`          | `src/components/Values.jsx`                | Brotherhood, authenticity, passion, mentoring                                        |
 | `/studentVentures` | `src/components/StudentVentures.jsx`       | Member-founded businesses, filterable by category                                    |
@@ -107,7 +107,7 @@ flowchart LR
 | `/recruitment`     | `src/components/Recruitment.jsx`           | Recruitment timeline, application rounds and FAQ                                     |
 | `/brothers`        | `src/components/Brothers.jsx`              | Executive board, members by pledge class, alumni                                     |
 | `/newsletter`      | `src/components/Newsletter.jsx`            | Newsletter archive (hidden from the navbar, linked from the footer)                  |
-| `/new`             | `src/components/founders/FoundersHome.jsx` | Redesign preview (work in progress): brothers and the ventures they built            |
+| `/new`             | `src/App.jsx`                              | Old preview link of the redesign; redirects to `/`                                   |
 | `/newsletter/:id`  | `src/components/NewsletterPage.jsx`        | One issue, with a full-screen reader                                                 |
 
 `/members` redirects to `/brothers`. Every page shares the navbar, the footer and the
@@ -166,18 +166,19 @@ flowchart LR
     events --> popup(["Event popup, every page"])
     config["applicationConfig.js"] --> apply(["Every Apply Here button"])
     ventures["StudentVenturesData.js"] --> p3(["/studentVentures"])
-    endeavors["EndeavorsData.js"] --> p4(["/ (endeavors)"])
+    founders["founders/foundersData.js"] --> p4(["/ (home)"])
+    ventures --> p4
     news["NewsletterData.js"] --> p5(["/newsletter"])
 ```
 
-| To change…                    | Edit                                    | Notes                                                                                       |
-| ----------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------- |
-| Members, e-board, alumni      | `src/components/BrothersData.js`        | Arrays `eboard`, `brotherhood` (one entry per pledge class) and `alumni`                    |
-| Recruitment events and rounds | `src/components/recruitmentEvents.js`   | `recruitmentEvents`, `applicationRounds` and `RECRUITMENT_YEAR`; also feeds the event popup |
-| Application form link         | `src/components/applicationConfig.js`   | Used by every "Apply Here" button, including Round One                                      |
-| Student ventures              | `src/components/StudentVenturesData.js` | The filter bar's categories come from each venture's `category`                             |
-| Home page endeavors           | `src/components/EndeavorsData.js`       | Cards and popups on the home page                                                           |
-| Newsletter issues             | `src/components/NewsletterData.js`      | Newest issue first; pages in `public/newsletters/issueN/`                                   |
+| To change…                    | Edit                                      | Notes                                                                                       |
+| ----------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Members, e-board, alumni      | `src/components/BrothersData.js`          | Arrays `eboard`, `brotherhood` (one entry per pledge class) and `alumni`                    |
+| Recruitment events and rounds | `src/components/recruitmentEvents.js`     | `recruitmentEvents`, `applicationRounds` and `RECRUITMENT_YEAR`; also feeds the event popup |
+| Application form link         | `src/components/applicationConfig.js`     | Used by every "Apply Here" button, including Round One                                      |
+| Student ventures              | `src/components/StudentVenturesData.js`   | The filter bar's categories come from each venture's `category`                             |
+| Home page                     | `src/components/founders/foundersData.js` | Hero spotlights, the wall of ventures, a year at ENT and the chapter photos                 |
+| Newsletter issues             | `src/components/NewsletterData.js`        | Newest issue first; pages in `public/newsletters/issueN/`                                   |
 
 <details>
 <summary><b>Add a member</b></summary>

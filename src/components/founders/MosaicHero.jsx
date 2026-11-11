@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import Collage from "./Collage";
 import { heroSpotlights } from "./foundersData";
 
 // The hero background: a smooth rose gradient with a soft arc of light that breathes
@@ -122,6 +123,9 @@ function useLight(canvasRef) {
     let start = 0;
 
     const resize = () => {
+      // A hidden or collapsing canvas reports 0 × 0; there is nothing to size until it
+      // has a size again, and createImageData would throw.
+      if (!canvas.clientWidth || !canvas.clientHeight) return;
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
       canvas.width = Math.round(canvas.clientWidth * dpr);
       canvas.height = Math.round(canvas.clientHeight * dpr);
@@ -162,6 +166,11 @@ function useLight(canvasRef) {
       }
       const w = canvas.clientWidth;
       const h = canvas.clientHeight;
+      // Skip frames while the canvas has no size (its buffer isn't ready either).
+      if (!image || !w || !h) {
+        if (!still) frame = requestAnimationFrame(draw);
+        return;
+      }
       // The band is computed once per frame; only the per-pixel math runs in the loop.
       const band = bandAt(t, w, h);
       for (let row = 0; row < buffer.height; row++) paintRow(row, t, intro, w, h, band);
@@ -221,17 +230,28 @@ function useScrollProgress(sectionRef) {
 // Each step of the hero plays over its own slice of the scroll range, eased in and out
 // so it starts and settles gently.
 const STEPS = {
-  turn: [0.03, 0.15], // the quote slides out, "ENT turns Cornell students into founders." in
-  next: [0.19, 0.3], // that slides out, "With real companies." in
+  turn: [0.03, 0.13], // the quote slides out, "ENT turns Cornell students into founders." in
+  next: [0.17, 0.25], // that slides out, "With real companies." in
 };
 // Then the ventures, one after another: each comes in over its own slice and leaves
 // (quickly, upward) just before the next one comes in.
-const SPOTLIGHT_IN = [
-  [0.33, 0.45],
-  [0.56, 0.68],
-  [0.79, 0.91],
-];
-const SPOTLIGHT_OUT = 0.06;
+// The spotlight fades in once; after that the frames stay put and only their contents
+// cross-fade from one venture to the next, quickly, over these slices.
+// The first entry is the fade-in; then each venture takes only SPOTLIGHT_STEP of the scroll,
+// so more ventures fit without making the page longer.
+const SPOTLIGHT_FIRST = [0.27, 0.35];
+const SPOTLIGHT_STEP = 0.075;
+const SPOTLIGHT_FADE = 0.026;
+// After the last venture the frames fade away and every venture fills the screen.
+const SPOTLIGHT_EXIT = [0.61, 0.66];
+const COLLAGE = [0.6, 1];
+const spotlightSlice = (i) =>
+  i === 0
+    ? SPOTLIGHT_FIRST
+    : [
+        SPOTLIGHT_FIRST[1] + i * SPOTLIGHT_STEP - SPOTLIGHT_FADE,
+        SPOTLIGHT_FIRST[1] + i * SPOTLIGHT_STEP,
+      ];
 
 function stepProgress(progress, [from, to]) {
   const p = Math.max(0, Math.min(1, (progress - from) / (to - from)));
@@ -245,62 +265,108 @@ function Phrase({ lines, accentFrom, total }) {
     <span key={li} className="fh-line">
       {line.map((word) => {
         const index = i++;
+        // The space sits between the word spans, not inside them, so the heading's
+        // accessible name keeps its spaces ("Live in the future", not "Liveinthefuture").
         return (
-          <span
-            key={word}
-            className={`fh-wordx ${index >= accentFrom ? "fh-metal-text fh-accent-word" : ""}`}
-            style={{ "--i": index, "--n": total }}
-          >
-            {word}{" "}
-          </span>
+          <Fragment key={word}>
+            <span
+              className={`fh-wordx ${index >= accentFrom ? "fh-metal-text fh-accent-word" : ""}`}
+              style={{ "--i": index, "--n": total }}
+            >
+              {word}
+            </span>{" "}
+          </Fragment>
         );
       })}
     </span>
   ));
 }
 
-// One venture, kept clean: two staggered photos that open like a curtain with the
-// scroll, and only the venture's name between them, in the site's metal. `enter` and
-// `leave` (0 to 1) come from the scroll.
-function Spotlight({ venture: v, enter, leave }) {
-  const shown = enter > 0.01 && leave < 0.99;
+const SIDES = ["left", "right"];
+
+// Photos cross-fade, but text would overlap mid-change ("Stride" over "BUZZ"); it fades
+// out over the first half of the change and in over the second, never both at once.
+function textOpacity(vis) {
+  return Math.max(0, vis * 2 - 1).toFixed(4);
+}
+
+// The ventures, kept clean: two staggered frames and a name between them. The frames fade
+// in once (`enter`) and then stay still; each venture's photos, captions and name are
+// stacked inside them and cross-fade by `vis` (0 to 1, from the scroll), so the content
+// changes without anything moving.
+function Spotlight({ spots, enter, exit }) {
   return (
     <div
       className="fh-spot"
       style={{
         "--s": enter.toFixed(4),
-        "--o": leave.toFixed(4),
-        visibility: shown ? "visible" : "hidden",
+        "--x": exit.toFixed(4),
+        visibility: enter > 0.01 && exit < 0.99 ? "visible" : "hidden",
       }}
-      aria-hidden={enter <= 0.5 || leave > 0.5}
     >
-      {v.photos.map((photo, i) => (
-        <figure
-          key={photo.src}
-          className={`fh-spot-figure ${i === 0 ? "fh-spot-left" : "fh-spot-right"}`}
-        >
+      {SIDES.map((side, s) => (
+        <figure key={side} className={`fh-spot-figure fh-spot-${side}`}>
           <div className="fh-spot-frame">
-            <img
-              className={photo.logoOn ? "fh-spot-photo fh-spot-logo" : "fh-spot-photo"}
-              src={photo.src}
-              alt={photo.alt}
-              width={photo.width}
-              height={photo.height}
-              style={
-                photo.logoOn ? { backgroundColor: photo.logoOn } : { objectPosition: photo.focus }
-              }
-            />
+            {spots.map(({ venture, vis }) => {
+              const photo = venture.photos[s];
+              return (
+                <img
+                  key={photo.src}
+                  className={photo.logoOn ? "fh-spot-photo fh-spot-logo" : "fh-spot-photo"}
+                  src={photo.src}
+                  alt={photo.alt}
+                  aria-hidden={vis < 0.5}
+                  width={photo.width}
+                  height={photo.height}
+                  style={{
+                    opacity: vis.toFixed(4),
+                    ...(photo.logoOn
+                      ? { backgroundColor: photo.logoOn }
+                      : { objectPosition: photo.focus }),
+                  }}
+                />
+              );
+            })}
           </div>
           <figcaption className="fh-mono fh-spot-caption">
-            <span>{photo.caption[0]}</span>
-            <span>{photo.caption[1]}</span>
+            {spots.map(({ venture, vis }) => (
+              <span
+                key={venture.name}
+                aria-hidden={vis < 0.5}
+                style={{ opacity: textOpacity(vis) }}
+              >
+                <span>{venture.photos[s].caption[0]}</span>
+                <span>{venture.photos[s].caption[1]}</span>
+              </span>
+            ))}
           </figcaption>
         </figure>
       ))}
       <p className="fh-serif fh-spot-name">
-        <a href={v.site} target="_blank" rel="noopener noreferrer">
-          <span className="fh-metal-text fh-accent-word">{v.name}</span>
-        </a>
+        {spots.map(({ venture, vis }) => {
+          const style = { opacity: textOpacity(vis) };
+          // A venture without a site yet shows its name without a link.
+          if (!venture.site)
+            return (
+              <span key={venture.name} aria-hidden={vis < 0.5} style={style}>
+                {venture.name}
+              </span>
+            );
+          return (
+            <a
+              key={venture.name}
+              className={venture.name.length > 10 ? "is-long" : undefined}
+              href={venture.site}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-hidden={vis < 0.5}
+              tabIndex={vis < 0.5 ? -1 : undefined}
+              style={{ ...style, pointerEvents: vis > 0.5 ? "auto" : "none" }}
+            >
+              {venture.name}
+            </a>
+          );
+        })}
       </p>
     </div>
   );
@@ -323,17 +389,15 @@ export default function MosaicHero() {
   const progress = useScrollProgress(sectionRef);
   const turn = stepProgress(progress, STEPS.turn);
   const next = stepProgress(progress, STEPS.next);
-  const spots = heroSpotlights.map((venture, i) => {
-    const following = SPOTLIGHT_IN[i + 1];
-    return {
-      venture,
-      enter: stepProgress(progress, SPOTLIGHT_IN[i]),
-      leave: following
-        ? stepProgress(progress, [following[0] - SPOTLIGHT_OUT, following[0] + 0.02])
-        : 0,
-    };
-  });
-  const spot = spots[0]?.enter ?? 0;
+  const shown = heroSpotlights.map((_, i) => stepProgress(progress, spotlightSlice(i)));
+  // How visible each venture is: in when its slice comes, out when the next one's does.
+  const spots = heroSpotlights.map((venture, i) => ({
+    venture,
+    vis: shown[i] * (1 - (shown[i + 1] ?? 0)),
+  }));
+  const spot = shown[0] ?? 0;
+  const exit = stepProgress(progress, SPOTLIGHT_EXIT);
+  const collage = stepProgress(progress, COLLAGE);
 
   return (
     // The section is taller than the screen; the stage inside stays pinned while the
@@ -381,18 +445,26 @@ export default function MosaicHero() {
           </div>
         </div>
 
-        {spots.map(({ venture, enter, leave }) => (
-          <Spotlight key={venture.name} venture={venture} enter={enter} leave={leave} />
-        ))}
+        <Spotlight spots={spots} enter={spot} exit={exit} />
+        <Collage progress={collage} />
 
-        {/* Poster-style corners: where we are, and the one thing to do next. */}
-        <div className="fh-mono fh-hero-corners fh-in fh-d2">
-          <p>
-            Cornell University
-            <br />
-            Ithaca, NY
-          </p>
-          <Link to="/recruitment">Fall 2026 recruitment →</Link>
+        {/* Poster-style corners: where we are, and the one thing to do next. They step
+            aside when the wall of ventures rises under them. The fade sits on a wrapper:
+            the corners' entrance animation would override an opacity set on them. */}
+        <div
+          style={{
+            opacity: Math.max(0, 1 - collage * 4).toFixed(4),
+            visibility: collage < 0.25 ? "visible" : "hidden",
+          }}
+        >
+          <div className="fh-mono fh-hero-corners fh-in fh-d2">
+            <p>
+              Cornell University
+              <br />
+              Ithaca, NY
+            </p>
+            <Link to="/recruitment">Fall 2026 recruitment →</Link>
+          </div>
         </div>
       </div>
     </section>

@@ -4,7 +4,7 @@ import App from "./App";
 
 // Every route and a heading that proves its page rendered, not just the layout.
 const ROUTES = [
-  ["/", /epsilon nu tau/i],
+  ["/", /live in the future/i],
   ["/about", /about us/i],
   ["/Values", /values/i],
   ["/studentVentures", /student ventures/i],
@@ -19,6 +19,15 @@ describe("App routes", () => {
     window.history.pushState({}, "", path);
     render(<App />);
     expect((await screen.findAllByRole("heading", { level: 1, name: heading })).length).toBe(1);
+  });
+
+  it("redirects the old /new preview to the home", async () => {
+    window.history.pushState({}, "", "/new");
+    render(<App />);
+    expect(
+      await screen.findByRole("heading", { level: 1, name: /live in the future/i }),
+    ).toBeInTheDocument();
+    expect(window.location.pathname).toBe("/");
   });
 
   it("redirects /members to /brothers", async () => {

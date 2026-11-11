@@ -2,7 +2,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Outlet, Navigate } from "react-router-dom";
 
-import Home from "./components/Home";
 import Newsletter from "./components/Newsletter";
 import Brothers from "./components/Brothers";
 import Recruitment from "./components/Recruitment";
@@ -32,11 +31,12 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* All routes below share the same NavBar */}
-        {/* Redesign preview: its own nav and footer, outside the shared layout. */}
-        <Route path="/new" element={<FoundersHome />} />
+        {/* The home has its own nav and footer, outside the shared layout. */}
+        <Route path="/" element={<FoundersHome />} />
+        {/* The redesign was previewed at /new; old links land on the home. */}
+        <Route path="/new" element={<Navigate to="/" replace />} />
+        {/* Every other page shares the original NavBar and Footer. */}
         <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
           <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/newsletter/:id" element={<NewsletterPage />} />
           <Route path="/brothers" element={<Brothers />} />

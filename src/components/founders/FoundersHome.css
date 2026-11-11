@@ -60,7 +60,6 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  flex-wrap: wrap;
 }
 .fh-nav-logo {
   display: flex;
@@ -131,7 +130,18 @@
   display: flex;
   align-items: center;
   gap: 30px;
-  flex-wrap: wrap;
+}
+/* Phones: one row, the logo and Apply only (the rest is in the footer). */
+@media (max-width: 600px) {
+  .fh-nav-inner {
+    padding: 16px 20px 12px;
+  }
+  .fh-nav-links {
+    gap: 18px;
+  }
+  .fh-hide-xs {
+    display: none;
+  }
 }
 
 /* Hero */
@@ -139,7 +149,7 @@
   /* Taller than the screen: the stage stays pinned while this extra height scrolls,
      which drives the hero's story (see STEPS in MosaicHero.jsx). */
   position: relative;
-  height: 660vh;
+  height: 560vh;
 }
 .fh-hero-stage {
   position: sticky;
@@ -177,7 +187,7 @@
   margin: 0;
   font-family: "Playfair Display", Georgia, serif;
   /* Playfair reads large for its size, so it runs ~12% under the base scale. */
-  font-size: clamp(38px, 5.6vw, 88px);
+  font-size: clamp(32px, 4.4vw, 72px);
   font-weight: 400;
   line-height: 0.98;
   letter-spacing: -0.03em;
@@ -296,20 +306,18 @@
   filter: opacity(clamp(0, calc(1 - (var(--s) - 0.2) * 4), 1));
 }
 
-/* The venture spotlight (--s, 0 to 1, from the scroll). Nothing starts before 0.45, once
-   "With real companies." has gone. Poster style: two staggered
-   photos open bottom-up like a curtain, the right one a beat after the left, and the
-   venture's name rises in between them. */
+/* The venture spotlight. The whole stage fades in once (--s, from the scroll, after
+   "With real companies." has gone); then nothing moves: each venture's photos, captions
+   and name are stacked in place and cross-fade (inline opacity) to the next one. */
 .fh-spot {
-  /* --o (0 to 1): the venture leaving, rising and fading as the next one comes in. */
-  opacity: calc(1 - var(--o));
-  translate: 0 calc(var(--o) * -48px);
   --photo: min(28vw, 54vh, 470px);
   /* Half the width kept clear for the name between the photos. */
   --gap: clamp(150px, 12vw, 200px);
   position: absolute;
   inset: 0;
   pointer-events: none;
+  /* --x: the frames leaving for the closing collage. */
+  opacity: calc(clamp(0, calc((var(--s) - 0.45) * 1.82), 1) * (1 - var(--x)));
 }
 .fh-spot-figure {
   position: absolute;
@@ -317,91 +325,493 @@
   width: var(--photo);
   margin: 0;
 }
-/* The photos hug the name (a fixed gap from the center), not the screen's edges, and sit
+/* The frames hug the name (a fixed gap from the center), not the screen's edges, and sit
    at different heights so they read as a poster, not a pair of cards. */
 .fh-spot-left {
-  --r: clamp(0, calc((var(--s) - 0.45) * 2.2), 1);
   right: calc(50% + var(--gap));
   transform: translateY(-53%);
 }
 .fh-spot-right {
-  --r: clamp(0, calc((var(--s) - 0.55) * 2.2), 1);
   left: calc(50% + var(--gap));
   transform: translateY(-47%);
 }
 .fh-spot-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   border-radius: 3px;
   box-shadow: 0 28px 60px rgb(40 20 20 / 26%);
-  /* The curtain: the frame opens from the bottom edge up. */
-  clip-path: inset(calc((1 - var(--r)) * 100%) 0 0 0);
+}
+.fh-spot-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 /* A logo instead of a photo: contained, with room around it, on the brand's color. */
 .fh-spot-photo.fh-spot-logo {
   object-fit: contain;
-  padding: 18%;
+  padding: 16% 22%;
   box-sizing: border-box;
 }
+/* Captions and names are stacked in one grid cell so they can cross-fade in place. */
 .fh-spot-caption {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
+  display: grid;
   margin-top: 14px;
   font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--ink);
-  opacity: var(--r);
 }
-.fh-spot-caption span:last-child {
+.fh-spot-caption > span {
+  grid-area: 1 / 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.fh-spot-caption > span > span:last-child {
   /* The dark ENT red: the lighter rose disappears where the background darkens. */
   color: #6e1010;
-}
-.fh-spot-photo {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  /* Settles from a slight zoom as the curtain opens. */
-  transform: scale(calc(1.18 - var(--r) * 0.18));
 }
 .fh-spot-name {
   position: absolute;
   top: 50%;
   left: 50%;
   margin: 0;
+  display: grid;
+  justify-items: center;
   font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(64px, 7.4vw, 120px);
+  font-size: clamp(52px, 5.8vw, 96px);
   line-height: 1;
   letter-spacing: -0.03em;
   white-space: nowrap;
   /* Playfair's default old-style figures turn the 1 in "N1X" into a small "i". */
   font-variant-numeric: lining-nums;
-  opacity: clamp(0, calc((var(--s) - 0.55) * 5), 1);
-  transform: translate(-50%, calc(-50% + (1 - var(--s)) * 48px));
+  /* Upright and in ink, like the regular words of the headline. */
+  font-weight: 400;
+  color: var(--ink);
+  transform: translate(-50%, -50%);
 }
-/* Italic capitals (the N of "N1X") swing left of the text box, where the metal
-   gradient isn't painted; extend the gradient that way without moving the word. */
-.fh-spot-name .fh-metal-text {
-  padding-left: 0.2em;
-  margin-left: -0.2em;
+.fh-spot-name > * {
+  grid-area: 1 / 1;
 }
 .fh-spot-name a {
-  pointer-events: auto;
+  color: inherit;
   text-decoration: none;
 }
-/* Narrow screens: the two photos side by side above, the name below. */
+/* Long names ("N1X Technologies") wrap onto two centered lines at a smaller size, so they
+   stay between the photos. */
+.fh-spot-name a.is-long {
+  font-size: 0.62em;
+  line-height: 1.05;
+  white-space: normal;
+  text-align: center;
+  width: calc(var(--gap) * 2 - 32px);
+}
+/* The closing wall: every venture's logo in tiles four across, starting just below the
+   screen. With the scroll (--c, 0 to 1) it rises by its own height, so at the end its
+   bottom meets the bottom of the screen just as the hero lets go; from there it scrolls
+   away with the page into the next section. */
+.fh-collage {
+  --cols: 4;
+  --gap-c: 6px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  gap: var(--gap-c);
+  transform: translateY(calc(var(--c) * -100%));
+  pointer-events: none;
+}
+/* A soft band of the page's rose at the top and bottom keeps the nav and the corner text
+   readable over the tiles. */
+.fh-collage-scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgb(214 166 158 / 92%), rgb(214 166 158 / 0%) 120px),
+    linear-gradient(to top, rgb(214 166 158 / 92%), rgb(214 166 158 / 0%) 110px);
+}
+/* Every tile sits on the same cream paper so logos from very different sources read as
+   one set. Multiply drops each logo's white ground into the paper and keeps its colours;
+   logos made for a dark ground keep that ground instead. */
+.fh-tile {
+  aspect-ratio: 3 / 2;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #f6efe9;
+}
+/* Each logo's width is set inline (logoWidth in foundersData.js); the height follows. */
+.fh-tile img {
+  height: auto;
+  mix-blend-mode: multiply;
+}
+/* Many logo files sit on an off-white box; lift it to white so multiply makes it vanish. */
+.fh-tile:not(.is-dark) img {
+  filter: brightness(1.05) contrast(1.05);
+}
+.fh-tile.is-dark img {
+  mix-blend-mode: normal;
+}
+/* No logo: the name, set like a wordmark. */
+.fh-tile.is-name span {
+  padding: 0 10%;
+  text-align: center;
+  color: var(--ink);
+  line-height: 1.05;
+}
+.fh-tile.is-serif span {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(18px, 2.4vw, 38px);
+  letter-spacing: -0.01em;
+}
+.fh-tile.is-sans span {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: clamp(22px, 3vw, 48px);
+  letter-spacing: -0.01em;
+}
+@media (max-width: 900px) {
+  .fh-collage {
+    --cols: 2;
+    --gap-c: 4px;
+  }
+}
+
+/* Narrow screens: a vertical poster. One photo up on the left, the name in the middle, the
+   other photo down on the right; the whole stack is centered on the screen. */
 @media (max-width: 900px) {
   .fh-spot {
-    --photo: calc((100vw - 60px) / 2);
-    --gap: 6px;
+    --photo: min(48vw, 27svh);
+    /* Two photos (4:5), their captions and the name: about 2 × 1.25 photos + 200px. */
+    --spot-top: max(76px, calc((100svh - var(--photo) * 2.5 - 200px) / 2));
   }
-  .fh-spot-figure {
-    top: 28%;
+  .fh-spot-left,
+  .fh-spot-right {
+    transform: none;
+  }
+  .fh-spot-left {
+    top: var(--spot-top);
+    left: 20px;
+    right: auto;
+  }
+  .fh-spot-right {
+    top: calc(var(--spot-top) + var(--photo) * 1.25 + 130px);
+    right: 20px;
+    left: auto;
+  }
+  .fh-spot-caption {
+    margin-top: 8px;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+  }
+  .fh-spot-caption > span {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2px;
   }
   .fh-spot-name {
-    top: 72%;
+    top: calc(var(--spot-top) + var(--photo) * 1.25 + 58px);
+    font-size: 44px;
+    transform: translateX(-50%);
+  }
+}
+
+/* A year at ENT: a pinned film strip that slides sideways with the scroll (--y, 0 to 1),
+   on the hero's rose metal. The section is tall so the strip has room to travel. */
+.fh-year {
+  position: relative;
+  height: calc(var(--count) * 55vh + 100vh);
+  background: linear-gradient(100deg, #e7c3bb, #d9a69d 45%, #efd7d1 70%, #c99187);
+}
+.fh-year-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+}
+.fh-year-head {
+  width: min(1272px, 100% - 48px);
+  margin: 0 auto;
+}
+.fh-year-rule {
+  position: relative;
+  height: 1px;
+  margin-top: 30px;
+  background: rgb(58 36 36 / 25%);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.fh-year-rule span {
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+.fh-year-rule i {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: calc(var(--y) * 100%);
+  height: 2px;
+  margin-top: -0.5px;
+  background: #6e1010;
+}
+.fh-year-track {
+  --card: min(46vw, 62vh, 620px);
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0 max(24px, calc((100vw - 1272px) / 2));
+  list-style: none;
+  width: max-content;
+  /* Slides its own width minus one screen, so the last moment ends at the right edge. */
+  transform: translateX(calc(var(--y) * (-100% + 100vw)));
+}
+.fh-year-moment {
+  width: var(--card);
+}
+.fh-year-moment figure {
+  margin: 0 0 18px;
+}
+.fh-year-cap {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  margin-bottom: 12px;
+  border-top: 1px solid rgb(58 36 36 / 35%);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.fh-year-moment img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 24px 50px rgb(40 20 20 / 22%);
+}
+.fh-year-moment h3 {
+  margin: 0 0 6px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(22px, 2vw, 30px);
+  color: var(--ink);
+}
+.fh-year-moment p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--ink-2);
+}
+@media (max-width: 900px) {
+  .fh-year-track {
+    --card: 78vw;
+    gap: 20px;
+  }
+}
+
+/* Shared section header, links and button */
+.fh-eyebrow {
+  margin: 0 0 18px;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--rose);
+}
+.fh-section-head {
+  max-width: 1272px;
+  margin: 0 auto 56px;
+  padding: 0 24px;
+}
+.fh-section-title {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(36px, 4.4vw, 68px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+.fh-text-link {
+  display: inline-block;
+  margin-top: 22px;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+.fh-root a.fh-text-link {
+  color: #6e1010;
+}
+.fh-button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 52px;
+  padding: 0 28px;
+  border-radius: 999px;
+  font-family: "DM Mono", monospace;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: linear-gradient(100deg, #5a0e0e, #8f2d29 50%, #5a0e0e);
+  box-shadow: 0 14px 30px rgb(90 14 14 / 25%);
+  transition: transform 0.2s ease;
+}
+.fh-root a.fh-button {
+  color: #fbf6f4;
+}
+.fh-button:hover {
+  transform: translateY(-2px);
+}
+
+/* The chapter: rows of photos drifting in alternating directions, each at its own pace. */
+.fh-community {
+  padding: 40px 0 150px;
+  overflow: hidden;
+}
+.fh-reel {
+  display: flex;
+  width: max-content;
+  margin-bottom: 14px;
+  animation: fh-reel 120s linear infinite;
+}
+.fh-reel.is-reverse {
+  animation-direction: reverse;
+}
+.fh-reel:nth-of-type(3) {
+  animation-duration: 140s;
+}
+.fh-reel:nth-of-type(4) {
+  animation-duration: 105s;
+}
+.fh-reel-track {
+  display: flex;
+  gap: 14px;
+  margin: 0;
+  padding: 0 14px 0 0;
+  list-style: none;
+}
+/* Every photo keeps its own shape at a shared height, so the rows read like a contact
+   sheet rather than a grid of crops. */
+.fh-reel-track img {
+  display: block;
+  height: clamp(140px, 15vw, 220px);
+  width: auto;
+  border-radius: 3px;
+}
+@keyframes fh-reel {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Recruitment, minimal: the line and Apply on the left, the 3D rocket on the right. */
+.fh-recruit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 48px;
+  max-width: 1272px;
+  margin: 0 auto;
+  padding: 80px 24px 120px;
+}
+/* The 3D scene can only draw inside its own box, so the box is tall and runs to the
+   screen's right edge, and its top and right edges fade out: the rocket leaves the frame
+   on lift-off (and comes back in from the right) without a hard cut. */
+.fh-recruit-rocket {
+  height: min(92vh, 860px);
+  margin-right: calc(-1 * max(24px, (100vw - 1272px) / 2));
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent, #000 32%),
+    linear-gradient(to left, transparent, #000 22%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to bottom, transparent, #000 32%),
+    linear-gradient(to left, transparent, #000 22%);
+  mask-composite: intersect;
+}
+.fh-recruit-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  margin-top: 36px;
+}
+.fh-recruit-actions .fh-text-link {
+  margin-top: 0;
+}
+@media (max-width: 900px) {
+  .fh-recruit {
+    grid-template-columns: 1fr;
+  }
+  .fh-recruit-rocket {
+    display: none;
+  }
+}
+
+/* Footer */
+.fh-footer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 24px;
+  max-width: 1272px;
+  margin: 0 auto;
+  padding: 48px 24px 40px;
+  border-top: 1px solid rgb(58 36 36 / 18%);
+}
+.fh-footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.fh-footer-brand p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.6;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.fh-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.fh-root .fh-footer-links a {
+  color: var(--ink);
+  text-decoration: none;
+}
+.fh-footer-legal {
+  grid-column: 1 / -1;
+  margin: 12px 0 0;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+@media (max-width: 900px) {
+  .fh-footer {
+    grid-template-columns: 1fr;
   }
 }
 

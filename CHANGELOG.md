@@ -6,6 +6,11 @@ The site is deployed continuously from `main`, so entries are grouped by date, n
 
 ## [Unreleased]
 
+### Removed
+
+- The old home page (`Home.jsx`, `EndeavorsPopup.jsx`, `EndeavorsData.js`), replaced by the
+  new one.
+
 ### Changed
 
 - **README redesigned** in ENT's colors: banner, live screenshots (desktop and phone),
@@ -15,10 +20,19 @@ The site is deployed continuously from `main`, so entries are grouped by date, n
 
 ### Added
 
-- **Redesigned home preview at `/new`** (not linked from the live site): a pinned hero on a
-  rose-copper metal background that turns, with the scroll, from Paul Graham's "Live in the
-  future, then build what's missing." to "ENT turns Cornell students into founders." and
-  "With real companies.", then spotlights Stride, BUZZ and N1X with their founders.
+- **New home at `/`**, in a rose-copper metal identity with Playfair Display and DM Mono:
+  - a pinned, scroll-driven hero: Paul Graham's "Live in the future, then build what's
+    missing." turns into "ENT turns Cornell students into founders." and "With real
+    companies.", then spotlights Stride, BUZZ, N1X and Hotake with their founders, and
+    ends on a wall of every ENT venture's logo;
+  - "A year at ENT": a pinned film strip of real chapter moments, fall to spring;
+  - "Builders, and friends.": four drifting rows of chapter photos;
+  - recruitment with ENT's 3D rocket (three.js, loaded only near the section, desktop only)
+    and a footer.
+    Photos come from the ENT media library, converted to WebP. Every other page keeps its
+    original design; the old preview link `/new` redirects to `/`.
+- `scripts/optimize-model.mjs` shrinks 3D models for the web (the rocket went from 58 MB to
+  0.9 MB).
 - Taglines for every venture in `StudentVenturesData.js`; Kate Stiens added as Stride's
   co-founder.
 - `npm run readme:assets` regenerates the README banner and screenshots with headless

@@ -14,7 +14,9 @@ Follows `~/.claude/standards/engineering.md`; anything below wins over it.
 2. `main` is production (Vercel). Never push to it: branch → PR → squash. Merge only on the
    owner's go-ahead.
 3. `npm run check && npm run build` pass before any PR.
-4. README and CHANGELOG are updated in the same PR as the change.
+4. README and CHANGELOG are updated in the same PR as the change. `src/readme.test.js` fails
+   when a route, content file, npm script or screenshot is missing from the README; after a
+   visual change, run `npm run readme:assets` and commit the new images.
 5. Authorship: the person making the change. No Claude attribution anywhere.
 6. This is the club's shared repo: other members edit content through GitHub. Keep data
    files simple to edit by hand.

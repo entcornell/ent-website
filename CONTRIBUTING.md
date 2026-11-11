@@ -39,5 +39,7 @@ npm run dev             # http://localhost:3000
 
 - English everywhere in the repo.
 - Compress images before adding them (see [README, Images](README.md#images)).
-- Update the README and CHANGELOG (`[Unreleased]`) in the same PR as the change.
+- Update the README and CHANGELOG (`[Unreleased]`) in the same PR as the change. A test
+  fails if the README misses a route, content file or npm script. After a visual change,
+  run `npm run readme:assets` to refresh the README's banner and screenshots.
 - Bug fixes include a test that would have caught the bug.

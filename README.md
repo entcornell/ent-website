@@ -444,7 +444,7 @@ README in the same PR**.
 ---
 
 <p align="center">
-  <img src="public/ENTTransparentLogo.png" alt="ENT at Cornell" width="96" /><br />
+  <img src="public/ENTTransparentLogo.png" alt="ENT at Cornell" width="150" /><br />
   <sub>© Epsilon Nu Tau, Tau Chapter at Cornell University. All rights reserved.</sub><br />
   <sub><a href="https://www.instagram.com/entcornell">Instagram</a> · <a href="https://www.linkedin.com/company/epsilon-nu-tau">LinkedIn</a> · <a href="mailto:ent.cornell@gmail.com">ent.cornell@gmail.com</a></sub>
 </p>

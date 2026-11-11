@@ -6,6 +6,10 @@ The site is deployed continuously from `main`, so entries are grouped by date, n
 
 ## [Unreleased]
 
+### Removed
+
+- Dependabot. The site has two pinned CI actions; they are bumped by hand.
+
 ### Changed
 
 - **Images are 94% smaller.** All 231 photos were resized to the size the page shows and

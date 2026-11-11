@@ -24,7 +24,8 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      # Pinned to commit SHAs: a tag can move, a SHA cannot. Dependabot bumps them.
+      # Pinned to commit SHAs: a tag can move, a SHA cannot. Bump them by hand when a
+      # new major version is released (gh api repos/actions/checkout/releases/latest).
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:

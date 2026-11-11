@@ -159,7 +159,7 @@ ent-website/
 │   │                    *Data.js content files listed above, and their *.test.* files
 │   └── test/setup.js    Test setup (Vitest + Testing Library)
 ├── docs/decisions/      Why the project is set up the way it is
-├── .github/             CI workflow, PR and issue templates, Dependabot
+├── .github/             CI workflow, PR and issue templates
 ├── vite.config.js       Build and test config
 └── vercel.json          Hosting config
 ```

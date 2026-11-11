@@ -27,53 +27,59 @@ code.
 
 ## Pages
 
-| Route | File | What it shows |
-|---|---|---|
-| `/` | `src/components/Home.js` | Hero, about blurb, ENT endeavors (popups), photo gallery |
-| `/about` | `src/components/About.js` | History and mission |
-| `/Values` | `src/components/Values.js` | Core values |
-| `/studentVentures` | `src/components/StudentVentures.js` | Member-founded businesses, filterable by category |
-| `/SBC` | `src/components/SBC.js` | Small Business Collective, links to [sbc.entcornell.com](https://sbc.entcornell.com) |
-| `/recruitment` | `src/components/Recruitment.js` | Recruitment timeline and application rounds |
-| `/brothers` | `src/components/Brothers.js` | Executive board, members by pledge class, alumni |
-| `/newsletter`, `/newsletter/:id` | `src/components/Newsletter.js`, `NewsletterPage.js` | Newsletter archive (hidden from the navbar, linked from the footer) |
+| Route                            | File                                                  | What it shows                                                                        |
+| -------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| `/`                              | `src/components/Home.jsx`                             | Hero, about blurb, ENT endeavors (popups), photo gallery                             |
+| `/about`                         | `src/components/About.jsx`                            | History and mission                                                                  |
+| `/Values`                        | `src/components/Values.jsx`                           | Core values                                                                          |
+| `/studentVentures`               | `src/components/StudentVentures.jsx`                  | Member-founded businesses, filterable by category                                    |
+| `/SBC`                           | `src/components/SBC.jsx`                              | Small Business Collective, links to [sbc.entcornell.com](https://sbc.entcornell.com) |
+| `/recruitment`                   | `src/components/Recruitment.jsx`                      | Recruitment timeline and application rounds                                          |
+| `/brothers`                      | `src/components/Brothers.jsx`                         | Executive board, members by pledge class, alumni                                     |
+| `/newsletter`, `/newsletter/:id` | `src/components/Newsletter.jsx`, `NewsletterPage.jsx` | Newsletter archive (hidden from the navbar, linked from the footer)                  |
 
 `/members` redirects to `/brothers`. Every page shares the navbar, the footer and the
-upcoming-event popup (`src/App.js`).
+upcoming-event popup (`src/App.jsx`).
 
 ## Run it locally
 
-You need [Node.js](https://nodejs.org) 20 or newer.
+You need [Node.js](https://nodejs.org) 24 (the version is pinned in `.nvmrc`; with
+[nvm](https://github.com/nvm-sh/nvm), run `nvm use`).
 
 ```sh
 git clone https://github.com/entcornell/ent-website.git
 cd ent-website
 npm ci          # install the exact dependency versions from package-lock.json
-npm start       # dev server at http://localhost:3000, reloads on save
+npm run dev     # dev server at http://localhost:3000, reloads on save
 ```
 
-| Command | What it does |
-|---|---|
-| `npm start` | Development server with hot reload |
-| `npm run build` | Production build into `build/` (run it before opening a PR) |
+| Command                 | What it does                                                    |
+| ----------------------- | --------------------------------------------------------------- |
+| `npm run dev`           | Development server with hot reload                              |
+| `npm run build`         | Production build into `dist/`                                   |
+| `npm run preview`       | Serves the production build locally                             |
+| `npm test`              | Runs the tests once (`npm run test:watch` re-runs them on save) |
+| `npm run check`         | Everything CI checks: lint, format, tests and dead code         |
+| `npm run format`        | Formats every file with Prettier                                |
+| `npm run hooks:install` | Enables the commit guard (blocks `.env` files and build output) |
 
 ## Update the content
 
 Almost every update is a change to one data file. You don't need to touch page layout.
 
-| To change… | Edit | Notes |
-|---|---|---|
-| Members, e-board, alumni | `src/components/Brothers.js` | Arrays `eboard`, `brotherhood` (one entry per pledge class) and `alumni` at the top of the file |
-| Recruitment events | `src/components/recruitmentEvents.js` | Shared by the Recruitment page and the site-wide event popup. Update `RECRUITMENT_YEAR` each season |
-| Application form link | `src/components/applicationConfig.js` | Used by every "Apply Here" button. Also update the link in the rounds section of `Recruitment.js` |
-| Student ventures | `src/components/StudentVenturesData.js` | Categories in the filter bar come from the `category` field |
-| Home page endeavors | `src/components/EndeavorsData.js` | Cards and popups on the home page |
-| Newsletter issues | `src/components/NewsletterData.js` | Newest issue first; page images in `public/newsletters/issueN/` |
+| To change…               | Edit                                    | Notes                                                                                            |
+| ------------------------ | --------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| Members, e-board, alumni | `src/components/BrothersData.js`        | Arrays `eboard`, `brotherhood` (one entry per pledge class) and `alumni`                         |
+| Recruitment events       | `src/components/recruitmentEvents.js`   | Timeline events, application rounds and `RECRUITMENT_YEAR`; also feeds the site-wide event popup |
+| Application form link    | `src/components/applicationConfig.js`   | Used by every "Apply Here" button, including Round One                                           |
+| Student ventures         | `src/components/StudentVenturesData.js` | Categories in the filter bar come from the `category` field                                      |
+| Home page endeavors      | `src/components/EndeavorsData.js`       | Cards and popups on the home page                                                                |
+| Newsletter issues        | `src/components/NewsletterData.js`      | Newest issue first; page images in `public/newsletters/issueN/`                                  |
 
 ### Add a member
 
 1. Add their headshot to `public/headshots-fall2026/` (see [Images](#images)).
-2. Add an entry to the right pledge class in `src/components/Brothers.js`:
+2. Add an entry to the right pledge class in `src/components/BrothersData.js`:
 
    ```js
    {
@@ -90,30 +96,31 @@ Almost every update is a change to one data file. You don't need to touch page l
 
    E-board entries also take a `role`, for example `"VP Recruitment"`.
 
-3. Run `npm start` and check the card on `/brothers`.
+3. Run `npm run dev` and check the card on `/brothers`. `npm test` fails if the image path
+   doesn't match a file in `public/`.
 
 ### Update recruitment for a new season
 
-1. Set `RECRUITMENT_YEAR` and replace the events in `src/components/recruitmentEvents.js`.
-   Dates are written like `"Sep 9"`. The popup shows the next event that hasn't happened yet,
-   and hides itself when every event is in the past.
-2. Update the application link in `src/components/applicationConfig.js` and in the rounds
-   section of `src/components/Recruitment.js`.
-3. Update the season title (`FALL 2026`) at the top of `Recruitment.js`.
+1. In `src/components/recruitmentEvents.js`, set `RECRUITMENT_YEAR` and replace
+   `recruitmentEvents` and `applicationRounds`. Dates are written like `"Sep 9"` (a test
+   checks that every date can be read). The popup shows the next event that hasn't happened
+   yet, and hides itself when every event is in the past.
+2. Update the application link in `src/components/applicationConfig.js`.
+3. Update the season title (`FALL 2026`) at the top of `src/components/Recruitment.jsx`.
 
 ## Images
 
 Everything in `public/` is served as-is, so `public/images/home1.jpg` is available at
 `/images/home1.jpg`.
 
-| Folder | Contents |
-|---|---|
-| `public/images/` | Page heroes, backgrounds and gallery photos |
-| `public/headshots-fall2026/`, `headshots-fall2025/`, `headshots/` | Member headshots by season |
-| `public/group-pics/` | Group photos |
-| `public/studentbusinesses/` | Student venture logos and photos |
-| `public/endeavors/` | Home page endeavor images |
-| `public/newsletters/issueN/` | Newsletter pages and headline image |
+| Folder                                                            | Contents                                    |
+| ----------------------------------------------------------------- | ------------------------------------------- |
+| `public/images/`                                                  | Page heroes, backgrounds and gallery photos |
+| `public/headshots-fall2026/`, `headshots-fall2025/`, `headshots/` | Member headshots by season                  |
+| `public/group-pics/`                                              | Group photos                                |
+| `public/studentbusinesses/`                                       | Student venture logos and photos            |
+| `public/endeavors/`                                               | Home page endeavor images                   |
+| `public/newsletters/issueN/`                                      | Newsletter pages and headline image         |
 
 **Before adding a photo, make it small.** Phone photos are 3–15 MB and make the site slow
 on mobile. Aim for **under 300 KB**: about 800 px wide for headshots and cards, and
@@ -127,20 +134,25 @@ old one; git keeps it in the history anyway.
 
 ```
 ent-website/
-├── public/              Static files served as-is: index.html, favicon, images
-│   └── index.html       Page title, description and link-preview (Open Graph) tags
+├── index.html           Page title, description and link-preview (Open Graph) tags
+├── public/              Static files served as-is: favicon, images
 ├── src/
-│   ├── index.js         Entry point, mounts <App />
-│   ├── App.js           Routes and the shared layout (navbar, footer, event popup)
+│   ├── index.jsx        Entry point, mounts <App />
+│   ├── App.jsx          Routes and the shared layout (navbar, footer, event popup)
 │   ├── index.css        Global styles
-│   └── components/      One file per page or component, each with its own .css,
-│                        plus the *Data.js / *Config.js content files listed above
-└── package.json
+│   ├── components/      One .jsx per page or component, each with its own .css, the
+│   │                    *Data.js content files listed above, and their *.test.* files
+│   └── test/setup.js    Test setup (Vitest + Testing Library)
+├── docs/decisions/      Why the project is set up the way it is
+├── .github/             CI workflow, PR and issue templates, Dependabot
+├── vite.config.js       Build and test config
+└── vercel.json          Hosting config
 ```
 
 Built with [React 19](https://react.dev), [React Router 7](https://reactrouter.com),
-[Font Awesome](https://fontawesome.com) icons and
-[Create React App](https://create-react-app.dev) (`react-scripts`).
+[Font Awesome](https://fontawesome.com) icons and [Vite](https://vite.dev). Checked with
+[oxlint](https://oxc.rs), [Prettier](https://prettier.io), [Vitest](https://vitest.dev) and
+[knip](https://knip.dev).
 
 ## Deployment
 
@@ -150,18 +162,20 @@ The site is hosted on **[Vercel](https://vercel.com)**, connected to this GitHub
   www.entcornell.com within a couple of minutes. `entcornell.com` redirects to `www`.
 - Every other branch and pull request gets a **preview URL** from Vercel, posted on the
   PR. Check your change there before merging.
-- Vercel serves `index.html` for every route, so links like `/brothers` work when opened
-  directly.
+- `vercel.json` tells Vercel how to build (`npm run build` into `dist/`) and rewrites every
+  route to `index.html`, so links like `/brothers` work when opened directly. Real files in
+  `public/` are served before the rewrite applies.
+- GitHub Actions runs `.github/workflows/ci.yml` on every pull request: lint, format,
+  tests, dead-code check and the production build.
 
 ## Contributing
 
-1. Create a branch from `main`: `git switch -c update/fall-2026-members`.
-2. Make the change and check it with `npm start`.
-3. Run `npm run build` and make sure it finishes without errors.
-4. Push and open a pull request. Check the Vercel preview, then merge.
+1. Create a branch from `main`: `git switch -c feat/fall-2026-members`.
+2. Make the change and check it with `npm run dev`.
+3. Run `npm run check` and `npm run build`.
+4. Push and open a pull request. Wait for CI, check the Vercel preview, then merge.
 
-Write commit messages that say what changed, for example
-`feat(brothers): add Nu class members` or `fix(recruitment): correct info session room`.
+The full workflow, commit format and rules are in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Known issues and roadmap
 
@@ -169,9 +183,9 @@ Write commit messages that say what changed, for example
 - [ ] Use absolute image paths (`/images/...`). Relative paths break on nested routes like
       `/newsletter/3`.
 - [ ] Give each page its own `<title>` and description.
-- [ ] Make the recruitment dropdowns keyboard-accessible.
-- [ ] Move off Create React App, which is no longer maintained, to Vite. Add automated
-      checks (lint and tests) on every pull request.
+- [ ] Convert the code to TypeScript.
+- [x] Make the recruitment dropdowns, venture cards and About menu keyboard-accessible.
+- [x] Move off Create React App to Vite, with lint, tests and CI on every pull request.
 
 ---
 

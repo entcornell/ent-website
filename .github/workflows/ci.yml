@@ -1,0 +1,67 @@
+# The gate every change crosses before it reaches `main`.
+# It runs what CONTRIBUTING asks you to run locally, plus the production build.
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+# Least privilege: this workflow only reads the code.
+permissions:
+  contents: read
+
+# A new push to a PR cancels the run in flight. Runs on `main` are never cancelled:
+# every commit that lands there gets its own verdict.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      # Pinned to commit SHAs: a tag can move, a SHA cannot. Dependabot bumps them.
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # Nothing here pushes, so don't leave the token in .git/config.
+          persist-credentials: false
+
+      - name: Set up Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          # Same Node version as local development.
+          node-version-file: .nvmrc
+          cache: npm
+
+      # `npm ci` installs the lockfile exactly and fails if it drifted from package.json.
+      - name: Install dependencies
+        run: npm ci
+
+      # `!cancelled()` keeps every check running after one fails, so a single run
+      # reports every problem instead of one per push.
+      - name: Lint
+        if: ${{ !cancelled() }}
+        run: npm run lint
+
+      - name: Format
+        if: ${{ !cancelled() }}
+        run: npm run format:check
+
+      - name: Test
+        if: ${{ !cancelled() }}
+        run: npm test
+
+      # Unused files, exports and dependencies: dead code piles up silently otherwise.
+      - name: Dead code
+        if: ${{ !cancelled() }}
+        run: npm run deadcode
+
+      # The real production build: what CI proves green is what gets deployed.
+      - name: Build
+        if: ${{ !cancelled() }}
+        run: npm run build

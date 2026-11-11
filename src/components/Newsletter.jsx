@@ -2,30 +2,17 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Newsletter.css";
 import { issues } from "./NewsletterData";
-//import { Helmet } from "react-helmet-async";
-//import { useLocation } from "react-router-dom";
 
 export default function Newsletter() {
   const latest = issues[0];
   const rest = issues.slice(1);
 
-  //const { pathname } = useLocation();
-
-      useEffect(() => {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-      }, []);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   return (
     <div className="nl-page">
-
-      {/*<Helmet key={pathname}>
-        <title>Weekly Newsletter — ENT</title>
-        <meta
-          name="description"
-          content="Stay up to date with ENT’s weekly newsletter, featuring entrepreneurship news, member highlights, and upcoming events."
-        />
-      </Helmet>*/}
-
       {/* HERO */}
       <section className="nl-hero">
         <div className="nl-hero-clip">
@@ -38,7 +25,6 @@ export default function Newsletter() {
       </section>
 
       <main className="nl-container">
-
         {/* FEATURED */}
         <section className="nl-featured">
           <Link to={`/newsletter/${latest.id}`} className="nl-featured-media">
@@ -49,7 +35,9 @@ export default function Newsletter() {
             <span className="nl-kicker">LATEST</span>
             <h2 className="nl-featured-title">{latest.title}</h2>
             <p className="nl-featured-excerpt">{latest.excerpt}</p>
-            <Link className="nl-btn" to={`/newsletter/${latest.id}`}>Read Issue</Link>
+            <Link className="nl-btn" to={`/newsletter/${latest.id}`}>
+              Read Issue
+            </Link>
           </div>
         </section>
 
@@ -66,7 +54,9 @@ export default function Newsletter() {
                 <span className="nl-date">{issue.date}</span>
                 <h3 className="nl-card-title">{issue.title}</h3>
                 <p className="nl-card-excerpt">{issue.excerpt}</p>
-                <Link className="nl-btn nl-btn--small" to={`/newsletter/${issue.id}`}>Read Issue</Link>
+                <Link className="nl-btn nl-btn--small" to={`/newsletter/${issue.id}`}>
+                  Read Issue
+                </Link>
               </div>
             </article>
           ))}

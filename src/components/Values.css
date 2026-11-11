@@ -1,89 +1,99 @@
 /* Values.css (FLUSH GALLERY, NO CROPPING, NO COLLAGE SPANS) */
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-.values-page{
-  width:100%;
-  background:#fff;
-  color:#111;
-  font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+.values-page {
+  width: 100%;
+  background: #fff;
+  color: #111;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
 }
 
 /* ============================= */
 /* HERO                          */
 /* ============================= */
-.values-hero{
-  position:relative;
-  width:100%;
-  height:320px;
-  overflow:hidden;
+.values-hero {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
 }
-.values-hero-img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center 55%;
-  filter:brightness(.55);
+.values-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 55%;
+  filter: brightness(0.55);
 }
-.values-hero-overlay{
-  position:absolute;
-  inset:0;
-  display:grid;
-  place-items:center;
+.values-hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
 }
-.values-hero-overlay h1{
-  margin:0;
-  color:#fff;
-  font-family:"Kaisei Decol",serif;
-  font-size:clamp(2.5rem,5vw,4rem);
-  font-weight:700;
-  letter-spacing:2px;
-  text-align:center;
+.values-hero-overlay h1 {
+  margin: 0;
+  color: #fff;
+  font-family: "Kaisei Decol", serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
 }
 
 /* ============================= */
 /* PAGE CONTAINER                */
 /* ============================= */
-.values-main{
-  width:100%;
-  margin:0;
-  padding:60px 0 80px;
+.values-main {
+  width: 100%;
+  margin: 0;
+  padding: 60px 0 80px;
 }
 
 /* ============================= */
 /* SECTION HEADER                */
 /* ============================= */
-.value-section{ margin-bottom:75px; }
-
-.value-header{
-  max-width:1200px;
-  margin:0 auto 18px;
-  padding:0 40px;
-  display:flex;
-  align-items:baseline;
-  gap:18px;
+.value-section {
+  margin-bottom: 75px;
 }
 
-.value-title{
-  margin:0;
-  font-family:"Georgia",serif;
-  font-size:20px;
-  font-weight:500;
-  letter-spacing:.6px;
+.value-header {
+  max-width: 1200px;
+  margin: 0 auto 18px;
+  padding: 0 40px;
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
 }
 
-.value-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  font-size:16px;
-  text-transform:uppercase;
-  letter-spacing:1px;
-  color:#333;
-  opacity:.9;
+.value-title {
+  margin: 0;
+  font-family: "Georgia", serif;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
 }
 
-.value-tags span{ white-space:nowrap; }
+.value-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #333;
+  opacity: 0.9;
+}
+
+.value-tags span {
+  white-space: nowrap;
+}
 
 /* ============================= */
 /* FLUSH GALLERY GRID            */
@@ -92,69 +102,79 @@
 /* ============================= */
 
 /* IMPORTANT: this replaces the old 12-col collage + nth-child spans */
-.value-gallery{
-  max-width:1200px;
-  margin:0 auto;
-  padding:0 40px;
+.value-gallery {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
 
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
-  gap:14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
 }
 
 /* each image is a "tile" with a consistent aspect ratio */
-.value-gallery img{
-  width:100%;
-  height:auto;
+.value-gallery img {
+  width: 100%;
+  height: auto;
 
-  display:block;
+  display: block;
 
-  object-fit:contain;
-  object-position:center;
+  object-fit: contain;
+  object-position: center;
 
-  border-radius:0;
+  border-radius: 0;
 }
 
 /* ============================= */
 /* MOBILE RESPONSIVE             */
 /* ============================= */
-@media (max-width: 900px){
-  .values-main{ padding:45px 20px 70px; }
-
-  .value-header{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:6px;
-    padding:0; /* values-main already has side padding now */
+@media (max-width: 900px) {
+  .values-main {
+    padding: 45px 20px 70px;
   }
 
-  .value-title{ font-size:25px; }
-
-  .value-gallery{
-    padding:0; /* values-main padding handles edges */
-    grid-template-columns:repeat(2, minmax(0, 1fr));
-    gap:12px;
+  .value-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 0; /* values-main already has side padding now */
   }
 
-  .value-gallery img{
+  .value-title {
+    font-size: 25px;
+  }
+
+  .value-gallery {
+    padding: 0; /* values-main padding handles edges */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .value-gallery img {
     aspect-ratio: 4 / 3;
   }
 }
 
-@media (max-width: 480px){
-  .values-hero{ height:260px; }
-
-  .value-gallery{
-    grid-template-columns:1fr;  /* single column = big, clean, “gallery” */
-    gap:12px;
+@media (max-width: 480px) {
+  .values-hero {
+    height: 260px;
   }
 
-  .value-tags span{ white-space:normal; }
+  .value-gallery {
+    grid-template-columns: 1fr; /* single column = big, clean, “gallery” */
+    gap: 12px;
+  }
+
+  .value-tags span {
+    white-space: normal;
+  }
 }
 
 /* ============================= */
 /* PHONE PATCH (prevents 1–2px scroll) */
 /* ============================= */
-@media (max-width: 520px){
-  body{ overflow-x:hidden; }
+@media (max-width: 520px) {
+  body {
+    overflow-x: hidden;
+  }
 }

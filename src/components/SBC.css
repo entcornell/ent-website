@@ -15,8 +15,8 @@
 /* ============================= */
 .sbc-hero {
   position: relative;
-  width: 100vw;                     
-  margin-left: calc(50% - 50vw);     
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
   height: 320px;
   overflow: hidden;
 }
@@ -91,7 +91,9 @@
   text-decoration: none;
   letter-spacing: 0.5px;
 
-  transition: transform 0.15s ease, filter 0.2s ease;
+  transition:
+    transform 0.15s ease,
+    filter 0.2s ease;
 }
 
 .sbc-website-btn:hover {

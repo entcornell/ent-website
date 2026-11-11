@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import "./NewsletterPage.css";
 import { issues } from "./NewsletterData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExpand } from "@fortawesome/free-solid-svg-icons";
-//import { Helmet } from "react-helmet-async";
-//import { useLocation } from "react-router-dom";
 
 export default function NewsletterPage() {
-  //const { pathname } = useLocation();
   const { id } = useParams();
   const navigate = useNavigate();
   const idx = issues.findIndex((i) => String(i.id) === String(id));
@@ -19,20 +16,20 @@ export default function NewsletterPage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  // ESC closes fullscreen
+  // The native modal dialog traps focus, makes the page behind it inert and closes on Escape.
+  const fullscreenRef = useRef(null);
   useEffect(() => {
-    if (!fullscreen) return;
-    const onKey = (e) => e.key === "Escape" && setFullscreen(false);
-    document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
+    if (fullscreen) fullscreenRef.current?.showModal();
   }, [fullscreen]);
-  
+
   if (!issue) {
     return (
       <div className="nl-page">
         <main className="nl-container">
           <p>Issue not found.</p>
-          <Link to="/newsletter" className="nl-btn nl-btn--small">Back to list</Link>
+          <Link to="/newsletter" className="nl-btn nl-btn--small">
+            Back to list
+          </Link>
         </main>
       </div>
     );
@@ -45,22 +42,10 @@ export default function NewsletterPage() {
 
   return (
     <div className="nl-page">
-
-      {/*<Helmet key={pathname}>
-            <title>Weekly Newsletter Issue — ENT</title>
-            <meta
-              name="description"
-              content="Stay up to date with ENT’s weekly newsletter, featuring entrepreneurship news, member highlights, and upcoming events."
-            />
-      </Helmet>*/}
-
       {/* ===== Banner with overlay back button ===== */}
       <section className="nl-banner">
         <img src={bannerSrc} alt={`${issue.title} banner`} />
-        <button
-          className="nl-backbtn nl-backbtn--over"
-          onClick={() => navigate(-1)}
-        >
+        <button className="nl-backbtn nl-backbtn--over" onClick={() => navigate(-1)}>
           ← Back
         </button>
       </section>
@@ -125,14 +110,22 @@ export default function NewsletterPage() {
           {issue.sources?.length ? (
             <table className="nl-table">
               <thead>
-                <tr><th>#</th><th>Title</th><th>Link</th></tr>
+                <tr>
+                  <th>#</th>
+                  <th>Title</th>
+                  <th>Link</th>
+                </tr>
               </thead>
               <tbody>
                 {issue.sources.map((s, i) => (
                   <tr key={i}>
                     <td>{i + 1}</td>
                     <td>{s.label}</td>
-                    <td><a href={s.url} target="_blank" rel="noreferrer">Open</a></td>
+                    <td>
+                      <a href={s.url} target="_blank" rel="noreferrer">
+                        Open
+                      </a>
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -145,7 +138,12 @@ export default function NewsletterPage() {
 
       {/* ===== Fullscreen modal ===== */}
       {fullscreen && (
-        <div className="nl-fullscreen" role="dialog" aria-modal="true">
+        <dialog
+          ref={fullscreenRef}
+          className="nl-fullscreen"
+          aria-label={`${issue.title} full screen`}
+          onClose={() => setFullscreen(false)}
+        >
           <button
             className="nl-closebtn"
             onClick={() => setFullscreen(false)}
@@ -159,7 +157,7 @@ export default function NewsletterPage() {
               <img key={i} src={src} alt={`${issue.title} page ${i + 1}`} />
             ))}
           </div>
-        </div>
+        </dialog>
       )}
     </div>
   );

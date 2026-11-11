@@ -10,7 +10,11 @@ body {
   margin: 0;
   background: #ffffff;
   color: #111;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
 }
 
 /* ============================= */
@@ -293,7 +297,6 @@ body {
   transform: translateX(100px);
 }
 
-
 /* ============================= */
 /* FULL WIDTH IMAGE BANNER       */
 /* + DARK GLASS BOX              */
@@ -405,7 +408,6 @@ body {
     padding: 22px 18px;
   }
 }
-
 
 /* ============================= */
 /* MOBILE FIX (keeps desktop same)*/

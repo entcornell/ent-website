@@ -11,11 +11,7 @@ const EndeavorsPopup = ({ isOpen, onClose, data }) => {
     <div className="popup-overlay">
       <div className="popup-content no-stripes">
         {/* Close (floats over the image) */}
-        <button
-          className="popup-close over-image"
-          onClick={onClose}
-          aria-label="Close popup"
-        >
+        <button className="popup-close over-image" onClick={onClose} aria-label="Close popup">
           ✕
         </button>
 
@@ -34,22 +30,18 @@ const EndeavorsPopup = ({ isOpen, onClose, data }) => {
 
             <h3 className="popup-sub">What We’re Working On:</h3>
             <ul className="popup-list">
-                {data.projects.map((proj, i) => (
-                    <li className="popup-row" key={i}>
-                    <span className="hex-bullet" aria-hidden="true">
-                        <FontAwesomeIcon
-                        icon={proj.icon || faArrowRight}
-                        className="hex-fa"
-                        />
-                    </span>
-                    <div className="row-text">
-                        <strong className="row-title">{proj.name}</strong>
-                        <p className="row-detail">{proj.detail}</p>
-                    </div>
-                    </li>
-                ))}
+              {data.projects.map((proj, i) => (
+                <li className="popup-row" key={i}>
+                  <span className="hex-bullet" aria-hidden="true">
+                    <FontAwesomeIcon icon={proj.icon || faArrowRight} className="hex-fa" />
+                  </span>
+                  <div className="row-text">
+                    <strong className="row-title">{proj.name}</strong>
+                    <p className="row-detail">{proj.detail}</p>
+                  </div>
+                </li>
+              ))}
             </ul>
-
 
             <div className="popup-thumbs">
               {data.thumbs.map((src, i) => (
@@ -61,18 +53,17 @@ const EndeavorsPopup = ({ isOpen, onClose, data }) => {
 
             {/* CTA button at bottom */}
             {data.link && (
-            <div className="popup-cta">
-                <a 
-                href={data.link} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="popup-cta-btn"
+              <div className="popup-cta">
+                <a
+                  href={data.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="popup-cta-btn"
                 >
-                Check it out here
+                  Check it out here
                 </a>
-            </div>
+              </div>
             )}
-
           </div>
         </div>
       </div>

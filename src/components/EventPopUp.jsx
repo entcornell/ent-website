@@ -2,35 +2,13 @@ import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
-import { recruitmentEvents, RECRUITMENT_YEAR } from "./recruitmentEvents";
+import { recruitmentEvents } from "./recruitmentEvents";
+import { getNextUpcomingEventIndex, isVirtualEvent } from "./recruitmentDates";
 import "./EventPopUp.css";
 
 const SESSION_KEY = "ent-event-popup-shown";
 const SCROLL_TRIGGER = 0.35; // 35% of page
 const IDLE_MS = 10000; // 10 seconds
-
-function parseEventDate(dateStr, year = RECRUITMENT_YEAR) {
-  const parsed = new Date(`${dateStr} ${year}`);
-  if (Number.isNaN(parsed.getTime())) return null;
-  parsed.setHours(0, 0, 0, 0);
-  return parsed;
-}
-
-function getNextUpcomingEventIndex(events, year = RECRUITMENT_YEAR) {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-
-  for (let i = 0; i < events.length; i++) {
-    const date = parseEventDate(events[i].date, year);
-    if (date && date >= today) return i;
-  }
-  return -1;
-}
-
-function isVirtualEvent(event) {
-  const haystack = `${event.title} ${event.meta || ""}`.toLowerCase();
-  return haystack.includes("zoom") || haystack.includes("virtual");
-}
 
 /**
  * Soft, once-per-session nudge for the next recruitment event.
@@ -86,18 +64,8 @@ export default function EventPopUp() {
   const virtual = isVirtualEvent(nextEvent);
 
   return (
-    <aside
-      className="event-popup"
-      role="dialog"
-      aria-label="Upcoming recruitment event"
-      aria-live="polite"
-    >
-      <button
-        type="button"
-        className="event-popup-close"
-        onClick={dismiss}
-        aria-label="Dismiss"
-      >
+    <aside className="event-popup" aria-label="Upcoming recruitment event" aria-live="polite">
+      <button type="button" className="event-popup-close" onClick={dismiss} aria-label="Dismiss">
         ✕
       </button>
 
@@ -109,27 +77,15 @@ export default function EventPopUp() {
         <div className="event-popup-body">
           <p className="event-popup-eyebrow">Mark Your Calendar!</p>
           <h3 className="event-popup-title">{nextEvent.title}</h3>
-          <p className="event-popup-format">
-            {virtual ? "Virtual event" : "In-person event"}
-          </p>
+          <p className="event-popup-format">{virtual ? "Virtual event" : "In-person event"}</p>
           <p className="event-popup-date">{nextEvent.date}</p>
-          {nextEvent.meta && (
-            <p className="event-popup-meta">{nextEvent.meta}</p>
-          )}
+          {nextEvent.meta && <p className="event-popup-meta">{nextEvent.meta}</p>}
 
           <div className="event-popup-actions">
-            <button
-              type="button"
-              className="event-popup-cta"
-              onClick={goToTimeline}
-            >
+            <button type="button" className="event-popup-cta" onClick={goToTimeline}>
               View timeline
             </button>
-            <button
-              type="button"
-              className="event-popup-dismiss"
-              onClick={dismiss}
-            >
+            <button type="button" className="event-popup-dismiss" onClick={dismiss}>
               Not now
             </button>
           </div>

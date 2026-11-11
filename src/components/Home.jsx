@@ -27,11 +27,7 @@ const Home = () => {
           </div>
 
           {/* Red Chevron Outline */}
-          <svg
-            className="hero-outline"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-          >
+          <svg className="hero-outline" viewBox="0 0 100 100" preserveAspectRatio="none">
             <polyline
               points="-1,80 50,95 101,80"
               fill="none"
@@ -49,12 +45,11 @@ const Home = () => {
       <section className="home-blurb">
         <div className="home-blurb-inner">
           <p>
-            Epsilon Nu Tau is the nation’s first entrepreneurship fraternity,
-            built to inspire the next generation of founders and builders. We
-            bring together students from <b>all 9 colleges at Cornell</b> to grow
-            real startups through mentorship, resources, and a strong community.
-            Join us to create impact, form lifelong connections, and bring your
-            ideas to life.
+            Epsilon Nu Tau is the nation’s first entrepreneurship fraternity, built to inspire the
+            next generation of founders and builders. We bring together students from{" "}
+            <b>all 9 colleges at Cornell</b> to grow real startups through mentorship, resources,
+            and a strong community. Join us to create impact, form lifelong connections, and bring
+            your ideas to life.
           </p>
         </div>
       </section>
@@ -110,7 +105,6 @@ const Home = () => {
         </div>
       </section>
 
-
       {/* ============================= */}
       {/* OUR MEMBERS (KEEP AS IS)      */}
       {/* ============================= */}
@@ -121,9 +115,7 @@ const Home = () => {
           <button
             className="scroll-arrow left"
             onClick={() =>
-              document
-                .querySelector(".members-scroll")
-                .scrollBy({ left: -250, behavior: "smooth" })
+              document.querySelector(".members-scroll").scrollBy({ left: -250, behavior: "smooth" })
             }
           >
             &#8249;
@@ -203,9 +195,7 @@ const Home = () => {
           <button
             className="scroll-arrow right"
             onClick={() =>
-              document
-                .querySelector(".members-scroll")
-                .scrollBy({ left: 250, behavior: "smooth" })
+              document.querySelector(".members-scroll").scrollBy({ left: 250, behavior: "smooth" })
             }
           >
             &#8250;
@@ -231,11 +221,7 @@ const Home = () => {
                 <p>{e.desc}</p>
 
                 <div className="endeavor-buttons">
-                  <button
-                    type="button"
-                    className="endeavor-btn"
-                    onClick={() => setPopupData(e)}
-                  >
+                  <button type="button" className="endeavor-btn" onClick={() => setPopupData(e)}>
                     See More
                   </button>
 
@@ -283,11 +269,7 @@ const Home = () => {
       </section>
 
       {/* Popup */}
-      <EndeavorsPopup
-        isOpen={!!popupData}
-        onClose={() => setPopupData(null)}
-        data={popupData}
-      />
+      <EndeavorsPopup isOpen={!!popupData} onClose={() => setPopupData(null)} data={popupData} />
     </div>
   );
 };

@@ -10,7 +10,9 @@
   letter-spacing: 0.04em;
   cursor: pointer;
   text-decoration: none;
-  transition: background 0.25s ease, transform 0.2s ease;
+  transition:
+    background 0.25s ease,
+    transform 0.2s ease;
   white-space: nowrap;
 }
 

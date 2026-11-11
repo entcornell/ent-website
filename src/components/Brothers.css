@@ -4,7 +4,11 @@
   --shadow: 0 6px 16px rgb(0 0 0 / 18%);
 }
 
-.members-page { background: #fff; color: var(--text); font-family: "Montserrat", system-ui, sans-serif;}
+.members-page {
+  background: #fff;
+  color: var(--text);
+  font-family: "Montserrat", system-ui, sans-serif;
+}
 
 /* hero */
 .members-hero {
@@ -33,7 +37,7 @@
 }
 
 .members-hero-content h1 {
-  font-family: 'Kaisei Decol', serif;
+  font-family: "Kaisei Decol", serif;
   font-weight: 1000;
   letter-spacing: 0.04em;
   font-size: 3.7rem;
@@ -50,15 +54,12 @@
   margin-top: 0.25rem;
 }
 
-
-
 /* ===== layout ===== */
 .m-container {
   max-width: 1400px; /* was 1100px */
   margin: 0 auto;
   padding: 1.25rem 2rem 3rem; /* slightly more padding inside */
 }
-
 
 /* ===== headings ===== */
 /* Section titles match Home ("What We Do", etc.) */
@@ -69,7 +70,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #6E1010;
+  background-color: #6e1010;
   color: white;
   font-family: "Montserrat", system-ui, sans-serif;
   font-size: 2.5rem;
@@ -77,23 +78,22 @@
   margin: 5 auto 2rem auto;
 }
 
-
 .m-class-title {
-  font-family: 'Kaisei Opti', serif;   /* new font */
-  font-size: 1.8rem;             /* was 1.15rem */
-  font-weight: 800;              /* keep it bold */
-  color: #6E1010;
-  margin: .8rem 0 .8rem;         /* a bit more breathing room below */
+  font-family: "Kaisei Opti", serif; /* new font */
+  font-size: 1.8rem; /* was 1.15rem */
+  font-weight: 800; /* keep it bold */
+  color: #6e1010;
+  margin: 0.8rem 0 0.8rem; /* a bit more breathing room below */
 }
 
 /* tiny divider between Delta, Epsilon, etc. */
 .m-class-block + .m-class-block::before {
   content: "";
   display: block;
-  height: 1px;               
+  height: 1px;
   background: #ccc;
   border-radius: 1px;
-  margin: 12px 0 30px;  
+  margin: 12px 0 30px;
   opacity: 0.9;
 }
 
@@ -124,70 +124,79 @@
   background: #000;
 }
 
-
-
 .m-card-body {
   padding: 1rem 1.2rem 1.1rem;
-  font-size: .96rem;
+  font-size: 0.96rem;
   line-height: 1.2;
 
-  display: flex;             /* make body a column flexbox */
+  display: flex; /* make body a column flexbox */
   flex-direction: column;
 }
 
-.m-role { 
-    color: #6E1010; 
-    margin: 0 0 .15rem 0; 
-    font-size: 1rem;
-    font-weight: bold; 
+.m-role {
+  color: #6e1010;
+  margin: 0 0 0.15rem 0;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
-.member-extra { 
-    color: #6E1010; 
-    margin: 0 0 .15rem 0; 
-    font-size: 1rem;
-    font-weight: bold; 
+.member-extra {
+  color: #6e1010;
+  margin: 0 0 0.15rem 0;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
-.m-name { 
-    margin: 0 0 .15rem 0; 
-    font-size: 1.5rem;
+.m-name {
+  margin: 0 0 0.15rem 0;
+  font-size: 1.5rem;
 }
 
-.m-line { margin: .3rem 0; color: #333; }
-.m-email-line { 
-
-    padding-bottom: 1rem;
-    margin: .15rem 0;
-    color: #333; 
+.m-line {
+  margin: 0.3rem 0;
+  color: #333;
+}
+.m-email-line {
+  padding-bottom: 1rem;
+  margin: 0.15rem 0;
+  color: #333;
 }
 
-.m-line span { font-weight: 700; }
+.m-line span {
+  font-weight: 700;
+}
 
 .m-btn {
-  display: block;                /* full-width button */
-  width: 100%;                    /* match card width */
-  text-align: center;             /* center the text */
+  display: block; /* full-width button */
+  width: 100%; /* match card width */
+  text-align: center; /* center the text */
   margin-top: auto;
-  background: #6E1010;
+  background: #6e1010;
   color: #fff;
   text-decoration: none;
-  padding: .6rem 0;               /* vertical padding only */
-  border-radius: 10px;   /* match card corners on bottom */
-  font-family: 'Kaisei Opti', serif;
+  padding: 0.6rem 0; /* vertical padding only */
+  border-radius: 10px; /* match card corners on bottom */
+  font-family: "Kaisei Opti", serif;
   font-size: 1rem;
   font-weight: 600;
-  transition: background .25s ease, transform .1s ease;
+  transition:
+    background 0.25s ease,
+    transform 0.1s ease;
   box-shadow: 0 -1px 0 var(--border) inset;
 }
-.m-btn:hover { background:#a91c1c; }
-.m-btn:active { transform: translateY(1px); }
-
+.m-btn:hover {
+  background: #a91c1c;
+}
+.m-btn:active {
+  transform: translateY(1px);
+}
 
 /* ===== responsive ===== */
 
 @media (max-width: 1000px) {
-  .m-card-grid { grid-template-columns: repeat(2, 1fr); }
+  .m-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media (max-width: 640px) {
   .m-card-grid {
@@ -249,4 +258,3 @@
     height: 220px;
   }
 }
-

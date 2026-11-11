@@ -11,11 +11,7 @@ export default function Values() {
     <div className="values-page">
       {/* ===== HERO ===== */}
       <section className="values-hero">
-        <img
-          src="images/valuesBackground.JPG"
-          alt="Values"
-          className="values-hero-img"
-        />
+        <img src="images/valuesBackground.JPG" alt="Values" className="values-hero-img" />
         <div className="values-hero-overlay">
           <h1>VALUES</h1>
         </div>
@@ -23,7 +19,6 @@ export default function Values() {
 
       {/* ===== CONTENT ===== */}
       <main className="values-main">
-
         {/* ===================== */}
         {/* BROTHERHOOD */}
         {/* ===================== */}
@@ -131,7 +126,6 @@ export default function Values() {
             <img src="images/m6.png" alt="Mentoring 6" />
           </div>
         </section>
-
       </main>
     </div>
   );

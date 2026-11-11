@@ -1,0 +1,3 @@
+#!/bin/sh
+# Commit guard (scripts/git-guard.mjs). Enable once per clone: npm run hooks:install
+exec node scripts/git-guard.mjs commit-msg "$1"

@@ -18,7 +18,8 @@ Follows `~/.claude/standards/engineering.md`; anything below wins over it.
 5. Authorship: the person making the change. No Claude attribution anywhere.
 6. This is the club's shared repo: other members edit content through GitHub. Keep data
    files simple to edit by hand.
-7. Images are compressed before they are committed and referenced with absolute paths.
+7. Images go through `npm run images` before they are committed and are referenced with
+   absolute paths (`/images/x.webp`). Tests enforce both.
 
 ## Where things are
 
@@ -33,4 +34,4 @@ Follows `~/.claude/standards/engineering.md`; anything below wins over it.
 
 ## Commands
 
-`npm run dev` · `npm run check` · `npm run build` · `npm test`
+`npm run dev` · `npm run check` · `npm run build` · `npm test` · `npm run images`

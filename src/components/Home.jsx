@@ -17,7 +17,7 @@ const Home = () => {
       {/* HERO (DO NOT CHANGE) */}
       <section className="hero">
         <div className="hero-clip">
-          <img src="images/homeBackground.jpg" alt="Hero" className="hero-img" />
+          <img src="/images/homeBackground.webp" alt="Hero" className="hero-img" />
 
           <div className="hero-content">
             <h1>EPSILON NU TAU</h1>
@@ -60,15 +60,15 @@ const Home = () => {
       <section className="home-photo-row">
         <div className="home-photo-grid">
           <div className="home-photo-card">
-            <img src="images/home1.jpg" alt="ENT event" />
+            <img src="/images/home1.webp" alt="ENT event" />
           </div>
 
           <div className="home-photo-card">
-            <img src="images/home2.jpg" alt="ENT members" />
+            <img src="/images/home2.webp" alt="ENT members" />
           </div>
 
           <div className="home-photo-card">
-            <img src="images/home3.png" alt="ENT 5k" />
+            <img src="/images/home3.webp" alt="ENT 5k" />
           </div>
         </div>
       </section>
@@ -126,62 +126,62 @@ const Home = () => {
               {
                 role: "President",
                 name: "Sadie Schnierow",
-                img: "headshots-fall2025/SadieSchnierow-Headshot.jpg",
+                img: "/headshots-fall2025/SadieSchnierow-Headshot.webp",
               },
               {
                 role: "VP Recruitment",
                 name: "Finn Clancy",
-                img: "headshots-fall2025/FinnClancy-Headshot.jpg",
+                img: "/headshots-fall2025/FinnClancy-Headshot.webp",
               },
               {
                 role: "VP NME",
                 name: "Pradhi Pakkeraki",
-                img: "headshots-fall2025/PradhiPakkerakari.png",
+                img: "/headshots-fall2025/PradhiPakkerakari.webp",
               },
               {
                 role: "VP NME",
                 name: "Sebastian Dominguez",
-                img: "headshots-fall2025/SebastianDominguez-Headshot.JPG",
+                img: "/headshots-fall2025/SebastianDominguez-Headshot.webp",
               },
               {
                 role: "VP Professional Events",
                 name: "Alix Martini",
-                img: "headshots-fall2025/AlixMartini-Headshot.jpg",
+                img: "/headshots-fall2025/AlixMartini-Headshot.webp",
               },
               {
                 role: "VP Professional Connects",
                 name: "Christine Zhou",
-                img: "headshots-fall2026/ChristineZhou-HeadshotFA26.png",
+                img: "/headshots-fall2026/ChristineZhou-HeadshotFA26.webp",
               },
               {
                 role: "VP Finance",
                 name: "Noel Blackwell",
-                img: "headshots-fall2025/NoelBlackwell-Headshot.jpg",
+                img: "/headshots-fall2025/NoelBlackwell-Headshot.webp",
               },
               {
                 role: "VP Marketing",
                 name: "Samantha Vaca",
-                img: "headshots-fall2025/SamanthaVaca-Headshot.jpeg",
+                img: "/headshots-fall2025/SamanthaVaca-Headshot.webp",
               },
               {
                 role: "VP SBC",
                 name: "Mahin Hardaway",
-                img: "headshots-fall2025/MahinHardaway-Headshot.jpg",
+                img: "/headshots-fall2025/MahinHardaway-Headshot.webp",
               },
               {
                 role: "VP Brotherhood",
                 name: "Jackson Hutchison",
-                img: "headshots/JacksonHutchison-Headshot.jpeg",
+                img: "/headshots/JacksonHutchison-Headshot.webp",
               },
               {
                 role: "VP Philanthropy",
                 name: "Olivia Buvanova",
-                img: "headshots/OliviaBuvanova-Headshot.png",
+                img: "/headshots/OliviaBuvanova-Headshot.webp",
               },
               /*{
                 role: "Social Media Chair",
                 name: "Brooke Wilcox",
-                img: "headshots/BrookeWilcox-Headshot.jpeg",
+                img: "/headshots/BrookeWilcox-Headshot.webp",
               },*/
             ].map((member, index) => (
               <div className="member-card" key={index}>
@@ -248,22 +248,22 @@ const Home = () => {
       <section className="photo-mosaic">
         <div className="mosaic-grid">
           <figure className="tile tile--img1">
-            <img src="images/IMG_2115.JPG" alt="Event 1" />
+            <img src="/images/IMG_2115.webp" alt="Event 1" />
           </figure>
           <figure className="tile tile--img2">
-            <img src="images/100_0980.JPG" alt="Event 2" />
+            <img src="/images/100_0980.webp" alt="Event 2" />
           </figure>
           <figure className="tile tile--img3">
-            <img src="/images/IMG_4945.JPG" alt="Event 3" />
+            <img src="/images/IMG_4945.webp" alt="Event 3" />
           </figure>
           <figure className="tile tile--img4">
-            <img src="images/100_1210.JPG" alt="Event 4" />
+            <img src="/images/100_1210.webp" alt="Event 4" />
           </figure>
           <figure className="tile tile--img5">
-            <img src="images/IMG_4540.JPG" alt="Event 5" />
+            <img src="/images/IMG_4540.webp" alt="Event 5" />
           </figure>
           <figure className="tile tile--img6">
-            <img src="images/IMG_0052.JPG" alt="Event 6" />
+            <img src="/images/IMG_0052.webp" alt="Event 6" />
           </figure>
         </div>
       </section>

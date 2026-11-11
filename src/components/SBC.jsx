@@ -11,7 +11,7 @@ export default function SBC() {
     <div className="sbc-page">
       {/* ===== HERO ===== */}
       <section className="sbc-hero">
-        <img src="images/IMG_3070.jpg" alt="SBC" className="sbc-hero-img" />
+        <img src="/images/IMG_3070.webp" alt="SBC" className="sbc-hero-img" />
         <div className="sbc-hero-overlay">
           <h1>SMALL BUSINESS COLLECTIVE</h1>
         </div>

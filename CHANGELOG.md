@@ -8,6 +8,22 @@ The site is deployed continuously from `main`, so entries are grouped by date, n
 
 ### Changed
 
+- **Images are 94% smaller.** All 231 photos were resized to the size the page shows and
+  converted to WebP: `public/` went from 358 MB to 21 MB, so pages load far faster on
+  phones. Logos and icons are unchanged.
+- **Image paths are absolute** (`/images/...`), so they keep working on nested pages such
+  as `/newsletter/3`.
+
+### Added
+
+- `npm run images` (`scripts/optimize-images.mjs`) to optimize new photos and update their
+  references.
+- Tests that fail on relative image paths and on any image over 1 MB.
+
+## 2026-11-10 (Vite migration)
+
+### Changed
+
 - **Build tool: Create React App → Vite.** Faster dev server and builds, and off an
   unmaintained toolchain. Vercel now builds with `vercel.json` (output `dist/`).
 - **Accessibility.** Recruitment timeline items, application rounds, venture cards and the

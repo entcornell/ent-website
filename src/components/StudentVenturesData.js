@@ -2,7 +2,7 @@ export const studentventures = [
   {
     title: "Sadie Bea Cakes",
     desc: "Independently founded bespoke cake studio specializing in festive, made-to-order cakes. Rooted in hospitality and the idea that every day deserves something worth celebrating.",
-    img: "studentbusinesses/SadieBeaCakes.png",
+    img: "/studentbusinesses/SadieBeaCakes.webp",
     link: "https://www.instagram.com/sadiebeacakes?igsh=MXhlbGZhbTRka3pjOQ==",
     founder: "Sadie Schnierow",
     category: "Food & Beverage",
@@ -10,7 +10,7 @@ export const studentventures = [
   {
     title: "Clark",
     desc: "Clark is a smart briefing platform that tracks the topics you care about, distills what’s important, and pushes real-time notifications so you’re always on top of news that affects you. It filters the noise, delivers concise impact-first summaries, and gives you the truth.",
-    img: "studentbusinesses/Clark.png",
+    img: "/studentbusinesses/Clark.webp",
     link: "https://monitoringthesituation.ai/accounts/login/?next=/home/new_conversation",
     founder: "Julius Behner",
     category: "Tech",
@@ -18,7 +18,7 @@ export const studentventures = [
   {
     title: "TalentTap",
     desc: "TalentTap is a Cornell-only platform that connects students to other students for freelance work and creative gigs. It makes it easy to find trusted designers, developers, photographers, DJs, and more in one place. We hope to bring visibility to the incredible creative and technical talent already on campus.",
-    img: "studentbusinesses/TalentTap.jpeg",
+    img: "/studentbusinesses/TalentTap.webp",
     link: "http://www.talenttapcornell.com",
     founder: "Katie Perlitz",
     category: "Tech",
@@ -26,7 +26,7 @@ export const studentventures = [
   {
     title: "Stride",
     desc: "Stride is a women’s reflective athletic apparel brand designing sleek, safety-focused outerwear that empowers women to run independently and confidently. We are currently developing our first reflective vest collection and planning to launch in the near future.",
-    img: "studentbusinesses/StrideRunningCompany.png",
+    img: "/studentbusinesses/StrideRunningCompany.webp",
     link: "https://www.instagram.com/striderunningcompany?igsh=MXFpY2p5aG0yb2x2NQ==",
     founder: "Brooke Wilcox",
     category: "Fashion",
@@ -34,7 +34,7 @@ export const studentventures = [
   {
     title: "Nishijin-Ori Mari",
     desc: "Nishijin-Ori Mari is a small entrepreneurial venture I started 6 years ago that modernized traditional Japanese textiles. It uses authentic Nishijin-ori fabric from Kyoto to create contemporary, travel-friendly accessories and souvenirs. The goal is to preserve cultural craftsmanship while making it accessible to a global audience through tourism-focused retail.",
-    img: "studentbusinesses/Nishijin-Ori Mari.jpeg",
+    img: "/studentbusinesses/Nishijin-Ori Mari.webp",
     link: "https://rinn-premium.com/nishijinorikomono-mari/",
     founder: "Mariko Mita",
     category: "Fashion",
@@ -42,7 +42,7 @@ export const studentventures = [
   {
     title: "BUZZ",
     desc: "A platform to connect consumer brands to college student organizations (like greek life, athletic teams, clubs) to run authentic student-led marketing events at scale, on campuses across the U.S. ",
-    img: "studentbusinesses/Buzz.png",
+    img: "/studentbusinesses/Buzz.webp",
     link: "https://www.bringthebuzzover.com/",
     founder: "Melissa Chowdhury",
     category: "Tech",
@@ -50,7 +50,7 @@ export const studentventures = [
   {
     title: "Pitch",
     desc: "Pitch is a music platform for emerging artists where they post 15 to 30 second clips, fans boost the talent they believe in and get the chance to collaborate, turning real support into visibility and growth.",
-    img: "studentbusinesses/Pitch.png",
+    img: "/studentbusinesses/Pitch.webp",
     link: "https://pitch-your-sound.lovable.app/",
     founder: "Shannon Lin/Ewan Moss",
     category: "Tech",
@@ -58,7 +58,7 @@ export const studentventures = [
   {
     title: "DishPlay",
     desc: "DishPlay helps restaurants turn their menus into a growth engine. Using simple food photos, DishPlay creates high-quality visual menus used across QR codes, NFC taps, WhatsApp Business, and social media, helping customers decide faster and restaurants sell more.",
-    img: "studentbusinesses/DishPlay.png",
+    img: "/studentbusinesses/DishPlay.webp",
     link: "http://www.dishplay.ai",
     founder: "Sebastian Dominguez",
     category: "Tech",
@@ -66,7 +66,7 @@ export const studentventures = [
   {
     title: "SmartSip",
     desc: "I’m building SmartSip an autonomous and continuous patch that tracks the water level in your body for medical patients. The patch relays the information into an app on your phone, creating metrics that can be sent directly to clinicians. ",
-    img: "studentbusinesses/SmartSip.png",
+    img: "/studentbusinesses/SmartSip.webp",
     link: "",
     founder: "Diya Sheth",
     category: "Tech",
@@ -74,7 +74,7 @@ export const studentventures = [
   {
     title: "Ava Grace Sannino Jazz Bar",
     desc: "A one of a kind jazz bar experience that blends intimate live music with award-winning wines.",
-    img: "studentbusinesses/AvaSanninoVineyard.JPG",
+    img: "/studentbusinesses/AvaSanninoVineyard.webp",
     link: "SanninoVineyard.com",
     founder: "Ava Grace Sannino",
     category: "Food & Beverage",
@@ -82,7 +82,7 @@ export const studentventures = [
   {
     title: "AnchorSmart",
     desc: "AnchorSmart is a digital mooring reservation platform. Lets sailors view and book available buoys in real time and modernizes payments and occupancy management for bay operators. AnchorSmart creates a safer and more efficient coastal sailing experience.",
-    img: "studentbusinesses/AnchorSmart.png",
+    img: "/studentbusinesses/AnchorSmart.webp",
     link: "https://anchor-smart-sea.lovable.app/",
     founder: "Alix Martini",
     category: "Tech",
@@ -90,7 +90,7 @@ export const studentventures = [
   {
     title: "Ellie Grace",
     desc: "Sustainable handmade clothing and accessories brand rooted in timelessness, elegance, and femininity.",
-    img: "studentbusinesses/EllieGrace.png",
+    img: "/studentbusinesses/EllieGrace.webp",
     link: "https://www.instagram.com/elliegrace.co/",
     founder: "Ellie Park",
     category: "Fashion",
@@ -98,7 +98,7 @@ export const studentventures = [
   {
     title: "Oatful",
     desc: "UAE's first overnight oats mix packed with 20g+ of protein, superfoods, and fiber. Soon will be introducing the world's first high protein ready-to-eat overnight oats.",
-    img: "studentbusinesses/Oatful.png",
+    img: "/studentbusinesses/Oatful.webp",
     link: "https://shopoatful.com/",
     founder: "Yara Mersi",
     category: "Food & Beverage",
@@ -106,7 +106,7 @@ export const studentventures = [
   {
     title: "Discount City Fireworks",
     desc: "Fireworks business with over $120,000 worth of inventory based in Lubbock, Texas.",
-    img: "studentbusinesses/DiscountCityFireworks.png",
+    img: "/studentbusinesses/DiscountCityFireworks.webp",
     link: "https://discount-city-fireworks.business.site/",
     founder: "Conrad Hamilton",
     category: "Retail",
@@ -114,7 +114,7 @@ export const studentventures = [
   {
     title: "Afritrip Advisors",
     desc: "A travel concierge offering private personalized and customizable trips to Morroco. Afritrip planes on expanding trips into the rest of Africa in the near future.",
-    img: "studentbusinesses/AfritripAdvisors.png",
+    img: "/studentbusinesses/AfritripAdvisors.webp",
     link: "https://www.afritripmorocco.com/",
     founder: "Ghali Jorio",
     category: "Travel",
@@ -122,7 +122,7 @@ export const studentventures = [
   {
     title: "Collegetown Jazz Club",
     desc: "Student operated jazz club in the heart of Collegetown.",
-    img: "studentbusinesses/CollegetownJazzClub.png",
+    img: "/studentbusinesses/CollegetownJazzClub.webp",
     link: "https://www.instagram.com/collegetownjazzclub/",
     founder: "Kaitlyn Clarke",
     category: "Food & Beverage",
@@ -130,7 +130,7 @@ export const studentventures = [
   {
     title: "Jaden",
     desc: "Quarter sized bodyguard for runners by runners. Backed by NY State.",
-    img: "studentbusinesses/Jaden.png",
+    img: "/studentbusinesses/Jaden.webp",
     link: "https://jaden-technology.com/",
     founder: "Kaitlyn Clarke",
     category: "Tech",
@@ -138,7 +138,7 @@ export const studentventures = [
   {
     title: "Crescendo",
     desc: "Crescendo is an all-in-one music education platform designed to solve one of music education's biggest challenges: keeping students engaged outside the lesson. By combining customizable assignments, interactive practice games, leaderboards, and separate teacher and student dashboards, Crescendo helps instructors increase accountability, improve communication, and reduce student dropout.",
-    img: "studentbusinesses/Crescendo.png",
+    img: "/studentbusinesses/Crescendo.webp",
     link: "",
     founder: "Olivia Buvanova",
     category: "Tech",
@@ -146,7 +146,7 @@ export const studentventures = [
   {
     title: "TennisB&B",
     desc: "TennisB&B connects lower-level competitive tennis players traveling for tournaments with local tennis families offering affordable short-term stays. By cutting accommodation costs, it makes traveling to more tournaments financially accessible.",
-    img: "studentbusinesses/TennisBnB.png",
+    img: "/studentbusinesses/TennisBnB.webp",
     link: "",
     founder: "Finn Clancy",
     category: "Travel",
@@ -154,7 +154,7 @@ export const studentventures = [
   {
     title: "Syndeo",
     desc: "Syndeo is a guided networking platform for in-person events. For organizers it means more engaging events, and for attendees it means more valuable connections, and less missed opportunities.",
-    img: "studentbusinesses/Syndeo.png",
+    img: "/studentbusinesses/Syndeo.webp",
     link: "https://www.linkedin.com/in/jackson-hutchison-564641312",
     founder: "Jackson Hutchison",
     category: "Tech",

@@ -22,7 +22,8 @@
     "test:watch": "vitest",
     "deadcode": "knip --no-progress",
     "hooks:install": "git config core.hooksPath .githooks",
-    "check": "npm run lint && npm run format:check && npm test && npm run deadcode"
+    "check": "npm run lint && npm run format:check && npm test && npm run deadcode",
+    "images": "node scripts/optimize-images.mjs"
   },
   "type": "module",
   "engines": {
@@ -38,6 +39,7 @@
     "knip": "^6.45.0",
     "oxlint": "^1.93.0",
     "prettier": "^3.9.10",
+    "sharp": "^0.35.5",
     "vite": "^8.3.8",
     "vitest": "^5.1.0"
   }

@@ -185,7 +185,7 @@ export default function StudentVentures() {
       {/* ===== HERO ===== */}
       <section className="ventures-hero">
         <img
-          src="images/AboutBackground.jpg"
+          src="/images/AboutBackground.webp"
           alt="Student Ventures"
           className="ventures-hero-img"
         />

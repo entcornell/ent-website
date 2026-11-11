@@ -11,7 +11,7 @@ export default function Values() {
     <div className="values-page">
       {/* ===== HERO ===== */}
       <section className="values-hero">
-        <img src="images/valuesBackground.JPG" alt="Values" className="values-hero-img" />
+        <img src="/images/valuesBackground.webp" alt="Values" className="values-hero-img" />
         <div className="values-hero-overlay">
           <h1>VALUES</h1>
         </div>
@@ -32,25 +32,25 @@ export default function Values() {
           </div>
 
           <div className="value-gallery">
-            <img src="images/b1.png" alt="Brotherhood 1" />
-            <img src="images/b2.png" alt="Brotherhood 2" />
-            <img src="images/b3.png" alt="Brotherhood 3" />
-            <img src="images/b4.png" alt="Brotherhood 4" />
-            <img src="images/b5.png" alt="Brotherhood 5" />
-            <img src="images/b6.png" alt="Brotherhood 6" />
-            <img src="images/b7.png" alt="Brotherhood 7" />
-            <img src="images/b8.png" alt="Brotherhood 8" />
-            <img src="images/b9.png" alt="Brotherhood 9" />
-            <img src="images/b10.png" alt="Brotherhood 10" />
-            <img src="images/b11.png" alt="Brotherhood 11" />
-            <img src="images/b12.png" alt="Brotherhood 12" />
-            <img src="images/b13.png" alt="Brotherhood 13" />
-            <img src="images/b14.png" alt="Brotherhood 14" />
-            <img src="images/b15.png" alt="Brotherhood 15" />
-            <img src="images/b16.png" alt="Brotherhood 16" />
-            <img src="images/b17.png" alt="Brotherhood 17" />
-            <img src="images/b18.png" alt="Brotherhood 18" />
-            <img src="images/b19.png" alt="Brotherhood 19" />
+            <img src="/images/b1.webp" alt="Brotherhood 1" />
+            <img src="/images/b2.webp" alt="Brotherhood 2" />
+            <img src="/images/b3.webp" alt="Brotherhood 3" />
+            <img src="/images/b4.webp" alt="Brotherhood 4" />
+            <img src="/images/b5.webp" alt="Brotherhood 5" />
+            <img src="/images/b6.webp" alt="Brotherhood 6" />
+            <img src="/images/b7.webp" alt="Brotherhood 7" />
+            <img src="/images/b8.webp" alt="Brotherhood 8" />
+            <img src="/images/b9.webp" alt="Brotherhood 9" />
+            <img src="/images/b10.webp" alt="Brotherhood 10" />
+            <img src="/images/b11.webp" alt="Brotherhood 11" />
+            <img src="/images/b12.webp" alt="Brotherhood 12" />
+            <img src="/images/b13.webp" alt="Brotherhood 13" />
+            <img src="/images/b14.webp" alt="Brotherhood 14" />
+            <img src="/images/b15.webp" alt="Brotherhood 15" />
+            <img src="/images/b16.webp" alt="Brotherhood 16" />
+            <img src="/images/b17.webp" alt="Brotherhood 17" />
+            <img src="/images/b18.webp" alt="Brotherhood 18" />
+            <img src="/images/b19.webp" alt="Brotherhood 19" />
           </div>
         </section>
 
@@ -67,20 +67,20 @@ export default function Values() {
           </div>
 
           <div className="value-gallery">
-            <img src="images/a1.png" alt="Authenticity 1" />
-            <img src="images/a2.png" alt="Authenticity 2" />
-            <img src="images/a3.png" alt="Authenticity 3" />
-            <img src="images/a4.png" alt="Authenticity 4" />
-            <img src="images/a5.png" alt="Authenticity 5" />
-            <img src="images/a6.png" alt="Authenticity 6" />
-            <img src="images/a7.png" alt="Authenticity 7" />
-            <img src="images/a8.png" alt="Authenticity 8" />
-            <img src="images/a9.png" alt="Authenticity 9" />
-            <img src="images/a10.png" alt="Authenticity 10" />
-            <img src="images/a11.png" alt="Authenticity 11" />
-            <img src="images/a12.png" alt="Authenticity 12" />
-            <img src="images/a13.png" alt="Authenticity 13" />
-            <img src="images/a14.png" alt="Authenticity 14" />
+            <img src="/images/a1.webp" alt="Authenticity 1" />
+            <img src="/images/a2.webp" alt="Authenticity 2" />
+            <img src="/images/a3.webp" alt="Authenticity 3" />
+            <img src="/images/a4.webp" alt="Authenticity 4" />
+            <img src="/images/a5.webp" alt="Authenticity 5" />
+            <img src="/images/a6.webp" alt="Authenticity 6" />
+            <img src="/images/a7.webp" alt="Authenticity 7" />
+            <img src="/images/a8.webp" alt="Authenticity 8" />
+            <img src="/images/a9.webp" alt="Authenticity 9" />
+            <img src="/images/a10.webp" alt="Authenticity 10" />
+            <img src="/images/a11.webp" alt="Authenticity 11" />
+            <img src="/images/a12.webp" alt="Authenticity 12" />
+            <img src="/images/a13.webp" alt="Authenticity 13" />
+            <img src="/images/a14.webp" alt="Authenticity 14" />
           </div>
         </section>
 
@@ -99,9 +99,9 @@ export default function Values() {
           </div>
 
           <div className="value-gallery">
-            <img src="images/p1.png" alt="Passion 1" />
-            <img src="images/p2.png" alt="Passion 2" />
-            <img src="images/p3.png" alt="Passion 3" />
+            <img src="/images/p1.webp" alt="Passion 1" />
+            <img src="/images/p2.webp" alt="Passion 2" />
+            <img src="/images/p3.webp" alt="Passion 3" />
           </div>
         </section>
 
@@ -118,12 +118,12 @@ export default function Values() {
           </div>
 
           <div className="value-gallery">
-            <img src="images/m1.png" alt="Mentoring 1" />
-            <img src="images/m2.png" alt="Mentoring 2" />
-            <img src="images/m3.png" alt="Mentoring 3" />
-            <img src="images/m4.png" alt="Mentoring 4" />
-            <img src="images/m5.png" alt="Mentoring 5" />
-            <img src="images/m6.png" alt="Mentoring 6" />
+            <img src="/images/m1.webp" alt="Mentoring 1" />
+            <img src="/images/m2.webp" alt="Mentoring 2" />
+            <img src="/images/m3.webp" alt="Mentoring 3" />
+            <img src="/images/m4.webp" alt="Mentoring 4" />
+            <img src="/images/m5.webp" alt="Mentoring 5" />
+            <img src="/images/m6.webp" alt="Mentoring 6" />
           </div>
         </section>
       </main>

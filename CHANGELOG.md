@@ -15,6 +15,12 @@ The site is deployed continuously from `main`, so entries are grouped by date, n
 
 ### Added
 
+- **Redesigned home preview at `/new`** (not linked from the live site): a pinned hero on a
+  rose-copper metal background that turns, with the scroll, from Paul Graham's "Live in the
+  future, then build what's missing." to "ENT turns Cornell students into founders." and
+  "With real companies.", then spotlights Stride, BUZZ and N1X with their founders.
+- Taglines for every venture in `StudentVenturesData.js`; Kate Stiens added as Stride's
+  co-founder.
 - `npm run readme:assets` regenerates the README banner and screenshots with headless
   Chrome.
 - `src/readme.test.js` fails CI when the README misses a route, content file, npm script or

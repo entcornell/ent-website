@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 import About from "./components/About";
 import Values from "./components/Values";
 import EventPopUp from "./components/EventPopUp";
+import FoundersHome from "./components/founders/FoundersHome";
 import "./index.css";
 
 function Layout() {
@@ -32,6 +33,8 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         {/* All routes below share the same NavBar */}
+        {/* Redesign preview: its own nav and footer, outside the shared layout. */}
+        <Route path="/new" element={<FoundersHome />} />
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/newsletter" element={<Newsletter />} />

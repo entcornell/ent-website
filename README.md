@@ -97,17 +97,18 @@ flowchart LR
 
 ## ◆ Pages
 
-| Route              | File                                 | What it shows                                                                        |
-| ------------------ | ------------------------------------ | ------------------------------------------------------------------------------------ |
-| `/`                | `src/components/Home.jsx`            | Hero, about blurb, ENT endeavors (popups), photo gallery                             |
-| `/about`           | `src/components/About.jsx`           | Our story and mission                                                                |
-| `/Values`          | `src/components/Values.jsx`          | Brotherhood, authenticity, passion, mentoring                                        |
-| `/studentVentures` | `src/components/StudentVentures.jsx` | Member-founded businesses, filterable by category                                    |
-| `/SBC`             | `src/components/SBC.jsx`             | Small Business Collective, links to [sbc.entcornell.com](https://sbc.entcornell.com) |
-| `/recruitment`     | `src/components/Recruitment.jsx`     | Recruitment timeline, application rounds and FAQ                                     |
-| `/brothers`        | `src/components/Brothers.jsx`        | Executive board, members by pledge class, alumni                                     |
-| `/newsletter`      | `src/components/Newsletter.jsx`      | Newsletter archive (hidden from the navbar, linked from the footer)                  |
-| `/newsletter/:id`  | `src/components/NewsletterPage.jsx`  | One issue, with a full-screen reader                                                 |
+| Route              | File                                       | What it shows                                                                        |
+| ------------------ | ------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `/`                | `src/components/Home.jsx`                  | Hero, about blurb, ENT endeavors (popups), photo gallery                             |
+| `/about`           | `src/components/About.jsx`                 | Our story and mission                                                                |
+| `/Values`          | `src/components/Values.jsx`                | Brotherhood, authenticity, passion, mentoring                                        |
+| `/studentVentures` | `src/components/StudentVentures.jsx`       | Member-founded businesses, filterable by category                                    |
+| `/SBC`             | `src/components/SBC.jsx`                   | Small Business Collective, links to [sbc.entcornell.com](https://sbc.entcornell.com) |
+| `/recruitment`     | `src/components/Recruitment.jsx`           | Recruitment timeline, application rounds and FAQ                                     |
+| `/brothers`        | `src/components/Brothers.jsx`              | Executive board, members by pledge class, alumni                                     |
+| `/newsletter`      | `src/components/Newsletter.jsx`            | Newsletter archive (hidden from the navbar, linked from the footer)                  |
+| `/new`             | `src/components/founders/FoundersHome.jsx` | Redesign preview (work in progress): brothers and the ventures they built            |
+| `/newsletter/:id`  | `src/components/NewsletterPage.jsx`        | One issue, with a full-screen reader                                                 |
 
 `/members` redirects to `/brothers`. Every page shares the navbar, the footer and the
 upcoming-event popup, wired in `src/App.jsx`.

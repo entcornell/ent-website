@@ -6,9 +6,21 @@ The site is deployed continuously from `main`, so entries are grouped by date, n
 
 ## [Unreleased]
 
-### Removed
+### Changed
 
-- Dependabot. The site has two pinned CI actions; they are bumped by hand.
+- **README redesigned** in ENT's colors: banner, live screenshots (desktop and phone),
+  diagrams of how the site works, how content flows to pages, the image pipeline and the
+  path from a change to production, step-by-step guides, brand reference and
+  troubleshooting.
+
+### Added
+
+- `npm run readme:assets` regenerates the README banner and screenshots with headless
+  Chrome.
+- `src/readme.test.js` fails CI when the README misses a route, content file, npm script or
+  screenshot.
+
+## 2026-11-10 (images)
 
 ### Changed
 
@@ -23,6 +35,10 @@ The site is deployed continuously from `main`, so entries are grouped by date, n
 - `npm run images` (`scripts/optimize-images.mjs`) to optimize new photos and update their
   references.
 - Tests that fail on relative image paths and on any image over 1 MB.
+
+### Removed
+
+- Dependabot. The site has two pinned CI actions; they are bumped by hand.
 
 ## 2026-11-10 (Vite migration)
 

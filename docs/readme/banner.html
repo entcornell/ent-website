@@ -1,0 +1,161 @@
+<!doctype html>
+<!--
+  Source of docs/readme/banner.webp, the README header.
+  Rendered by `npm run readme:assets` (scripts/readme-assets.mjs) at 1280x400, 2x.
+  Colors and fonts are the site's own (see README "Brand").
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;700&family=Kaisei+Opti&family=Montserrat:wght@500;600&display=block"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --maroon: #6e1010;
+        --maroon-deep: #3d0808;
+        --red: #d62828;
+        --blush: #f4d9d9;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      html,
+      body {
+        width: 1280px;
+        height: 400px;
+        overflow: hidden;
+      }
+      body {
+        position: relative;
+        background:
+          radial-gradient(120% 140% at 85% 0%, #8f1818 0%, transparent 55%),
+          radial-gradient(90% 120% at 0% 100%, #2a0505 0%, transparent 60%),
+          linear-gradient(135deg, var(--maroon-deep), var(--maroon) 55%, #7d1414);
+        color: #fff;
+        font-family: "Montserrat", system-ui, sans-serif;
+      }
+      .circuit {
+        position: absolute;
+        inset: 0;
+        opacity: 0.22;
+      }
+      .chevron {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 70px;
+      }
+      .content {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        gap: 56px;
+        padding: 0 96px 28px;
+      }
+      .mark {
+        flex: none;
+        width: 168px;
+        height: 168px;
+        filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.35));
+      }
+      .eyebrow {
+        font-weight: 600;
+        font-size: 15px;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--blush);
+        opacity: 0.9;
+      }
+      h1 {
+        margin-top: 14px;
+        font-family: "Kaisei Decol", serif;
+        font-weight: 700;
+        font-size: 74px;
+        line-height: 1;
+        letter-spacing: 0.06em;
+      }
+      .rule {
+        width: 84px;
+        height: 4px;
+        margin: 24px 0 20px;
+        border-radius: 2px;
+        background: var(--red);
+      }
+      .tagline {
+        font-family: "Kaisei Opti", serif;
+        font-size: 25px;
+        color: var(--blush);
+      }
+      .url {
+        position: absolute;
+        top: 34px;
+        right: 40px;
+        padding: 9px 18px;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        border-radius: 999px;
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 0.08em;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.18);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Circuit traces, echoing the lines that leave the shield in the ENT logo. -->
+    <svg class="circuit" viewBox="0 0 1280 400" fill="none" stroke="#fff" stroke-width="2">
+      <path d="M1090 120 H1150 L1190 160 H1280" />
+      <path d="M1100 200 H1200 L1230 230 H1280" />
+      <path d="M1090 280 H1170 L1210 240" />
+      <g fill="#fff">
+        <circle cx="1090" cy="120" r="6" />
+        <circle cx="1100" cy="200" r="6" />
+        <circle cx="1090" cy="280" r="6" />
+        <circle cx="1210" cy="240" r="6" />
+      </g>
+    </svg>
+
+    <!-- The same chevron that closes the hero on www.entcornell.com. -->
+    <svg class="chevron" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polyline
+        points="-1,52 50,88 101,52"
+        fill="none"
+        stroke="#d62828"
+        stroke-width="6"
+        vector-effect="non-scaling-stroke"
+      />
+    </svg>
+
+    <div class="content">
+      <!-- The ENT mark in white: a shield whose right side becomes three circuit lines. -->
+      <svg class="mark" viewBox="0 0 120 120" fill="none" stroke="#fff" stroke-linecap="round">
+        <path
+          d="M58 12 L20 26 V62 C20 86 38 102 58 110 C66 107 73 102 79 96"
+          stroke-width="7"
+          stroke-linejoin="round"
+        />
+        <path d="M58 12 L76 19" stroke-width="7" />
+        <path d="M44 48 H74 L86 36" stroke-width="6" stroke-linejoin="round" />
+        <path d="M44 60 H92" stroke-width="6" />
+        <path d="M44 72 H74 L86 84" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="92" cy="31" r="7" stroke-width="5" />
+        <circle cx="99" cy="60" r="7" stroke-width="5" />
+        <circle cx="92" cy="89" r="7" stroke-width="5" />
+      </svg>
+
+      <div>
+        <p class="eyebrow">Tau Chapter · Cornell University</p>
+        <h1>EPSILON NU TAU</h1>
+        <div class="rule"></div>
+        <p class="tagline">The nation's first entrepreneurship fraternity.</p>
+      </div>
+    </div>
+
+    <div class="url">www.entcornell.com</div>
+  </body>
+</html>

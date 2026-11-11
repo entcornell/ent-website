@@ -17,6 +17,7 @@
 - [ ] Branch is `<type>/<short-desc>` and commits follow Conventional Commits
 - [ ] `npm run check` and `npm run build` pass locally
 - [ ] README / CHANGELOG / docs updated if behavior changed
+- [ ] README screenshots regenerated (`npm run readme:assets`) if the site looks different
 - [ ] Tests added or updated for changed logic
 
 ## Proof

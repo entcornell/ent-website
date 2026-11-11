@@ -12,12 +12,12 @@ export const issues = [
     author: "Mac Dorward",
     excerpt:
       "Welcome back ENT! On September 15th at 5:30PM, we will be hosting an Entrepreneurship Faculty Panel, where you will get to hear about what Cornell has to offer for entrepreneurs. On September 27th, ENT will be partnering with Computers4 People to host a 5K run to raise money to provide internet access for those access.",
-    image: abs("/newsletters/issue9/Newsletter9-HeadlineImage.jpg"),
+    image: abs("/newsletters/issue9/Newsletter9-HeadlineImage.webp"),
     pages: [
-      abs("/newsletters/issue9/1.png"),
-      abs("/newsletters/issue9/2.png"),
-      abs("/newsletters/issue9/3.png"),
-      abs("/newsletters/issue9/4.png"),
+      abs("/newsletters/issue9/1.webp"),
+      abs("/newsletters/issue9/2.webp"),
+      abs("/newsletters/issue9/3.webp"),
+      abs("/newsletters/issue9/4.webp"),
     ],
     sources: [
       {
@@ -58,12 +58,12 @@ export const issues = [
     author: "Mac Dorward",
     excerpt:
       "This semester has started off with a bang! With recruiting underway and numerous events coming up, opportunities are abundant to get involved in the future of entrepreneurship.",
-    image: abs("/newsletters/issue8/Newsletter8-HeadlineImage.jpg"),
+    image: abs("/newsletters/issue8/Newsletter8-HeadlineImage.webp"),
     pages: [
-      abs("/newsletters/issue8/1.png"),
-      abs("/newsletters/issue8/2.png"),
-      abs("/newsletters/issue8/3.png"),
-      abs("/newsletters/issue8/4.png"),
+      abs("/newsletters/issue8/1.webp"),
+      abs("/newsletters/issue8/2.webp"),
+      abs("/newsletters/issue8/3.webp"),
+      abs("/newsletters/issue8/4.webp"),
     ],
     sources: [
       {
@@ -104,12 +104,12 @@ export const issues = [
     author: "Mac Dorward",
     excerpt:
       "We are thrilled to kick off this semester together. From upcoming recruiting events to our weekly G-Body meetings, we cannot wait to see how ENT has spent the summer.",
-    image: abs("/newsletters/issue7/Newsletter7-HeadlineImage.jpg"),
+    image: abs("/newsletters/issue7/Newsletter7-HeadlineImage.webp"),
     pages: [
-      abs("/newsletters/issue7/1.png"),
-      abs("/newsletters/issue7/2.png"),
-      abs("/newsletters/issue7/3.png"),
-      abs("/newsletters/issue7/4.png"),
+      abs("/newsletters/issue7/1.webp"),
+      abs("/newsletters/issue7/2.webp"),
+      abs("/newsletters/issue7/3.webp"),
+      abs("/newsletters/issue7/4.webp"),
     ],
     sources: [
       {
@@ -153,12 +153,12 @@ export const issues = [
     author: "Mac Dorward",
     excerpt:
       "Welcome back to another edition of ENT weekly - your easy to read and favorite source of entrepreneurship, business, and market news!",
-    image: abs("/newsletters/issue6/Newsletter6-HeadlineImage.jpg"),
+    image: abs("/newsletters/issue6/Newsletter6-HeadlineImage.webp"),
     pages: [
-      abs("/newsletters/issue6/1.png"),
-      abs("/newsletters/issue6/2.png"),
-      abs("/newsletters/issue6/3.png"),
-      abs("/newsletters/issue6/4.png"),
+      abs("/newsletters/issue6/1.webp"),
+      abs("/newsletters/issue6/2.webp"),
+      abs("/newsletters/issue6/3.webp"),
+      abs("/newsletters/issue6/4.webp"),
     ],
     sources: [
       {
@@ -198,12 +198,12 @@ export const issues = [
     author: "Mac Dorward",
     excerpt:
       "Welcome back to another edition of ENT weekly - your easy to read and favorite source of entrepreneurship, business, and market news!",
-    image: abs("/newsletters/issue5/Newsletter5-HeadlineImage.jpg"),
+    image: abs("/newsletters/issue5/Newsletter5-HeadlineImage.webp"),
     pages: [
-      abs("/newsletters/issue5/1.png"),
-      abs("/newsletters/issue5/2.png"),
-      abs("/newsletters/issue5/3.png"),
-      abs("/newsletters/issue5/4.png"),
+      abs("/newsletters/issue5/1.webp"),
+      abs("/newsletters/issue5/2.webp"),
+      abs("/newsletters/issue5/3.webp"),
+      abs("/newsletters/issue5/4.webp"),
     ],
     sources: [
       {
@@ -247,12 +247,12 @@ export const issues = [
     author: "Mac Dorward",
     excerpt:
       "Welcome back to another edition of ENT weekly - your easy to read and favorite source of entrepreneurship, business, and market news!",
-    image: abs("/newsletters/issue4/Newsletter4-HeadlineImage.jpg"),
+    image: abs("/newsletters/issue4/Newsletter4-HeadlineImage.webp"),
     pages: [
-      abs("/newsletters/issue4/1 6.PNG"),
-      abs("/newsletters/issue4/2 6.PNG"),
-      abs("/newsletters/issue4/3 6.PNG"),
-      abs("/newsletters/issue4/4 3.PNG"),
+      abs("/newsletters/issue4/1 6.webp"),
+      abs("/newsletters/issue4/2 6.webp"),
+      abs("/newsletters/issue4/3 6.webp"),
+      abs("/newsletters/issue4/4 3.webp"),
     ],
     sources: [
       {
@@ -296,12 +296,12 @@ export const issues = [
     author: "Mac Dorward",
     excerpt:
       "Welcome back to another edition of ENT weekly - your easy to read and favorite source of entrepreneurship, business, and market news!",
-    image: abs("/newsletters/issue3/Newsletter3-HeadlineImage.jpg"),
+    image: abs("/newsletters/issue3/Newsletter3-HeadlineImage.webp"),
     pages: [
-      abs("/newsletters/issue3/1.PNG"),
-      abs("/newsletters/issue3/2.PNG"),
-      abs("/newsletters/issue3/3.PNG"),
-      abs("/newsletters/issue3/4.PNG"),
+      abs("/newsletters/issue3/1.webp"),
+      abs("/newsletters/issue3/2.webp"),
+      abs("/newsletters/issue3/3.webp"),
+      abs("/newsletters/issue3/4.webp"),
     ],
     sources: [
       {
@@ -341,12 +341,12 @@ export const issues = [
     author: "Mac Dorward",
     excerpt:
       "Welcome back to another edition of ENT weekly - your easy to read and favorite source of entrepreneurship, business, and market news!",
-    image: abs("/newsletters/issue2/Newsletter2-HeadlineImage.jpg"),
+    image: abs("/newsletters/issue2/Newsletter2-HeadlineImage.webp"),
     pages: [
-      abs("/newsletters/issue2/1.PNG"),
-      abs("/newsletters/issue2/2.PNG"),
-      abs("/newsletters/issue2/3.PNG"),
-      abs("/newsletters/issue2/4.PNG"),
+      abs("/newsletters/issue2/1.webp"),
+      abs("/newsletters/issue2/2.webp"),
+      abs("/newsletters/issue2/3.webp"),
+      abs("/newsletters/issue2/4.webp"),
     ],
     sources: [
       {
@@ -386,13 +386,13 @@ export const issues = [
     author: "Mac Dorward",
     excerpt:
       "Happy summer, ENT! Welcome to the first edition of ENT Weekly - your essential briefing on entrepreneurship, business, and market news in the U.S.!",
-    image: abs("/newsletters/issue1/Newsletter1-HeadlineImage.jpg"),
+    image: abs("/newsletters/issue1/Newsletter1-HeadlineImage.webp"),
     pages: [
-      abs("/newsletters/issue1/1.png"),
-      abs("/newsletters/issue1/2.png"),
-      abs("/newsletters/issue1/3.png"),
-      abs("/newsletters/issue1/4.png"),
-      abs("/newsletters/issue1/5.png"),
+      abs("/newsletters/issue1/1.webp"),
+      abs("/newsletters/issue1/2.webp"),
+      abs("/newsletters/issue1/3.webp"),
+      abs("/newsletters/issue1/4.webp"),
+      abs("/newsletters/issue1/5.webp"),
     ],
     sources: [
       {

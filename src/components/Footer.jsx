@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="footer-inner">
           {/* Brand */}
           <div className="footer-brand">
-            <img src="images/ENTTransparentLogo.png" alt="ENT Logo" className="footer-logo" />
+            <img src="/images/ENTTransparentLogo.png" alt="ENT Logo" className="footer-logo" />
             <p className="club-regristration">
               This organization is a registered student organization of Cornell University.
             </p>

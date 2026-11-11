@@ -93,7 +93,7 @@ export default function Recruitment() {
     <div className="recruitment-page">
       {/* ===== HERO HEADER ===== */}
       <section className="recruitment-hero">
-        <img src="/images/recruitmentheader.png" alt="Recruitment Header" />
+        <img src="/images/recruitmentheader.webp" alt="Recruitment Header" />
         <div className="recruitment-hero-content">
           <h1>FALL 2026</h1>
           <h2>RECRUITMENT</h2>
@@ -140,7 +140,7 @@ export default function Recruitment() {
       {/* ===== FAQ ===== */}
       <section
         className="recruitment-faq"
-        style={{ backgroundImage: "url(/images/RecruitmentFAQ.png)" }}
+        style={{ backgroundImage: "url(/images/RecruitmentFAQ.webp)" }}
       >
         <h2>FAQ</h2>
 

@@ -78,7 +78,9 @@ Almost every update is a change to one data file. You don't need to touch page l
 
 ### Add a member
 
-1. Add their headshot to `public/headshots-fall2026/` (see [Images](#images)).
+1. Add their headshot to `public/headshots-fall2026/` and run
+   `npm run images -- public/headshots-fall2026/FirstLast-Headshot.jpg` to turn it into a
+   small `.webp` (see [Images](#images)).
 2. Add an entry to the right pledge class in `src/components/BrothersData.js`:
 
    ```js
@@ -89,7 +91,7 @@ Almost every update is a change to one data file. You don't need to touch page l
      major: "Computer Science",
      involvement: "Clubs, teams",
      hobbies: "Hobbies",
-     image: "headshots-fall2026/FirstLast-Headshot.jpg",
+     image: "/headshots-fall2026/FirstLast-Headshot.webp",
      style: { objectPosition: "center 30%" }, // optional: moves the crop up or down
    },
    ```
@@ -110,8 +112,9 @@ Almost every update is a change to one data file. You don't need to touch page l
 
 ## Images
 
-Everything in `public/` is served as-is, so `public/images/home1.jpg` is available at
-`/images/home1.jpg`.
+Everything in `public/` is served as-is, so `public/images/home1.webp` is available at
+`/images/home1.webp`. In the code, always write the path with a leading `/`; without it the
+image breaks on nested pages like `/newsletter/3` (a test enforces this).
 
 | Folder                                                            | Contents                                    |
 | ----------------------------------------------------------------- | ------------------------------------------- |
@@ -122,13 +125,25 @@ Everything in `public/` is served as-is, so `public/images/home1.jpg` is availab
 | `public/endeavors/`                                               | Home page endeavor images                   |
 | `public/newsletters/issueN/`                                      | Newsletter pages and headline image         |
 
-**Before adding a photo, make it small.** Phone photos are 3–15 MB and make the site slow
-on mobile. Aim for **under 300 KB**: about 800 px wide for headshots and cards, and
-2000 px for full-width heroes. [Squoosh](https://squoosh.app) does this in the browser
-(choose WebP or MozJPEG, quality ~75).
+**Every photo goes through `npm run images` before it is committed.** Phone photos are
+3–15 MB and make the site slow on mobile. The script (`scripts/optimize-images.mjs`):
+
+- resizes to the size the page shows (800 px wide for headshots, 1200 for ventures and
+  endeavors, 1600 for newsletter pages, 2000 for heroes), keeping the phone's rotation;
+- converts to WebP and deletes the original (git history keeps it);
+- updates every reference in the code from `.jpg`/`.png` to `.webp`.
+
+```sh
+npm run images -- public/headshots-fall2026/FirstLast-Headshot.jpg   # one or more files
+npm run images                                                       # everything in public/
+```
+
+A test fails if any image in `public/` is over 1 MB. Logos and icons
+(`ENTTransparentLogo.png`, `favicon.ico`, `apple-touch-icon.png`, `ENTLogo*.png`) stay as
+PNG on purpose: link previews on some apps don't read WebP.
 
 Name files `FirstLast-Headshot.jpg`, without spaces. When you replace a photo, delete the
-old one; git keeps it in the history anyway.
+old one.
 
 ## Project structure
 
@@ -179,11 +194,9 @@ The full workflow, commit format and rules are in [CONTRIBUTING.md](CONTRIBUTING
 
 ## Known issues and roadmap
 
-- [ ] Compress the existing images (about 350 MB today); several are over 5 MB.
-- [ ] Use absolute image paths (`/images/...`). Relative paths break on nested routes like
-      `/newsletter/3`.
 - [ ] Give each page its own `<title>` and description.
 - [ ] Convert the code to TypeScript.
+- [x] Compress every image (358 MB → 21 MB) and use absolute image paths.
 - [x] Make the recruitment dropdowns, venture cards and About menu keyboard-accessible.
 - [x] Move off Create React App to Vite, with lint, tests and CI on every pull request.
 

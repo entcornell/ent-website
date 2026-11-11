@@ -16,7 +16,7 @@ export default function Newsletter() {
       {/* HERO */}
       <section className="nl-hero">
         <div className="nl-hero-clip">
-          <img src="images/IMG_3070.jpg" alt="ENT Newsletter" className="nl-hero-img" />
+          <img src="/images/IMG_3070.webp" alt="ENT Newsletter" className="nl-hero-img" />
           <div className="nl-hero-content">
             <h1>ENT NEWSLETTER</h1>
             <p>STAY UP TO DATE WITH THE LATEST ENTREPRENEURIAL NEWS</p>

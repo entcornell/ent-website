@@ -21,7 +21,7 @@ export default function About() {
     <div className="about-page">
       {/* ===== HERO ===== */}
       <section className="about-hero">
-        <img src="images/AboutBackground.jpg" alt="About ENT" className="about-hero-img" />
+        <img src="/images/AboutBackground.webp" alt="About ENT" className="about-hero-img" />
         <div className="about-hero-overlay">
           <h1>ABOUT US</h1>
           <ApplyNowButton />
@@ -44,7 +44,7 @@ export default function About() {
               </div>
 
               <div className="about-story-image">
-                <img src="images/about1.JPG" alt="ENT members" loading="lazy" />
+                <img src="/images/about1.webp" alt="ENT members" loading="lazy" />
               </div>
             </div>
           </section>
@@ -133,7 +133,7 @@ export default function About() {
 
         <section className="about-banner">
           <img
-            src="images/about2.JPG"
+            src="/images/about2.webp"
             alt="ENT commitment"
             className="about-banner-img"
             loading="lazy"

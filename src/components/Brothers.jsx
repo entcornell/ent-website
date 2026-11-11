@@ -62,7 +62,7 @@ export default function Members() {
     <div className="members-page">
       {/* HERO */}
       <section className="members-hero">
-        <img src="group-pics/ENTGroups-64.jpeg" alt="Members hero" className="members-hero-img" />
+        <img src="/group-pics/ENTGroups-64.webp" alt="Members hero" className="members-hero-img" />
 
         <div className="members-hero-content">
           <h1>BROTHERS</h1>

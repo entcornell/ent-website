@@ -13,7 +13,7 @@ import {
 export const endeavors = [
   {
     title: "Weekly Newsletter",
-    img: "images/weeklynewsletter.jpg",
+    img: "/images/weeklynewsletter.webp",
     desc: "Stay up to date with our weekly newsletter, which highlights ENT events along with entrepreneurship news!",
     projects: [
       {
@@ -32,12 +32,16 @@ export const endeavors = [
         icon: faUserTie,
       },
     ],
-    thumbs: ["newsletters/issue1/1.png", "newsletters/issue5/3.png", "newsletters/issue6/4.png"],
+    thumbs: [
+      "/newsletters/issue1/1.webp",
+      "/newsletters/issue5/3.webp",
+      "/newsletters/issue6/4.webp",
+    ],
     link: "/newsletter",
   },
   {
     title: "Speaker Events",
-    img: "images/speakerevent1.jpg",
+    img: "/images/speakerevent1.webp",
     desc: "Conversations with entrepreneurs, alumni, and industry leaders hosted weekly by our members.",
     projects: [
       {
@@ -57,14 +61,14 @@ export const endeavors = [
       },
     ],
     thumbs: [
-      "endeavors/elab-event.jpg",
-      "endeavors/EcclecticConvergence1.jpg",
-      "endeavors/speaker-event1.jpg",
+      "/endeavors/elab-event.webp",
+      "/endeavors/EcclecticConvergence1.webp",
+      "/endeavors/speaker-event1.webp",
     ],
   },
   {
     title: "Small Business Collective",
-    img: "images/IMG_0162.JPG",
+    img: "/images/IMG_0162.webp",
     desc: "A collective run by our own members to help them gain hands-on entrepreneurial experience!",
     projects: [
       {
@@ -85,9 +89,9 @@ export const endeavors = [
       },
     ],
     thumbs: [
-      "endeavors/SBC-Stickers.jpg",
-      "endeavors/working-on-computer.jpg",
-      "endeavors/NSA-Stickers.jpg",
+      "/endeavors/SBC-Stickers.webp",
+      "/endeavors/working-on-computer.webp",
+      "/endeavors/NSA-Stickers.webp",
     ],
     link: "https://sbc.entcornell.com/",
   },

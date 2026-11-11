@@ -10,7 +10,7 @@ export const eboard = [
     minors: "",
     involvement: "Créme de Cornell, On Tap, Social Sorority",
     hobbies: "Dance, Art History, Baking, Crosswords & Trivia, Saturday Night Live",
-    image: "headshots-fall2025/SadieSchnierow-Headshot.jpg",
+    image: "/headshots-fall2025/SadieSchnierow-Headshot.webp",
     style: { objectPosition: "center 35%" },
   },
   {
@@ -21,7 +21,7 @@ export const eboard = [
     major: "Biology & Society, Entrepreneurship and Cognitive Science",
     involvement: "On Campus Job at Reis Tennis Center",
     hobbies: "Travelling, Learning languages, Weightlifting, Triathlon, Collecting Coins",
-    image: "headshots-fall2026/FinnClancy-HeadshotFA26.jpeg",
+    image: "/headshots-fall2026/FinnClancy-HeadshotFA26.webp",
     style: { objectPosition: "center 45%" },
   },
   {
@@ -32,7 +32,7 @@ export const eboard = [
     major: "Computer Science, Data Science",
     involvement: "Cornell Speech & Debate, Armada, Engineers Without Borders, Cornell Sitara",
     hobbies: "Cooking, Cars, Gardening, AgriTech",
-    image: "headshots-fall2025/PradhiPakkerakari.png",
+    image: "/headshots-fall2025/PradhiPakkerakari.webp",
     style: { objectPosition: "center 30%" },
   },
   {
@@ -43,7 +43,7 @@ export const eboard = [
     major: "Computer Science, Entrepreneurship",
     involvement: "EWB Cornell",
     hobbies: "Travelling, Basketball, Golf, Coding",
-    image: "headshots-fall2025/SebastianDominguez-Headshot.JPG",
+    image: "/headshots-fall2025/SebastianDominguez-Headshot.webp",
     style: { objectPosition: "center 30%" },
   },
   {
@@ -55,7 +55,7 @@ export const eboard = [
     involvement:
       "Cornell DEBUT, International Students Association, Triathlon Club, Social Sorority",
     hobbies: "Sailing, Triathlon, Running, Cycling, Cooking, Hiking",
-    image: "headshots-fall2026/AlixMartinit-HeadshotFA26.jpeg",
+    image: "/headshots-fall2026/AlixMartinit-HeadshotFA26.webp",
     style: { objectPosition: "center 50%" },
   },
   {
@@ -67,7 +67,7 @@ export const eboard = [
     involvement:
       "Cornell Global Business, Claude Builders, Chinese Students Association, SWIB, CSSC",
     hobbies: "Hospitality, Jazz Club, Digital Creation, Ceramic Sculpture",
-    image: "headshots-fall2026/ChristineZhou-HeadshotFA26.png",
+    image: "/headshots-fall2026/ChristineZhou-HeadshotFA26.webp",
     style: { objectPosition: "center 90%" },
   },
   {
@@ -78,7 +78,7 @@ export const eboard = [
     major: "Economics",
     involvement: "Founder of Tempest, Cornell Rugby",
     hobbies: "Golf, Music, Reading, History, Investing",
-    image: "headshots-fall2025/NoelBlackwell-Headshot.jpg",
+    image: "/headshots-fall2025/NoelBlackwell-Headshot.webp",
     style: { objectPosition: "center 55%" },
   },
   {
@@ -89,7 +89,7 @@ export const eboard = [
     major: "Computer Science, Artificial Intelligence",
     involvement: "Cornell Data Science, Cornell Filmmaking Society",
     hobbies: "Computer Animation, Creative Writing, Piano & Guitar",
-    image: "headshots-fall2025/SamanthaVaca-Headshot.jpeg",
+    image: "/headshots-fall2025/SamanthaVaca-Headshot.webp",
     style: { objectPosition: "center 35%" },
   },
   {
@@ -101,7 +101,7 @@ export const eboard = [
     involvement:
       "Social Enterprise Group at Cornell, Mosaic Hospitality Association, Cornell Rock Climbing Club",
     hobbies: "Baking, Running, Playing Card & Board Games, Reading, Climbing, ATLA",
-    image: "headshots-fall2025/MahinHardaway-Headshot.jpg",
+    image: "/headshots-fall2025/MahinHardaway-Headshot.webp",
     style: { objectPosition: "center 30%" },
   },
   {
@@ -112,7 +112,7 @@ export const eboard = [
     major: "AEM/Entrepreneurship, Philosophy",
     involvement: "Founder of Syndeo, Social Fraternity, Club Golf",
     hobbies: "Backpacking, Movies, Sports, Running, Minimizing Cortisol",
-    image: "headshots/JacksonHutchison-Headshot.jpeg",
+    image: "/headshots/JacksonHutchison-Headshot.webp",
     style: { objectPosition: "center 10%" },
   },
   {
@@ -124,7 +124,7 @@ export const eboard = [
     involvement:
       "Psych and law research lab, Cornell Ballet Club, Cornell Ethics Team, Social Sorority",
     hobbies: "Music, Pickleball, Fashion, Ballet",
-    image: "headshots/OliviaBuvanova-Headshot.png",
+    image: "/headshots/OliviaBuvanova-Headshot.webp",
     style: { objectPosition: "center 15%" },
   },
 ];
@@ -140,7 +140,7 @@ export const brotherhood = [
         major: "Hotel Administration, Fashion Studies",
         involvement: "Grub Ventures, Medium Design Collective",
         hobbies: "Hiking, Hot Sauce, Pottery, Fashion",
-        image: "headshots-fall2025/AndriaCao-Headshot.JPG",
+        image: "/headshots-fall2025/AndriaCao-Headshot.webp",
         style: { objectPosition: "center 20%" },
       },
     ],
@@ -155,7 +155,7 @@ export const brotherhood = [
         major: "Computer Science and Statistics",
         involvement: "Cornell Data Science, Student Agencies",
         hobbies: "Matcha, Concerts, Beach Volleyball",
-        image: "headshots-fall2025/TamaraKasikovic-Headshot.JPG",
+        image: "/headshots-fall2025/TamaraKasikovic-Headshot.webp",
         style: { objectPosition: "center 10%" },
       },
     ],
@@ -172,7 +172,7 @@ export const brotherhood = [
           "Cornell Assistive Technologies, BigRed\\Hacks,  Club Swim, Cornell Sun, Curious Cardinals Representative",
         hobbies:
           "Gourmet Dining, Crocheting, Ski, Gardening, Robotic Fabrication, Travel, Accessibility",
-        image: "headshots-fall2025/ShannonLin-Headshot.jpeg",
+        image: "/headshots-fall2025/ShannonLin-Headshot.webp",
         extra: "Website Coordinator",
         style: { objectPosition: "center 40%" },
       },
@@ -183,7 +183,7 @@ export const brotherhood = [
         major: "Information Science and Economics, Business",
         involvement: "Alpha Fund, eLabs Accelerator",
         hobbies: "Music, Economics, Entrepreneurship, VC",
-        image: "headshots-fall2025/EzanaKavuma-Headshot.jpeg",
+        image: "/headshots-fall2025/EzanaKavuma-Headshot.webp",
         style: { objectPosition: "center 40%" },
       },
       {
@@ -194,7 +194,7 @@ export const brotherhood = [
         involvement:
           "Cornell Nordic Association, American Hotel & Lodging Association, Social Fraternity",
         hobbies: "Hiking, Traveling, Volleyball, Spikeball",
-        image: "headshots-fall2025/KyanRosenthal-Headshot.jpg",
+        image: "/headshots-fall2025/KyanRosenthal-Headshot.webp",
         extra: "Director of Alumni Relations",
         style: { objectPosition: "center 25%" },
       },
@@ -205,7 +205,7 @@ export const brotherhood = [
         major: "Information Science, Art History",
         involvement: "Créme de Cornell, On Tap, Social Sorority",
         hobbies: "Dance, Art History, Baking, Crosswords & Trivia, Saturday Night Live",
-        image: "headshots-fall2026/SadieSchnierow-Headshot.jpg",
+        image: "/headshots-fall2026/SadieSchnierow-Headshot.webp",
         style: { objectPosition: "center 35%" },
       },
       {
@@ -215,7 +215,7 @@ export const brotherhood = [
         major: "ILR, Entrepreneurship and Business",
         involvement: "Hockey, Social Fraternity",
         hobbies: "Piano, Hockey, Cars, Travel, F1, Gym, VC, B2B SaaS",
-        image: "headshots-fall2025/ColinOBrien-Headshot.jpg",
+        image: "/headshots-fall2025/ColinOBrien-Headshot.webp",
         style: {
           objectFit: "contain",
           objectPosition: "center bottom",
@@ -231,7 +231,7 @@ export const brotherhood = [
         major: "Computer Science, Artificial Intelligence",
         involvement: "Cornell Data Science, Cornell Filmmaking Society",
         hobbies: "Computer Animation, Creative Writing, Piano & Guitar",
-        image: "headshots-fall2025/SamanthaVaca-Headshot.jpeg",
+        image: "/headshots-fall2025/SamanthaVaca-Headshot.webp",
         style: { objectPosition: "center 35%" },
       },
       {
@@ -241,7 +241,7 @@ export const brotherhood = [
         major: "Mechanical Engineering",
         involvement: "Cornell Electric Vehicles, Student Assembly",
         hobbies: "Bridging Enginering and Entrepreneurship",
-        image: "headshots-fall2025/CionKim-Headshot.jpeg",
+        image: "/headshots-fall2025/CionKim-Headshot.webp",
         style: { objectPosition: "center 30%" },
       },
       {
@@ -251,7 +251,7 @@ export const brotherhood = [
         major: "Independent Studies: Biomedical Engineering & Biotech Commercialization",
         involvement: "Cornell Bhangra, Engineering World Health",
         hobbies: "Hiking, Travel, Coffee, Food, Dance, Music",
-        image: "headshots-fall2026/AnishaRoy-Headshot.jpeg",
+        image: "/headshots-fall2026/AnishaRoy-Headshot.webp",
         style: { objectPosition: "center 30" },
       },
       {
@@ -261,7 +261,7 @@ export const brotherhood = [
         major: "AEM/Entrepreneurship",
         involvement: "Varsity Field Hockey, Dyson Student Ambassadors",
         hobbies: "Travel, Art, Breakdancing, Eating Good Food with Friends",
-        image: "headshots-fall2026/PollyParsons-Headshot.png",
+        image: "/headshots-fall2026/PollyParsons-Headshot.webp",
         style: { objectPosition: "center 20%" },
       },
       {
@@ -271,7 +271,7 @@ export const brotherhood = [
         major: "ORIE, Business",
         involvement: "SEGC, Cornell Speech and Debate, ISA",
         hobbies: "Basketball, History, Cooking",
-        image: "headshots-fall2025/AlexanderZhang-Headshot.png",
+        image: "/headshots-fall2025/AlexanderZhang-Headshot.webp",
         style: { objectPosition: "center 0%" },
       },
       {
@@ -281,7 +281,7 @@ export const brotherhood = [
         major: "Economics",
         involvement: "Founder of Tempest, Cornell Rugby",
         hobbies: "Golf, Music, Reading, History, Investing",
-        image: "headshots-fall2025/NoelBlackwell-Headshot.jpg",
+        image: "/headshots-fall2025/NoelBlackwell-Headshot.webp",
         style: { objectPosition: "center 55%" },
       },
       {
@@ -291,7 +291,7 @@ export const brotherhood = [
         major: "Operations Research and Information Engineering, Business",
         involvement: "Alpha Phi",
         hobbies: "Surfing, Hiking",
-        image: "headshots-fall2025/CaliBernier-Headshot.jpeg",
+        image: "/headshots-fall2025/CaliBernier-Headshot.webp",
         style: { objectPosition: "center 50%" },
       },
       {
@@ -302,7 +302,7 @@ export const brotherhood = [
         involvement: "Cornell Data Science, Cornell Bhangra",
         hobbies:
           "Dancing (Bhangra), Playing Basketball and Spikeball, Programming, Hanging Out with Friends",
-        image: "headshots-fall2025/MihirKulshreshtha-Headshot.jpg",
+        image: "/headshots-fall2025/MihirKulshreshtha-Headshot.webp",
         style: { objectPosition: "center 35%" },
       },
       {
@@ -312,7 +312,7 @@ export const brotherhood = [
         major: "Design & Environmental Analysis, Business and Fashion",
         involvement: "Women's Track and Field Team, WOCA",
         hobbies: "Thrifting, Any Kind of Art, Reading, Working Out, Eating Good Food",
-        image: "headshots-fall2025/AnikaSukumar-Headshot.jpg",
+        image: "/headshots-fall2025/AnikaSukumar-Headshot.webp",
         style: { objectPosition: "center 40%" },
       },
     ],
@@ -327,7 +327,7 @@ export const brotherhood = [
         major: "Materials Science & Engineering",
         involvement: "Cornell Venture Capital, Thompson Lab, Laidlaw Scholars Program",
         hobbies: "Cooking, Quilling, Astronomy, Pilates",
-        image: "headshots-fall2026/NoorDewood-Headshot.jpg",
+        image: "/headshots-fall2026/NoorDewood-Headshot.webp",
         style: { objectPosition: "center 35%" },
       },
       {
@@ -338,7 +338,7 @@ export const brotherhood = [
         involvement:
           "Social Enterprise Group at Cornell, Mosaic Hospitality Association, Cornell Rock Climbing Club",
         hobbies: "Baking, Running, Playing Card & Board Games, Reading, Climbing, ATLA",
-        image: "headshots-fall2025/MahinHardaway-Headshot.jpg",
+        image: "/headshots-fall2025/MahinHardaway-Headshot.webp",
         style: { objectPosition: "center 30%" },
       },
       {
@@ -348,7 +348,7 @@ export const brotherhood = [
         major: "Biology & Society, Entrepreneurship and Cognitive Science",
         involvement: "On Campus Job at Reis Tennis Center",
         hobbies: "Travelling, Learning languages, Weightlifting, Triathlon, Collecting Coins",
-        image: "headshots-fall2026/FinnClancy-HeadshotFA26.jpeg",
+        image: "/headshots-fall2026/FinnClancy-HeadshotFA26.webp",
         style: { objectPosition: "center 30%" },
       },
       {
@@ -358,7 +358,7 @@ export const brotherhood = [
         major: "Biological Engineering",
         involvement: "CUBMD, Cornell Maker Club",
         hobbies: "Guitar, Fishing, Surfing, Spikeball",
-        image: "headshots-fall2026/MarcusLotufo-Headshot.jpg",
+        image: "/headshots-fall2026/MarcusLotufo-Headshot.webp",
         style: { objectPosition: "center 20%" },
       },
       {
@@ -368,7 +368,7 @@ export const brotherhood = [
         major: "Electrical and Computer Engineering (ECE)",
         involvement: "Weill Cornell, ECE Research, Tech Startups, IM Soccer & Basketball",
         hobbies: "Cooking, Reading, Chess, Running, Gym, Soccer & Basketball",
-        image: "headshots-fall2025/HongjinFang-Headshot.jpeg",
+        image: "/headshots-fall2025/HongjinFang-Headshot.webp",
         style: { objectPosition: "center 40%" },
       },
       {
@@ -378,7 +378,7 @@ export const brotherhood = [
         major: "Biometry and Statistics",
         involvement: "Big Red Yoga, Residential Advisor",
         hobbies: "Basketball, Being an Influencer",
-        image: "headshots-fall2025/BrijGarg-Headshot.png",
+        image: "/headshots-fall2025/BrijGarg-Headshot.webp",
         style: { objectPosition: "center 35%" },
       },
       {
@@ -389,7 +389,7 @@ export const brotherhood = [
         involvement:
           "Run Your City Ithaca, Varsity Cross Country and Track & Field, Red Key, Research",
         hobbies: "Sailing, Travelling, Spending Time with Family, Hiking, Skiing",
-        image: "headshots-fall2026/HennySchminke-Headshot.jpeg",
+        image: "/headshots-fall2026/HennySchminke-Headshot.webp",
         style: { objectPosition: "center 30%" },
       },
       {
@@ -399,7 +399,7 @@ export const brotherhood = [
         major: "Computer Science, Data Science",
         involvement: "Cornell Speech & Debate, Armada, Engineers Without Borders, Cornell Sitara",
         hobbies: "Cooking, Cars, Gardening, AgriTech",
-        image: "headshots-fall2025/PradhiPakkerakari.png",
+        image: "/headshots-fall2025/PradhiPakkerakari.webp",
         style: { objectPosition: "center 30%" },
       },
       {
@@ -409,7 +409,7 @@ export const brotherhood = [
         major: "Economics",
         involvement: "Football, Christian Union, FCA, SAAC",
         hobbies: "UFC, Kunekune Pigs, Markets",
-        image: "headshots-fall2025/MacDorward-Headshot.jpeg",
+        image: "/headshots-fall2025/MacDorward-Headshot.webp",
         style: { objectPosition: "center 30%" },
       },
       {
@@ -419,7 +419,7 @@ export const brotherhood = [
         major: "Computer Science, Entrepreneurship",
         involvement: "EWB Cornell",
         hobbies: "Travelling, Basketball, Golf, Coding",
-        image: "headshots-fall2025/SebastianDominguez-Headshot.JPG",
+        image: "/headshots-fall2025/SebastianDominguez-Headshot.webp",
         style: { objectPosition: "center 30%" },
       },
       {
@@ -430,7 +430,7 @@ export const brotherhood = [
         involvement:
           "Cornell Business Analytics, South Asian Business Association, Engineers Without Borders, Pi Beta Phi",
         hobbies: "DJing, Cooking, Listening to Rap & R&B",
-        image: "headshots-fall2025/NehaPatil-Headshot.png",
+        image: "/headshots-fall2025/NehaPatil-Headshot.webp",
         extra: "Website Coordinator",
         style: { objectPosition: "center 30%" },
       },
@@ -448,7 +448,7 @@ export const brotherhood = [
           "Social Fraternity, South Asian Business Association, Cornell Real Estate Club, Society for India, Sitara @ Cornell, Cornell Poker Club",
         hobbies:
           "Traveling, Fishing, Pickleball & Basketball, Tampa Bay Buccaneers, Poker & Blackjack, Real Estate",
-        image: "headshots/KrishPatel-Headshot.png",
+        image: "/headshots/KrishPatel-Headshot.webp",
         style: { objectPosition: "center 35%" },
       },
       {
@@ -458,7 +458,7 @@ export const brotherhood = [
         major: "HBHS, Fiber Science",
         involvement: "Grub Ventures",
         hobbies: "Running, Podcasts, Thrifting",
-        image: "headshots/KateSahin-Headshot.jpg",
+        image: "/headshots/KateSahin-Headshot.webp",
         style: { objectPosition: "center 35%" },
       },
       {
@@ -469,7 +469,7 @@ export const brotherhood = [
         involvement:
           "Hospitality Sales and Marketing Association International, Hotel Ezra Cornell, Society for Women in Business, Singapore Student Association, Japan US Association",
         hobbies: "Rhythmic Gymnastics, Film Photography, Formula 1",
-        image: "headshots/MarikoMita-Headshot.jpg",
+        image: "/headshots/MarikoMita-Headshot.webp",
         style: { objectPosition: "center 35%" },
       },
       {
@@ -479,7 +479,7 @@ export const brotherhood = [
         major: "ECE or CS",
         involvement: "Hall Council, Independent Projects",
         hobbies: "Reading, Coding, Debate, Practical Jokes",
-        image: "headshots/JuliusBehner-Headshot.jpg",
+        image: "/headshots/JuliusBehner-Headshot.webp",
         style: { objectPosition: "center 35%" },
       },
       {
@@ -489,7 +489,7 @@ export const brotherhood = [
         major: "ILR",
         involvement: "Cornell Fashion Collective, Alpha Xi Delta",
         hobbies: "Running, Skiing, Baking, Music, Driving",
-        image: "headshots/BrookeWilcox-Headshot.jpeg",
+        image: "/headshots/BrookeWilcox-Headshot.webp",
         extra: "Social Media Coordinator",
         style: { objectPosition: "center 35%" },
       },
@@ -500,7 +500,7 @@ export const brotherhood = [
         major: "AEM",
         involvement: "Cornell Pickleball Club",
         hobbies: "UFC, Pickleball, Travis Scott, Cooking/Grilling",
-        image: "headshots/JadAlsouss-Headshot.JPG",
+        image: "/headshots/JadAlsouss-Headshot.webp",
         style: { objectPosition: "center 35%" },
       },
       {
@@ -510,7 +510,7 @@ export const brotherhood = [
         major: "AEM",
         involvement: "eLab, Entrepreneurship Club",
         hobbies: "Cooking, Traveling, Anything Adventurous, Side Quests",
-        image: "headshots-fall2026/MelissaChowdhury-Headshot.png",
+        image: "/headshots-fall2026/MelissaChowdhury-Headshot.webp",
         style: { objectPosition: "center 25%" },
       },
       {
@@ -521,7 +521,7 @@ export const brotherhood = [
         involvement:
           "Cornell Fashion Collective, Cornell Fashion Industry Network, Cornell Outdoor Odyssey, Kappa Alpha Theta",
         hobbies: "Fashion, Running, Cooking, Photography, Art",
-        image: "headshots/KateStiens-Headshot.JPG",
+        image: "/headshots/KateStiens-Headshot.webp",
         style: { objectPosition: "center 35%" },
       },
       {
@@ -533,7 +533,7 @@ export const brotherhood = [
           "Digital Tech & Innovation Project Team, Cornell Symphony Orchestra, Claude Builders Club, Brass Club, Cornell Club Women's Ice Hockey",
         hobbies:
           "Experimental Oatmeal Recipes, Japanese, Ninja Creami, French Horn Karaoke, Frozen Yogurt, Ice Hockey, Google Reviewing, Painting",
-        image: "headshots/JulietCrane-Headshot.JPG",
+        image: "/headshots/JulietCrane-Headshot.webp",
         extra: "Currently Away",
         style: { objectPosition: "center 35%" },
       },
@@ -545,7 +545,7 @@ export const brotherhood = [
         involvement:
           "Cornell Assistive Technologies, Startup Consulting at Cornell, Society of Women Engineers",
         hobbies: "Swimming, Traveling, Robotics, Cafe Hopping",
-        image: "headshots/DiyaSheth-Headshot.jpg",
+        image: "/headshots/DiyaSheth-Headshot.webp",
         style: { objectPosition: "center 50%" },
       },
       {
@@ -555,7 +555,7 @@ export const brotherhood = [
         major: "Biological Sciences",
         involvement: "N/A",
         hobbies: "ITF Taekwon-Do, Hiking for a View, Talking About London",
-        image: "headshots/TJ-Headshot.jpeg",
+        image: "/headshots/TJ-Headshot.webp",
         extra: "Currently Away",
         style: { objectPosition: "center 35%" },
       },
@@ -566,7 +566,7 @@ export const brotherhood = [
         major: "Industrial & Labor Relations",
         involvement: "Residential Advisor, Scheinman Conflict Resolution Club",
         hobbies: "Reading, Meditation, Distance Running, Content Creation, Calisthenics",
-        image: "headshots/StephenD'Ambrosio-Headshot.JPG",
+        image: "/headshots/StephenD'Ambrosio-Headshot.webp",
         style: { objectPosition: "center 35%" },
       },
       {
@@ -577,7 +577,7 @@ export const brotherhood = [
         involvement:
           "Cornell DEBUT, International Students Association, Triathlon Club, Social Sorority",
         hobbies: "Sailing, Triathlon, Running, Cycling, Cooking, Hiking",
-        image: "headshots-fall2026/AlixMartinit-HeadshotFA26.jpeg",
+        image: "/headshots-fall2026/AlixMartinit-HeadshotFA26.webp",
         style: { objectPosition: "center 50%" },
       },
       {
@@ -588,7 +588,7 @@ export const brotherhood = [
         involvement:
           "Cornell United Football Club, Outdoor Odyssey, Cornell M&A, Cornell Wind Symphony, Cornell Jazz Ensemble",
         hobbies: "Music, Nature, Gym, F1, Golf, Skiing",
-        image: "headshots/EwanMoss-Headshot.jpeg",
+        image: "/headshots/EwanMoss-Headshot.webp",
         style: { objectPosition: "center 35%" },
       },
     ],
@@ -604,7 +604,7 @@ export const brotherhood = [
         involvement:
           "Society for Women in Business, Cornell Generative AI, KKR Scholar, Forte Women’s Leaders",
         hobbies: "Tennis, Baking, Asian Food, Walking, Dancing",
-        image: "headshots/SaanviRastogi-Headshot.jpg",
+        image: "/headshots/SaanviRastogi-Headshot.webp",
         style: { objectPosition: "center 32%" },
       },
       {
@@ -614,7 +614,7 @@ export const brotherhood = [
         major: "Industrial and Labor Relations, Computer Science",
         involvement: "Cornell Sun Opinion Columnist, Cornell Data Strategy ",
         hobbies: "Biking, Jiu-Jitsu, Reading, Food",
-        image: "headshots/MihirSteingard-Headshot.jpeg",
+        image: "/headshots/MihirSteingard-Headshot.webp",
         style: { objectPosition: "center 40%" },
       },
       {
@@ -624,7 +624,7 @@ export const brotherhood = [
         major: "AEM/Entrepreneurship, Philosophy",
         involvement: "Founder of Syndeo, Social Fraternity, Club Golf",
         hobbies: "Backpacking, Movies, Sports, Running, Minimizing Cortisol",
-        image: "headshots/JacksonHutchison-Headshot.jpeg",
+        image: "/headshots/JacksonHutchison-Headshot.webp",
         style: { objectPosition: "center 0%" },
       },
       {
@@ -634,7 +634,7 @@ export const brotherhood = [
         major: "Economics",
         involvement: "Cornell Investment Banking Club, Cornell Varsity Track & Field",
         hobbies: "Snowboarding, Climbing, F1",
-        image: "headshots/GabrielleShepston-Headshot.png",
+        image: "/headshots/GabrielleShepston-Headshot.webp",
         style: { objectPosition: "center 35%" },
       },
       {
@@ -644,7 +644,7 @@ export const brotherhood = [
         major: "Mechanical Engineering",
         involvement: "IM sports and NSBE",
         hobbies: "Basketball, Music, Gym",
-        image: "headshots/LesterLarbie-Headshot.jpg",
+        image: "/headshots/LesterLarbie-Headshot.webp",
         extra: "Currently Away",
         style: { objectPosition: "center 25%" },
       },
@@ -655,7 +655,7 @@ export const brotherhood = [
         major: "ISST and Business",
         involvement: "WICC and CVC",
         hobbies: "Outdoor Activities, Traveling and Eating",
-        image: "headshots/ShrutiGoteti-Headshot.png",
+        image: "/headshots/ShrutiGoteti-Headshot.webp",
         style: { objectPosition: "center 25%" },
       },
       {
@@ -666,7 +666,7 @@ export const brotherhood = [
         involvement:
           "Psych and Law Research Lab, Cornell Ballet Club, Cornell Ethics Team, Social Sorority",
         hobbies: "Music, Pickleball, Fashion, Ballet",
-        image: "headshots/OliviaBuvanova-Headshot.png",
+        image: "/headshots/OliviaBuvanova-Headshot.webp",
         style: { objectPosition: "center 15%" },
       },
       {
@@ -677,7 +677,7 @@ export const brotherhood = [
         involvement:
           "Cornell Global Business, Claude Builders, Chinese Students Association, SWIB, CSSC",
         hobbies: "Hospitality, Jazz Club, Digital Creation, Ceramic Sculpture",
-        image: "headshots-fall2026/ChristineZhou-HeadshotFA26.png",
+        image: "/headshots-fall2026/ChristineZhou-HeadshotFA26.webp",
         style: { objectPosition: "center 90%" },
       },
       {
@@ -687,7 +687,7 @@ export const brotherhood = [
         major: "Computer Science",
         involvement: "Cornell University Autonomous Drone",
         hobbies: "Travelling, Dancing, Poker, Movies",
-        image: "headshots-fall2026/JiyaChoudhary-Headshot.JPG",
+        image: "/headshots-fall2026/JiyaChoudhary-Headshot.webp",
         style: { objectPosition: "center 55%" },
       },
       {
@@ -698,7 +698,7 @@ export const brotherhood = [
         involvement:
           "Founder at Nova, Independent Research, Business Club for Emerging Economies, DysonConnects Mentor, Cornell ECO, Cornell Cricket Club",
         hobbies: "Bollywood, Pickleball, Travelling, Royal Challengers Bengaluru (IPL)",
-        image: "headshots-fall2026/RaghavSinghal-Headshot.jpeg",
+        image: "/headshots-fall2026/RaghavSinghal-Headshot.webp",
         style: { objectPosition: "center 40%" },
       },
     ],
@@ -714,7 +714,7 @@ export const alumni = [
     involvement:
       "Varsity Track and Field, Run Your City, Nigerian Student Association, Men of Color in Athletics",
     hobbies: "Frolicking",
-    image: "headshots-fall2025/AbrahamAilemen-Headshot.jpeg",
+    image: "/headshots-fall2025/AbrahamAilemen-Headshot.webp",
     style: { objectPosition: "center 20%" },
   },
   {
@@ -724,7 +724,7 @@ export const alumni = [
     major: "Business Management",
     involvement: " eLab 2024/25 Cohort",
     hobbies: "Fitness, Soccer, Travelling, Fashion",
-    image: "headshots/TenTakeda-Headshot.jpeg",
+    image: "/headshots/TenTakeda-Headshot.webp",
     style: { objectPosition: "center 30%" },
   },
   {
@@ -736,7 +736,7 @@ export const alumni = [
       "Social Sorority, Cornell Women's Club Lacrosse and Club Basketball, Big Red Sports Network",
     hobbies:
       "Fitness/Hyrox, Graphic Design, Sports Media, Frontend Development, Coffee Shops, Podcasts",
-    image: "headshots-fall2025/KatiePerlitz-Headshot.jpg",
+    image: "/headshots-fall2025/KatiePerlitz-Headshot.webp",
     style: { objectPosition: "center 25%" },
   },
   {
@@ -748,7 +748,7 @@ export const alumni = [
       "Cornell Business Analytics, Academic Excellence Workshop Facilitator, Teaching Assistant, International Students Association",
     hobbies:
       "Cooking, International Travel, Working Out, Running, Watching TV, Perfumes, Flower Arrangements",
-    image: "headshots-fall2025/ValeriaEnciso-Headshot.jpg",
+    image: "/headshots-fall2025/ValeriaEnciso-Headshot.webp",
     style: { objectPosition: "center 30%" },
   },
   {
@@ -758,7 +758,7 @@ export const alumni = [
     major: "Computer Science",
     involvement: "Cornell University Sustainable Design, BigRed//Hacks, AAIV",
     hobbies: "Embroidery, Rock Climbing, and Skiing",
-    image: "headshots-fall2025/LieselWong-Headshot.jpg",
+    image: "/headshots-fall2025/LieselWong-Headshot.webp",
     style: { objectPosition: "center 40%" },
   },
   {
@@ -769,7 +769,7 @@ export const alumni = [
     involvement: "Research Under Dr. Dan Berry, Personal Training with CFC",
     hobbies:
       "Social Media/Content Creation, Reading, Endurance Sports, Weight Lifting, Cooking, Eating",
-    image: "headshots-fall2025/DillonGordon-Headshot.jpg",
+    image: "/headshots-fall2025/DillonGordon-Headshot.webp",
     style: { objectPosition: "center 30%" },
   },
   {
@@ -780,7 +780,7 @@ export const alumni = [
     involvement: "Interfraternity Council, Part-Time Software Engineer",
     hobbies:
       "Literally Anything to do with Being Outdoors, House Music, Distributed Systems & Systems Programming",
-    image: "headshots-fall2025/AndyMarous-Headshot.jpeg",
+    image: "/headshots-fall2025/AndyMarous-Headshot.webp",
     style: { objectPosition: "center 50%" },
   },
   {
@@ -790,7 +790,7 @@ export const alumni = [
     major: "Economics and Computer Science",
     involvement: "SEGC",
     hobbies: "Music, Spikeball, Basketball, Soccer",
-    image: "headshots-fall2025/AaronZhu-Headshot.jpeg",
+    image: "/headshots-fall2025/AaronZhu-Headshot.webp",
     style: { objectPosition: "center 55%" },
   },
   {
@@ -800,7 +800,7 @@ export const alumni = [
     major: "Computer Science, Artificial Intelligence",
     involvement: "FGI, ORIE Research, Study Abroad, SWE",
     hobbies: "Running, Hiking, Snowboarding, Coffee, Traveling",
-    image: "headshots/EnaKovac-Headshot.jpeg",
+    image: "/headshots/EnaKovac-Headshot.webp",
     style: { objectPosition: "center 35%" },
   },
   {
@@ -810,7 +810,7 @@ export const alumni = [
     major: "Economics and Business",
     involvement: "Cornell Global Business",
     hobbies: "Golf, Soccer, Volleyball, F1, Gaming",
-    image: "headshots/LuisHenriqueHermann-Headshot.jpeg",
+    image: "/headshots/LuisHenriqueHermann-Headshot.webp",
     style: { objectPosition: "center 30%" },
   },
   {
@@ -820,7 +820,7 @@ export const alumni = [
     major: "Agricultural Sciences and Business & Global Development",
     involvement: "Cru Cornell, Mushroom Club, We Care for Children, and More!",
     hobbies: "Hiking and Entrepreneurship ",
-    image: "headshots-fall2025/SamuelIradukunda-Headshot.jpeg",
+    image: "/headshots-fall2025/SamuelIradukunda-Headshot.webp",
     style: { objectPosition: "center 25%" },
   },
   {
@@ -830,7 +830,7 @@ export const alumni = [
     major: "Chemical Engineering",
     involvement: "Alpha Xi Delta, Research at the Hybrid Body Lab",
     hobbies: "Beauty, Fashion, Fitness & Baking!",
-    image: "headshots/SamanthaChang-Headshot.jpeg",
+    image: "/headshots/SamanthaChang-Headshot.webp",
     style: { objectPosition: "center 70%" },
   },
   {
@@ -841,7 +841,7 @@ export const alumni = [
     minors: "",
     involvement: "ENT is a religion.",
     hobbies: "Weightlifting, Cold Plunges, Reading, Running, and Guitar (and Entrepreneurship)",
-    image: "headshots-fall2025/MatthewKahn-Headshot.jpeg",
+    image: "/headshots-fall2025/MatthewKahn-Headshot.webp",
     style: { objectPosition: "center 35%" },
   },
   {
@@ -852,7 +852,7 @@ export const alumni = [
     involvement:
       "Big Red Yoga President, CUVEC Secretary, CU Cuvée Blind Wine Tasting Society, Cornell Tradition Fellow, Varsity Sailing, CALS Ambassador, Statler Hotel Wine Stewardess, Christian Union Worship Lead",
     hobbies: "Guitar, Sailing, and Making Wine",
-    image: "headshots-fall2025/AvaGraceSannino-Headshot.jpeg",
+    image: "/headshots-fall2025/AvaGraceSannino-Headshot.webp",
     style: { objectPosition: "center 35%" },
   },
   {
@@ -862,7 +862,7 @@ export const alumni = [
     major: "AEM, Fashion",
     involvement: "Cornell Fashion Collective, Alpha Xi Delta",
     hobbies: "Fashion Design, Spikeball, Tennis, Jazz Music",
-    image: "headshots-fall2025/ElliePark-Headshot.JPG",
+    image: "/headshots-fall2025/ElliePark-Headshot.webp",
     style: { objectPosition: "center 50%" },
   },
   {
@@ -872,7 +872,7 @@ export const alumni = [
     major: "AEM",
     involvement: "Student Agencies, Ski Club, Skateboarding Club",
     hobbies: "Skateboarding, Skiing",
-    image: "headshots/DylanSeale-Headshot.jpeg",
+    image: "/headshots/DylanSeale-Headshot.webp",
     style: { objectPosition: "center 50%" },
   },
   {
@@ -882,7 +882,7 @@ export const alumni = [
     major: "Human Biology, Health, and Society",
     involvement: "Social Fraternity, PATCH",
     hobbies: "3D Printing, Camping, Med Tech",
-    image: "headshots/JackLowe-Headshot.jpeg",
+    image: "/headshots/JackLowe-Headshot.webp",
     style: { objectPosition: "center 50%" },
   },
   {
@@ -892,7 +892,7 @@ export const alumni = [
     major: "AEM",
     involvement: "Orientation Leader, Cornell Tradition, Social Fraternity",
     hobbies: "Surfing, Free Diving, Skateboard",
-    image: "headshots/ConradHamilton-Headshot.jpeg",
+    image: "/headshots/ConradHamilton-Headshot.webp",
     style: { objectPosition: "center 20%" },
   },
   {
@@ -902,7 +902,7 @@ export const alumni = [
     major: "Computer Science, Entrepreneurship",
     involvement: "Woman in Computing",
     hobbies: "Traveling, Music, Photography, Reading, Flute, Rowing",
-    image: "headshots/LaraKulkarni-Headshot.jpeg",
+    image: "/headshots/LaraKulkarni-Headshot.webp",
     style: { objectPosition: "center 50%" },
   },
   {
@@ -912,7 +912,7 @@ export const alumni = [
     major: "Biology and Society, Psychology and Spanish",
     involvement: "Rho Psi Eta, Cornell Red Cross",
     hobbies: "Running, Reading",
-    image: "headshots/JaileneSinchi-Headshot.jpeg",
+    image: "/headshots/JaileneSinchi-Headshot.webp",
     style: { objectPosition: "center 70%" },
   },
   {
@@ -922,7 +922,7 @@ export const alumni = [
     major: "Communication, Business",
     involvement: "Track, SAAC",
     hobbies: "Baking, Karaoke, Painting",
-    image: "headshots/MargauxRawson-Headshot.jpeg",
+    image: "/headshots/MargauxRawson-Headshot.webp",
     style: { objectPosition: "center 70%" },
   },
   {
@@ -932,7 +932,7 @@ export const alumni = [
     major: "AEM, Information Science",
     involvement: "SWIB, Social Sorority",
     hobbies: "Tennis, Skiing",
-    image: "headshots/MariaGuzman-Headshot.jpeg",
+    image: "/headshots/MariaGuzman-Headshot.webp",
     style: { objectPosition: "center 15%" },
   },
   {
@@ -942,7 +942,7 @@ export const alumni = [
     major: "Policy Analysis and Management, Business and Law",
     involvement: "Social Sorority",
     hobbies: "Outdoor Excursions, Jazz Clubs, Peanut Butter, Running, Snowboarding",
-    image: "headshots/KaitlynClarke-Headshot.jpeg",
+    image: "/headshots/KaitlynClarke-Headshot.webp",
     style: { objectPosition: "center 0%" },
   },
   {
@@ -952,7 +952,7 @@ export const alumni = [
     major: "Animal Science",
     involvement: "Track, Dairy Science Club, Intergroup Dialogue Project",
     hobbies: "Baking, Etch-A-Sketch, Making Cartoon Characters, DIY Projects",
-    image: "headshots/CharliStewart-Headshot.jpeg",
+    image: "/headshots/CharliStewart-Headshot.webp",
     style: { objectPosition: "center 30%" },
   },
   {
@@ -962,7 +962,7 @@ export const alumni = [
     major: "Human Biology, Health & Society, Business, Health and Classics",
     involvement: "Track, PATCH, Women of Color in Athletics",
     hobbies: "Traveling, Creating Media & Graphics, Food Photography, Music",
-    image: "headshots/MadelynPacker-Headshot.jpeg",
+    image: "/headshots/MadelynPacker-Headshot.webp",
     style: { objectPosition: "center 35%" },
   },
   {
@@ -972,7 +972,7 @@ export const alumni = [
     major: "Computer Science and Operations Research",
     involvement: "CU Solar Boat, Cornell FinTech Club",
     hobbies: "Badminton, Chess, Soccer",
-    image: "headshots/AnneshGhoshDastidar-Headshot.jpeg",
+    image: "/headshots/AnneshGhoshDastidar-Headshot.webp",
     style: { objectPosition: "center 40%" },
   },
   {
@@ -982,7 +982,7 @@ export const alumni = [
     major: "Hotel Administration, Information Science",
     involvement: "Leading Women of Tomorrow, HEC, TEDxCornell",
     hobbies: "Reading, Writing Screenplays, Product Designing, Cooking, Pilates",
-    image: "headshots/MonicaLee-Headshot.jpeg",
+    image: "/headshots/MonicaLee-Headshot.webp",
     style: { objectPosition: "center 30%" },
   },
   {
@@ -992,7 +992,7 @@ export const alumni = [
     major: "AEM, Real Estate",
     involvement: "Men’s Ice Hockey, Real Estate Club",
     hobbies: "Investing, Fitness, Technology, Cars, Music",
-    image: "headshots/JackLagerstrom-Headshot.jpeg",
+    image: "/headshots/JackLagerstrom-Headshot.webp",
     style: {
       objectFit: "contain",
       objectPosition: "center bottom",

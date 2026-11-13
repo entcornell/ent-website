@@ -16,9 +16,15 @@ describe("README", () => {
   });
 
   it("documents every content file", () => {
-    const contentFiles = readdirSync(join(ROOT, "src/components")).filter(
-      (name) =>
-        /Data\.js$/.test(name) || ["recruitmentEvents.js", "applicationConfig.js"].includes(name),
+    // Content lives in src/components and in the home's own folder (founders/).
+    const contentFiles = ["", "founders/"].flatMap((dir) =>
+      readdirSync(join(ROOT, "src/components", dir))
+        .filter(
+          (name) =>
+            /Data\.js$/.test(name) ||
+            ["recruitmentEvents.js", "applicationConfig.js"].includes(name),
+        )
+        .map((name) => dir + name),
     );
     expect(contentFiles.length).toBeGreaterThan(5);
     expect(contentFiles.filter((name) => !readme.includes(`src/components/${name}`))).toEqual([]);

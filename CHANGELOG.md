@@ -8,6 +8,8 @@ The site is deployed continuously from `main`, so entries are grouped by date, n
 
 ### Removed
 
+- The old home page (`Home.jsx`, `EndeavorsPopup.jsx`, `EndeavorsData.js`), replaced by the
+  new one.
 - Colin O'Brien and Cali Bernier from the Brothers page, with their headshots.
 
 ### Changed
@@ -19,6 +21,23 @@ The site is deployed continuously from `main`, so entries are grouped by date, n
 
 ### Added
 
+- **New home at `/`**, in a rose-copper metal identity with Playfair Display and DM Mono:
+  - a pinned, scroll-driven hero: Paul Graham's "Live in the future, then build what's
+    missing." turns into "ENT turns Cornell students into founders." and "With real
+    companies.", then spotlights Stride, BUZZ, N1X and Hotake with their founders, and
+    ends on a wall of every ENT venture's logo;
+  - "A year at ENT": a pinned film strip of real chapter moments, fall to spring;
+  - "Builders, and friends.": four drifting rows of chapter photos;
+  - recruitment with ENT's 3D rocket (three.js, loaded only near the section, desktop only)
+    and a footer.
+    Photos come from the ENT media library, converted to WebP. Every other page keeps its
+    original design; the old preview link `/new` redirects to `/`.
+    Its nav and footer link to every existing page (About, Values, Ventures, SBC, Brothers,
+    Recruitment, Newsletter).
+- `scripts/optimize-model.mjs` shrinks 3D models for the web (the rocket went from 58 MB to
+  0.9 MB).
+- Taglines for every venture in `StudentVenturesData.js`; Kate Stiens added as Stride's
+  co-founder.
 - `npm run readme:assets` regenerates the README banner and screenshots with headless
   Chrome.
 - `src/readme.test.js` fails CI when the README misses a route, content file, npm script or

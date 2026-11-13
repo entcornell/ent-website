@@ -10,6 +10,7 @@ The site is deployed continuously from `main`, so entries are grouped by date, n
 
 - The old home page (`Home.jsx`, `EndeavorsPopup.jsx`, `EndeavorsData.js`), replaced by the
   new one.
+- Colin O'Brien and Cali Bernier from the Brothers page, with their headshots.
 
 ### Changed
 

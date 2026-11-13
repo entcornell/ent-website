@@ -38,9 +38,9 @@ function Nav() {
           </span>
         </Link>
         <div className="fh-mono fh-nav-links">
-          <a className="fh-hide-sm" href="#about">
+          <Link className="fh-hide-sm" to="/about">
             About
-          </a>
+          </Link>
           <Link className="fh-hide-xs" to="/studentVentures">
             Ventures
           </Link>

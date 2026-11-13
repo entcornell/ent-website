@@ -15,8 +15,13 @@ export default function Footer() {
         </p>
       </div>
       <nav className="fh-mono fh-footer-links" aria-label="Footer">
+        <Link to="/about">About</Link>
+        <Link to="/Values">Values</Link>
+        <Link to="/studentVentures">Ventures</Link>
+        <Link to="/SBC">SBC</Link>
         <Link to="/brothers">Brothers</Link>
         <Link to="/recruitment">Recruitment</Link>
+        <Link to="/newsletter">Newsletter</Link>
         <a href="https://www.instagram.com/entcornell" target="_blank" rel="noopener noreferrer">
           Instagram
         </a>

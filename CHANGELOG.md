@@ -32,6 +32,8 @@ The site is deployed continuously from `main`, so entries are grouped by date, n
     and a footer.
     Photos come from the ENT media library, converted to WebP. Every other page keeps its
     original design; the old preview link `/new` redirects to `/`.
+    Its nav and footer link to every existing page (About, Values, Ventures, SBC, Brothers,
+    Recruitment, Newsletter).
 - `scripts/optimize-model.mjs` shrinks 3D models for the web (the rocket went from 58 MB to
   0.9 MB).
 - Taglines for every venture in `StudentVenturesData.js`; Kate Stiens added as Stride's

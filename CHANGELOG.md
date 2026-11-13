@@ -6,6 +6,10 @@ The site is deployed continuously from `main`, so entries are grouped by date, n
 
 ## [Unreleased]
 
+### Removed
+
+- Colin O'Brien and Cali Bernier from the Brothers page, with their headshots.
+
 ### Changed
 
 - **README redesigned** in ENT's colors: banner, live screenshots (desktop and phone),
